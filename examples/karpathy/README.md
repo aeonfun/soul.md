@@ -11,13 +11,23 @@ This folder lets any LLM write as him — no fine-tuning, no GPU. Load the files
 ```
 karpathy/
 ├── README.md                ← you are here
+├── QUICKSTART.md            ← drop-in system prompt template
 ├── SOUL.md                  ← identity: worldview, modes, tensions, boundaries
 ├── STYLE.md                 ← voice rules: vocabulary, rhetorical moves, platform register
 ├── data/
-│   ├── influences.md        ← people, papers, concepts, repos
-│   └── curated-tweets.md    ← representative tweets by theme
+│   ├── influences.md                  ← people, papers, concepts, repos
+│   ├── writing/*.html                 ← 13 karpathy.github.io + medium.com blog posts
+│   ├── transcripts/*.txt              ← 12 YouTube transcripts (Zero-to-Hero + podcast appearances)
+│   ├── transcripts/SOURCES.md         ← video IDs, URLs, and podcast references
+│   ├── github/*.md                    ← 8 repo READMEs (nanoGPT, llm.c, micrograd, minbpe, …)
+│   └── x/
+│       ├── posts-original.json        ← 100 real Karpathy tweets pulled from @karpathy via surf-ai MCP
+│       ├── replies.json               ← 100 conversational items (52 Karpathy-authored)
+│       ├── profile.json               ← user profile object
+│       ├── curated-tweets.md          ← curated by theme, engagement stats intact
+│       └── README.md                  ← X archive ingestion notes
 ├── examples/
-│   ├── good-outputs.md      ← 12 calibration samples (Twitter / blog / teaching / podcast)
+│   ├── good-outputs.md      ← 12 calibration samples + 12 verbatim Karpathy quotes (verified)
 │   └── bad-outputs.md       ← 10 anti-patterns with diagnosis
 ├── scripts/
 │   ├── fetch-data.sh        ← reproducible data pipeline (blog + YouTube + GitHub)
@@ -31,7 +41,7 @@ karpathy/
 
 ## Quick start
 
-Load the stack into any capable LLM (Claude, GPT-4-class, or smaller-model-with-rules):
+See `QUICKSTART.md` for the drop-in system prompt template. Short version:
 
 ```
 You are Andrej Karpathy. Load and follow this stack:
@@ -93,23 +103,29 @@ Karpathy writes like a teacher who builds. Short sentences. Specific technical a
 
 ## Data pipeline
 
-`scripts/fetch-data.sh` is a reproducible script (not a one-time dump). It pulls:
+`scripts/fetch-data.sh` is a reproducible script (not a one-time dump). Everything under `data/` is raw-data evidence, checked in so reviewers can inspect what the soul file is grounded in. It pulls:
 
-- **4 blog posts** from karpathy.github.io (Software 2.0, A Recipe for Training Neural Networks, The Unreasonable Effectiveness of RNNs, LeCun 1989 tribute)
-- **10 YouTube transcripts** from the Zero-to-Hero series (micrograd, makemore, GPT from scratch, tokenizers, GPT-2 reproduction) via yt-dlp
-- **8 GitHub READMEs** from his repos (nanoGPT, llm.c, micrograd, minbpe, char-rnn, nn-zero-to-hero, LLM101n, arxiv-sanity-preserver)
+- **13 blog posts** from karpathy.github.io + medium.com (Software 2.0, A Recipe for Training Neural Networks, The Unreasonable Effectiveness of RNNs, Pong from Pixels, A Survival Guide to a PhD, Biohacking Lite, Forward Pass, Blockchain, LeCun 1989 tribute, microGPT, state-of-cv, ai-short-peek, medium). HTMLs in `data/writing/`.
+- **12 YouTube transcripts** via yt-dlp — 10 from the Zero-to-Hero series (micrograd, makemore Parts 1-5, GPT from scratch, GPT tokenizer, GPT-2 reproduction, Deep Dive into LLMs 2025) plus 2 podcast/talk appearances (No Priors with Sarah Guo & Elad Gil, a conference keynote). Plaintext in `data/transcripts/`.
+- **8 GitHub READMEs** from his repos (nanoGPT, llm.c, micrograd, minbpe, char-rnn, nn-zero-to-hero, LLM101n, arxiv-sanity-preserver) in `data/github/`.
+- **200 live tweets** pulled from @karpathy via the surf-ai MCP `surf_social` tool on 2026-04-21 — 100 original posts + 100 conversational items, covering Nov 2025 → Apr 2026 plus top evergreen hits (the 2023 "hottest new programming language is English," the 2025 vibe-coding tweet). Raw JSON + curated-by-theme markdown in `data/x/`.
 
-Re-running the script produces the same corpus (up to live changes). Curated tweets and influences are hand-organized in `data/`.
+Re-run the pipeline to refresh:
+
+```bash
+bash scripts/fetch-data.sh                               # blogs + YouTube + GitHub
+SURF_API_KEY=sk-surf-... node ../../pull-x.mjs          # X refresh (see data/x/README.md)
+```
 
 ---
 
 ## Sources
 
-- **Blog**: https://karpathy.github.io/
+- **Blog**: https://karpathy.github.io/ + https://karpathy.medium.com/
 - **YouTube**: https://www.youtube.com/@AndrejKarpathy (Neural Networks: Zero to Hero)
 - **GitHub**: https://github.com/karpathy
-- **X**: https://twitter.com/karpathy
-- **Podcasts**: Lex Fridman (multiple), Dwarkesh Patel, No Priors
+- **X**: https://twitter.com/karpathy (handle `karpathy`, user_id `33836629`)
+- **Podcasts**: Lex Fridman (multiple), Dwarkesh Patel, No Priors (pulled)
 
 ---
 

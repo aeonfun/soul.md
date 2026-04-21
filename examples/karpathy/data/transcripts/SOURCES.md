@@ -17,12 +17,21 @@ Karpathy's flagship educational YouTube series. Each video builds a complete ML 
 | l8pRSuU81PU | Let's reproduce GPT-2 (124M) | https://www.youtube.com/watch?v=l8pRSuU81PU |
 | 7xTGNNLPyMI | Deep Dive into LLMs like ChatGPT (2025) | https://www.youtube.com/watch?v=7xTGNNLPyMI |
 
-## Podcast appearances (external)
+## Podcast & conference appearances (pulled)
+
+| Video ID | Source | URL |
+|----------|--------|-----|
+| hM_h0UA7upI | No Priors × Andrej Karpathy (Sarah Guo & Elad Gil) | https://www.youtube.com/watch?v=hM_h0UA7upI |
+| c3b-JASoPi0 | Karpathy conference talk (keynote-style, intro by host) | https://www.youtube.com/watch?v=c3b-JASoPi0 |
+
+## Additional podcast sources (referenced, yt-dlp-extensible)
 
 - **Lex Fridman Podcast** — multiple appearances. Topics: Tesla, OpenAI, Stanford, neural nets, AGI.
   - https://lexfridman.com/andrej-karpathy/
-- **No Priors (Sarah Guo & Elad Gil)** — 2024, AI landscape, LLMs, education.
-- **Dwarkesh Podcast** — deep technical conversation on LLMs, scaling, and the future of AI.
+  - Episodes: Lex #333 (Oct 2022, Tesla/Autopilot/Optimus/AGI), Lex #416 (Nov 2024, LLMs/Eureka)
+- **Dwarkesh Podcast** — deep technical conversation on LLMs, scaling, education.
+  - https://www.dwarkeshpatel.com/
+- Add any new Karpathy appearance to `YOUTUBE_VIDEOS` array in `scripts/fetch-data.sh`.
 
 ## CS231N (Stanford)
 

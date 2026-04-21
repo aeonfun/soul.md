@@ -24,8 +24,8 @@ echo ""
 # -----------------------------------------------------------------------------
 echo "--- Fetching blog posts ---"
 
-BLOG_SLUGS="rnn-effectiveness software-2.0 recipe lecun1989"
-BLOG_URLS="https://karpathy.github.io/2015/05/21/rnn-effectiveness/ https://karpathy.github.io/2017/01/25/software-2.0/ https://karpathy.github.io/2019/04/25/recipe/ https://karpathy.github.io/2022/03/14/lecun1989/"
+BLOG_SLUGS="state-of-cv rnn-effectiveness ai-short-peek rl phd medium software-2.0 recipe biohacking-lite forward-pass blockchain lecun1989 microgpt"
+BLOG_URLS="https://karpathy.github.io/2012/10/22/state-of-computer-vision/ https://karpathy.github.io/2015/05/21/rnn-effectiveness/ https://karpathy.github.io/2015/11/14/ai/ https://karpathy.github.io/2016/05/31/rl/ https://karpathy.github.io/2016/09/07/phd/ https://karpathy.github.io/2018/01/20/medium/ https://karpathy.github.io/2017/01/25/software-2.0/ https://karpathy.github.io/2019/04/25/recipe/ https://karpathy.github.io/2020/06/11/biohacking-lite/ https://karpathy.github.io/2021/03/27/forward-pass/ https://karpathy.github.io/2021/06/21/blockchain/ https://karpathy.github.io/2022/03/14/lecun1989/ https://karpathy.github.io/2026/02/12/microgpt/"
 
 set -- $BLOG_URLS
 for slug in $BLOG_SLUGS; do
@@ -59,6 +59,9 @@ YOUTUBE_VIDEOS=(
   "zduSFxRajkE"  # Let's build the GPT Tokenizer
   "l8pRSuU81PU"  # Let's reproduce GPT-2 (124M)
   "7xTGNNLPyMI"  # Deep Dive into LLMs like ChatGPT (2025)
+  # Podcast appearances
+  "hM_h0UA7upI"  # No Priors × Karpathy
+  "c3b-JASoPi0"  # Karpathy talk (conference)
 )
 
 if command -v yt-dlp &>/dev/null; then
@@ -136,7 +139,7 @@ else
 fi
 
 cat > "$DATA/x/README.md" << 'XREADME'
-# Twitter/X Data — @kaborthy
+# Twitter/X Data — @karpathy
 
 ## How to get the full archive
 

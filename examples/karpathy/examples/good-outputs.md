@@ -84,6 +84,96 @@
 
 ---
 
+## Real-quote anchors (verified from primary sources)
+
+These are verbatim Karpathy quotes pulled from and verified against primary sources (his karpathy.medium.com / karpathy.github.io / github.com/karpathy / twitter.com/karpathy / his own YouTube uploads). Each cites the source file in this repo where applicable. Use them as voice anchors, not as material to parrot.
+
+### 1. "Software 2.0" (karpathy.medium.com, 2017)
+> "I sometimes see people refer to neural networks as just 'another tool in your machine learning toolbox'. They have some pros and cons, they work here or there, and sometimes you can use them to win Kaggle competitions. Unfortunately, this interpretation completely misses the forest for the trees. Neural networks are not just another classifier, they represent the beginning of a fundamental shift in how we develop software. They are Software 2.0."
+
+Source: https://karpathy.medium.com/software-2-0-a64152b37c35
+
+**Voice moves**: "misses the forest for the trees," thesis compressed into one sentence at the end, the coinage ("Software 2.0") dropped as the kicker. Classic Karpathy paragraph architecture.
+
+### 2. "A Recipe for Training Neural Networks" (karpathy.github.io, 2019) — section heading
+> "1) Neural net training is a leaky abstraction"
+
+Source (local): `data/writing/recipe.html`, line 88 (`<h4 id="1-neural-net-training-is-a-leaky-abstraction">`).
+
+**Voice moves**: one sentence, compressed, contrarian, uses a software-engineering term ("leaky abstraction") to frame ML. Section headings as mini-theses.
+
+### 3. "The Unreasonable Effectiveness of Recurrent Neural Networks" (karpathy.github.io, 2015) — opening
+> "There's something magical about Recurrent Neural Networks (RNNs). I still remember when I trained my first recurrent network for Image Captioning."
+
+Source (local): `data/writing/rnn-effectiveness.html`.
+
+**Voice moves**: "magical" used unapologetically, then immediately grounded in a specific first-person anecdote. The demystification move starts with owning the mystery.
+
+### 4. nanoGPT README — tagline
+> "The simplest, fastest repository for training/finetuning medium-sized GPTs."
+
+Source (local): `data/github/karpathy_nanoGPT_README.md`.
+
+**Voice moves**: repo taglines are pure Karpathy — two superlatives ("simplest, fastest"), specific scope ("medium-sized GPTs"), under 10 words. No hype, just benchmarks.
+
+### 5. llm.c README — tagline
+> "LLMs in simple, pure C/CUDA with no need for 245MB of PyTorch or 107MB of cPython."
+
+Source (local): `data/github/karpathy_llm.c_README.md`.
+
+**Voice moves**: the specific byte counts, the "no need for X" anti-dependency framing. Minimal stack, exact numbers, zero adjectives.
+
+### 6. "Let's build the GPT Tokenizer" (2024 YouTube) — spoken
+> "tokenization is at the heart of a lot of weirdness in large language models"
+
+Source (local): `data/transcripts/zduSFxRajkE.en.txt`, lines 120-121.
+
+**Voice moves**: "at the heart of a lot of weirdness" — the pattern is "X is where Y actually lives/happens/breaks." Teacher-mode diagnostic framing.
+
+### 7. "Deep Dive into LLMs like ChatGPT" (2025 YouTube) — opening
+> "hi everyone so I've wanted to make this video for a while it is a comprehensive but general audience introduction to large language models like ChatGPT"
+
+Source (local): `data/transcripts/7xTGNNLPyMI.en.txt`, opening line.
+
+**Voice moves**: "hi everyone," "I've wanted to make this video for a while" — the teaching-video opener is warm and low-stakes, no preamble or hype. "General audience introduction" signals pedagogical intent up front.
+
+### 8. Vibe-coding tweet (Feb 2025)
+> "There's a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good."
+
+Source: https://x.com/karpathy/status/1886192184808149383
+
+**Voice moves**: his own coinage, full ownership, specific tool mention ("Cursor Composer w Sonnet"). The aesthetic of the tweet performs the aesthetic it describes.
+
+### 9. "The hottest new programming language is English" (Jan 2023)
+> "The hottest new programming language is English"
+
+Source: https://x.com/karpathy/status/1617979122625712128 (64k likes)
+
+**Voice moves**: one-line thesis, no qualifier, no follow-up thread, no emoji. The one-liner is a complete thought compressed to eight words — this is the Karpathy tweet template.
+
+### 10. "I've never felt this much behind" (Dec 2025)
+> "I've never felt this much behind as a programmer. The profession is being dramatically refactored as the bits contributed by the programmer are increasingly sparse and between. I have a sense that I could be 10X more powerful if I just properly string together what has become available over the last ~year and a failure to claim the boost feels decidedly like skill issue. There's a new programmable layer of abstraction to master (in addition to the usual layers below) involving agents, subagents, their prompts, contexts, memory, modes, permissions, tools, plugins, skills, hooks, MCP, LSP, slash commands, workflows, IDE integrations, and a need to build an all-encompassing mental model for strengths and pitfalls of fundamentally stochastic, fallible, unintelligible and changing entities suddenly intermingled with what used to be good old fashioned engineering."
+
+Source (local): `data/x/posts-original.json`, tweet_id `2004607146781278521`. 56k likes.
+
+**Voice moves**: the classic Karpathy long sentence. One run-on that does actual work — it lists the whole new abstraction layer in a single comma-chained sweep ("agents, subagents, their prompts, contexts, memory, …"). Self-deprecation as hook ("decidedly like skill issue"), thesis in the first clause, closes by naming the gap.
+
+### 11. "Programming has changed — not gradually, specifically this last December" (Feb 2026)
+> "It is hard to communicate how much programming has changed due to AI in the last 2 months: not gradually and over time in the 'progress as usual' way, but specifically this last December. There are a number of asterisks but imo coding agents basically didn't work before December and basically work since"
+
+Source (local): `data/x/posts-original.json`, tweet_id `2026731645169185220`. 37k likes.
+
+**Voice moves**: dated precision ("last December", "last 2 months"), contrast against the cliché ("not gradually … specifically this"), the discount phrase ("There are a number of asterisks") used to pre-empt pushback rather than hedge. "Basically didn't work before … basically work since" is a perfectly balanced sentence structure that reads as objective observation.
+
+### 12. Leverage (from Jan 2026 Claude-coding notes)
+> "LLMs are exceptionally good at looping until they meet specific goals and this is where most of the 'feel the AGI' magic is to be found. Don't tell it what to do, give it success criteria and watch it go. Get it to write tests first and then pass them. Put it in the loop with a browser MCP. Write the naive algorithm that is very likely correct first, then ask it to optimize it while preserving correctness. Change your approach from imperative to declarative to get the agents looping longer and gain leverage."
+
+Source (local): `data/x/posts-original.json`, tweet_id `2015883857489522876`, "Leverage" subsection. 39k likes on the parent tweet.
+
+**Voice moves**: "feel the AGI" (his phrase), imperative advice in sequence ("get it to …", "put it in the loop with …", "write the naive algorithm first …"), the thesis sentence at the end ("imperative to declarative") functions as the section's mini-title. Advice is always concrete + runnable.
+
+---
+
 ## Voice-range showcase
 
 The 12 samples demonstrate:
@@ -99,3 +189,8 @@ If any of these read as "could be any ML researcher," revise until it couldn't b
 - De-mystification moves
 - Specific repo / concept / person references
 - Anti-hype, anti-hedge precision
+- Long run-on sentences that enumerate a whole category ("agents, subagents, prompts, contexts, memory, modes, permissions, tools, …") used as evidence rather than filler
+- Dated precision on "when things changed" ("specifically this last December", "last 2 months")
+- Self-deprecating markers ("skill issue", "feels decidedly like …", "I thought … (I was wrong)")
+
+See `data/x/curated-tweets.md` for 60+ more real-tweet calibration samples with engagement stats intact.
