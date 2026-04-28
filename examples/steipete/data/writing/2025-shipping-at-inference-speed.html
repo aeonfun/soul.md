@@ -1,0 +1,560 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="view-transition" content="same-origin"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="canonical" href="https://steipete.me/posts/2025/shipping-at-inference-speed"><meta name="generator" content="Astro v5.18.1"><!-- General Meta Tags --><title>Shipping at Inference-Speed | Peter Steinberger</title><meta name="title" content="Shipping at Inference-Speed | Peter Steinberger"><meta name="description" content="Why I stopped reading code and started watching it stream by."><meta name="author" content="Peter Steinberger"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Shipping at Inference-Speed | Peter Steinberger"><meta property="og:description" content="Why I stopped reading code and started watching it stream by."><meta property="og:url" content="https://steipete.me/posts/2025/shipping-at-inference-speed"><meta property="og:image" content="https://steipete.me/posts/2025/shipping-at-inference-speed/index.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-12-28T11:00:00.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://steipete.me/posts/2025/shipping-at-inference-speed"><meta property="twitter:title" content="Shipping at Inference-Speed | Peter Steinberger"><meta property="twitter:description" content="Why I stopped reading code and started watching it stream by."><meta property="twitter:image" content="https://steipete.me/posts/2025/shipping-at-inference-speed/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Shipping at Inference-Speed | Peter Steinberger","image":"https://steipete.me/posts/2025/shipping-at-inference-speed/index.png","datePublished":"2025-12-28T11:00:00.000Z","author":[{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"}]}</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Peter Steinberger" href="https://steipete.me/rss.xml"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><script src="/toggle-theme.js"></script><!-- Domain-based markdown redirect --><script>
+      // Check if we're on steipete.md domain
+      const hostname = window.location.hostname;
+      if ((hostname === 'steipete.md' || hostname === 'www.steipete.md') && !window.location.pathname.endsWith('.md')) {
+        // Redirect to the .md version of the current page
+        const mdPath = window.location.pathname === '/' ? '/index.md' : window.location.pathname + '.md';
+        window.location.replace(mdPath + window.location.search + window.location.hash);
+      }
+    </script><!-- Twitter Widget Script --><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><style>@media(max-width:640px){.newsletter-box[data-astro-cid-nbvfnxgh]{margin-left:-1rem;margin-right:-1rem;border-radius:0}}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.jXOsNRnW.css">
+<style>.youtube-embed-container[data-astro-cid-vj4tpspi]{margin:2rem 0;position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden}.youtube-embed-container[data-astro-cid-vj4tpspi] iframe[data-astro-cid-vj4tpspi]{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+</style><style>[data-astro-transition-scope="astro-pu2sknsl-1"] { view-transition-name: shipping-at-inference-speed; }@layer astro { ::view-transition-old(shipping-at-inference-speed) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(shipping-at-inference-speed) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(shipping-at-inference-speed) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(shipping-at-inference-speed) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: ai; }@layer astro { ::view-transition-old(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: codex; }@layer astro { ::view-transition-old(codex) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(codex) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(codex) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(codex) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: workflow; }@layer astro { ::view-transition-old(workflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(workflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(workflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(workflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4>  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Shipping at Inference-Speed","description":"Why I stopped reading code and started watching it stream by.","author":{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"},"datePublished":"2025-12-28T11:00:00.000Z","dateModified":"2025-12-28T11:00:00.000Z","publisher":{"@type":"Person","name":"Peter Steinberger","logo":{"@type":"ImageObject","url":"https://steipete.me/peter-avatar.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://steipete.me/posts/2025/shipping-at-inference-speed"},"image":"https://steipete.me/posts/2025/shipping-at-inference-speed/index.png","articleSection":"ai","keywords":"ai, codex, workflow","wordCount":3441,"timeRequired":"18 min read"}</script> <header> <a id="skip-to-content" href="#main-content" class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <div id="nav-container" class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"> <a href="/" class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:static"> Peter Steinberger </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg> </button> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Posts
+</a> </li> <!-- <li class="col-span-2">
+            <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
+              Tags
+            </a>
+          </li> --> <li class="col-span-2"> <a href="/about">
+About
+</a> </li>  <li class="col-span-1 flex items-center justify-center"> <a href="/search" class="group inline-block hover:text-accent focus-outline flex p-3 sm:p-1" aria-label="search" title="Search"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span> </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-border" aria-hidden="true"> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",()=>{s()});</script> <script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="mx-auto w-full max-w-3xl px-4 pb-12 mt-8" data-pagefind-body data-astro-cid-vj4tpspi> <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-cid-vj4tpspi data-astro-transition-scope="astro-pu2sknsl-1"> Shipping at Inference-Speed </h1> <div class="flex items-center justify-between gap-4 mt-2 mb-6" data-astro-cid-vj4tpspi> <div class="flex items-center gap-3" data-astro-cid-vj4tpspi> <div class="flex items-center gap-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5 min-w-[1.25rem]"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg> <span class="sr-only">Published:</span> <span class="text-sm italic sm:text-base"> <time datetime="2025-12-28T11:00:00.000Z">28 Dec, 2025</time> </span> </div>  <span class="text-foreground/30" data-astro-cid-vj4tpspi>•</span> <span class="text-sm text-foreground/60" data-astro-cid-vj4tpspi>18 min read</span>  </div> <div class="opacity-80 max-sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/shipping-at-inference-speed.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> </div> <article id="article" class="mx-auto prose mt-6 max-w-3xl" data-astro-cid-vj4tpspi>  <h2 id="what-changed-since-may">What Changed Since May</h2>
+<p>It’s incredible how far “vibe coding” has come this year. Whereas in ~May I was amazed that <em>some</em> prompts produced code that worked out of the box, <strong>this is now my expectation</strong>. I can ship code now at a speed that seems unreal. I burned <a href="https://x.com/thsottiaux/status/2004789121492156583">a lot of tokens</a> since then. Time for an update.</p>
+<p>It’s funny how these agents work. There’s been this argument a few weeks ago that <a href="https://x.com/steipete/status/1997380251081490717">one needs to write code in order to feel bad architecture</a> and that using agents creates a disconnection - and I <strong>couldn’t disagree more</strong>. When you spend enough time with agents, you know exactly how long sth should take, and when codex comes back and hasn’t solved it in one shot, I already get suspicious.</p>
+<p>The amount of software I can create is now mostly <strong>limited by inference time and hard thinking</strong>. And let’s be honest - most software does not require hard thinking. Most apps shove data from one form to another, maybe store it somewhere, and then show it to the user in some way or another. The simplest form is text, so by default, whatever I wanna build, it starts as CLI. Agents can call it directly and verify output - closing the loop.</p>
+<h2 id="the-model-shift">The Model Shift</h2>
+<p>The real unlock into <a href="https://github.com/steipete/">building like a factory</a> was GPT 5. It took me a few weeks after the release to see it - and for codex to catch up on features that claude code had, and a bit to learn and understand the differences, but then I started trusting the model more and more. <strong>These days I don’t read much code anymore.</strong> I watch the stream and sometimes look at key parts, but I gotta be honest - most code I don’t read. I do know where which components are and how things are structured and how the overall system is designed, and that’s usually all that’s needed.</p>
+<p>The important decisions these days are <strong>language/ecosystem and dependencies</strong>. My go-to languages are TypeScript for web stuff, Go for CLIs and Swift if it needs to use macOS stuff or has UI. Go wasn’t something I gave even the slightest thought even a few months ago, but eventually I played around and found that agents are really great at writing it, and its simple type system makes linting fast.</p>
+<p>Folks building Mac or iOS stuff: You don’t need Xcode much anymore. <a href="https://github.com/steipete/clawdis/tree/main/apps/ios">I don’t even use xcodeproj files</a>. Swift’s build infra is good enough for most things these days. codex knows how to run iOS apps and how to deal with the Simulator. No special stuff or MCPs needed.</p>
+<h2 id="codex-vs-opus">codex vs Opus</h2>
+<p>I’m writing this post here while codex crunches through a huge, multi-hour refactor and un-slops older crimes of Opus 4.0. People on Twitter often ask me what’s the big difference between Opus and codex and why it even matters because the benchmarks are so close. IMO it’s getting harder and harder to trust benchmarks - you need to try both to really understand. Whatever OpenAI did in post-training, codex has been trained to read LOTS of code before starting.</p>
+<p>Sometimes it just <strong>silently reads files for 10, 15 minutes</strong> before starting to write any code. On the one hand that’s annoying, on the other hand that’s amazing because it greatly increases the chance that it fixes the right thing. Opus on the other hand is much more eager - great for smaller edits - not so good for larger features or refactors, it often doesn’t read the whole file or misses parts and then delivers inefficient outcomes or misses sth. I noticed that even tho codex sometimes takes 4x longer than Opus for comparable tasks, I’m often faster because I don’t have to go back and fix the fix, sth that felt quite normal when I was still using Claude Code.</p>
+<p>codex also allowed me to unlearn lots of charades that were necessary with Claude Code. Instead of “<strong>plan mode</strong>”, I simply <a href="https://x.com/steipete/status/1997412175615246603"><strong>start a conversation with the model</strong></a>, ask a question, let it google, explore code, create a plan together, and when I’m happy with what I see, I write “build” or “write plan to docs/*.md and build this”. Plan mode feels like a hack that was necessary for older generations of models that were not great at adhering to prompts, so we had to take away their edit tools. There’s <a href="https://x.com/steipete/status/2001228002953158928">a highly misunderstood tweet of mine</a> that’s still circling around that showed me that most people don’t get that <a href="https://lucumr.pocoo.org/2025/12/17/what-is-plan-mode/">plan mode is not magic</a>.</p>
+<h2 id="oracle">Oracle</h2>
+<p>The step from GPT 5/5.1 to 5.2 was massive. I built <a href="https://github.com/steipete/oracle"><strong>oracle 🧿</strong></a> about a month ago - it’s a CLI that allows the agent to run GPT 5 Pro and upload files + a prompt and manages sessions so answers can be retrieved later. I did this because many times when agents were stuck, I asked it to write everything into a markdown file and then did the query myself, and that felt like a repetitive waste of time - and an opportunity to close the loop. The instructions are in <a href="https://github.com/steipete/agent-scripts/blob/main/AGENTS.MD">my global AGENTS.MD</a> file and the model sometimes by itself triggered oracle when it got stuck. I used this multiple times per day. It was a <strong>massive unlock</strong>. Pro is insanely good at doing a speedrun across ~50 websites and then thinking really hard at it and in almost every case nailed the response. Sometimes it’s fast and takes 10 minutes, but I had runs that took more than an hour.</p>
+<p>Now that GPT 5.2 is out, I have far fewer situations where I need it. I do use Pro myself sometimes for research, but the cases where I asked the model to “ask the oracle” went from multiple times per day to a few times per week. I’m not mad about this - building oracle was super fun and I learned lots about browser automation, Windows and finally took my time to look into skills, after dismissing that idea for quite some time. What it does show is how much better 5.2 got for many real-life coding tasks. It <strong>one-shots almost anything</strong> I throw at it.</p>
+<p>Another massive win is the <strong>knowledge cutoff date</strong>. GPT 5.2 goes till end of August whereas Opus is stuck in mid-March - that’s about 5 months. Which is significant when you wanna use the latest available tools.</p>
+<h2 id="a-concrete-example-vibetunnel">A Concrete Example: VibeTunnel</h2>
+<p>To give you another example on how far models have come. One of my early intense projects was <a href="https://vibetunnel.sh/">VibeTunnel</a>. A terminal-multiplexer so you can code on-the-go. I poured pretty much all my time into this earlier this year, and after 2 months it was so good that I caught myself coding from my phone while out with friends… and decided that this is something I should stop, more for mental health than anything. Back then I tried to rewrite a core part of the multiplexer away from TypeScript, and the older models consistently failed me. I tried Rust, Go… god forbid, even zig. Of course I could have finished this refactor, but it would have required lots of manual work, so I never got around completing this before I put it to rest. Last week I un-dusted this and gave codex a <strong>two sentence prompt</strong> to <a href="https://github.com/amantus-ai/vibetunnel/compare/6a1693b482fa4ef0ac021700a9ec05489a3a108f...a81b29ee3de6a2c85fd9fa41423d968dcc000515">convert the whole forwarding-system to zig</a>, and it ran over 5h and multiple compactions and delivered a working conversion in one shot.</p>
+<p>Why did I even un-dust it, you ask? My current focus is <a href="https://clawdis.ai/">Clawdis</a>, an AI assistant that has <strong>full access to everything</strong> on <a href="https://x.com/steipete/status/2005213014778409280/photo/1">all my computers</a>, <a href="https://imsg.to/">messages</a>, <a href="https://github.com/steipete/gogcli">emails</a>, <a href="https://www.openhue.io/cli/openhue-cli">home automation</a>, <a href="https://camsnap.ai/">cameras</a>, lights, <a href="https://sonoscli.sh/">music</a>, heck it can even control the <a href="https://eightctl.sh/">temperature of my bed</a>. Ofc it also has <a href="https://github.com/steipete/sag/">its own voice</a>, <a href="https://github.com/steipete/bird">a CLI to tweet</a> and its own <a href="https://clawd.bot">clawd.bot</a>.</p>
+<p>Clawd <a href="https://www.peekaboo.boo/">can see and control my screen</a> and sometimes makes snarky remarks, but I also wanted to give him the ability to check on my agents, and getting a <strong>character stream</strong> is just far more efficient than looking at images… if this will work out, we’ll see!</p>
+<h2 id="my-workflow">My Workflow</h2>
+<p>I know… you came here to <strong>learn how to build faster</strong>, and I’m just writing a marketing-pitch for OpenAI. I hope Anthropic is cooking Opus 5 and the tides turn again. Competition is good! At the same time, I <em>love</em> Opus as general purpose model. My AI agent wouldn’t be half as fun running on GPT 5. Opus has something <a href="https://soul.md/">special</a> that makes it a delight to work with. I use it for most of my computer automation tasks and ofc it powers Clawd🦞.</p>
+<p>I haven’t changed my workflow all that much from <a href="https://steipete.me/posts/just-talk-to-it">my last take at it in October</a>.</p>
+<ul>
+<li>
+<p>I usually work on <a href="https://x.com/steipete/status/2005083410482733427/photo/1"><strong>multiple projects</strong></a> at the same time. Depending on complexity that can be between 3-8. The context switching can be tiresome, I really only can do that when I’m working at home, in silence and concentrated. It’s a lot of mental models to shuffle. Luckily most software is boring. Creating a CLI to <a href="https://ordercli.sh/">check up on your food delivery</a> doesn’t need a lot of thinking. Usually my focus is on one big project and satellite projects that chug along. When you do enough agentic engineering, you develop a feeling for what’s gonna be easy and where the model likely will struggle, so often I just put in a prompt, codex will chug along for 30 minutes and I have what I need. Sometimes it takes a little fiddling or creativity, but often things are straightforward.</p>
+</li>
+<li>
+<p>I extensively use the <strong>queueing feature</strong> of codex - as I get a new idea, I add it to the pipeline. I see many folks experimenting with various systems of multi-agent orchestration, emails or automatic task management - so far I don’t see much need for this - usually I’m the bottleneck. My approach to building software is very iterative. I build sth, play with it, see how it “feels”, and then get new ideas to refine it. Rarely do I have a complete picture of what I want in my head. Sure, I have a rough idea, but often that drastically changes as I explore the problem domain. So systems that take <em>the complete idea</em> as input and then deliver output wouldn’t work well for me. I need to play with it, touch it, feel it, see it, that’s how I evolve it.</p>
+</li>
+<li>
+<p>I basically <strong>never revert</strong> or use checkpointing. If something isn’t how I like it, I ask the model to change it. codex sometimes then resets a file, but often it simply reverts or modifies the edits, very rare that I have to back completely, and instead we just travel into a different direction. Building software is like walking up a mountain. You don’t go straight up, you circle around it and take turns, sometimes you get off path and have to walk a bit back, and it’s imperfect, but eventually you get to where you need to be.</p>
+</li>
+<li>
+<p>I simply <strong>commit to main</strong>. Sometimes codex decides that it’s too messy and automatically creates a worktree and then merges changes back, but it’s rare and I only prompt that in exceptional cases. I find the added cognitive load of having to think of different states in my projects unnecessary and prefer to evolve it linearly. Bigger tasks I keep for moments where I’m distracted - for example while writing this, I run refactors on 4 projects here that will take around 1-2h each to complete. Ofc I could do that in a worktree, but that would just cause lots of merge conflicts and suboptimal refactors. Caveat: I usually work alone, if you work in a bigger team that workflow obv won’t fly.</p>
+</li>
+<li>
+<p>I’ve already mentioned my way of planning a feature. I <strong>cross-reference projects</strong> all the time, esp if I know that I already solved sth somewhere else, I ask codex to look in ../project-folder and that’s usually enough for it to infer from context where to look. This is extremely useful to save on prompts. I can just write “look at ../vibetunnel and do the same for Sparkle changelogs”, because it’s already solved there and with a 99% guarantee it’ll correctly copy things over and adapt to the new project. That’s how I scaffold new projects as well.</p>
+</li>
+<li>
+<p>I’ve seen plenty of systems for folks wanting to refer to past sessions. Another thing I never need or use. I maintain docs for subsystems and features in a <strong>docs folder</strong> in each project, and use <a href="https://github.com/steipete/agent-scripts/blob/main/scripts/docs-list.ts">a script + some instructions</a> in my global AGENTS file to force the model to read docs on certain topics. This pays off more the larger the project is, so I don’t use it everywhere, but it is of great help to keep docs up-to-date and engineer a better context for my tasks.</p>
+</li>
+<li>
+<p>Apropos context. I used to be really diligent to restart a session for new tasks. <strong>With GPT 5.2</strong> this is no longer needed. Performance is extremely good even when the context is fuller, and often it helps with speed since the model works faster when it already has loaded plenty files. Obviously that only works well when you serialize your tasks or keep the changes so far apart that two sessions don’t touch each other much. codex has no system events for “this file changed”, unlike claude code, so you need to be more careful - on the flip side, codex is just FAR better at context management, I feel I get 5x more done on one codex session than with claude. This is more than just the objectively larger context size, there’s other things at work. My guess is that codex internally thinks really condensed to save tokens, whereas Opus is very wordy. Sometimes the model messes up and <a href="https://x.com/steipete/status/1974108054984798729">its internal thinking stream leaks to the user</a>, so I’ve seen this quite a few times. Really, <a href="https://x.com/steipete/status/2005243588414931368">codex has a way with words</a> I find strangely entertaining.</p>
+</li>
+<li>
+<p>Prompts. I used to write long, elaborate prompts with voice dictation. With codex, my <strong>prompts gotten much shorter</strong>, I often type again, and many times I add images, especially when iterating on UI (or text copies with CLIs). If you show the model what’s wrong, just a few words are enough to make it do what you want. Yes, I’m that person that drags in a clipped image of some UI component with “fix padding” or “redesign”, many times that either solves my issue or gets me reasonably far. I used to refer to markdown files, but with my docs:list script that’s no longer necessary.</p>
+</li>
+<li>
+<p>Markdowns. Many times I write “<strong>write docs to docs/*.md</strong>” and simply let the model pick a filename. The more obvious you design the structure for what the model is trained on, the easier your work will be. After all, I don’t design codebases to be easy to navigate for me, I engineer them so agents can work in it efficiently. Fighting the model is often a waste of time and tokens.</p>
+</li>
+</ul>
+<h2 id="tooling--infrastructure">Tooling &#x26; Infrastructure</h2>
+<ul>
+<li>
+<p><strong>What’s still hard?</strong> Picking the right dependency and framework to set on is something I invest quite some time on. Is this well-maintained? How about peer dependencies? Is it popular = will have enough world knowledge so agents have an easy time? Equally, system design. Will we communicate via web sockets? HTML? What do I put into the server and what into the client? How and which data flows where to where? Often these are things that are a bit harder to explain to a model and where research and thinking pays off.</p>
+</li>
+<li>
+<p>Since I manage lots of projects, often I let an agent simply run in my project folder and when I figure out a new pattern, I ask it to “<strong>find all my recent go projects</strong> and implement this change there too + update changelog”. Each of my project has a raised patch version in that file and when I revisit it, some improvements are already waiting for me to test.</p>
+</li>
+<li>
+<p>Ofc I <strong>automate everything</strong>. There’s a skill to register domains and change DNS. One to write good frontends. There’s a note in my AGENTS file about my tailscale network so I can just say “go to my mac studio and update xxx”.</p>
+</li>
+<li>
+<p>Apropos <strong>multiple Macs</strong>. I usually work on two Macs. My MacBook Pro on the big screen, and a Jump Desktop session to my Mac Studio on another screen. Some projects are cooking there, some here. Sometimes I edit different parts of the same project on each machine and sync via git. Simpler than worktrees because drifts on main are easy to reconcile. Has the added benefit that anything that needs UI or browser automation I can move to my Studio and it won’t annoy me with popups. (Yes, Playwright has headless mode but there’s enough situations where that won’t work)</p>
+</li>
+<li>
+<p>Another benefit is that tasks <strong>keep running</strong> there, so whenever I travel, remote becomes my main workstation and tasks simply keep running even if I close my Mac. I did experiment with real async agents like codex or Cursor web in the past, but I miss the steerability, and ultimately the work ends up as pull request, which again adds complexity to my setup. I much prefer the simplicity of the terminal.</p>
+</li>
+<li>
+<p>I used to play with slash commands, but just never found them too useful. Skills replaced some of it, and for the rest I keep writing “<strong>commit/push</strong>” because it takes the same time as /commit and always works.</p>
+</li>
+<li>
+<p>In the past I often took dedicated days to <strong>refactor and clean up</strong> projects, I do this much more ad-hoc now. Whenever prompts start taking too long or I see sth ugly flying by in the code stream, I’ll deal with it right away.</p>
+</li>
+<li>
+<p>I tried linear or other <strong>issue trackers</strong>, but nothing did stick. Important ideas I try right away, and everything else I’ll either remember or it wasn’t important. Of course I have public bug trackers for bugs for folks that use my open source code, but when I find a bug, I’ll immediately prompt it - much faster than writing it down and then later having to switch context back to it.</p>
+</li>
+<li>
+<p>Whatever you build, <strong>start with the model and a CLI first</strong>. I had this idea of <a href="https://x.com/steipete/status/2005320848543298009">a Chrome extension to summarize YouTube</a> vids in my head for a long time. Last week I started working on summarize, a CLI that converts anything to markdown and then feeds that to a model for summarization. First I got the core right, and once that worked great I built the whole extension in a day. I’m quite in love with it. Runs on local, free or paid models. Transcribes video or audio locally. Talks to a local daemon so it’s super fast. <a href="https://github.com/steipete/summarize/releases/latest">Give it a go!</a></p>
+</li>
+<li>
+<p>My go-to model is <strong>gpt-5.2-codex high</strong>. Again, KISS. There’s very little benefit to xhigh other than it being far slower, and I don’t wanna spend time thinking about different modes or “ultrathink”. So pretty much everything runs on high. GPT 5.2 and codex are close enough that changing models makes no sense, so I just use that.</p>
+</li>
+</ul>
+<h2 id="my-config">My Config</h2>
+<p>This is my <code>~/.codex/config.toml</code>:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>model = "gpt-5.2-codex"</span></span>
+<span class="line"><span>model_reasoning_effort = "high"</span></span>
+<span class="line"><span>tool_output_token_limit = 25000</span></span>
+<span class="line"><span># Leave room for native compaction near the 272–273k context window.</span></span>
+<span class="line"><span># Formula: 273000 - (tool_output_token_limit + 15000)</span></span>
+<span class="line"><span># With tool_output_token_limit=25000 ⇒ 273000 - (25000 + 15000) = 233000</span></span>
+<span class="line"><span>model_auto_compact_token_limit = 233000</span></span>
+<span class="line"><span>[features]</span></span>
+<span class="line"><span>ghost_commit = false</span></span>
+<span class="line"><span>unified_exec = true</span></span>
+<span class="line"><span>apply_patch_freeform = true</span></span>
+<span class="line"><span>web_search_request = true</span></span>
+<span class="line"><span>skills = true</span></span>
+<span class="line"><span>shell_snapshot = true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[projects."/Users/steipete/Projects"]</span></span>
+<span class="line"><span>trust_level = "trusted"</span></span></code></pre>
+<p>This allows the model to read more in one go, the defaults are a bit small and can limit what it sees. It fails silently, which is a pain and something they’ll eventually fix. Also, web search is still not on by default? <code>unified_exec</code> replaced tmux and my old <code>runner</code> script, rest’s neat too. And don’t be scared about compaction, ever since OpenAI switched to their new /compact endpoint, this works well enough that tasks can run across many compacts and will be finished. It’ll make things slower, but often acts like a review, and the model will find bugs when it looks at code again.</p>
+<p>That’s it, for now. I plan on writing more again and have quite a backlog on ideas in my head, just having <a href="https://codexbar.app/"><strong>too much fun</strong></a> <a href="https://x.com/steipete/status/2005393881395835045"><strong>building things</strong></a>. If you wanna hear more ramblings and ideas how to build in this new world, <a href="https://x.com/steipete">follow me on Twitter</a>.</p> </article> <div class="newsletter-box bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 my-8" data-astro-cid-nbvfnxgh> <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-astro-cid-nbvfnxgh>
+New posts, shipping stories, and nerdy links straight to your inbox.
+</p> <form action="https://buttondown.com/api/emails/embed-subscribe/steipete" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3" data-astro-cid-nbvfnxgh> <input type="hidden" name="tag" value="steipete" data-astro-cid-nbvfnxgh> <input type="text" name="name" placeholder="Your Name" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <input type="email" name="email" placeholder="Your Email" required class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <button type="submit" class="px-6 py-2 bg-accent rounded-md hover:bg-accent/90 transition-colors font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2" style="color: white;" data-astro-cid-nbvfnxgh>
+Subscribe
+</button> </form> <p class="text-xs text-gray-500 dark:text-gray-400 mt-3" data-astro-cid-nbvfnxgh>
+2× per month, pure signal, zero fluff.
+</p> </div>  <hr class="my-8 border-dashed" data-astro-cid-vj4tpspi> <div class="opacity-80 sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/shipping-at-inference-speed.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> <ul class="mt-4 mb-8 sm:my-8" data-astro-cid-vj4tpspi> <li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/ai/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>ai</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/codex/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>codex</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/workflow/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-4"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>workflow</span> </a> </li> </ul> <div class="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end sm:gap-4" data-astro-cid-vj4tpspi> <div class="flex flex-col flex-wrap items-center justify-center gap-2 sm:gap-1 sm:items-start"> <span class="italic">Share this post on:</span> <div class="text-center flex flex-wrap gap-1"> <a href="https://x.com/intent/post?url=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Share this post on X</span> </a><a href="https://bsky.app/intent/compose?text=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Share this post on BlueSky</span> </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Share this post on LinkedIn</span> </a><a href="https://wa.me/?text=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg><span class="sr-only">Share this post via WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg><span class="sr-only">Share this post on Facebook</span> </a><a href="https://t.me/share/url?url=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg><span class="sr-only">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Pinterest"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg><span class="sr-only">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://steipete.me/posts/2025/shipping-at-inference-speed" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via email"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Share this post via email</span> </a> </div> </div> <button id="back-to-top" class="focus-outline py-1 whitespace-nowrap hover:opacity-75" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span data-astro-cid-vj4tpspi>Back to Top</span> </button> </div> <hr class="my-6 border-dashed" data-astro-cid-vj4tpspi> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="flex flex-col sm:flex-row justify-between gap-6" data-prev-url="/posts/2026/openclaw" data-next-url="/posts/2025/signature-flicker" data-astro-cid-vj4tpspi> <a href="/posts/2026/openclaw" class="flex gap-2 hover:opacity-75 items-start" id="prev-post-link" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Previous Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>OpenClaw, OpenAI and the future</div> </div> </a> <a href="/posts/2025/signature-flicker" class="flex gap-2 hover:opacity-75 items-start justify-end text-right ml-auto" id="next-post-link" data-astro-cid-vj4tpspi> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Next Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>The Signature Flicker</div> </div> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg> </a> </div> </main> <footer class="w-full mt-auto"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-border" aria-hidden="true"> </div> <div class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"> <div class="flex-wrap justify-center gap-1 flex"> <a href="https://github.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title=" Peter Steinberger on Github"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg><span class="sr-only"> Peter Steinberger on Github</span> </a><a href="https://x.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Peter Steinberger on X</span> </a><a href="https://bsky.app/profile/steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Peter Steinberger on BlueSky</span> </a><a href="https://www.linkedin.com/in/steipete/" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Peter Steinberger on LinkedIn</span> </a><a href="mailto:peter@steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Send an email to Peter Steinberger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Send an email to Peter Steinberger</span> </a> </div> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <a href="https://github.com/steipete/steipete.me" target="_blank" rel="noopener noreferrer" class="hover:text-accent">
+Steal this post ➜ CC BY 4.0 · Code MIT
+</a> </div> </div> </footer>  <!-- Vercel Analytics --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_0_lang.iMTEyByK.js"></script> <!-- Vercel Speed Insights --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_1_lang.B9nzKlec.js"></script> </body></html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6"),
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-muted px-2 py-1 text-xs leading-4 text-foreground font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" }),
+  );
+
+  /** Add lazy loading to all images in the article */
+  function addLazyLoading() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+    
+    const images = article.querySelectorAll("img:not([loading])");
+    images.forEach((img) => {
+      img.setAttribute("loading", "lazy");
+    });
+  }
+  addLazyLoading();
+
+  /** Keyboard navigation for posts */
+  function setupKeyboardNavigation() {
+    const navContainer = document.querySelector('[data-prev-url]');
+    if (!navContainer) return;
+    
+    const prevUrl = navContainer.getAttribute('data-prev-url');
+    const nextUrl = navContainer.getAttribute('data-next-url');
+    
+    document.addEventListener('keydown', (e) => {
+      // Ignore if user is typing in an input, textarea, or contenteditable
+      if (e.target.matches('input, textarea, [contenteditable="true"]')) return;
+      
+      // J key for next post
+      if (e.key === 'j' && nextUrl) {
+        window.location.href = nextUrl;
+      }
+      // K key for previous post
+      else if (e.key === 'k' && prevUrl) {
+        window.location.href = prevUrl;
+      }
+    });
+  }
+  setupKeyboardNavigation();
+
+  /** Process YouTube and Twitter embeds */
+  function processEmbeds() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+
+    // Look for YouTube embeds
+    const youtubeEmbedRegex = /\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/g;
+    
+    let foundYoutubeEmbeds = false;
+    
+    // Helper to extract a YouTube video ID from various URL formats
+    const extractYouTubeId = (input) => {
+      let videoId = input;
+      try {
+        if (videoId.includes("youtube.com/watch")) {
+          const url = new URL(videoId);
+          videoId = url.searchParams.get("v") || "";
+        } else if (videoId.includes("youtu.be/")) {
+          videoId = videoId.split("youtu.be/")[1]?.split("?")[0] || "";
+        } else if (videoId.includes("youtube.com/embed/")) {
+          videoId = videoId.split("youtube.com/embed/")[1]?.split("?")[0] || "";
+        }
+      } catch (_) {
+        // If URL parsing fails, fall back to the raw input
+      }
+      return videoId;
+    };
+
+    // 1) Pre-pass: replace whole-paragraph shortcodes (most common case)
+    const pNodes = article.querySelectorAll("p");
+    pNodes.forEach((p) => {
+      const text = (p.textContent || "").trim();
+      const ytMatch = text.match(/\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/);
+
+      if (ytMatch && ytMatch[1]) {
+        foundYoutubeEmbeds = true;
+        const videoId = extractYouTubeId(ytMatch[1]);
+        const container = document.createElement("div");
+        container.className = "youtube-embed-container";
+        container.innerHTML = `
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/${videoId}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        `;
+        p.replaceWith(container);
+      }
+    });
+
+    // 2) Fallback: process any remaining text nodes that still contain shortcodes
+    const walker = document.createTreeWalker(
+      article,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false,
+    );
+
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      textNodes.push(node);
+    }
+
+    textNodes.forEach((textNode) => {
+      let content = textNode.textContent;
+      let hasChanges = false;
+
+      // Process YouTube embeds
+      content = content.replace(youtubeEmbedRegex, (match, videoId) => {
+        foundYoutubeEmbeds = true;
+        hasChanges = true;
+        videoId = extractYouTubeId(videoId);
+
+        return `<div class="youtube-embed-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/${videoId}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`;
+      });
+
+      if (hasChanges) {
+        // Replace the text node with HTML content
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+
+        // Replace the text node with the new HTML elements
+        const parent = textNode.parentNode;
+        while (tempDiv.firstChild) {
+          parent.insertBefore(tempDiv.firstChild, textNode);
+        }
+        parent.removeChild(textNode);
+      }
+    });
+  }
+
+  // Run the embed processing
+  processEmbeds();
+  
+  // Also run after astro navigation
+  document.addEventListener("astro:page-load", processEmbeds);
+</script> 

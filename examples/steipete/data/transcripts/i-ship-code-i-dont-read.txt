@@ -1,0 +1,3138 @@
+What if you could merge 600 commits on a
+single day [music] and none of it was
+slopp? This is what today's guest, Peter
+Stainberger, the creator of Claudebot,
+claims he's doing. Peter is a standout
+developer who built PSP PDF kit, the PDF
+[music] framework used on more than 1
+billion devices. Then he burned out,
+sold his shares, [music] and disappeared
+from tech for 3 years. This year, he
+came back and how he builds and what
+he's doing now looks nothing like
+[music] traditional software
+development. In today's episode, we
+cover why he no longer reads most of the
+code he ships, and why [music] that's
+not as crazy as it sounds. How he is
+building Clawbot, his wildly popular
+personal assistant project, which feels
+like the future of Siri, the closing the
+loop principle that separates effective
+AI assistant coding from frustrating
+vibe coding. Why he says code reviews
+are dead and PR should be called prompt
+[music] requests, and many more. If
+you're interested in how the software
+engine workflow could change in the
+coming years thanks to AI, this episode
+is for you. This episode is presented by
+Statsig, the unified platform for flags,
+analytics experiments, and more. Check
+out the show notes to learn more about
+them, the pragmatic summit on the 11th
+February in San Francisco that I'm
+hosting with them, and our other [music]
+season sponsors. Right, Pete, welcome to
+the podcast.
+&gt;&gt; Thanks for having me, Gay.
+&gt;&gt; It is awesome to meet you in in person.
+&gt;&gt; Yeah, and I almost messed it up.
+&gt;&gt; Yeah. What what what what happened? You
+lost track of time. Does that happen
+often? And how how so? Um, not usually.
+Not usually. Um, this is an interesting
+time for me cuz I cuz my latest project
+is is blowing up. Cloud, right?
+&gt;&gt; Clawbot. Yeah,
+&gt;&gt; Cloudbot.
+&gt;&gt; I'm struggling a bit to get enough
+sleep, but it's it's it's interesting. I
+never I never had a community blowing up
+so fast and it's just incredibly fun to
+work with.
+&gt;&gt; So, before we we get into Clubbot and
+all the fun stuff you're doing, I wanted
+to rewind all the way way back. You
+create a PSPDF kit which is used I think
+on more than 1 billion devices users. If
+if you see a PDF render you probably see
+that. But even before that how did you
+get into tech? Oh my god. How did you
+get into tech? So I'm from rural
+Austria. Um always more being the
+introvert.
+So eventually I we always had like
+summer guests and one of them one of
+them was a was a computer nerd and then
+I kind of got hooked with with like the
+machine he had and begged my mom to buy
+me one
+and ever since then I this was in high
+school or so.
+&gt;&gt; I guess I was 14.
+&gt;&gt; Yeah. And ever since I started
+tinkering, like I can remember the
+earliest thing was like I stole an old
+DOS game from my school and then wrote a
+copy protection for the floppy disc so I
+could sell it.
+It took like 2 minutes to load. I was
+just always tinkering. Also playing a
+lot of computer games of course, but
+like building stuff almost feels like
+playing a computer game. Like definitely
+right now it feels better than Factorio.
+Oh, when I started out, I I I I read
+like
+the equivalent of bash scripts for
+Windows and then I did like websites.
+So, I guess a little bit of JavaScript,
+uh, even though I had no clue what I was
+doing. And then the actual first
+language where I I had to learn how to
+build things is when I started
+university.
+And I never met my dad. And I come from
+a from a poor family. So, I always had
+to work. like I had to had to finance my
+own studies, right? So when other people
+were were having holiday, I just worked
+full-time at a company. So the the first
+real job I had was was in Vienna was
+supposed to be 1 months and then they
+kept me for 6 months. It was just a
+bridge between military and and my
+university. And I kept working there for
+like I think 5 years. And I remember the
+first day they they gave me this huge
+book. maybe that huge and say Microsoft
+MFC. Um I still have nightmares and I
+got I got like I was like this is
+terrible like for for the next win I
+just I just silently used net I just
+didn't tell them and like a few months
+in I just told them yeah but the text I
+I did a few modernizations but then it
+was too late. I did this a few times in
+this company. I don't know why they kept
+me because because my worked. So uh
+I did net and actually I actually
+actually dig it.NET 2.0 had like
+generics. It took insanely long for the
+application to to to launch because like
+everything was compiled at first start
+and like your hard disk was like
+if [snorts] you remember
+&gt;&gt; so so you you how did you stumble into
+both iOS and where did the idea from
+PSPDF
+&gt;&gt; come from?
+&gt;&gt; Not even yeah the first one the first
+one wasn't even available in in in
+Austria. That's true. Yeah.
+&gt;&gt; A little time goes went on and I was at
+university and a friend showed me the
+iPhone and I I think I I touched it for
+a minute and then immediately bought one
+like like this like it it clicked when I
+felt it and and to me this was like a
+holy f moment cuz it was just like so
+different and so much better. So I got I
+got one. I was still not thinking about
+building for it, you know. That was that
+was
+&gt;&gt; when was this 2009 10 something like
+that.
+&gt;&gt; Yeah. Yeah. And then I I used their
+browser. I I can see the story. I was I
+was literally driving in the subway.
+&gt;&gt; Mhm.
+&gt;&gt; And by the time I was using a gay dating
+app and this was iPhone OS 2.
+&gt;&gt; Yeah.
+&gt;&gt; So So I I
+&gt;&gt; long time ago
+&gt;&gt; I typed this long message. I pressed
+send and we were just going into a
+tunnel and the JavaScript disabled the
+send button and then an error message
+came but there was no copy paste. There
+was no screenshot. So I was just like
+and I couldn't scroll anymore because
+like scrolling was disabled. So like
+this long message was like a little bit
+emotional was gone and I was so mad. I
+was so mad. I'm like what the hell? I
+went home and I downloaded Xcode. That's
+that's where that's where the window
+came and I was like where is the ID?
+So it was like like I was like this is
+unacceptable. I basically hacked the
+website. I used regular expressions to
+like download uh to parse the HTML which
+is like totally not something you should
+do and I built an app and I used I used
+iPhone OS3 beta with like core data in
+beta regaxit light. I used a hacked
+version of GCC that backported the
+blocks compiler so I could use blocks in
+iPhone OS3. It took me quite a while
+until anything worked because like I had
+no idea what I was doing and I was like
+using all kind of like beta tech but
+eventually I I got it to work and I I I
+wrote that company was like hey I'm
+making an app. What do you think about
+it? Got no response of course. So I was
+like let's just put it in the app store.
+&gt;&gt; And this was for the dating app right?
+&gt;&gt; Yeah.
+&gt;&gt; So you just like you know you looked at
+you saw their APIs you could just like
+easily like build a client on top
+&gt;&gt; API. It was HTML.
+&gt;&gt; Oh
+&gt;&gt; I was I was just literally parsing HTML.
+&gt;&gt; Oh. So, so you kind of parse the HTML,
+kind of turn it into your own, you know,
+like you use it as an API. Oh, clever. I
+mean, this was back in the day where no
+one thought this this would happen, but
+I made I put it in the app store. I
+charged five bucks for it and I made
+like 10k in the first month. [laughter]
+And I had no clue what I was doing. So,
+and there was like so many complex tech
+stuff. This was very early on where
+there was a lot of weird forums on
+Apple.
+&gt;&gt; So, I just put in the the bank account
+of my grandpa. And then one day my
+grandpa called me, "Yeah, something is
+weird. Like I got this huge payment from
+Apple." I'm like, "This is mine. This is
+mine. Don't touch it." But the the funny
+thing was when I this blew off and I
+remember I was in a club one day and
+like I saw someone using my app and I
+was so proud and I wanted to like tap
+him on the shoulder and say I built this
+and I thought like that would be really
+weird. So I didn't. And then I I I went
+to the company I worked for for 5 years
+and told him like I'm going to pursue
+this. This is this is really exciting.
+And my boss was like mocking me.
+&gt;&gt; Oh, really?
+&gt;&gt; They're like, "Oh, you're making a
+mistake. This is a fat. This will not
+go." Blah, blah, blah, blah, blah. And
+you know what that got me? That's what
+you call a chip on your shoulder. I'm
+like,
+&gt;&gt; you know, one day I'm going to I'm going
+to have a company that that's worth more
+money than yours. Well, it took me eight
+years. So, I I got hooked. Like, I I
+worked
+I I'm I'm a little bit of an addictive
+personality. So which you see again
+right now. But I I worked a lot on this
+app. I learned I learned in in high
+speed and this was also the time where I
+started Twitter and that was usually
+hugely influential for my career. I made
+this app actually quite good and then
+one day I was at a party at at 3:00 a.m.
+um slightly intoxicated and I got a call
+from a US number. The guy on the phone
+was like, "Yeah, hello. This is John
+from Apple. Yeah, there's a problem with
+your application. Like some people
+reported pictures and that was it. That
+was the end of my app. Um,
+&gt;&gt; it was good until it lasted
+&gt;&gt; and I was just I just quit my my job and
+was like, well,
+f you Apple.
+&gt;&gt; I did freelance work. I was at dubdub.
+I was introduced to
+&gt;&gt; dubdubdubc.
+&gt;&gt; Yes. Sorry for the insider terms. I was
+introduced to someone as one of the best
+iOS developers in Austria at a bar at 2
+a.m. in San Francisco and then basically
+got a job in the US and then I moved to
+the US for a while and then I I went to
+the Nokia development days. This is all
+like stone age by now. My god. And then
+someone came up to me and said, "Yeah,
+they built this app somewhere in Eastern
+Europe and it works but it crashes
+sometimes and it was like was like a
+magazine viewer, right? This was back
+when the iPad just came out and Steve
+Jobs hit that like this is the savior.
+So everybody was building magazine apps
+and I was like that sounds like an
+interesting short-term gig. And I I was
+like okay I I'll I'll I'll help you out.
+And I opened the app and it was like oh
+the worst code I've
+ever seen in my life. It was literally
+one file with like thousands of lines
+&gt;&gt; of Objective C. Yes. Where they used
+windows as tabs. I I didn't know this
+worked. I was surprised this worked at
+all, but it felt like a a house of
+cards. And I I tried to I tried to
+surgically fix things, but like as soon
+as you would touch something, something
+else would break. Um so I got it I got
+it somewhat stabilized and I told him
+like, "Look, this is this is like
+madness. Um I'm going to rewite this for
+you." Yeah. But it took half a year. I'm
+going to do it in in a month. Well, it
+took me two months. Um, I wasn't that
+far off
+and and then here I was working on a on
+a PDF viewer. You know, on every
+technical problem, [clears throat] the
+domain is is I wouldn't say like
+completely unimportant, but you can
+always find interesting problems in
+every domain. And there was a lot of
+interesting problems because you had a C
+call that would render a PDF that would
+maybe take 30 megabytes, but the whole
+system had 64 megabytes. So if you're
+not very smart and like very careful
+what you do in the background and when
+the OS would just kill you. I got really
+fixated at like making it good like when
+the rotation is like that the page would
+like animate and so so you know I I like
+I like those details. I spent way too
+much time on that. That's why I took two
+months instead of one. But the end
+result was it's good. Um and then I I I
+worked with them for a while and then a
+friend texted me up. He's like, "Yeah,
+I'm working on this magazine app and
+it's really hard." I'm like, "Yeah, no
+way it's hard. I know." Oh, like I did
+it.
+&gt;&gt; You just built one.
+&gt;&gt; And and he was like, "Can you can you
+can you get me the code?" I'm like,
+"Sure." So, I sold him like I extracted
+the the part that was PDF from from this
+magazine app. And I I made sure I made
+sure like the other person was okay. And
+then I sold him that. I was like, "Well,
+if he's interested in that, why let's
+not try to sell it to other people." I
+used a a WordPress template and
+mutilated it to run on GitHub pages and
+then and then when you did the the fast
+lane flow at the end you got a Dropbox
+link to my personal Dropbox with a
+source code sip and I put this on one
+afternoon and I I tweeted it and and
+then in that week three people bought it
+and it was like I guess 200 bucks but
+back then and for me this was like
+amazing and not only I got like three
+people who just bought it and like 10
+emails who comp 10 people who complained
+about
+uh because they wanted it but it didn't
+have the features they wanted. You know,
+it's like I got nerd sniped. I was like,
+"Oh, I didn't have text selection." Oh,
+how hard can it be? 3 months later. Oh,
+yeah. It's really hard. [laughter]
+Text selection in a PDF specifically.
+&gt;&gt; Yeah. Yeah. Yeah. Yeah. You know the
+saying the saying like uh the companies
+are built by young people because they
+don't know how hard it is.
+&gt;&gt; Yes.
+&gt;&gt; Yeah. Yeah. I had no idea what an insane
+madness this file format is. Peter was
+talking about how some problems look
+deceptively simple. PDF rendering is a
+good example. You look at it and think,
+how hard could it be? And then you spend
+months on edge cases that you didn't
+even know existed. This looks easy until
+you build it pattern shows up in other
+places, too. Internal tooling for
+feature flags and experimentation is a
+classic example. Teams often
+underestimate how much work it is to
+build infrastructure around these tools.
+There's a reason big tech companies like
+Uber invested years into building
+internal experimentation and feature
+flagging systems. Which brings me to
+Static, our presenting partner for the
+season. Static gives you the complete
+toolkit without building it yourself.
+You get feature flags, experimentation,
+and product analytics all in one
+platform tied to the same underlying
+user assignments and data. In practice,
+it looks like this. You roll out a
+change to 1% of users first. You see how
+it moves the top pipeline metrics you
+care about, conversion, retention,
+whatever is relevant for the release. If
+something goes wrong, instant roll back.
+If it's working, you can confidently
+scale it up. Companies like Notion went
+from singledigit experiments per quarter
+to over 300 experiments with static.
+They shipped over 600 features behind
+feature flags, moving fast while
+protecting against metrics regression.
+Microsoft, Atlassian, and Brex use
+static for the same reason. It's the
+infrastructure that enables both speed
+and reliability at scale. Static has a
+generous free tier to get started and
+pro pricricing for teams starts at $150
+per month. To learn more and get a
+30-day enterprise trial, go to
+stats.com/pragmatic.
+And now, let's get back to Peter and why
+rendering PDFs was a surprisingly hard
+problem.
+But now, I remember there was a few
+weeks ago someone emailed me. They did
+something PDF and they wanted my help.
+And I just wrote them like, I'm sorry,
+like I I did my deed. I I know more
+about PDF than any any sane human person
+ever should know. And I went I went to
+therapy. Good luck. [laughter]
+But that took off and and I just I while
+I was waiting for my visa, I I worked on
+this project and and it just kept on
+more people kept on buying it. And you
+know, it was like it was like summer. I
+was I was like lying at the lake and got
+another email that someone bought it for
+600 bucks, 800 bucks. I just up the
+prices as it had more features. And by
+the time I I went to San Francisco to
+work at this company, it already made
+more than what I made there. But my
+whole life was I still I still thought
+like I have to be there, you know.
+&gt;&gt; So I I did it. And also interestingly at
+this company, I had to
+&gt;&gt; So what would you say that you moved to
+San Francisco?
+&gt;&gt; Yeah. And and of course also it ended up
+being something where I had to build
+build something with my framework at
+that company too. But you know startups
+are not like 8 hours. They're a little
+more. And my personal project was also a
+little more. So my sleep was a little
+less. And then eventually after 3 months
+uh Sabine my manager came over and said
+this Peter are you okay? And they gave
+me a choice uh to either keep working at
+this company and drop my project or or
+vice versa. And I had one week to
+decide. The counter was one week to
+stay there or leave the country because
+I was on a on a complicated visa.
+And well, the decision was quite easy.
+It's like, yeah, I want to do my own
+thing. And then and
+&gt;&gt; and at this point, it was already taking
+off. You already saw that this is
+there's a big business here. It it will
+probably pay you as much as your US job
+would have paid. Ah,
+&gt;&gt; it was never money driven either.
+&gt;&gt; It was more about what what were you
+driven by? I want to make stuff that
+other people find amazing. Like I I I
+love tweaking the details. I love those
+little delights. It wasn't even that the
+space there were competitors in the
+space. But my angle was always like I
+built something as if Apple would have
+built it like like with with like all
+the love and care and and polish and and
+those little delights that
+a lot of people in the industry don't
+get. Uh, so even though we had
+competitors that had way more features
+and were around way longer, my company
+was more successful and my product was
+more successful cuz developers tried the
+the different ones and mine just felt
+the best. I think software is all about
+about how it feels much more so than the
+than the feature set. Like why did we
+buy Apple stuff? It has more features
+than than Windows. Um, but it it feels
+better. So, how did you go from like you
+you left this company and you were
+building this PDF component that started
+to sell. At what point did you hire the
+first person realizing, okay, there's
+something more to this? when I went back
+to Vienna then I was like okay I have to
+go all in and that's where I I started
+working with freelancers a little bit
+and way too late to be honest also like
+I I could have could have hired much
+earlier but you know you know it's it's
+it's a big step and that's kind of where
+it it started having a life of its own
+and I spent
+pretty much 13 years of my career
+um building this product with this weird
+name that I never changed because I took
+me like I thought like five minutes
+about it and then stock PSPDF kit.
+&gt;&gt; PSPDF.
+&gt;&gt; They finally they finally did a rename,
+but I wouldn't have I wouldn't have
+renamed it. But now it it
+&gt;&gt; it's it's a mouthful, but it's very
+unique.
+&gt;&gt; Well, you get it if you do Objective C
+because it's just a name space.
+&gt;&gt; Yes.
+&gt;&gt; Um and by by the time it it made perfect
+sense, my marketing my strategy for
+marketing was always I only care about
+the developer. Like I know like upper
+management does the decisions but if I
+can convince the people inside the
+company they all do the marketing and
+lobbying for me that worked really well.
+We never did like cold cold emails or
+aggressive. It was all inbound. All we
+did was like make good stuff and write
+insertful technical blog posts that and
+I went to a lot of conferences like the
+for me important it was okay if if
+people understand that the people who
+built this product are like know what
+they do and and love what they do that
+reflects on the product and that that
+worked really well.
+&gt;&gt; And then what was the text type behind
+PSPDF kit? Was it objective C? Was it
+later swift? Were there other
+technologies like C or or anything else?
+&gt;&gt; We eventually expanded to to all the
+platforms. Um big shift was the switch
+out renderer which was and is still
+quite buggy to like a big C++ one that
+when then we used across all the
+frameworks. Um we we were we were really
+early with web. We were one of the first
+PDF frameworks that ran in web assembly.
+And I I did the most clever thing that
+it was in the very early days when Web
+Assembly was just taking off and we
+built a benchmark and that benchmark was
+eventually used by by Google and
+Microsoft and Apple and I basically had
+all these companies like working really
+hard on making my renderer faster cuz
+cuz they used their benchmark as one of
+their benchmarks and the benchmark was
+just like rendering our stuff with our
+&gt;&gt; Ah nice. And then a as as a company
+grew, one thing that I remember about
+PSPDF kit, you did write a lot of blogs
+and one blog in 2019, so this was about
+like I think you know year nine or 10 in
+the company. It was about how the team
+worked and you you mentioned things
+there like every feature starts with a
+proposal. You mentioned that you are
+conservative because it's a it's a big
+API that that people use. You want to be
+careful things like the boy scout rule
+such a factor. How how did you kind of
+put together the the culture of of this
+now this team which was now closer to 30
+or 60 people?
+&gt;&gt; We were actually 70 when when I sold my
+shares and now it's almost 200. And I I
+knew right from the get- go it's like
+I'm not going to find the people that I
+need in Vienna. So it was always just
+like remote first and eventually we we
+landed up with some kind of hybrid model
+uh which made things a bit more
+complicated. I learned a whole lot on
+the go. Like I I never had the urge to
+be CEO. I always was coding. I I brought
+people in to people that that helped me
+a lot with other other parts. Uh and on
+the business side, I can do it and I I
+think I think I'm I'm quite good at it,
+but I just don't enjoy it. Like even on
+sales calls where you like have to like
+think of all the magic number how much
+it would be worth because that's how
+enterprise works. Gh worse. Peter just
+said, "Ah, the worst about enterprise
+sales. Because selling to large
+companies, enterprises, is as tricky as
+it gets." Not just because you need to
+get pricing right, but because of all
+the enterprise features that you need to
+build. And this leads us nicely to our
+season sponsor, Work OS. If you're
+building with AI agents or automation
+tools, here's a problem most teams don't
+think about at first. Once an agent can
+take actions on your behalf, you need to
+control what it's allowed to do. And
+traditional O just wasn't designed for
+that. That's why work introduced MCP off
+which gives teams a way to authenticate
+AI agents with explicit permissions
+auditability and enterprisegrade
+security. Instead of sharing over scoped
+API keys, you can define clear
+boundaries for the data that agents can
+access and the agents they can perform.
+If you're building AI powered features
+and want to share fast without
+compromising security, check out
+workeros.com/mcp.
+And with this, let's get back to Peter
+and enterprise pricing. But that's also
+the only thing that that really works on
+on a model like this.
+&gt;&gt; Yeah. You mean enterprise sales
+specifically, right?
+&gt;&gt; Meaning custom pricing. So So can you
+tell us for for for you know devs
+listening who go to a vendor's website
+and they're frustrated that there's no
+price. It says call us or schedule
+meeting. Why that is?
+&gt;&gt; Oh, that's that's why because we going
+to look at your company and then just
+take the dice and and and think about
+the number that you're probably willing
+to pay. And that sounds horrible. But
+also when you have a product where you
+can't really tear it down to a specific
+number like it it's it makes a
+difference if uh a freelancer contacts
+us or one of the big Fortune 500s. Let's
+not say names
+&gt;&gt; because the usage will be different. The
+value they get out of it will be
+different and charging the same. You
+would either exclude one or the other.
+If I if I if I go too low, they're going
+to see this fishy. It's like uh
+procurement for like 500 bucks. we're
+not going to even start the process. And
+if we we target it too high, we're going
+to lose those people. So So as horrible
+and unfair this process seems for some
+kinds of products, it is the it's the
+most fair way after all. You know, you
+know, on software
+there is I would say there's like four
+axes. There's like easy and hard and
+interesting and not interesting. We were
+very much in the not interesting and
+hard part. If you build something that
+every developer wants to build, it's
+going to be a hard cell. It's it's a
+hard sell anyhow. Selling anything to
+developers is a hard sell.
+&gt;&gt; Yeah.
+&gt;&gt; But if it's if it's too easy or too
+interesting, good luck. But if it's
+&gt;&gt; oh god, I don't want to do this and oh
+my god, this is hard. That's a good spot
+to be in. So So I found a really
+interesting niche and there were just an
+infinite number of complex problems.
+&gt;&gt; You you you need to tell me tell me one
+or two hard things about parsing PDF.
+How hard could it be? There's a
+specification. I'm an engineer. I know
+specifications. I What's so hard about
+it?
+&gt;&gt; I mean, there was this one example
+where, you know, like PDF has have
+links. So, like there's like there's
+like a table of contents and you click
+on it and it goes to like page 37. So, I
+built this whole model with the
+assumption, oh yeah, maybe there's like
+a 100 or 400 links in there.
+&gt;&gt; And then we got this one customer who
+like paid really good money. And then I
+was like, oh, it takes 4 minutes to load
+a PDF. What the heck, guys? And I looked
+at it and it was like a 50,000 page text
+bible from Canada and it had
+&gt;&gt; 50,000 pages.
+&gt;&gt; It had like more than 100 links per
+page,
+&gt;&gt; 500,000 links.
+&gt;&gt; My data model completely exploded
+because my assumptions were off by a
+number of what 1,000. But by then you
+have like a mature product with an API.
+So like how do you how do you completely
+redesign the internal part without
+breaking things for everyone? like
+suddenly everything has to be lazy where
+where before parsing 100 one was easy
+but now they were like this was like so
+difficult to keep it working for people
+um I think I spent like two months just
+on that completely redesigning like the
+internals and like making sure it's
+still easy for people they don't have to
+know what we what we load easy what we
+load lazy or if you copy this thing it
+it still has to like have to keep some
+connection
+&gt;&gt; it needs to keep the references and and
+some of those things.
+&gt;&gt; So, so I and I I love to do support and
+I think that that that also a confining
+factor why the company worked cuz if if
+you send a ticket and then the the the
+CEO replies and helps you out
+um that has impact and my my strategy
+was always like I always used to list in
+reverse cuz if you if you send a ticket
+and you get a reply within 5 minute
+that's magical. If you wait one or two
+days not much difference. Yeah.
+&gt;&gt; So, yeah, this this was one of the
+problems where I worked two months and I
+finally got it down to almost like this.
+&gt;&gt; Mhm. That must have been satisfying.
+&gt;&gt; And and it was this was very satisfying.
+&gt;&gt; And you were writing a lot a lot of the
+code or you were involved in in in a
+bunch of the code like obviously a big
+big team was now here, but you were
+still kind of overseeing it, right?
+You're in the details. I mean, of
+course, I had a a really great team and
+and some parts I was more involved. I
+was always more involved in mobile
+because that's where my my heart was,
+but I was always very deep in the tech
+and and the the
+marketing side, the business side. I had
+like Jonathan's help, I had marketing
+help. There was I I I found good people.
+The the thing is if you like the
+blogging and writing about how you solve
+interesting hard problems will help you
+hire interesting people that want to
+solve interesting problems. This is what
+I remember at PSP PDF kit that your blog
+was every now and then it admitted it to
+hacker news as well but it was just
+interesting to read and I couldn't name
+again I I'm not went into PDFs but if I
+had to say something a PDF I would have
+said PSPDF kit because they're the only
+ones where I read interesting engineing
+blogs about how you optimize your ship
+is still there by the way I I I myself
+also sometimes ask myself like hm
+interesting do more companies not see
+this or is is the question that you you
+need to be a developer who's either the
+CEO or or up there who just likes doing
+this. And by the way, did did you ever
+write this thinking this will be helpful
+or you just wrote because you got
+something out of it like putting out
+that you solved this hard problem?
+&gt;&gt; I like sharing and and and like
+inspiring people. Um there was sometimes
+even conflicts where we were like should
+we write about this because it's like a
+little bit of secret sauce
+but I just never listen to those voices
+too much. Um I just you know there's
+also like when you when you write
+something down there it's this principle
+of like you understand it but then if
+you want to teach it you really have to
+understand it. So to to me it was also a
+little bit like oh yeah I worked on this
+really hard problem and now I want to
+like preserve it and like help others.
+So, so, so I I got I got a gig of it of
+of course I liked the attention. Um, but
+really it it was this
+sometimes I just referenced a year later
+to my own post like yeah this this is a
+this is both company documentation. This
+is like my own lookbook. It's helpful on
+so many ways and a lot of those bigger
+companies.
+Oh, they put on too much red tape.
+There's a lot of developers who don't
+really like to write. So I I I forced
+everyone once a month a full day just to
+write a blog post.
+&gt;&gt; But you gave them the time. You're like
+that day you don't need to do any other
+work but write something.
+&gt;&gt; Yeah. You have Yeah. You have a day to
+come up with a post. Ah a day is is
+quite much actually. I mean when I'm
+nowadays when I write posts it still
+takes me
+a few hours. I don't want to dwell too
+much on like the I think the the the
+starting time of the company is the most
+interesting. the then the the growth
+phase, you get more red tape, you get
+more people. It's much more gardening
+your product instead of like doing doing
+wild hacks
+&gt;&gt; um and more iterative. So, so, so it got
+a little bit less interesting uh over
+the years and there was like more people
+drama cuz the more so the more people
+you have, the more issues there are and
+I didn't enjoy it that much and I was
+really really burned out. What what
+burnt you out, do you think?
+&gt;&gt; I was just burning too hard. I was
+working most weekends. I I I tried to
+shuffle all my managerial needs. And you
+know, as a CEO, you're basically the
+waste bin cuz everything everything that
+other people don't manage or or can do
+or or mess up, you have to fix. And it's
+also quite lonely because you you can't
+openly talk about a lot of things. I
+mean I I I I structured the company to
+be quite open but still like you cannot
+you cannot be negative. You have to even
+if even if like even if like really bad
+stuff happens. I know there was like
+there was like one weekend where my my
+co-founder called me at at 5:00 a.m. and
+told me like yeah there's this big
+airplane company and their planes are
+down because our software is crashing.
+That was a very interesting weekend
+until I could like I disassembled their
+their app and did proof that they messed
+around with our source code to
+triggering a triggering a license key
+fall back. Uh that eventually like
+caused issue they had. But that was like
+a if they sus company's gone and more
+moment. Um and that's just on top to all
+the additional stress and there were
+quite a few of those things. You can do
+that for a while. And I I also believe
+like burnout doesn't necessarily come
+from working too much. It it comes more
+from or at least for me when you when
+you work on something but you don't
+believe in it anymore or you have like
+too many conflicts and and we also had a
+we did fight a lot in the team uh with
+like management team and by the time I I
+made this mistake and I thought you have
+to like lead a company more
+democratically.
+Um so that was also something that
+burned me out. I wouldn't I wouldn't
+want to miss it for a while, though.
+&gt;&gt; Yeah. So, you know, from from the
+outside, it seems you sold your shares,
+you made enough money to not have to
+work again, should you not choose. And
+for a lot of people, like, you know,
+people who are starting out their
+business or or one day want to start a
+business, this sounds like the absolute
+dream. Like, this is I guess what we
+know realistically that most people will
+not make it, but if you make it, I mean,
+you've kind of like I guess you know,
+checkbox done. You're kind of it's a
+little bit if you're like climbing on a
+wall and you ring the bell, you're done.
+And then what I noticed is from the
+outside again on your blog, the blog
+post completely stopped for several
+years. What what did you do uh in in
+this time uh and and what what what did
+you learn in this time, you know, before
+you came back to to where we are now?
+&gt;&gt; I needed a lot of time to decompress. I
+I catched up a lot on the things I
+thought I missed. I I a lot. Um there
+were months where I didn't even turn on
+my computer. And for a while I was I
+just didn't had this feeling of like
+what should I do now? Like like I
+definitely was like
+why border? You know, you're not you're
+not supposed to to retire so early or
+like have so much have such a good exit
+that you never have to work again. That
+messed with my mind quite a bit. That
+&gt;&gt; that was some that was some hard years.
+And then in in April I was like
+I there was this idea that I had years
+ago and even a side project that I
+started I was like oh yeah I want to I
+want to continue on that and then after
+after after more than 3 years I just sat
+back to my computer and and started
+hacking again. But the thing was this
+was like a a Twitter analytics thing and
+it was written in in Swift and Swift UI
+and back then I already knew this would
+have would be so much better if I would
+build as a website.
+&gt;&gt; So So was this an existing idea that you
+kind of had at the back of your your
+mind something something Twitter
+analytic?
+&gt;&gt; Yeah, it was just like something I
+wanted to build for myself because uh
+because it didn't exist and then
+&gt;&gt; even three years later it didn't exist.
+It still doesn't exist. Uh it it kind of
+does but I got a bit sidetracked. So I I
+went back and I I wanted to build it in
+in with web tech. But web was really was
+always even at the company the one thing
+that I looked into the least because I
+had I had someone really smart who took
+care of of of that side in the company
+that I brought in Martin. So I never had
+to worry about it. That was one of the
+&gt;&gt; You're not hands on with React or any of
+that stuff.
+&gt;&gt; Yeah. And when I came back, I was like,
+what's a prop? You know, that that level
+where you really where and you know,
+this is like this is a a trap I see with
+many developers. The the better you get
+at one technology, the harder it is to
+jump somewhere else. It's not that you
+can't do it, but it hurts so much.
+You're like like I can I can program in
+in in in Apple stack. and program blind.
+But then in that stack, I have to Google
+the most mundane stuff and it it just
+like it just hurts. You you you feel you
+feel like an idiot again.
+&gt;&gt; Yeah. And and I guess the more
+experience you have, it it kind of sucks
+feeling. I mean, I'm sure you say
+embrace and and all that, but it's it's
+not great. You're not as efficient. You
+know that you could be faster, etc.
+&gt;&gt; Yeah. So So I came back and I was like,
+gosh, there has to be there has to be
+what is this AI? What is this AI stuff
+that every that that people are
+dismissing? let's look into this. Yeah.
+And in April, a lot of us were the
+specific probably for rightfully so, but
+and I and I and I like and I to a degree
+I I credit those three years where I
+basically didn't turn on my computer
+because in those years you guys checked
+out AI and learned that it's crap.
+&gt;&gt; Yeah. the the people who like I was
+about to say so you missed out on you
+didn't do the beta of GitHub copilot you
+know glorified autocomplete which is
+GPC3 or or maybe not even there was then
+of course 3.5 which is a big jump and it
+it got incrementally better than GPT4
+and so by the time you came back what
+tool did you first use when you cuz you
+missed out on like two years of like
+like devs us devs using dismissing
+finding some niche use cases for it
+&gt;&gt; oh cloud code so you start with cloud
+mode that I think came out.
+&gt;&gt; It just came out It came out in May, but
+there was a beta beforehand.
+&gt;&gt; Yeah. Yeah. I think they had something
+Didn't they have something in February
+already?
+&gt;&gt; They had a beta from February. Correct.
+&gt;&gt; Yeah. So, so
+&gt;&gt; so clock was your first you you come
+back after like a you know hiatus and
+you immediately turned on clock code and
+you missed everything else before. and
+and and you know, you know, it was like
+I I remember I took this big messy site
+project that I built and I have this
+browser extension where that that
+converts a GitHub repository into one
+big markdown that was like a 1.3
+megabyte markdown file and I dragged it
+into into Google's CI studio with
+Geminina 2.5 or two to something and I
+typed write me a spec and it generated
+those 400 lines of spec And I dragged
+this back into cloud code
+and I was like build and then I continue
+continue [laughter]
+continue and while I was like working on
+other stuff, you know, um and eventually
+told me like it's 100% production ready
+and I started it and it crashed. I'm
+sure we can all relate to the story of
+the AI saying the code is production
+ready then crashing. This is a pretty
+funny and innocent story, but I
+personally don't trust code that AI
+generates without verifying it. And this
+leads us nicely to our season sponsor,
+Sonar. So, let's look at some data. A
+new report from Sonar, the state of code
+developer survey report, found that 82%
+of developers believe they can code
+faster with AI. But here's what's
+interesting. In the same survey, 96% of
+developers said they do not highly trust
+the accuracy of AI code. This checks out
+for me as well. While I write the code
+faster with AI agents, I don't exactly
+trust the code it produces. This really
+becomes a problem at the code review
+stage where all this AI generated code
+must be regularly verified for security,
+reliability, and maintainability. Sonar
+cube is precisely built to solve this
+code verification issue. Sonar has been
+the leader in the automated code
+analysis business for over 17 years,
+analyzing 750 billion lines of code
+daily. That's over 8 million lines of
+code per second. I actually first came
+across Sonar 13 years ago in 2013 when I
+was working at Microsoft Skype and a
+bunch of teams already use Sonar Cube to
+improve the quality of their code. I've
+been a fan since. Sonar provides an
+essential and independent verification
+layer. It's the automated guardrail that
+analyzes all code whether it's developer
+or AI agent generated, ensuring it meets
+your quality and security standards
+before it ever reaches production. To
+get started for free, head to
+sonarsource.com/pragmatic.
+With this, let's get back to Peter and
+how AI agents cannot exactly be trusted.
+&gt;&gt; Then I had then I added added an MCP so
+it could use the browser. I think the
+player with MCP was already there and it
+looped a few more hours and then I had a
+I had a Twitter login page and it it did
+something. I It was not great, but it
+did something. And to me to me this was
+my holy mind-blowing moment.
+&gt;&gt; Yeah.
+&gt;&gt; This and this was like in April or May
+this year, right?
+&gt;&gt; Yeah. It was it was it was just good
+enough that I could see the potential
+and I I understood it's like
+&gt;&gt; yeah this is this is where it's going
+and and from that moment on I I had a
+few months where I had really trouble
+sleeping and I in
+&gt;&gt; I I remember because once on Twitter I
+sent you a direct message. I was up
+early for valid reasons, you know, my my
+kids or something like that. But it was
+5:00 a.m. and I I sent you a message on
+Twitter and you replied immediately. And
+I was like, "Why are you up?" And he's
+like, "Oh, this is usual. Like I I
+usually I'm still usually awake." And
+and I asked like, "Why?" And you said
+like, "Oh, I'm I'm just like using
+Claude and it's really really
+addictive." And I was like, "Really?"
+And you're like, "Yeah, I'm not joking.
+Like it's really good." And I think that
+was the thing. You said something or
+wrote something like just one more
+prompt. like you told me how like what
+what made it so addictive or or what
+what still makes it so addictive?
+&gt;&gt; Oh, it's the same economics as as you go
+to a casino. That's that's it's my
+little slot machines, you know? You you
+you press the trigger and ding ding ding
+ding ding and it's like nope. you you
+type in the prompt and it it will like
+and it does it does crap or it does
+something that actually blows your mind
+and it's this
+&gt;&gt; and and you're saying it it blows your
+mind as like you're a really experienced
+developer like it's it's not easy to
+blow your mind, right? Like you you
+you've seen good code you can
+differentiate like crap code, decent
+code, good enough code like you have a
+bar, right? It's so funny, you know, in
+my company, I used to obsess over every
+detail, every spacing, every new line,
+the naming. I spend so much time bike
+shedding. And in retrospect, I'm like,
+what the heck? Why did I do that? Like,
+what's the point that the customer
+doesn't see the insights of of course
+like it has to meet certain certain
+standards. It has to work. It has to be
+fast. It should be secure, but like how
+much did that bike there is like
+stupid.
+&gt;&gt; You say that, but then you also just
+said that people loved PSPDF kit because
+it was the most polished. It worked the
+best. Do you not think that that that
+amount of caring bike shedding as you
+call it? Being obsessed. It sound like
+you were keeping tech depth at bay, you
+know, like being obsessed with white
+spaces is is not going to be messy. And
+we know it's not just the white spaces.
+we know you're going to care about
+testing and all that. Like it sounds to
+me that PSPDF kit like you know like
+what I see is you were not just building
+a product that was great UX but you
+built something that had a really good
+hygiene and that's how it could be high
+performance and all that is how do you
+think about it?
+&gt;&gt; Yeah. Yeah. Yeah. To a degree. Yes. And
+and even now like I I I mean like my my
+last blog post was a confession that I I
+ship code on read and
+&gt;&gt; yeah we have to talk about that
+[laughter]
+&gt;&gt; and at the same time I spent so much
+time to like restructuring
+I mean I mean like even even today like
+I I really wanted to get this PR in
+where it was like 15,000 line change
+where in my I moved everything over to a
+plug-in architecture where I was so
+excited about and I care a lot about the
+structure. Did I read all the code? No,
+because a lot of code really is just
+boring plumbing. Well, what are most
+apps? Like data comes in from an API in
+one form. You like you parse it, you
+package into a different form. Hey, you
+store it into database and it's a
+different form. It comes out again into
+a different form. Then it's like HTML or
+whatever. And you type in something it's
+a different form again. And all you do
+is like you're massaging data in
+different forms throughout your app.
+This is what most apps are. We are
+pretty chasing printers. And the and the
+the really the hard part is solved by
+Postgress 30 years ago by some neck
+birds. Uh that's that's really what a
+lot of software is like. There's always
+some interesting parts, but I don't have
+to care how this button is aligned or
+which tailwind class is used or or like
+many details are boring and many other
+details are interesting. But it I think
+it's much more about system architecture
+than having to read every single line.
+&gt;&gt; Right now jumping forward, what is your
+workflow like? Like like when you're
+working on on cloud bot, are you using a
+terminal, multiple terminals, which
+which tools and and how are you you know
+like you said you're not you're kind of
+like not reviewing the the code, but
+you're still thinking about
+architecture. Like what does your
+average day look like in terms of
+tooling? You know, you have to explain
+to a developer who might join the team.
+you know, at at one point you didn't get
+like what does it look like?
+&gt;&gt; It's interesting. Let's let's let's go a
+little bit. We were we were in in in
+April with Cloud Code and then I got
+really hooked and then I did some I had
+a phase where I did cursor and then I
+did I I used Gemini 2.5 a bit. Then we
+had this phase with Opus 4. I hooked up
+a lot of my friends like I know I know
+both Armen and and Mario from Vinner.
+They got they got AI pill because I I
+was addictive. You know, my my enem was
+like confusing them [clears throat] and
+then they tried it out and then and then
+eventually they also were up at 5:00
+a.m. and I called it like the black eye
+club. [gasps] I mean, there's a reason
+like I I I I started a meet up in London
+that I called called uh Cloud Code
+Anonymous because because it's it's a
+little bit like a drug because it's so
+it's so much fun. Like to to me what
+what what blew my mind so much was this
+realization that I can build everything
+now. Before you had to really pick which
+side project you build because software
+is hard. Yeah, it's still hard. But now
+like I I am this this friction that I
+talked about where I'm so good at this
+at this technology and I'm like so bad
+at this and I'm like oh let's make the
+CLI in Go. I have no clue about Go. But
+I have I have a good system
+understanding and once you have that is
+like you you develop a feeling what's
+right what's wrong like it's it it is a
+skill in itself. I remember there was
+this tweet where someone said, "Oh, when
+you write the code, you you feel the
+friction and that's why that's how you
+make good architecture." I feel the same
+friction when I prompt because I I see
+the code flying by. I see how long it
+takes. I see if like the agent pushes
+back. Um I see if what it creates looks
+like messy or like makes sense. When I
+prompt, I I have a hint already how long
+it's going to take. If it takes much
+longer, I understand that I messed up
+somewhere.
+&gt;&gt; You kind of feel the model. you you know
+you know
+&gt;&gt; yeah usually it's like this or if it
+runs
+&gt;&gt; I I feel it's very much a symbiosis like
+I I learn to to talk
+&gt;&gt; may I even say dare or that language
+more so it's like my my knowledge how to
+use those things improved and also the
+models improved and then and then like
+over the time between between April and
+now I would say yeah the inflection
+point was summer where it just got so
+good that you could you create software
+without actually writing code by hand.
+But the real that change that like sold
+it for me is was
+again GBD 5.2 that was again I think
+it's underrated. I don't know I don't
+know why why all these people still use
+cloud code. I I I kind of get it. It's
+it's a different way of working but
+whatever OpenAI cook there is insanely
+good. pretty much every prompt I type
+gives me the result I want which is
+insane like like on on on cloudbot the
+my latest product I use
+between five and 10 agents in parallel
+if you're very much cloud code build you
+have to forget quite a lot of the
+the silliness that the things that you
+have to do to create good output with
+cloud code I mean I also met that team
+and and they created a whole new
+category. Like cloud code is is is a
+category defining product and it is
+amazing for general purpose computer
+work and it is is really good for coding
+and I I I I still use it almost every
+day. But for writing code in complex
+applications, Codex is just so much
+better because it it it takes 10 times
+longer. um Claude would
+read three files and then be confident
+enough to just like create code and then
+you really have to steer it and push it
+so it reads more code so it gets it sees
+a bigger picture of your codebase so
+that it it it weaves in new features
+better and Codex will just like be
+silent and just read files for 10
+minutes and if you if you only work on
+one terminal I completely understand how
+you how you find this unbearable
+But I rather have something where it's
+also you don't tell it what to do. You
+know this is this is also something that
+people don't get like I have a
+conversation with the model. It's like
+oh let's look at this what what what
+what options do we have for this
+structure? Did you consider this
+feature? It's like because every every
+session is like the model starts from
+having no understanding about your
+product and you have and and sometimes
+you have to just give it a little bit of
+pointers. What about this and this? So
+it explores different directions and you
+don't need plan mode like I'm just
+having a conversation until I say build
+this it will not build this. There's
+some trigger words because it it is they
+all are a little trigger hungry but as
+soon as I say let's discuss or give me
+options they will not build things until
+I say build.
+&gt;&gt; So so a lot of a lot would you say a lot
+of your prompting or a good part of it
+is this conversation where you are
+pretty much planning together with the
+agent.
+&gt;&gt; Yeah. It's like what about like I say
+okay then you remind them it's like okay
+we need documentation what would be a
+good spot it would like give me some
+recommendations I say no this should
+really be its own page do we need a
+configuration how how does this fit into
+this other feature it's like I am
+designing the system because I have this
+I have this system understanding about
+how how is my my product how are the
+shapes looking I don't have a line by
+line code understanding that's that's
+what Codex does for me but I'm the
+architect you
+It sounds a little bit like you're
+almost, you know, for
+years back this this totally came got
+out of style. But there was this idea
+that you would have the architect with a
+capital A who used to be a software
+developer, but they're not hands-on
+anymore because they spend a lot of time
+understanding the business and they have
+these developers working underneath
+them. And some companies still kind of
+work a little bit like this, but most
+modern companies don't. But some banks,
+etc. I met people there who are capital
+architects. They do the system plan.
+They talk with fellow architects. They
+have the blueprint and then they
+literally pass it down to the team and
+everyone hates this model obviously
+because you know again like I I think as
+people you kind of want more. The
+architect is never on call for for this
+stuff and so it just kind of breaks down
+in practice and a lot of large companies
+just move to the staff engineer model
+where you're kind of all working
+together. Of course, there's people who
+make who might have more input, but
+sounds like it's almost like this world
+where you are the architect who kind of,
+you know, you have your little agents
+who who do the code, except in this
+case, you are of course fully
+responsible because you're still an
+individual contributor. You're not
+you're not like a okay, you might say
+you're a manager of agents or whatnot,
+but the code is is yours. It's your
+responsibility. You're going to be on
+call. If you know, if you push out code
+that takes down CloudBot, which it did
+just recently, you're on the hook for
+it, right? like and I think the the
+difference in this system when when it
+was in companies it was the architect
+was kind of shielded from the output of
+their work because there's so much
+people and so much process etc. Well, I
+wouldn't say architecture. I I like the
+word builder.
+&gt;&gt; Builder. Yeah.
+&gt;&gt; And and and I think also that's there's
+a few categories that I see for people
+that are highly successful using using
+AI and people who really struggle.
+&gt;&gt; I care more about the outcome, the
+product. I very much care about how it
+feels and everything, but how the
+plumbing works underneath.
+&gt;&gt; I care structurally, but you know, not
+to the not the biggest detail. And then
+there are people who really love to to
+code on hard problems like think about
+algorithms don't really like the I'm
+building a product with like all the
+marketing all the they they more like
+they like to solve hard problems and
+those are the people who really struggle
+and and and often reject AI or get
+really sad because that's exactly the
+job where that AI does like it solves
+the hard problems. Now sometimes I give
+it some pointers but many times I
+learned I learned more this year than
+last five years around around software
+architecture and designing. I the
+there's so much inside those monsters um
+on knowledge and everything is just a
+question away but you have to know what
+question to ask. Of course I also built
+this Twitter thing and it's still not
+done and I and I I really hope I I'll
+get back to it at one one time.
+everything worked but if I used it more
+at some point things got really laggy
+and weird and then it worked again and I
+just couldn't figure it out and it was
+like really difficult to debug because
+it was not easy to reproduce. It was
+just like you use it more and things get
+really slow. I basically had like
+software in in in in Psql like in
+Postgress that would be triggered when
+certain inserts were were doing and then
+the database would would get really busy
+and the model couldn't see it because it
+was it was it was so far abstracted from
+all the you know like those those models
+are really good at tracing through but
+this was a side effect that was so hard
+to see because it was only in this one
+file
+a function that had no connection to
+anything else. um with a name that was
+not easy grabbable. I just never asked
+the right question until I was like do
+we have any side effects for this and
+this and I found it and I fixed it and
+it's like but I everything is just the
+right question away.
+&gt;&gt; Yeah. But you you need to have like
+knowledge, expertise.
+&gt;&gt; Yeah. You experience
+&gt;&gt; you you I mean so so so these are the
+people who rejected and then the people
+who who care a bit less about how it's
+being plumbed internally but are just
+excited to build things. They're really
+successful. And one thing that also
+helped me is, you know, when you run a
+company and then you hire people, you
+can't breathe on everyone's neck and
+like make them have the line of code
+exactly that way. And there's a lot of
+people who who didn't manage a team,
+they didn't had this experience how to
+how to relax a little bit and understand
+that yes, this maybe is not exactly that
+code that I want, but it will get me
+closer to my goal. And for anything that
+is like
+not perfect, we can always make it
+better and like put more time into it. I
+very much believe into this iterative
+improvement. I had to learn to let go a
+little bit at my company. So, so, so
+then when I when I had cloud code, it
+kind of felt like I have like I have
+like imperfect, sometimes silly, but
+sometimes very brilliant engineers that
+I have to steer and where we where we
+work together on a common goal. It felt
+a lot like being the boss again.
+&gt;&gt; Yeah. And and interesting now you know
+you you built kind of software I guess
+the traditional way you know pre AI for
+15 years or even more than 15 years and
+you got really good at being also
+leading a team and then how to have high
+standards. You really cared about the
+the craft there as well. You've now kind
+of been I guess vibe coding or working
+with agents for a year. You're comparing
+the two. What do you think? What do you
+think really really changed? And what do
+you think are things that kind of stayed
+the same despite all
+&gt;&gt; First of all, I don't like I don't like
+the term VIP code.
+&gt;&gt; All right. How should we call it?
+&gt;&gt; I I think I think I think VIP coding is
+by now almost a I I call it I tell
+people I do what I do is agending
+engineering with a little star. VIP
+coding starts at 3:00 a.m.
+&gt;&gt; Now like because all the the mundane
+stuff of writing code is automated away,
+I can move so much faster. But also
+means like I have to sing so much more.
+I'm still very much in the flow. Like it
+is it is completely the same feeling as
+for me as as I I very much get in this
+flow state but it is mentally even more
+taxing because I have I don't have one
+employee that I manage. I have like five
+or 10 that all work on things and I
+switch from this one part to this other
+part to this other part to this other
+part. mostly because of I'm designing
+this new subsystem or like this feature
+and then I know that it will probably
+take Codex like 40 minutes or or one
+hour to build. So like I want to like
+have the plan right and then I build it
+and then I'll I'll move on to something
+else but then this is cooking and then I
+work on this and then this is cooking
+and then this is cooking and then at
+some point this is cooking and then this
+is cooking and then I go back to this
+one. So like I I I I switch around a lot
+in my head. I wish I wouldn't have to do
+that. Like I'm sure this is a
+transitionary problem and at some point
+we have we have models and and systems
+that are so fast that that I can
+paralyze a little less. But to stay in
+the float flow state I need to massively
+parallelize. So that that's that's how
+it work. I go back to there and and
+maybe tweak it a little bit more. But
+usually just like try it out and maybe
+then this is ready because this only
+took like 20 minutes. So like I
+constantly jump around. Usually there's
+there's one main project that has my
+focus and I have like some satellite
+projects that also need attention but
+where I can make maybe I spend 5 minutes
+it does something for half an hour and
+and and I try it and it doesn't need uh
+so much capacity up there.
+&gt;&gt; This almost sounds you know like two
+things come to mind. One is there's
+these like games where you have to
+manage a kitchen with the employee and
+and you see like the recipes or
+something come out and you need to jump
+and do it again.
+&gt;&gt; It's like Starcraft, you know, you have
+like your main base and you have like
+your side bases. They give you
+resources.
+&gt;&gt; That as well. And also one thing that
+just came to mind as you said like I go
+there and I watch this and I make a
+decision is when I see the chess grand
+masters play multiple boards at once.
+You see see sometimes they 20 boards and
+they always all you they go there they
+kind of you can see that they just like
+see what's on that board. they make a
+decision and for some boards they stop
+for longer I guess better players or
+better opponents. It feels, you know,
+both they're occupying 100% of of their
+brain. You're occupying your bay and
+you're you're kind of scaling yourself
+as long as you can context switch. The
+difference the difference was up until
+with with cloud code I you have to work
+a little different because it is much
+faster but then the output often doesn't
+work on the first try. So like it makes
+something but then it forgot to update
+three other things. it crashes or you
+give it
+the good thing how to be effective with
+coding agent is always like you have to
+close the loop. It needs to be able to
+debug and test itself. That's the big
+secret. Um that's also something I I
+think that's part of why it got so much
+more effective. Um but yeah, with with
+with clock code you I often had to go
+back and like fix up the stuff
+um or it just takes a lot of iterations.
+So in the end it's not that much faster.
+It's just more interactive.
+And and these days with Cordex it just
+almost always gets it right. My my
+general strategy is always I I build a
+feature of course you and and of course
+you always let it write tests and you
+make sure that it runs it.
+&gt;&gt; It runs them. Yes.
+So even even when I write a MAC app, I
+don't know like I I just yesterday I
+debuged this feature where
+the MAC app couldn't find a a remote
+gateway but like the the same code in
+Typescript could but makeup is kind of
+annoying to debug because like it builds
+it you have to start it you have to look
+at it you have to like say no this is
+not working. So now I just said it like
+you know you're going to build a CLI
+just for debugging that invokes all the
+same code path that you can call
+yourself and then you just iterate and
+you fix it yourself and then it will
+just cook and it just cooked for an hour
+and it was done and it told me like
+there was a race condition here and here
+and like a misconfiguration blah blah
+blah and like yeah it sounds sensible. I
+don't need to I don't need to see that
+code. It's like but but you don't need
+to see it because you set up the
+validation loops and you trust that
+because it ran it. I mean this is I
+guess I guess it's not too dissimilar to
+like sometimes when you work on a large
+project in a large company when all the
+tests pass I mean it doesn't mean 100%
+it's there but it's it's a pretty good
+and and all the new new code has test as
+well you know someone thought about it
+and tested it and and all that. So even
+even on my on the very latest project we
+always had bugs
+but like anti-gravity has like a certain
+a certain weirdness with how it takes
+tool calls in the loop in the in the
+format. So you have to do like some
+filtering.
+&gt;&gt; Yeah.
+&gt;&gt; And that broke a bunch. And it actually
+took me way too long to realize like
+what am I doing here? I just need to
+automate this. So I was just going to
+codeex. like design life tests that spin
+up a Docker container, install the whole
+thing, spin up a loop, use my API keys
+from this and this file
+and then you tell the model to
+read an image, create an image before
+and then look into the image and see
+what it sees. So I I don't not just tell
+the loop, I still tell tool calling,
+make it work
+and then it solved itself. It took
+forever, but it it it it tested all my
+API keys like from from Entropic over
+SEI over GLM like everything and it
+fixed all those little indicies where
+where sometimes the tool calling didn't
+work or the ordering was wrong because I
+closed the loop and and that's that's
+&gt;&gt; and closing the loop you mean just have
+a way to to have have the agent be able
+to validate its work?
+&gt;&gt; Yeah, that's why that's the whole reason
+why why those models that we currently
+have are so good at coding. But like
+sometimes mediocre good at writing
+creative because there's no easy way to
+validate right but code I can compile I
+can lint I can execute I can verify the
+output if you design it the right way
+you have a perfect loop like even now
+even now for for websites I built the
+core in a way that can be run via a CLI
+so it's like I have this I have this
+perfect uh execution loop because the
+the browser loop is insanely slow you
+want something that that loops fast. So
+it sounds like one thing that is not
+really changing from like before is we
+had this before like backend or business
+logic heavy he heavy thing could easily
+be or more easily be verified that it's
+correct.
+&gt;&gt; Surprise actually using aentic coding
+makes you a better coder because you
+have to have to think harder about your
+your your architecture so that it's
+easier verifiable because verifying is
+the way how to make things good. Well,
+then remember back back even before AI
+for complex systems like once you got
+someone who built these things before
+what they started with how do we make it
+testable right like you you need to
+design interfaces classes testable you
+need to think about like am I going to
+fake things will I use mocks will I use
+end toend testing which will be long etc
+but these are like really hard
+architectural decisions and once you
+make them they're I guess harder to
+change in your in your word you know
+like the model would cook a lot longer
+if you asked it to make a massive
+refactor acture and you know if you have
+test it'll get it right but you know now
+these we we still have these trade-offs
+&gt;&gt; yeah it's still it's still software it's
+it's I I would say I write better code
+now that I don't write code myself
+anymore and I wrote really good code but
+but like even back at the company
+sometimes testing was so tedious and you
+come up with all those edge cases and
+and and the branching
+&gt;&gt; I mean outside of Ken Debbec who I
+deeply respect and he was on the podcast
+and we We we we talk like he he still
+writes test first and he tells me that
+he's not mad at me for not writing it
+but if you want to write like you know
+poor quality code it's on you. Uh but I
+don't know many developers myself
+included I never liked writing tests and
+even even when I pretended that I did I
+I just never did. It's a little bit like
+writing documentation and writing tests
+to me it was never a creative
+expression. It is so good now like I I
+would say for my last project I have
+really good documentation and I didn't
+write a single line myself like no I
+don't write the test I don't write
+documentation I explain the model the
+trade-off so like why we did something
+like this and then tell it like like
+write that write the entrance section
+beginner friendly and then add more
+technical detail at the end and it is so
+good I never had a project with that
+good documentation just by every time I
+design a feature this is a part of this
+a part of the process And also like
+testing I was like okay we built this
+how are we going to test this? Yeah we
+could do this and this and this. What if
+we build it this way and oh yeah then we
+can test it better. So it's like this is
+now part of my singing because I I
+always think like how do I close the
+loop? How do I the model always needs to
+be able to verify the work itself
+um which automatically steers me to
+better architecture. So why do you think
+there's, you know, a bunch of like
+experienced devs who are still pushing
+quite a bit back on on just like the
+idea that AI can do a lot of this?
+&gt;&gt; That was a week ago. I I stumbled over a
+a blog post by Nala Coco with love that
+I deeply respect and learned a lot from.
+And this blog post was just was a
+dissing of the current way how models
+work. And and what he did was he he
+tested like five or six models including
+some that make no sense like the the
+Open EI 120 billion open- source one
+that is not good enough to write good
+code you know it's like and he just he
+he wrote a prompt as far as I understand
+it there was there was not a lot of
+information on the website but to me it
+sounded like he wrote a prompt he put it
+on claude web and and he pressed send
+and And then he took the output and ran
+it and it didn't compile and he was
+disappointed. But he's like, "Of course
+it will not work. Do you think I can
+write buck-free code on the first
+attempt?" And those little those
+models are ghosts of our collective
+human knowledge. They work very similar
+in many ways. Of course, you don't get
+it right the first time. Like there will
+be mistakes. That's why you have to
+close the feedback loop. And also you
+don't just send a prompt to the model,
+you start a conversation. Hey, this is
+what I want to build. It's like you he
+complained that it used old API. Yeah,
+you didn't specify the Mac OS version.
+So it so so it made an assumption to
+default to like old API because that
+information was missing and it is it is
+trained on a lot of data, not just the
+last two years and there's just more old
+data than new data. So this is like the
+more you understand how those little
+beasts think, the the better you get at
+prompting. Um and then and then and then
+he he spent maybe I don't know a day or
+so on on playing with it and then just
+decided that this technology is still
+not really good. But to be effective you
+have to spend significantly more time.
+You know, it's it's like it's like you
+know how to play guitar and I put you on
+the piano and you tried a bit. It's
+like, "Oh, this sucks. I go back to my
+guitar." No. No. It's like it's it's a
+different way of building. It's a
+different way of thinking. You have no
+idea how often I screamed at like 3:00
+a.m. to cloud code because it did
+something silly. I slowly started to
+understand why those things do what they
+do with like exactly the way I tell it
+to do things. And sometimes you can
+literally ask you can even even last
+year like I for this project I the last
+project like clotboard I feel like a
+human merge button because the community
+is like blowing off and all I do is like
+reviewing PRs. I I I I have very little
+time to actually write code myself
+anymore.
+&gt;&gt; And in the beginning it would often like
+just cherrypick things and would close
+the PR and I was like so annoyed. So was
+I'm like why are you doing this? Yeah.
+When you say this and this I interpret
+this this and this. It was like ah like
+I I learned the language of the machine
+a little bit more. I tweaked my my
+prompting and now I get exactly what I
+want because it's it's a skill like any
+other skill.
+&gt;&gt; Yeah. And this is like Simon Wilson has
+been saying the same thing even though
+he's been using it for for years and I
+think everyone I think once I start to
+use it I also realize like I'm not I'm
+okay at it but I I I I could do better.
+What if we put this to a real test? cuz
+I think it's fair to say that right now
+you're building CloudBot which is a you
+know it's not something that generates
+revenue there's a lot of users and it's
+blowing up and it's it's a really cool
+tool but it's not PSPDF kit which is a
+business that it's a lot of revenue is
+hinging over it if today you know we
+just wiped PSPF kit does not exist you
+need to rebuild PSPDF kit you now have
+these agents how differently would it
+look how much would you trust it what
+would you delegate what you would you
+validate and and when you know you built
+up a team around it because now it's a
+profitable business at the very least
+you need to hire sales people whatot how
+do you think the team would look
+different today with that same product
+cuz you you know exactly what it took to
+build it and you also know what these
+tools can do today
+&gt;&gt; I could easily run a company with
+30% of the people it would probably be
+quite difficult to find people
+on that level but you you you want you
+want to have really senior engineers
+that really understand what they build
+but that are also comfortable in in in
+delegating and know which parts are
+actually important to to work on and
+which parts
+I can vibe. That's still something I
+don't see. I don't see a lot like like
+especially in the AI world, there is so
+much crap on Twitter, there's there's so
+many people that are loud but clearly
+have no clue what they're doing. There's
+there's so many there's so many dumb
+concepts around like I'm sorry, but the
+Ralph Wigum one gh like this is again
+another another silliness people use to
+work around
+uh model limitations of of of of Opus
+that you don't even need when you use
+Codex. There's there's maybe a few cases
+where you have a really long list of
+individual tasks that can be automated,
+but that's usually not how software
+building works. So there's these people
+who I see so many people building up
+this elaborated orchestration layers and
+then you have like beats that
+automatically creates tickets and then
+your agent does tickets and then your
+agent emails the other agent and then
+you build up this this elaborate mess.
+What for? Oh yeah, they did they design
+the the spec for like a few hours and
+then you just like the machine builds it
+in the whole day. I don't I don't
+believe this works. Like like this is
+this is this is the waterfall model of
+software building. This we learned long
+ago that this doesn't work. Like
+yes, people work differently and maybe
+it does work for some. I just I just I
+don't see how this
+how this could work for me. Like I I
+have to start
+with an idea and often I purposefully
+underprompt the agent so it would do
+something
+that would give me new ideas. You like
+maybe like 80% of the things I assumed
+were like crap but like there were like
+two things like oh I didn't think about
+that way.
+&gt;&gt; Mhm.
+&gt;&gt; And then I I I iterate and and and shape
+the project and I have to I have to
+click it. I have to like I have to feel
+it. I feel I feel to make good software
+I you know one thing those those things
+often lack is taste. I have to feel like
+how does this feature feel and and the
+beauty now is that features are so easy
+I can just like throw it away or like
+reprompt it. My building model is
+usually very much forward. It's very
+rarely that I actually revert and have
+to go back. It's just like okay no then
+let's change this. No let's do this.
+It's like it's like shaping. I I love
+how this like you start with a rock and
+then you like sisle away at it and like
+pick different areas and and and then
+slowly like this statue emerges out of
+out of marble. That's that's how I see
+that's how I see building something. I I
+guess reflecting on how software engine
+is changing. This seems like a change
+because before before we had AI or any
+of these agents, upfront planning did
+make a difference. you know, writing at
+PSPDF could you insisted I think to have
+a proposal where people put a lot of
+thought up front to specify and do all
+because it was expensive to I guess to
+to build to to do you think this is
+changing because of the the cost of just
+writing code is is going down or
+&gt;&gt; I mean I still I still I still plan and
+I but
+&gt;&gt; you still do yes
+&gt;&gt; but I don't put as much into it because
+I it's now so much easier to just like
+try and look at the results and then see
+if oh yeah this this shape could work or
+no we have to like the tweaking and even
+even like oh no we have to like do it a
+completely different way isn't so much
+cheaper that it's to me it became much
+more playful.
+&gt;&gt; Yeah. Yeah. I guess cuz cuz like you
+know when you're working even if you
+have like a new grad on the team or an
+intern you know you give them something
+they work it for a day or two now you
+give them another it's another day or
+two you know and and we're not talking
+days here we're talking minutes or like
+if it's a longunning task like 10 20
+minutes at at worst. Plus, you're not
+just waiting on that thing. You have
+parallel things running. So, it's not
+that much of a waste, if you will,
+&gt;&gt; in in in in in cloud.
+At the beginning I had this assumption
+of like one agent and then eventually
+changed to multiple agents and there was
+the assumption of like one provider like
+WhatsApp and now it's multiple ones and
+changing that was like such a pain would
+would have been such a pain if I would
+have written it myself because you have
+to weave in literally everything through
+the whole logic of the application
+and yeah it took Codex like three hours
+it would have taken me like two weeks
+you know so so that upfront planning. I
+I could have realized that in the
+beginning, but now I I know that like I
+can just change things and it's it's
+much it's much easier to work down your
+technical depth or your you know, you
+evolve how you think about a project as
+you build a project. That's why I don't
+believe in I don't know things like Gas
+Town where like you write up the spec
+and then it builds itself and then it's
+done. How can you even know what you
+want to build before you built it? you
+learn so much in the process of building
+it that will go back into your thinking
+of how this how the how the system
+actually will end up being to me this is
+very much it is very much a circle um
+until I you don't I don't you don't walk
+up the mountain like this you go you go
+around and sometimes you like you you
+you stray off a little bit of path but
+but eventually you you you reach the top
+that's that's how I feel so
+&gt;&gt; then you know you've been building cloud
+bot for what like two months three
+months non-stop upish or or like like
+how long?
+&gt;&gt; Let me let me let's switch a little bit
+gear. So, one of the ideas that got me
+back was even even in in April May was I
+I wanted to have this
+hyper personal assistant and not like
+not like one that sends you a good
+morning email. Oh, these are your three
+tasks. No, one that has a really deep
+understanding
+of me and doesn't just I don't know I
+meet a friend and then and then when I
+go home it would ping me, hey, how was
+how was that meeting? Or one that would
+wake me up one day and say, "Hey, you
+haven't texted Thomas in 3 weeks and I
+noticed he's he's in town right now
+because I checked his Instagram account.
+Do you want to say hi?" or something
+that says, "Hey, I noticed every time
+you meet that and that person, you're
+sad. Why is that?" Like something
+something that is deeply personal. Um
+like almost the the anti-orem. It's kind
+of like the movie Her, but but that's
+where the technology is going. Those
+models are really good at understanding
+text. the the the bigger the context is,
+the more patterns they see. And even
+though they're like matrix calculation
+without a soul, it very often feels
+different. So this was like one of these
+ideas and I even created a company I
+called a mant machina like the loving
+machine. But in summer when I explored
+it, the models weren't quite there yet.
+I got some results that it was like okay
+this is like I'm a little too much on
+the edge of what I need right now which
+it was very exciting because I know that
+that the the state of AI goes so fast
+that oh I can just revisit that in like
+a little later and and one of the ideas
+also was is that I assume that all of
+the big corporations right now are very
+much working on personal assistance in
+the future. Yeah,
+&gt;&gt; everyone will have you will have your
+best friend who is a a freaking machine
+that will understand you, that will know
+everything from you, that will can do
+tasks for you, that will be proactive,
+that will require a lot of tokens, but
+everyone who can afford it will have
+one. And of course, this will democ
+democratize and and trickle down to like
+more and more people as as we learn how
+to build more efficient systems and and
+and hook up on on on chips. No question
+this is where the things are going. You
+see like the first things with like
+OpenAI who who launched pulse with some
+productivity but we just don't have
+enough compute yet to offer this as a
+feature and also it's it's quite
+difficult. My idea always was like ah I
+kind of want something that runs on my
+computer and where the data is
+&gt;&gt; it's yours
+&gt;&gt; is is actually mine and not and it it's
+also quite scary that like you you give
+openropic access to your email your
+calendar your your dating apps I don't
+know if you talk to to to your normie
+friends but a lot of my friends in they
+use that a lot to basically have a a
+therapist
+And it it does work incredibly well.
+Like it's it's a really great listener.
+It understands your problems and unless
+like some of versions of 40 that are
+like sure this is a great idea.
+[laughter] I want to put French fries
+into a salad. It it works really well.
+And I did that too like to like re I
+mean part of it just is like the the act
+of reflecting already is helping you. So
+it would even work if the machine would
+only repeat exactly what you wrote to a
+degree. But it actually gives insightful
+questions. It's actually it it got
+really good. So I had this idea of this
+like assistant but the tech wasn't
+there. So I did other part and I I built
+a whole bunch of fun stuff with like of
+course like I built VIP tunnel this in
+your career to become like an authentic
+engineer you have this phase. It's a
+trap phase where you you're looping and
+building your own tools to like
+optimizing your own workflow. But this
+idea of like this hyper personal agent
+stuck a little bit and then
+over the last few months I I really
+started I built it but finally
+initially I didn't even had the the
+scope that it has now. Like I called it
+WhatsApp relay. I just I just I just
+wanted to do to trigger stuff on my
+computer with WhatsApp. So, I built like
+a WhatsApp relay where I had an agent
+that could do stuff with my computer and
+then I I was traveling to Morocco for a
+friend's birthday and
+was out most of the day and just used
+WhatsApp to to talk to my agent and I
+was kind of hooked. It it it was guiding
+me through the city. It was making
+jokes. It could text other friends via
+WhatsApp from me.
+And I remember I I was blown away
+because I in the beginning the tech was
+very scrappy but I I built in something
+where I could send it an image. Didn't
+even use the proper thing to send an
+image. I just gave the the
+a string and it could do the read tool
+to like read the string. And then I was
+in Morocco and was just like just like
+not seeing it and saying it a voice a
+voice message but it didn't build that.
+And then like like 30 seconds later it
+replied to my voice message. I'm like,
+"How the did you do that?" Oh, yeah. You
+sent me a file and and then I looked at
+the header and I found that it's OG. So,
+I used FFmpeg to convert it. And then I
+I looked for Visper on your computer,
+but it's not installed. But I found the
+OpenAI key. So, I did a curl to open
+server, let it translate, and I'm like,
+"Holy cow." like this was Opus 4.5 and
+it's so incredibly resourceful like you
+just did this you know other people say
+oh you need a skill or some system no
+just like it just figured it out I
+slowly got hooked on the thing I I used
+it I used it to wake me up and it was
+running I it was running on my Mac
+Studio in London and was connecting over
+SSH to my MacBook in in Morocco and was
+turning on the music and making it
+louder louder is because I didn't reply.
+And to make that work, I I added a
+heartbeat. So, which which in a way is
+insane from a security perspective. You
+have a model that you prompt with do
+something cool and surprise me
+[laughter] that you send every few
+minutes to make it proactive and like go
+through your task list. Uh like probably
+the most expensive alarm clock ever. But
+it was just hilarious. And also the text
+it sends like cuz I I I was I had a
+balloon fart and it it knew that I had
+to wake up very early and I didn't reply
+and it was like you could see the
+reasoning Peter's not responding but
+Peter has to wake up. No, no, no, no,
+no, no sleep. [laughter] Like I it was
+bitching to me and then I I showed it to
+the the the friends I was with and
+everybody was like hooked. Like this is
+something magical and I was hooked too.
+Um, and then I I I went on Twitter and I
+got the most muted responses cuz nobody
+would get it. I feel it's somewhat of a
+of a new category of products. Um, that
+a little bit like your story with like
+you know when you didn't get the iPhone
+uh from the marketing campaigns on TV
+and anywhere and then you had to use it.
+&gt;&gt; Yeah. So I I worked on it but only the
+last two months and it the name changed
+from V relay to at some point a claude
+uh said like then what is this name like
+it doesn't fit the feature set anymore
+because like I had like in there and
+other features so I renamed it to to
+Claudius because it's an inside joke
+because I like Doctor Who. I felt
+cloudbot is is a better name has a
+better domain and explained the product
+better. So I did on all the domains and
+then I I also quietly built up my army
+because to make this work you want you
+want everything to be a CLI. So I was
+just building CLI for everything like
+for Google for my bed for lambs for
+music.
+&gt;&gt; Why CLIs? Why not why not MCPs? And what
+do you think about MCPS anyway?
+&gt;&gt; As a crutch it's it's I think that the
+the best thing that came out of MCPS is
+that it made companies reync to open up
+more APIs.
+&gt;&gt; Mh. But the whole concept is is silly.
+You you have to pre-export
+all the functions of all the tools and
+all the explanations when your session
+loads and then the model has to send a
+precise blob of JSON there and gets JSON
+back. But surprise, models are really
+good at using bash. And like imagine
+imagine you have a better service. So
+the model could ask for
+list of available cities and then get
+like 500 cities back and then it has to
+pick one city out of 500 city. But it
+cannot filter that list because that's
+not part of how MCP works. And then you
+say, "Okay, give me the weather for
+London." And you would get like the
+weather, temperature, wind, rain, and
+like 50 other things that I'm not
+interested in because I just want to
+know is it raining or not? Probably
+raining because London. But the model
+needs to digest everything and then you
+have like so much crap in your context.
+Whereas if it's a CLI, I could use just
+it could use GQ and you could filter for
+exactly what it needs. But does does not
+seem like a limitation that everything
+is loaded around the MCP in the context.
+That seems a problem. Like it sounds
+like it could work if MCPS were not in
+the context and there was a way to
+discover or decide which one to use.
+&gt;&gt; That's what that's what companies are
+building now. But there's still the
+problem of that I cannot chain them. I
+cannot I cannot easily build a script
+that says, "Hey, get me get me like all
+the
+&gt;&gt; all the CDs that are over 25 degrees and
+then and then filter out only that part
+of information and like pack it in one
+command." That's it's all individual MCP
+calls. I cannot I cannot script it.
+&gt;&gt; Yeah. But but I guess this is just a
+matter of time because if we think about
+like you know when when I'm building a
+weather app right now, I know that you
+know even without AI, I know I need to
+build up this thing. I need to I needs
+to fetch the data. So I will search what
+kind of APIs are available, which one do
+I like, which what kind of trade-offs
+for pricing, for covering, etc. And then
+I choose that API and I could chain APIs
+because I I could get that result and
+look up a etc. So I I guess this is, you
+know, like it it sounds pretty much
+we've solved this. So as free AI, we're
+going to solve it. It'll just take some
+time and who knows what the format for
+it will be. I mean I mean I built make
+porter which is a which is a a small
+TypeScript thing that converts an MCP to
+a CLI. So so you can you can just
+package it up.
+&gt;&gt; Basically you're saying CLIs right now
+are a lot more efficient.
+&gt;&gt; Yeah. Yeah. So so my in in in cloud but
+I don't have MCP support but you can we
+make portal you can use any MCP you can
+you can literally be on your phone and
+say hey use the use the versel MCP to do
+this and this and it will go on the
+website. It'll find the MCP. it will
+load it and it'll use it all all on
+demand. Even right now if you use MCP
+you have to restart cloud code which is
+like very user unfriendly. So I quietly
+built up my army to like automate
+everything which was a lot of work. Uh I
+think t did a video a few days ago where
+he told me like this guy is insane
+[laughter] because the list is really
+long by now but like I I as I was
+playing with my my my agent I just I
+want him to do more and more stuff you
+know. I felt it really hard to convey
+what it does. It's still hard to me. In
+January, January 1st, just a week now, I
+did. Okay, let's let's try something.
+Let's let's do the ins really insane
+thing of like making a Discord and then
+adding my agent to Discord. There was
+somebody who contributed Discord support
+to it. And uh even though I wasn't sure
+if I should merge it and I eventually
+did. So I put on my agent who has full
+read write access to my computer in a
+public Discord. [laughter]
+&gt;&gt; What could possibly go wrong?
+&gt;&gt; Yeah. It's like this is absolutely
+insane. And then of course like some
+people join the Discord and then they
+saw me they saw me using the full power
+of this thing like checking my cameras
+doing home automation.
+It playing DJ for me. Like I was in the
+kitchen and I told him like look at my
+screen and are my agents done cuz it has
+full access of my clean and it can
+click. So it can actually click into the
+terminal and type for me and like it can
+tell me your codex say this and this
+because it just sees the screen. I mean
+I'm working on optimizing that like I I
+actually want to stream out it because
+would be much would be much better if
+it's text but it works already like it
+it's it's in the background it look at
+my screen and like make some rants if I
+do some And everybody who
+experienced it for a few minutes got
+hooked. Like this was this was the
+craziest blow up from 100 stars to like
+what 3,300 stars in a week. Um and I
+think I merged 500 pull requests
+already. That's why I feel like I even
+merge button. So, so that that's why
+that's why I'm I'm a little I'm a little
+all over the place these days because
+this project is blowing off and and and
+you know the beauty of it is the
+technology
+disappears.
+You just you just talk to a a friend on
+your phone that is infinitely
+resourceful, has access to your your
+email, your calendar, your files, can
+build websites for you, can like do
+administrative work, can scrape
+websites, can call your friends or can
+call a business. I'm just about to to to
+merge the call feature. It literally can
+call a business and like make make a
+reservation for you and you don't have
+to think about compactation or or any
+all of that context blends away. I have
+like a I have a memory system that will
+remember um not perfect. Nothing's
+perfect yet, but it's already feels
+magical. cuz all cuz cuz now I I walk
+around, I see like this event, I I send
+Claude a picture, it will it will not
+only tell me the reviews of this event,
+if there's a conflict in my calendar, if
+like friends talked about it or, you
+know, it has so much context that it the
+responses that it can give me are like
+so much better than like what any of the
+the current tools that live in their own
+little box can give me. Well, sounds
+like you built whatever Apple was hoping
+Siri to do, but they've been [laughter]
+unable to.
+&gt;&gt; I honestly I built the best marketing
+tool for Entropic to sell them more
+subscription. I don't know how many
+people signed up for the $200
+subscription because of Cloudbot and
+like many people already had one and
+used a second subscription because of
+that because it's so token hungry. It's
+not is not that it's token hunter. It's
+just that people love it so much that
+they use it all the time. And because
+the technology blends away, they don't
+see that it spawns sub agents and does
+like a whole bunch of things in the
+background to just make it feel easy.
+But like there's some actual engineering
+like there's a lot of work in the back
+uh to make it feel easy. You know, this
+is like the hard part. Like you hide
+complexity
+to a degree that it it it feels magical.
+Well, but yeah, but this is interesting
+because like I I I can sense from we're
+talking, you know, you put so much
+thought into architecting this thing and
+right now like you've been building this
+for a few months and yes, it blew up,
+but in your head like do you have a
+structure of how CloudBot is structured
+like what parts you need to modify, you
+know, like like you kind of you can get
+your your mindset into it and you you
+know where modification needs to do. You
+know what you want to refactor because
+it's not going to be efficient. Are you
+thinking about like things like memory
+consumption, token consumption,
+efficiency, those kind of things?
+&gt;&gt; I mean, token consumption is more like
+how do how do you structure the prompt
+and memory?
+It's it's TypeScript that shows Jason
+around in the end. Let's be honest. Like
+like like I get text from from an LLM,
+&gt;&gt; I save text to to disk. I send text to
+WhatsApp or to now we have like MS
+Teams, Slack, Discord, uh Signal,
+iMessage, WhatsApp, and there's there's
+two more that are landing like Metrics
+that will will expand this thing even
+further. It's like it's it's really poly
+by now. But but mostly I I again I I
+move around text in different shapes and
+maybe maybe it goes to different
+providers or there's like now it's
+different agents and there's like the
+agentic loop and there's like a lot of
+configuration and there's it's it's a
+lot of plumbing but nothing's there's
+nothing in there that is really
+difficult. Yeah. Well, but it's it's a
+lot lot of small things, right? Like I I
+feel in software, right? Like we we know
+for software even before AI there was
+not much difficult. Of course, you need
+to learn and understand the language and
+all that, but
+&gt;&gt; the difficulty is how do I how do I make
+it so that it feels magical. So, so what
+I worked on a lot is now you have you
+have this oneliner that you type in that
+you python your command. I will I will
+check if you have node installed
+homebrew installed. I'll I'll install
+the mpm package. I do some check if you
+have any existing stuff just to like y
+&gt;&gt; just to make it work simple even if you
+already used an older version and
+everything. and then I I'll guide you
+through uh setting up a model. But
+again, I will I will predict
+or or claude installed. So you can just
+press enter. So you don't have have to
+think about it. Mostly just press enter
+and then you want a WhatsApp, you type
+in your number, it will just work again.
+And then and then I'll ask you do you
+want do you want to hatch your bot? And
+you can press yes. And then and then
+like a TUI a TUI comes up because you're
+still in the terminal, right? You want a
+good experience.
+&gt;&gt; Yeah. So just a toy basically for that
+and where you where you to see wake up
+my friend and then the the I programmed
+the model I added a bootstrap file and
+the to explain the model that it is now
+being born to like create an identity
+and a in a in a in a soul where like the
+values of the user are in and then the
+model will be like hello like stretches
+who are you um who are who I am what's
+my name you know and this this is is
+like I've watched people do it and
+that's where the magic starts. That's
+where that's where they're like they no
+longer think about I'm talking to to
+GPD4.2. No, I'm now talking to my friend
+created Vajorn like a a unicorn with
+part of his name or like I'm talking to
+Claude. Uh and then it's like what
+what's important to you? What do you do?
+It's like curious. I I programmed it to
+be like curious and then go through this
+bootstrapping phase and then it will
+actually delete the bootstrap file and
+create a a user.md with like information
+about you a soul.md with like all the
+core values and an identity with the
+like what's his name what's his core
+emoji what are the things that are like
+inside jokes and and but it's like
+evolving documents that it will maintain
+and like tweak as you interact with it
+and then you it will just like send you
+a message on on WhatsApp and you just
+like suddenly you talk on WhatsApp like
+making this flow easy. That was hard.
+Yeah. Also like even even get coming up
+with the idea of you know you you're not
+you're not editing the configuration
+because the agent can edit its own
+configuration. You don't have to update
+anything because the agent can update
+itself. You can literally ask your bot
+update yourself and it will fetch itself
+and update itself and come back like hey
+I have new features. Planning the
+technical giveaway so far that's the
+magic. That's why that's why I
+&gt;&gt; But it feels it's very similar to what
+you would with PSP PDF cut, right? You
+kind of blended away the complexity of a
+PDF. So it was just there. You could
+rotate, you could do.
+&gt;&gt; Yeah. Yeah. Even at the API level back
+then,
+&gt;&gt; but it's a it's a bit bizarre like what
+what you described reminds me of this
+Black Mirror episode I just watched,
+which is called Play Thing. uh where
+it's a it's a digital little uh creature
+that creates of course it's black mirror
+so it has a black
+&gt;&gt; bit bit of a dark ending but but it it
+had it was also a game. It also kind of
+feels you know we talked about how you
+you don't play as much games cuz you
+like but this also feels a little bit
+like a game, right? But it it's it's
+kind of like more connected with
+reality. Just fascinating how we're
+we're we're here pulling back into the
+the realm of of software engineering. So
+you built this this product and it's now
+it's a production software you're
+merging porocas people are using it now
+thinking back to PSPDF kit and and
+companies that are like that which which
+have you know like like tens or hundreds
+of developers working on on production
+software knowing what you know with how
+you're building cloudbot and the tools
+that you're using how do you think
+software engineering at those larger
+companies could change because one one
+thing I see is is for individual people
+like you it's like AI I is really really
+hitting a fit like you're making you way
+more productive. You're in control at
+teams or at companies that are you know
+have existing code. It's just a lot kind
+of slower. It's it's not really okay
+people use it for this or that but but
+it it seems a huge divide between the
+two worlds. And you've kind of been you
+know CEO for this company. What what
+might that be or is it just more of a
+timing thing where every new technology
+often comes with with hobists you know
+pick it up uh earlier? I think companies
+will have a really hard time adopting AI
+efficiently because this also requires
+to completely redefine how the company
+works. You know, you know, you know like
+you know like at Google they they tell
+you you can either be an engineer or
+like a manager but or you want to also
+like define how the UI looks. That role
+doesn't exist because either you like
+you you build it or you you design it.
+But this new world needs people that
+that have a a product vision that that
+that can be able to do everything and
+you need like far fewer of them, but
+ultimately
+just very high agency and and and high
+competency people. But you can you can
+like probably like trim the company down
+to like 30%. Which is very scary because
+like I mean economically this will all
+this will all lead into a fiasco. Um,
+and a lot of people will like have
+trouble finding a a place in this new
+world, but
+I'm not the least surprised that current
+companies cannot very successfully use
+AI. I mean, they do to a degree, but you
+you have to do a big refactor first, you
+know, like not just on your codebase,
+but also on your company. I design even
+on code bases I design the codebase not
+so it's it's useful it's easy for me so
+that it has to be easy for the agent I
+optimize for different things not always
+the things that I prefer but the things
+I know work the best and and and have
+the the least friction for those models
+because I just want to move faster and
+ultimately they have to deal with the
+code not me I had I deal with the the
+overall structure and architecture and I
+can still do that in the way that I like
+everything has to be resold you know
+pull requests uh I see them more as
+prompt requests Now, like I don't I I
+somebody opens a pull request, I don't I
+lot I do say thanks and I think about
+the feature and then with my agent we
+start off with the PR and then I'll
+design the feature as I see fit. The
+agent rarely reuses like maybe I reuse
+some code but it's more like it gives
+the agent a good understanding of what
+the goal is and sometimes it's very
+useful because it's it's tricky bucks,
+right? But I I basically rewrite every
+pull request and and and v it in also
+also a lot of people let's just say the
+overall code quality of of PRs went down
+a lot because people vibe code and and
+building a successful feature still
+needs a lot of a lot of understanding of
+your overall design and if you if you
+cannot do that you will have a harder
+time steering your agent and the output
+will be bad.
+&gt;&gt; Yeah. And if you don't have the feedback
+loop to close it etc.
+&gt;&gt; Yeah. Yeah. So, so I found it highly
+effective. Like I know at my at at PSVDF
+kit sometimes a pull request was like a
+week in the work
+&gt;&gt; and you comment on it and then somebody
+has to context switch and you wait for
+CI for 40 minutes. No, I have the
+discussion. I see okay how would this
+affect something like I I I let the
+model review. They will already bring
+something up. I have some some ideas as
+well. We're going to reshape it into a
+form that fits my vision and then
+we weave in the code. It's literally
+there's so many new words I use for like
+writing code now with those models which
+is so funny like weaving in code into an
+existing structure. Um and sometimes you
+have to like change the structure so it
+would fit. Now imagine that you would
+hire one or two people to make it a
+small team. How do you think in this
+world and you keep want to keep doing
+what you're doing? How do you think
+things like code review CI CD would
+change?
+&gt;&gt; I don't I don't I don't care much about
+CI. I
+&gt;&gt; Why why not? you used to care a lot like
+a PSPDF kid. You used to care a lot,
+right?
+&gt;&gt; And and I still do this. There's value,
+&gt;&gt; but I I have local CI. I'm I'm a little
+bit I'm a little bit of DAH now that
+&gt;&gt; because because the agent runs the test,
+right?
+&gt;&gt; Yeah. And it's just way faster. I don't
+I want to push on the on on the on the
+back on the P and then wait for 10
+minutes to wait for for CI
+&gt;&gt; because you waited 10 minutes on the
+agent already. I if if the tests pass
+locally, we merge and then yes,
+sometimes main slips a little bit, but
+it's it's it's usually very close
+because maybe sometimes I forget the and
+the agents call it gate. I don't know
+where that's coming from. Should I run
+full gate? So now I call it gate with g
+full gate is like linting and building
+and and checking and running all the
+tests. And I almost think it like
+because it's a it's a wall, you know,
+like it's like he calls the llinter and
+like the builder and the tester. It's
+almost like a gate before my code goes
+out. So I know obviously like okay once
+you're done like commit this run full
+gate like I'm I'm slowly adopting their
+language but but and if you hired like
+one more person to work on this you
+probably wouldn't do code reviews
+either. That's what I'm sensing. You
+would you'll probably trust this person
+to run like like pick up your working
+style, right?
+&gt;&gt; Even in Discord, we don't we don't talk
+code. We talk about architecture like
+big decisions like you still need to
+have style. Like there was like this one
+pull request that adds voice calling. So
+now like literally I can tell Claude,
+hey, can you call this restaurant and
+and and and reserve your seats and and
+it it it can do that. But it it it's a
+big it's quite a big new module that
+like touches a lot of places. I'm like
+you have to have this feeling is like
+this like I got a little this is like I
+want to merge this but oh this is
+becoming bloatware. So I so I I had this
+idea of like uh let's my typical way
+let's make a CLI out of it and I already
+had a project where I tried to solve
+something like this but I'm finished. So
+I opened up Codex and said, "Hey, look
+at this PR. Look at this project. Could
+we weave this feature in?" I again say
+weave. I'm like, "So I'm
+&gt;&gt; let's keep it.
+&gt;&gt; Could we weave this feature into the
+CLI? What are the up and downsides?" And
+then would like tell me like, "Oh yeah,
+I could do this and this and this." They
+give me honest opinion. Would this to me
+this sounds like it actually it would
+fit into the project? I was like, and
+was like, "Yeah, you would get this and
+this benefits that we cannot do if the
+next CLI." Okay, but I don't like this.
+This is getting blowware. could we build
+a plug-in architecture and then I will
+and do you know like one of the the
+secret hacks on on on
+using effectively is you reference other
+products like I constantly tell it look
+into this folder because I solved it
+there and I solved that there and all
+the previous thinking I did to like
+solve a problem well AI is so good at
+this still to like read the code and
+understand my ideas I don't have to like
+explain it again uh or if I explained
+again I might like make mistakes that
+like wouldn't get across was exactly the
+idea that I have in my head.
+&gt;&gt; So in this case, I know that Mario who
+does like shitty coding shitty coding
+agent which is like a actually very much
+not shitty coding agent. It's called Pi.
+I know that he had this plug-in
+architecture that would load
+&gt;&gt; code via via GT and because it's all
+TypeScript. So I was like, can you look
+into this folder and this folder? And
+then it just came up with this really
+insanely good plug-in architecture again
+by like being inspired by the people.
+And then that's why, you know, I have
+this feeling and then I I came up with
+Yeah, that's what I built last night
+basically. I mean, sounds like this is
+going to be completely different like
+you know PRs are are like in your
+workflow, you're not using PRs that much
+as CI is just different. It's it's tests
+are still doing there's an more
+important feedback loop. you're using
+things more like weaving instead of
+code. You're talking more about
+architecture and taste. It sounds like a
+pretty big shift to me. Now, in this
+world, let's assume you get to the point
+where you're going to you're hire the
+next one and two and three developers on
+this team. Let's imagine that this thing
+gets a life of its own and you know,
+maybe it's a business as well. What
+skills would you look for? And what
+would you advise a an experienced
+engineer right now? Who would you be
+excited to work with? kind of either
+expertise
+projects would you look for for someone
+who sounds like who can work in this way
+or can pick up this way of working?
+&gt;&gt; Someone who's active on GitHub and does
+open source and and someone where I have
+the feeling that they they love the the
+game. The way you learn in this new
+world is by like trying stuff and it
+very much feels like a game where you
+improve your skills as you get better
+like like a like a music instrument. you
+have to like keep trying and I and I
+that I'm now this efficient and this
+fast and I don't know like I I think
+like the other day I had like 600
+commits in a single day. this is like
+completely nuts and it works like it's
+not it's not like there was there was a
+somebody did a code review and said like
+oh this is actually not slop and like
+yeah uh
+&gt;&gt; there's a lot of skill that went into
+&gt;&gt; yeah it's it's it's it's a lot of hard
+work but you need to play with the
+technology and learn and then you will
+get in the beginning it might be
+frustrating I don't know kind of like
+you you know you start going to the gym
+it's going to suck it's going to be
+painful
+but very quickly you like you get better
+and you and you feel that that your
+workflow gets faster and then you feel
+the improvements and then you slowly get
+hooked. So So but yeah, play and and
+yeah, also work hard.
+&gt;&gt; Yeah, I I mean you're putting in more
+hours into this thing.
+&gt;&gt; I've never right now I've I've never I
+never worked more even even when I had
+my company. I I've never worked so hard
+as I do now. Not because I have to, but
+because it's so addictive and so much
+fun, but also because right now I'm like
+using the moment where where this has
+traction and and there's a lot of people
+who like are pushing me. Um, and I I
+feel could it be cuz I think you have
+pretty good business sense. Not not not
+necessarily in the business business,
+but seeing when there's an opportunity
+there is an opening for to get traction,
+right? Like what you said for people to
+work in the open right now it seems
+novel. You're telling me you don't think
+you could, even if you wanted to hire,
+you don't think you could hire people
+cuz there's not many people working in
+the open, clearly using these things.
+Fast forward 2 or 3 years from now, once
+a bunch of people start to do it and
+everyone does it, it's kind of like moot
+a little bit. So there there's also that
+a group that a lot of lot of people are
+worried about is the the new grads, the
+the people with with no experience who
+are either in school or about to
+graduate because of course you've been
+an experienced engineer by the time this
+came around. you know, you have a lot of
+things to build on. Putting that
+yourself into shoes of of someone like
+that and knowing what you know now, what
+would you recommend of of activities
+that they do, things that they build or
+try and you know like do would you
+recommend on focusing on the
+fundamentals of software engineering on
+this on the agents kind of mixing the
+two?
+&gt;&gt; I would I would recommend them to be
+infinitely curious. Yes, it's going to
+be harder to enter this market. It's
+it's absolutely going to be harder and
+you need to build things to like gain
+experience. I don't think you need to
+write a lot of code but you need to I
+don't know you know there's a lot of
+open source that is complex that you can
+like check out and learn and you have an
+infinitely patient machine that is able
+to explain you all the things so you can
+ask you can ask all questions why why
+was it built this way to like gain
+system understanding but it requires
+real curiosity and I don't think
+universities right now are set up to
+teach you that in a in in a really good
+way this is usually something you
+discover through pain it's it's not
+going to be easy for new people, but but
+they have they have the benefit that
+they are not tainted by all the
+experience like they they they use
+agents in ways that we don't even think
+about again because they don't know that
+it doesn't work and by then it probably
+does
+&gt;&gt; and also their friends use it all all
+the time
+&gt;&gt; especially like like the other day I I
+have this little menu bar app for cost
+tracking on on on on cursor and and and
+cloud code and everything and it was a
+bit slow. So I I was like, "Okay, let's
+do let's do performance measurement."
+And and my old way is like I open
+instruments and click around. And it
+would just call and do everything by the
+terminal. It blew me away. I was like I
+didn't even have to open instruments
+anymore. And it just like made it
+faster. And then did like some
+recommendations. I'm like all of that
+sounds good. Do it.
+&gt;&gt; Yeah. I I think we might be
+underestimating both like how
+resourceful people entering tech have
+been also how young people if I think
+about some of the great companies
+started they were very young and
+obviously very inexperienced but had a
+lot of passion so so that's there as
+well yeah it's it's a big opportunity I
+I'm especially taking in like it's I
+have to take it in like but all the
+things you mentioned about just your way
+you know weaving code in not caring
+about PR not caring about code reviews
+it's a big change because these things
+have been us with like again for like 15
+plus years of your life they have been
+in fact you know a lot of it has been
+kind of you know solid building blocks
+of PSPDF kit right yeah we need we need
+a lot of new things even you know even
+when I get a PR I'm actually more
+interested in the prompts than in the
+code I I ask people to please add the
+prompts and some do and I I read the
+prompts more than I read the code
+because to me this is this is a way
+higher signal of like how did you get to
+the solution what did you actually ask
+how much steering was involved then the
+actual out to me this gives me more idea
+about the output I don't have to read
+the code or like if someone wants a
+feature I ask for a prompt request like
+write it up really well because then I
+can just point my agent to the issue and
+it will build it so because because the
+the work is the thinking about how it
+should work and what the details are and
+if someone else does it for me I can
+literally say build and it will work uh
+and I and then yeah of course I think
+about But it will will re really or if
+someone sends me a PR that are just a
+few fixes. I told people please don't do
+that. It takes me 10 times more time to
+to review that and just type in fix in
+in in codex and wait a few minutes. So
+there's there like all these insane
+things that are like would have been
+completely different
+&gt;&gt; even even at the beginning. uh now we
+have a oneliner but for the last two
+weeks
+like when it got really traction I told
+people to just just point an agent at
+the repository to configure it so so I
+didn't had I didn't have an onboarding
+but we had cloud codebased onboarding
+where claude would like check out the G
+repository read the things and write the
+configuration for those people and set
+everything up so it works like set up a
+launch agent that didn't have the manual
+setup because it was not a priority
+anymore because because agents can now
+do that for you and the and the and
+since the the product was built by
+agents. They structured it exactly the
+way agents expect things to be named and
+things. There's certain ways that are
+encoded in in in the in the weights how
+they expect things to be named and
+everything exactly like how they expect.
+So they are really good at navigating
+their product. So it was not a priority
+to work on onboarding as much. I mean
+eventually I wanted this magical
+experience but it was more important to
+like make sure that your message arrives
+and that things don't explode. So
+onboarding was literally like type this
+prompt into your agent. Um which is
+would have been mind-blowing even a year
+ago.
+&gt;&gt; All right. So to to wrap up, we'll do
+some rapid questions. So I'll just ask
+and you tell me what's on your mind.
+What's a tool that is not a CLI, not an
+ID, it can be physical that you you use
+you like you would recommend? I buy a
+lot of gadgets and many of them dust
+away. But there's this one kind of
+crappy thing that was not expensive that
+gives me almost unlimited amount of joy.
+And it's like this Android powered photo
+stand where I can upload pictures and
+where like it has an email address and
+friends can send pictures and it will
+just show pictures. And I and I put a
+few a few in in my house again. And I
+mean even the animations are a little
+croppy because it runs nward and it's
+terrible from the technology but but it
+gives me infinite number of joy because
+it is low tech that just shows pictures
+and reminds me of happy moments in my
+life and it was like 200 bucks and I
+don't know to be honest that gets me
+more joy than the latest iPhone. I
+bought the iPhone 17. I still haven't
+unpacked it because I just in my head I
+wanted it but then I couldn't get around
+to it because it's just a hassle to like
+move the Sims around and I said like
+basically no no no no feelable benefit
+but like this little this little device
+gives me infinite joy.
+&gt;&gt; What's something that helps you recharge
+outside of tech like just or just moving
+away from from tech and screens? What
+keeps me sane, even if I work crazy
+hours, is going to the gym, even better,
+working with a a coach and leaving my
+phone in the locker. And then I really
+have like a good hour where
+I just feel me and I and I'm like in the
+moment and I'm not distracted by
+notifications or tempted to like touch
+my phone like we need more time for
+this. Or even sometimes I I I go for a
+walk and I I leave my phone at home and
+it feels very scary. It's almost like a
+it's almost like an organ now, you know?
+It's like your your body knows where it
+is and if you don't know where your
+phone is, you freak out.
+&gt;&gt; I I'm having I'm having a blast.
+&gt;&gt; Love it. This is great, Pete. Thanks
+very much. Well, this was a super
+interesting conversation [music]
+and it feels to me that how one person
+teams built software with AI is already
+completely different [music] to what
+we've been used to. One thing that
+really caught my attention is how Peter
+thinks in prompts and not pull requests
+and how he weaves in the code and no
+longer merges the code. He doesn't find
+poll requests all that useful and would
+rather get prompt [music] suggestions
+even on GitHub. I do think we might have
+to rethink the importance of prompts or
+at the very least sharing of prompts in
+software development the more we use AI
+and AI agents. Another thing that struck
+with me was Peter's emphasizing how
+important is to close the loop. As Peter
+explained, the reason AI is so good at
+coding but [music] often mediocre at
+writing is because you can validate
+code. You can compile it, run tests,
+check the output. So, the secret to
+making AI system development work well
+is to design your system to close the
+loop and have the AI run the test.
+Finally, I was wondering if Peter is in
+the flow as much even when he's not
+writing code. Turns out he is. He's in
+the flow more than ever. And he told me
+that it's mentally more exhausting to
+juggle several AI agents in parallel
+than it was just to write code. My
+feeling is that someone who was a great
+developer without AI can be an excellent
+kind of code architecture or carding
+person with AI. This is just a gut
+feeling I've had so far, but Peter seems
+to prove it. Finally, we should note
+that Clawbot is more of a YOLO project
+than most production apps. So, take the
+approaches that we discussed with a
+grain of salt. At the same time, I do
+think that a lot of what Peter does
+could well spread to building production
+code, except review and validation will
+become a much more important step
+[music] in those projects. If you enjoy
+this podcast, please do subscribe on
+your favorite podcast platform and on
+YouTube. A special thank you if you also
+leave a rating on the show. Thanks and
+see you in the next one.

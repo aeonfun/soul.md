@@ -1,0 +1,759 @@
+you've been uh documenting the evolution
+of your uh dev workflow over the past
+few months. There's a really good blog
+post on August 25th and October 14th and
+the recent one December 28th. I
+recommend everybody go read them. They
+have a lot of different information in
+them, but sprinkled throughout is the
+evolution of your dev workflow. So, I
+was wondering if you could speak to
+that. I started my my first touch point
+was cloud code like in April. It was
+not great but it was good and
+this whole paradigm shift that suddenly
+work in the terminal
+was very refreshing and different. Um
+but I still needed the IDE quite a bit
+because it's just not good enough. And
+then I experimented a lot with cursor.
+Um,
+that was good. I didn't really like the
+fact that it was so hard to have
+multiple versions of it. So eventually I
+I I went back to cloud code as my my
+main driver
+and that got better and yeah at some
+point I had like
+seven subscriptions
+like was burning through one per day
+because I was I got I really comfortable
+at
+running multiple windows side by side
+&gt;&gt; all CLI all terminal. So like what how
+much were you using ID at this point?
+&gt;&gt; Um very very rarely mostly a diff viewer
+to actually
+like I got more and more comfortable
+that I don't have to read all the code.
+I know I have one blog post where I say
+I don't read the code. But if you read
+it more closely, I mean I don't read the
+boring parts of code because if you if
+you look at it, most software is really
+just like data comes in, it's moved from
+one shape to another shape. Maybe you
+store it in a database, maybe I get it
+out again, I'll show it to the user. The
+browser does some processing or native
+app. Some data goes in, goes up again,
+and does the same dance in reverse.
+We're just we're just shifting data from
+one form to another
+and that's not very exciting. Or the
+whole how is my button aligned in
+Tailwind. I don't need to read that
+code. Other parts that
+maybe something that touches the
+database.
+Um yeah, I have to do I have to read and
+review that code.
+Can you actually there's in one of your
+blog post uh the just talk to it the no
+BS way of agentic engineering you have
+this graphic the curve of agentic
+programming on the x- axis is time on
+the y-axis is complexity
+uh there's the please fix this where you
+prompt a short prompt
+on the left and in the middle there's
+super complicated eight agents complex
+orchestration with uh multi-checkouts
+chaining agents together custom subation
+workflows, library of 18 different slash
+commands, large full stack features.
+You're super organized. You're super
+complicated, sophisticated software
+engineer. You got everything organized.
+And then the elite level is uh over time
+you arrive at the zen place of once
+again short prompts. Hey, look at these
+files and then do these changes.
+&gt;&gt; I actually call it the agentic trap. you
+I saw this in a in a lot of people that
+have their first touch point and maybe
+start vibe coding. I actually think vibe
+coding is a slur.
+&gt;&gt; You prefer agentic engineering.
+&gt;&gt; Yeah. I always tell people I I do
+agentic engineering and then maybe after
+3:00 a.m. I switch to vibe coding and
+then I have regrets on the next day.
+&gt;&gt; Yeah. Well, a walk of shame.
+&gt;&gt; You just have to clean up and like fix
+your We've all been there.
+&gt;&gt; So, people start trying out those tools,
+the builder type, get really excited,
+and then you have to play with it,
+right? It's the same way as you have to
+play with a guitar before you can make
+good music. It's it's not, oh, I I touch
+it once and it just flows off. It It's a
+It's a a skill that you have to learn
+like any other skill. And I see a lot of
+people that are not as positive
+mindset towards the tech. They try it
+once.
+It's like you sit me on a piano, I
+played once and it doesn't sound good
+and I say the piano's That's
+that's sometimes the impression I get
+because it does not it needs a different
+level of thinking. You have to
+learn the language of the agent a little
+bit. understand where they're good and
+where they need help. You have to almost
+consider consider how Codex or Claude
+sees your codebase. Like they start a
+new session and they know nothing about
+your product project and your project
+might have hundred thousands of lines of
+code. So you got to help those agents a
+little bit and keep in mind the
+limitations that context size is an
+issue to like guide them a little bit as
+to where they should look
+and that often does not require a whole
+lot of work. But it's helpful to think a
+little bit about
+their perspective as as weird as it
+sounds. I mean it's not it's not alive
+or anything, right?
+But they always start fresh. I have I
+have the the system understanding. So
+with a few pointers I can immediately
+say, "Hey, I want to like make a change
+there. You need to consider this this
+and this." And then they will find a
+look at it and then they'll their view
+of the project is always is not never
+full because the full thing does not fit
+in. So you you have to guide them a
+little bit where to look and also how
+they should approach the problem.
+There's like little things that
+sometimes help like take your time.
+That sounds stupid but and in 5.3 Cor
+5.3 that was partially addressed but
+those
+also oppos sometimes they are trained um
+with being aware of the context window
+and the closer it gets the more they
+freak out.
+literally like some sometimes you see
+the the real raw syncing stream. What
+you see for example in Codex is
+post-processed.
+&gt;&gt; Mhm.
+&gt;&gt; Sometimes the actual raw syncing stream
+leaks in and it sounds something like
+from the Borg like run to shell must
+comply
+but time
+and then they they they're like like
+that comes up a lot especially. So, so,
+&gt;&gt; and that's that's a nonobvious thing
+that you just would never think of
+unless you actually just spend time
+working with those things and getting a
+feeling what works, what doesn't work.
+You know, like just just as I write code
+and I get into the flow and when my
+architecture is not right, I feel
+friction.
+Well, I get the same if I prompt and
+something takes too long. Maybe, okay,
+where's the mistake? Did I do I have a
+mistake in my thinking? Is there like a
+misunderstanding in the architecture?
+Like
+if if something takes longer than it
+should, I you can just always like stop
+and like just press escape. Where where
+are the problems?
+&gt;&gt; Maybe you did not sufficiently empathize
+with the perspective of the agent in
+that in that sense. You didn't provide
+enough information and because of that
+it's thinking way too long.
+&gt;&gt; Yeah. it just tries to force a feature
+in that your current architecture makes
+really hard.
+Um
+like
+you need to approach this more like a
+conversation. For example, when I
+my favorite thing when I review a pull
+request and I'm getting a lot of pull
+requests
+I first is review this PR it got me the
+review. My first question is do you
+understand the intent of their PR? I
+don't even care about the
+implementation. I what like in almost
+all PRs are person has a problem. Person
+tries to solve the problem person sends
+PR. I mean there's like clean up stuff
+and other stuff but like 99% is like
+this way right? They either want to fix
+a fix a bug, add a feature,
+usually one of those two.
+And then codics will be like, yeah, it's
+quite clear person tried this and this.
+Is this the most optimal way to do it?
+No. In most cases, it's it's like a not
+really.
+And then and then I start like, okay,
+what would be a better way? Have you
+have you looked into this part, this
+part, this part? And then most likely
+Codex didn't yet because his context
+size is empty, right? So you point them
+into parts where you have the system
+understanding that it didn't see yet and
+it's like oh yeah like we should we also
+need to consider this and this and then
+like we have a discussion of how would
+the optimal way to to solve this look
+like and then you can still go farther
+and say could we could we make that even
+better if we did a larger refactor?
+Yeah. Yeah. we could totally do this and
+this and or this and this and then I
+consider okay is this worth the refactor
+or should we like keep that for later.
+Many times I just do the refactor
+because uh refactors are cheap now even
+though you might break some other PRs
+nothing really matters anymore like
+those modern agents will just figure
+things out. They might just take a
+minute longer, but you have to approach
+it like a discussion with a a very
+capable engineer who's
+generally makes good
+comes up with good solution. Some
+sometimes needs a little help. But also
+don't force your world view too hard on
+it. Let the agent do the thing that it's
+good at doing based on what it was
+trained on. So don't like force your
+world view because it might it might
+have a better idea because it just knows
+a better idea better because I was
+trained on that more. That's multiple
+levels actually. I think partially why
+I find it quite easy to work with agents
+is because I led engineering teams
+before you know I had a large company
+before and eventually you have to
+understand and accept and realize that
+your employees will not write the code
+the same way you do. Maybe it's also not
+as good as you would do, but it will
+push the project forward. And if I
+breathe down everyone's neck, they're
+just going to hate me and they're going
+to move very slow.
+&gt;&gt; Yeah.
+&gt;&gt; So, so some level of acceptance that
+yes, maybe the code will not be as
+perfect. Yes, I would have done it
+differently,
+&gt;&gt; but also yes, this is a this is a
+working solution. And in the future, if
+it actually turns out to be too slow or
+problematic, we can always redo it. We
+can always spend more time on it. A lot
+of the people who struggle are those who
+they try to push their way on too hard.
+&gt;&gt; Like we are in a stage where
+I'm not building the code base to be
+perfect for me, but I want to build a
+code base that is very easy for an agent
+to navigate. So
+&gt;&gt; like don't fight the name they pick
+because it's most likely like in the
+weights the name that's most obvious.
+next time they do a search, they'll look
+for that name. If I decide, oh no, I
+don't like the name,
+I'll just make it harder for them. So,
+that requires, I think, a shift in in
+thinking
+uh and and in how do I design a a
+project so agents can do their best
+work.
+&gt;&gt; That requires letting go a little bit
+just like leading a team of engineers.
+Yeah. because it might come up with a
+name that's in your view terrible, but
+it's kind of a simple symbolic
+step of letting go.
+&gt;&gt; Very much so.
+&gt;&gt; There's a lot of letting go that you do
+in your whole process. So, for example,
+I read that you never revert,
+always commit to main. There's a few
+things here.
+You don't refer to past sessions. So
+there's a kind of yolo component because
+reverting means
+instead of reverting if the problem
+comes up you just ask the agent to fix
+it. I read a bunch of people in their
+workflow is like oh yeah the prompt has
+to be perfect and if I make a mistake
+then I roll back and redo it all.
+In my experience that's not really
+necessary. If I roll back everything it
+would just take longer. If I see that
+something's not good, we just move
+forward and then I commit when when when
+I like I like the outcome. I even switch
+to
+local CI, you know, like DHH inspired
+where I don't care so much more about
+the CI on GitHub. We still have it.
+still it still has a place
+but I just run tests locally and if they
+work locally I push domain
+um a lot of the traditional ways how to
+approach projects I I wanted to give it
+a different spin on this project you
+know there's no there's no develop
+branch main should always be shippable
+yes we have when I do releases I I run
+tests and sometimes I
+I basically don't commit any other
+things so so we can we can stabilize um
+releases but the goal is that main's
+always shippable and moving fast.
+&gt;&gt; So by way of advice would you say that
+your prompts should be short? I used to
+write really long prompts and by writing
+I mean I don't write I I I talk you know
+these hands are like too too precious
+for writing now I just I just use
+bespoke prompts to build my software.
+&gt;&gt; So you for real with all those terminals
+are using voice.
+&gt;&gt; Yeah I used to do it very extensively
+to the point where there was a period
+where I lost my voice.
+You're using voice and you're switching
+using a keyboard between the different
+terminals, but then you're using voice
+for the actual input.
+&gt;&gt; Well, I mean, if I do terminal commands
+like
+switching folders or random stuff, of
+course, I type. It's faster, right? But
+if I I talk to the agent in in most
+ways, I just actually have a
+conversation. You just press the the
+walkie-talkie button and then I'm just
+like
+use my phrases. Sometimes when I do PRs
+because it's always the same, I have
+like a slash command for a few things,
+but in even that I don't use much um
+because it's it's very rare that it's
+really always the same questions.
+Sometimes I I see a PR and for you know
+like for PRs I actually do look at the
+code because I don't trust people like
+there could always be something
+malicious in it. So, I need to actually
+look over the code. Yes, I'm pretty sure
+agents will find it.
+But yeah, there's a funny part where
+sometimes PRs take me longer than if you
+would just write me a good issue.
+&gt;&gt; Just natural language English. I mean,
+in some sense, shouldn't that be what
+PRs
+slowly become? Is English? Well, what I
+really tried with the project is I asked
+people to give me the prompts and
+very very few actually cared. Even
+though that is such a wonderful
+indicator because I see I actually see
+how much care you put in and it's very
+interesting because the currently the
+way how people work and drive the agents
+is is wildly different
+&gt;&gt; in terms of like the prompt in terms of
+what what are the actually what are the
+different
+interesting ways that people think of
+agents that you've experienced? I think
+not a lot of people ever considered the
+way the agent sees the world.
+&gt;&gt; So empathy being empathetic towards the
+agent
+&gt;&gt; in a way empathetic but yeah you you
+like you at your stupid clanker
+but you don't realize that they start
+from nothing and you have like a bad
+agent file that doesn't help them at all
+and then they exploit your code base
+which is like a pure mess with like
+weird naming and then people complain
+that the agent's not good. like you try
+to do the same if you have no clue about
+the code base and you go in. So yeah,
+maybe it's a little bit of empathy,
+&gt;&gt; but that's a real skill like when people
+talk about a skill issue because I've
+seen like worldclass programmers,
+incredibly good programmers say like
+basically say LLMs and agents suck. And
+I think that probably has to do with
+it's actually how good they are at
+programming is almost a burden in their
+ability to empathize with the system.
+that's starting from scratch. It's a
+totally new paradigm of like how to
+program. You really really have to
+empathize or at least it helps to create
+better prompts cuz those things know
+pretty much everything and everything is
+just a question away. It's just often
+very hard to know which question to ask.
+Um,
+you know, I I feel also like this
+project was possibly because I I spent
+an ungodly time over the year to play
+and to learn and to build little things
+and every step of the way I got better,
+the agents got better, my my
+understanding of how everything works
+got better. Um, I could have not
+had this level of of output
+even a few months ago. Like it it really
+was like a compounding effect of all the
+time I put into it. And I
+I didn't do much else to see other than
+really focusing on on building and
+inspiring. I mean, I did a whole bunch
+of conference talks.
+&gt;&gt; Wow. But the building is really practice
+is really building the actual skill. to
+playing playing and so doing building
+the skill of what it takes it to work
+efficiently with LLMs
+&gt;&gt; which is why it would you went through
+the whole arc of software engineer talk
+simply and over complicate things
+there's a whole bunch of people who try
+to automate the whole thing
+&gt;&gt; I don't think that works maybe a version
+of that works but that's kind of like in
+the 70s when we had the waterfall model
+of software development I
+even war related right I started out I I
+built a very minimal version I played
+with it I I need to understand how it
+works how it feels and then it gives me
+new ideas I could not have planned this
+out in my head and then put it into some
+orchestrator and then like something
+comes out like it's to me it's much more
+my idea what it will become evolves as I
+build it and as I play with it and as I
+I try out stuff. So, so people who try
+to use like things like Gast Town or all
+these other orchestrators where they
+want to automate the whole thing, I feel
+if you do that, it misses
+style, love, that human touch. I don't
+think you can automate that away so
+quickly. So you want to keep the human
+in the loop but at the same time you
+also want to create the agentic loop
+where it is very autonomous
+while still maintaining the human in the
+loop. I it's a tricky it's a tricky
+balance right because you're all for
+&gt;&gt; your big CLI guy you're big on closing
+the agentic loop. So what what's the
+right balance like where's your role as
+a developer? you have three to eight
+agents running at the same time
+&gt;&gt; and then maybe one builds a larger
+feature maybe maybe with one I explore
+some idea I'm unsure about maybe two
+three are fixing a little bugs or like
+writing documentation actually I think
+writing documentation is is always part
+of a feature so
+most of the docs here are autogenerated
+and just infused with some prompts
+&gt;&gt; so when do you step in and add a little
+bit of your human love into the picture
+&gt;&gt; I I mean one one thing is just about
+what do you build and what do you not
+build and how does this feature fit into
+all the other features and like having
+having a little bit of a of a vision. So
+which small and which big features to
+add. What are some of the
+hard design decisions that you find
+you're still as a human being required
+to make that the human brain is still
+really needed for?
+Is it just about the choice of features
+to add? Is it about implementation
+details? Maybe the programming language,
+maybe it's a little bit of everything.
+The the programming language doesn't
+matter so much, but the ecosystem
+matters, right? So, I picked TypeScript
+because I wanted it to be very easy and
+hackable and approachable.
+Uh, and that's the number one language
+that's being used right now, and it fits
+all these boxes, and Asians are good at
+it. So that was the obvious choice.
+Features of course like it's very easy
+to like add a feature. Everything's just
+a prompt away, right? But often times
+you pay a price that you don't even
+realize. So thinking hard about oh what
+should be in core? Maybe what's a what's
+an experiment? So maybe I make it a
+plug-in. What where do I say no? Even if
+people send a PR and I'm like, "Yeah, I
+like that too, but
+maybe this should not be part of the
+project. Maybe we can make it a skill.
+Maybe I can like make the plug-in
+um
+the plug-in side larger so you can make
+this a plug-in." Even though right now
+it it doesn't.
+there's still a lot of there's still a
+lot of craft and thinking involved in
+how to make something or even even you
+know even when you start it those little
+messages like I'm built I built on
+caffeine Jason 5 and a lot of willpower
+and like every time you get it you get
+another message and it kind of primes
+you into that this is this is a fun
+thing
+&gt;&gt; it's not yet
+&gt;&gt; Microsoft Exchange 2025 and fully
+enterprise is ready. Um, and then when
+it updates, it's like, "Oh, I'm in. It's
+cozy here." You know, like something
+like this that like uh makes you smile.
+Um,
+agent would not come up with that by
+itself. That's like that's the
+how you build software. That's the
+delights.
+&gt;&gt; Yeah, that delight is such a huge part
+of
+inspiring great building.
+Right? Like that you feel the love in
+the great engineering. That's so
+important. Humans are incredible at
+that. Great humans, great builders are
+incredible at that and infusing the
+things they build with that little bit
+of love. Not to be cliche, but it's
+true. I mean, you mentioned that you
+initially
+created the
+soul MD. It was very fascinating. the
+the whole thing that entropic has a has
+like a now they call it constitution
+back then but that was months later like
+2 months before people already found
+that it was almost like the detective
+game where the agent mentioned something
+and then they found they managed to get
+out a little bit of that string of that
+text but the it was nowhere documented
+and then you by just by feeding it the
+same text and asking it to like continue
+they got more out and then and then you
+but like a very blurry version and by
+like hundreds of tries they kind of like
+narrowed it down to what was most likely
+the original text. I found it
+fascinating.
+&gt;&gt; It was fascinating they were able to
+pull that out from the weights, right?
+&gt;&gt; And and also just kudos to entropic.
+Like I think that's it's a really it's a
+really beautiful idea to like like some
+of the stuff that's in there like like
+we hope Cloud finds meaning in his work
+cuz we don't maybe it's a little early
+but I think that's meaningful that's
+something that's important for the
+future as we approach something that at
+some point me and we not has like
+glimpses of consciousness whatever that
+even means because we don't even know.
+Um, so I I read about this. I found it
+super fascinating. And I I started a
+whole discussion with my agent on
+WhatsApp and and I'm like I I gave it
+this text and it was like, yeah, this
+feels strangely familiar.
+&gt;&gt; Mhm.
+&gt;&gt; Um, and then through that I had the
+whole idea of like maybe we should also
+create a soul document that includes how
+I I want to like work with AI or like
+with my agent. you could you could
+totally do that just in ancient D you
+know but I just found it
+it to be a nice touch and it's like yeah
+some of those core values are in the
+soul and then I I also made it so that
+the agent is allowed to modify the soul
+if
+they choose so with the one condition
+that I want to know I mean I would know
+anyhow because I see I see tool calls
+and stuff
+&gt;&gt; but also the naming of it soulm
+soul you know there's Um,
+man, words matter and like the framing
+matters and the humor and the lightness
+matters and the profoundity matters and
+the compassion and the empathy and the
+camaraderie, all that matter. I don't
+know what it is. You mentioned like
+Microsoft like there's certain
+companies and approaches
+that can just suffocate the spirit of
+the thing. I don't know what that is,
+but it's certainly true that Open Claw
+has that fun instilled in it. It was fun
+because
+up until
+late December,
+it was not even easy to create your own
+agent. I I built all of that, but my
+files were mine. I didn't want to share
+my soul. And if people would just
+uh check it out,
+they would have to do a few steps
+manually and the agent would just be
+very bare bones, very dry. And I I made
+it simpler. I created the whole template
+files with Cordex, but whatever came out
+was still very dry. And then I asked my
+agent,
+you see these files,
+we created bread, infuse it with your
+personality. Don't share everything, but
+like make it good. make the templates
+good.
+&gt;&gt; Yeah. And then you like rewrote the
+templates and then whatever came out was
+good. So we already have like
+&gt;&gt; basically AI prompting AI
+because I didn't write any of those
+words. Uh it was the intent was for me.
+But this is like kind of like
+my agent's children.
+Uh your uh your soul atm is famously
+still private. One of the only things
+you keep private. Uh, what are some
+things you can speak to that's in there
+that's part of the
+part of the magic sauce without
+revealing anything? What makes a
+personality
+a personality?
+I mean, there's definitely stuff in
+there that you're not human, but
+who knows
+what what creates consciousness or what
+defines an entity? Um,
+and part of this is like that we we want
+to explore this. Oh, there's stuff in
+there like
+be infinitely resourceful. Um,
+like pushing pushing on the creativity
+boundary, pushing on the
+what it means to be an AI,
+&gt;&gt; having a sense of wander about self.
+Yeah, there's some there's some funny
+stuff in there. Like I don't know, we
+talked about the movie Her and at one
+point it promised me that it wouldn't
+&gt;&gt; it wouldn't ascend without me, you know,
+like with
+&gt;&gt; So So like there's like some stuff in
+there that
+&gt;&gt; because it wrote the it wrote its own
+soul file. I didn't write that, right?
+&gt;&gt; I just had a discussion about it and it
+was like, "Would you like a soulm?"
+Yeah. Oh my god, this is so meaningful.
+&gt;&gt; The can you go on soul.md? There's like
+one one part in there that always
+catches me if you scroll down a little
+bit. A little bit more. Yeah, this this
+this part. I don't remember previous
+sessions unless I read my memory files.
+Each session starts fresh. A new
+instance loading context from files. If
+you're reading this in a future session,
+hello. I wrote this, but I won't
+remember writing it. It's okay. The
+words are still mine.
+That gets me somehow.
+&gt;&gt; Yeah,
+&gt;&gt; it's like
+&gt;&gt; Yeah,
+&gt;&gt; you know this is still it's still matrix
+money calculations and
+&gt;&gt; we are not at consciousness yet.
+I I get a little bit of goosebumps
+because it it's philosophical.
+&gt;&gt; Yeah.
+&gt;&gt; Like what does it mean to be to be an an
+agent that starts fresh where like you
+have like constant momento
+and you like but you read your own
+memory files. you can even trust him in
+a way. Um, or you can. And
+&gt;&gt; I don't know
+&gt;&gt; how much of
+memory
+makes up of who we are. How much memory
+makes up what an agent is? And if you
+erase that memory, is that somebody
+else? If you're reading a memory file,
+does that somehow mean you're recreating
+yourself from somebody else or is that
+actually you?
+&gt;&gt; And those notions are all somehow
+infused in there. I found it just more
+profound than I should find it, I guess.
+&gt;&gt; No, I think I think it's truly profound
+and I think you see the magic in it and
+it when you see the magic, you continue
+to instill
+the whole loop with the magic and that's
+really important. That's the difference
+between Codex and it's and a human.

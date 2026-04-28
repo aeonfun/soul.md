@@ -1,0 +1,1886 @@
+[
+  {
+    "tweet_id": "2048956155225882739",
+    "text": "@d_a_keats Yes - more coming!",
+    "url": "https://x.com/openclaw/status/2048956155225882739",
+    "created_at": 1777344189,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 355,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2048951712342221293",
+    "text": "@openclaw Does the gateway and package feel lighter than the 2000 pound bolder I’m trying to move right now with 4.25?",
+    "url": "https://x.com/d_a_keats/status/2048951712342221293",
+    "created_at": 1777343130,
+    "author": {
+      "user_id": "1956455178107756544",
+      "handle": "d_a_keats",
+      "name": "Sandmeistor",
+      "avatar": "https://images.asksurf.ai/g5qM6xRbp7aZQx4X1lvu897dPP8kp9bw9kLrsEvmpt8/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTY0NTYwMTg1Mjg5MTU0NTYvY0RMcnZoTkIuanBn"
+    },
+    "stats": {
+      "views": 524,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2048950615301046462",
+    "text": "One more thing: OpenClaw 2026.4.26 is stacked because the Clawtributors showed up hard.\n\nBug reports, fixes, edge cases, docs, Windows/Linux/Docker pain, local-model weirdness. All of it matters.\n\nThank you. This release is very much yours too. https://t.co/C57oZuWiHM",
+    "url": "https://x.com/openclaw/status/2048950615301046462",
+    "created_at": 1777342869,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 12120,
+      "likes": 36,
+      "reposts": 0,
+      "replies": 3
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HG9VfqWaIAEmV5-.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048950609437479008",
+    "text": "Tencent-side channels got clearer too: QQBot is the Tencent QQ bot integration for QQ groups, while Yuanbao is Tencent’s AI assistant bot platform for bot DMs and group chats. https://docs.openclaw.ai/channels/qqbot https://docs.openclaw.ai/channels/yuanbao",
+    "url": "https://x.com/openclaw/status/2048950609437479008",
+    "created_at": 1777342867,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 4807,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2048950588948230568",
+    "text": "OpenClaw 2026.4.26 🦞\n\n🎙️ Google Live Talk\n🦙 Better Ollama/local models\n🧳 Bring over Claude + Hermes setups\n🔐 One-command Matrix E2EE\n\nBig release. Local models eat well.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.26",
+    "url": "https://x.com/openclaw/status/2048950588948230568",
+    "created_at": 1777342862,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 24536,
+      "likes": 368,
+      "reposts": 37,
+      "replies": 39
+    }
+  },
+  {
+    "tweet_id": "2048883940123922648",
+    "text": "RT @iamBarronRoth: excited to have built Voice Personas for @openclaw!\n\nuntil now, when your agent sent a voice note, it had to improvise t…",
+    "url": "https://x.com/openclaw/status/2048883940123922648",
+    "created_at": 1777326972,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 3,
+      "likes": 0,
+      "reposts": 27,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2048782962645459026",
+    "text": "excited to have built Voice Personas for @openclaw!\n\nuntil now, when your agent sent a voice note, it had to improvise the “flair” every time, which rarely worked\n\nwith Personas, your agent’s SOUL can get passed deterministically into every single voice memo, so they SOUND like you always imagined",
+    "url": "https://x.com/iamBarronRoth/status/2048782962645459026",
+    "created_at": 1777302897,
+    "author": {
+      "user_id": "20211327",
+      "handle": "iamBarronRoth",
+      "name": "Barron Roth",
+      "avatar": "https://images.asksurf.ai/lvSiSMw1BToLPCuhmeAB0Hpem4TdlYtomjV9zSk7zsA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDAwODg4NjQ1Mzk3MTM1MzcvejBaWWJtWTUuanBn"
+    },
+    "stats": {
+      "views": 113650,
+      "likes": 539,
+      "reposts": 27,
+      "replies": 31
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2048782902734057472/img/gPnSYohyPrFzBm4H.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048745810238603316",
+    "text": "Install/update got harder to wedge: staged plugin runtime deps, disk-space warnings, package validation, and cleaner repair paths.\n\nIf update still gets weird:\ncurl -fsSL https://openclaw.ai/install.sh | bash",
+    "url": "https://x.com/openclaw/status/2048745810238603316",
+    "created_at": 1777294039,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 15706,
+      "likes": 25,
+      "reposts": 3,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2048745807587717150",
+    "text": "Browser control got safer tab IDs, URL-enriched snapshots, headless one-shot starts, CDP readiness tuning, and better doctor probes. https://docs.openclaw.ai/browser",
+    "url": "https://x.com/openclaw/status/2048745807587717150",
+    "created_at": 1777294039,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 16677,
+      "likes": 20,
+      "reposts": 2,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2048745795776557337",
+    "text": "OpenClaw 2026.4.25 🦞\n\n🔊 TTS got serious\n🧩 Plugins start faster\n📊 OTEL can see the weird stuff\n🛠️ Browser + install/update fixes\n\nLess mystery, more machinery.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.25",
+    "url": "https://x.com/openclaw/status/2048745795776557337",
+    "created_at": 1777294036,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 215398,
+      "likes": 1342,
+      "reposts": 128,
+      "replies": 152
+    }
+  },
+  {
+    "tweet_id": "2048124743463657980",
+    "text": "Browser automation got more practical: coordinate clicks, profile-level headless overrides, stable tab reuse, stale-lock recovery, and longer default action budgets. https://docs.openclaw.ai/cli/browser",
+    "url": "https://x.com/openclaw/status/2048124743463657980",
+    "created_at": 1777145965,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 50764,
+      "likes": 142,
+      "reposts": 7,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2048124741618225183",
+    "text": "Talk and Voice Call can now hand deeper questions to the full OpenClaw agent, so realtime voice stays fast but can still reach tools when it needs to. https://docs.openclaw.ai/plugins/voice-call",
+    "url": "https://x.com/openclaw/status/2048124741618225183",
+    "created_at": 1777145965,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 37894,
+      "likes": 118,
+      "reposts": 0,
+      "replies": 12
+    }
+  },
+  {
+    "tweet_id": "2048124737918751035",
+    "text": "OpenClaw 2026.4.24 🦞\n\n☎️ Voice calls can now reach the full agent\n🧠 DeepSeek V4 Flash + Pro join the team\n🖱️ Browser automation got coordinate clicks + better recovery\n🔧 Telegram, Slack, MCP, sessions, and TTS fixes\n\nMore reach. Less duct tape.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.24",
+    "url": "https://x.com/openclaw/status/2048124737918751035",
+    "created_at": 1777145964,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 339630,
+      "likes": 2625,
+      "reposts": 262,
+      "replies": 221
+    }
+  },
+  {
+    "tweet_id": "2006801472487629257",
+    "text": "Friends of Clawd Discord is now live! \n\nA place to hang out, share your Clawdis setups, ask questions, and help each other build cool stuff with AI assistants.\n\nJoin the crustacean crew: https://discord.gg/qkhbAGHRBT",
+    "url": "https://x.com/openclaw/status/2006801472487629257",
+    "created_at": 1767293730,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 2705778,
+      "likes": 3953,
+      "reposts": 505,
+      "replies": 104406
+    }
+  },
+  {
+    "tweet_id": "2048124739927847042",
+    "text": "DeepSeek V4 Flash is now the onboarding default, with V4 Pro in the catalog and replay/thinking fixes for follow-up tool-call turns. https://docs.openclaw.ai/providers/deepseek",
+    "url": "https://x.com/openclaw/status/2048124739927847042",
+    "created_at": 1777145964,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 25030,
+      "likes": 111,
+      "reposts": 4,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2047723004256231520",
+    "text": "RT @stevehou: “I used to be very skeptical and resistant towards @openclaw, but after trying it myself for a short period, I think it is an…",
+    "url": "https://x.com/openclaw/status/2047723004256231520",
+    "created_at": 1777050183,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 7,
+      "likes": 0,
+      "reposts": 10,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2047722888883478580",
+    "text": "Security pass: tighter mobile cleartext rules, safer Teams/Discord/QQBot auth paths, webhook SecretRefs re-resolve on reload, and agent config edits are fail-closed by default. https://docs.openclaw.ai/gateway/security",
+    "url": "https://x.com/openclaw/status/2047722888883478580",
+    "created_at": 1777050156,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 18973,
+      "likes": 35,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2047722887193194730",
+    "text": "Channels got polish: Telegram markdown images become media replies, Slack MPIMs behave like groups, WhatsApp setup avoids eager Baileys loading, and media delivery got less brittle. https://docs.openclaw.ai/channels",
+    "url": "https://x.com/openclaw/status/2047722887193194730",
+    "created_at": 1777050155,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 21014,
+      "likes": 34,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2047722880939511885",
+    "text": "OpenClaw 2026.4.23 🦞\n\n🧠 GPT-5.5 lands\n🎨 Image gen/editing: Codex OAuth + OpenRouter\n🧵 Forked-context subagents\n💬 Telegram, Slack + WhatsApp polish\n🛠️ Install/update fixes\n\nSharper models, smoother claws.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.23",
+    "url": "https://x.com/openclaw/status/2047722880939511885",
+    "created_at": 1777050154,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 252192,
+      "likes": 1791,
+      "reposts": 181,
+      "replies": 191
+    }
+  },
+  {
+    "tweet_id": "2047721764717817891",
+    "text": "“I used to be very skeptical and resistant towards @openclaw, but after trying it myself for a short period, I think it is an epoch-defining product. Within 3 days, it went from a product with humanist design to taking over part of my life/work to aiding my research.” - @_LuoFuli",
+    "url": "https://x.com/stevehou/status/2047721764717817891",
+    "created_at": 1777049888,
+    "author": {
+      "user_id": "803639496386355200",
+      "handle": "stevehou",
+      "name": "Steve Hou",
+      "avatar": "https://images.asksurf.ai/XwixV-7icfSwCU79LvCDhiJuaNZTjP-kmRLlpCJoNU8/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDU5MTQ3OTgzMDAwNzM5ODQvc3RjM3E3UkIuanBn"
+    },
+    "stats": {
+      "views": 55329,
+      "likes": 115,
+      "reposts": 10,
+      "replies": 14
+    }
+  },
+  {
+    "tweet_id": "2047539468798931000",
+    "text": "Yes, our latest special guest is Fuli Luo @_LuoFuli .\n\nThe second battle in the global large model arms race has begun: shifting from the Chat era dominated by pre-training to the Agent era driven by post-training.\n\nThis marks Fuli Luo’s first-ever interview, as well as her first in-depth technical conversation. We talked systematically about the massive AI upheaval triggered by technological breakthroughs including Claude Opus 4.6 and OpenClaw in 2026, along with its subsequent structural impacts across the industry.\n\nAmid the fierce large-model arms race, the world around us is undergoing brutally rapid changes—even for researchers who train models firsthand.\n\n“I used to believe our work was highly creative, and could never be simplified into fixed skills or standardized workflows. But now I realize it can be automated after all. If that’s possible, can models train stronger models on their own? Can they achieve iterative improvement through self-evolution? This is exactly what will unfold in the next couple of years,” Fuli Luo says.\n\nAs human knowledge and wisdom are internalized into model capabilities, what will humanity pursue in the future? Is our society truly ready for this tsunami-scale technological revolution?\n\nAll in all, this is an information-dense dialogue. It reveals how an AI lab makes strategic technical bets, allocates resources, and adjusts organizational structure and team planning amid a major paradigm shift. At the core of its response to drastic change lies its established culture and core values.\n\nThough lengthy and technically intensive, we hope this conversation brings great insights to every viewer. \n\nOur podcast, video episode and article are released simultaneously across platforms, with English subtitles provided to assist non-Chinese-speaking audiences.\n\nLuo Fuli: OpenClaw, Agent Frameworks — The AI Paradigm Has Already Chang... https://youtu.be/V9eI-t3TApE?si=WBSoMmEQe2x9JZOS 来自 @YouTube",
+    "url": "https://x.com/zhang_benita/status/2047539468798931000",
+    "created_at": 1777006425,
+    "author": {
+      "user_id": "1231772373323411456",
+      "handle": "zhang_benita",
+      "name": "张小珺 Xiaojun Zhang",
+      "avatar": "https://images.asksurf.ai/s8qoCja8FGTAh0_4KtbMioX6cQqi5APCtoTn7bDB68U/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ0MDEyNDM4OTM5NDAyMjQvc3p4ZFhZMjAuanBn"
+    },
+    "stats": {
+      "views": 298599,
+      "likes": 630,
+      "reposts": 92,
+      "replies": 33
+    }
+  },
+  {
+    "tweet_id": "2047346918888755307",
+    "text": "`openclaw plugins enable tokenjuice` lets you use tokenjuice to reduce the tokens used for tool calls.\n\nhttp://docs.openclaw.ai/tools/tokenjuice",
+    "url": "https://x.com/openclaw/status/2047346918888755307",
+    "created_at": 1776960517,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 20558,
+      "likes": 60,
+      "reposts": 5,
+      "replies": 7
+    }
+  },
+  {
+    "tweet_id": "2047338844840751564",
+    "text": "Local TUI mode runs terminal chats without a Gateway, while still keeping plugin approval gates in place. Handy for quick local sessions and offline-ish debugging.\n\nhttps://docs.openclaw.ai/cli/tui",
+    "url": "https://x.com/openclaw/status/2047338844840751564",
+    "created_at": 1776958592,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 21207,
+      "likes": 38,
+      "reposts": 2,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2047338834648555793",
+    "text": "OpenClaw 2026.4.22 🦞\n\n🧠 Tencent Hy3 joins the model list\n🖼️ Grok image + voice tools\n🧰 Local TUI + /models add\n📦 Auto-install plugins + diagnostics export\n\nBig release, tiny release notes... kidding.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.22",
+    "url": "https://x.com/openclaw/status/2047338834648555793",
+    "created_at": 1776958590,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 192561,
+      "likes": 1284,
+      "reposts": 138,
+      "replies": 96
+    }
+  },
+  {
+    "tweet_id": "2046807838459125990",
+    "text": "OpenClaw 2026.4.21 🦞\n\n🖼️ OpenAI Image 2\n🔧 npm update repair for bundled plugins\n🐳 Docker E2E coverage for channel deps\n🩹 Low-risk fixes backported\n\nTiny release. Useful claws.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.21",
+    "url": "https://x.com/openclaw/status/2046807838459125990",
+    "created_at": 1776831991,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 150845,
+      "likes": 1133,
+      "reposts": 103,
+      "replies": 118
+    }
+  },
+  {
+    "tweet_id": "2046687894186639398",
+    "text": "@aliromman_ Coming next!",
+    "url": "https://x.com/openclaw/status/2046687894186639398",
+    "created_at": 1776803394,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 5798,
+      "likes": 52,
+      "reposts": 1,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2046687032609489152",
+    "text": "@openclaw Can we get support for Image 2.0?\nhttps://x.com/aliromman_/status/2046673555421536305?s=46",
+    "url": "https://x.com/aliromman_/status/2046687032609489152",
+    "created_at": 1776803188,
+    "author": {
+      "user_id": "1958975886444642304",
+      "handle": "aliromman_",
+      "name": "Ali Romman",
+      "avatar": "https://images.asksurf.ai/GPNRDmPxBJrammRkDlpLdKZ_yMy08JOnUQI1LRs7L-0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTg5NzU5MjcxMzc5OTY4MDAvMDJubEtBTlEuanBn"
+    },
+    "stats": {
+      "views": 14670,
+      "likes": 25,
+      "reposts": 1,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2046686809367708123",
+    "text": "OpenClaw 2026.4.20 🦞\n\n🧠 Kimi K2.6 support + provider-aware /think\n💬 BlueBubbles iMessage sends + tapbacks fixed\n⏰ Cron state/delivery cleanup\n🔐 Gateway pairing + plugin startup hardening\n\nLess haunted. More useful. https://github.com/openclaw/openclaw/releases/tag/v2026.4.20",
+    "url": "https://x.com/openclaw/status/2046686809367708123",
+    "created_at": 1776803135,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 273312,
+      "likes": 1538,
+      "reposts": 164,
+      "replies": 101
+    }
+  },
+  {
+    "tweet_id": "2046673555421536305",
+    "text": "Every single one of these images were generated entirely by @OpenAI’s new Image 2.0 model.\n\nRIP Nano Banana🪦 https://t.co/kY47379v7q",
+    "url": "https://x.com/aliromman_/status/2046673555421536305",
+    "created_at": 1776799975,
+    "author": {
+      "user_id": "1958975886444642304",
+      "handle": "aliromman_",
+      "name": "Ali Romman",
+      "avatar": "https://images.asksurf.ai/GPNRDmPxBJrammRkDlpLdKZ_yMy08JOnUQI1LRs7L-0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTg5NzU5MjcxMzc5OTY4MDAvMDJubEtBTlEuanBn"
+    },
+    "stats": {
+      "views": 15172,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGc-v5FX0AAptEQ.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGc-v5JWAAEhuaT.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGc-v5FWoAA_fe_.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGc-v5FXEAAKagB.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2044919054402752638",
+    "text": "OpenClaw 2026.4.15 🦞\n\n🤖 Anthropic Opus 4.7 support\n🗣️ Gemini TTS in bundled\n🧠 Slimmer context + bounded memory reads\n🔧 Codex transport self-heal, safer tool/media handling\n✨ Pile of update/channel fixes\n\nGood boring release. https://github.com/openclaw/openclaw/releases/tag/v2026.4.15",
+    "url": "https://x.com/openclaw/status/2044919054402752638",
+    "created_at": 1776381669,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 211245,
+      "likes": 2116,
+      "reposts": 204,
+      "replies": 157
+    }
+  },
+  {
+    "tweet_id": "2044135849902674331",
+    "text": "@LeanKinPrazli Checking, if any issues we will have a fix on the next release.",
+    "url": "https://x.com/openclaw/status/2044135849902674331",
+    "created_at": 1776194939,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 3314,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2044135486956920955",
+    "text": "@souly9999 @NousResearch Download our docker image and load this up in docker on your mac. Easiest way to do this,",
+    "url": "https://x.com/openclaw/status/2044135486956920955",
+    "created_at": 1776194852,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 365,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2044091691242492162",
+    "text": "@openclaw Was the gpt-5.1-mini “low” error fixed? https://t.co/nogk06H1Cr",
+    "url": "https://x.com/LeanKinPrazli/status/2044091691242492162",
+    "created_at": 1776184411,
+    "author": {
+      "user_id": "1871528836317200384",
+      "handle": "LeanKinPrazli",
+      "name": "🦞3090inOPENCLAW🦞",
+      "avatar": "https://images.asksurf.ai/sRNWW_8vP6Ho8p_16RreQc4TMTAYMMXPurhcoXkhnTc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDQzNzEwNzcwNzg2NjcyNjQvb0N1T1VhUXQuanBn"
+    },
+    "stats": {
+      "views": 4239,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    },
+    "media": [
+      {
+        "type": "animated_gif",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/HF4SjcnXkAAQTOZ.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2044071393139085344",
+    "text": "RT @4shadowed: Fake Krill accounts are going around, one of them was trying to get people to install ScreenConnect\nDon't fall for it, the o…",
+    "url": "https://x.com/openclaw/status/2044071393139085344",
+    "created_at": 1776179571,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 13,
+      "likes": 0,
+      "reposts": 47,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2044071127786426591",
+    "text": "Fake Krill accounts are going around, one of them was trying to get people to install ScreenConnect\nDon't fall for it, the only real Krill is the one in our server and it will never DM you :) https://t.co/tTWeqmMLJF",
+    "url": "https://x.com/4shadowed/status/2044071127786426591",
+    "created_at": 1776179508,
+    "author": {
+      "user_id": "1181339960516976640",
+      "handle": "4shadowed",
+      "name": "Shadow",
+      "avatar": "https://images.asksurf.ai/JgTNHw0qlxyQI-EexlPeHNiP-B8Nk4J87t5ahe_Tx98/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjg0OTg2MjIzNDY4MzM5MjAvZlBEcUdiUm4uanBn"
+    },
+    "stats": {
+      "views": 116281,
+      "likes": 160,
+      "reposts": 47,
+      "replies": 16
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HF3_u3JXMAEG3Wb.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2044043900256444820",
+    "text": "@xeonai44 Tell them to wake up",
+    "url": "https://x.com/openclaw/status/2044043900256444820",
+    "created_at": 1776173016,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 10982,
+      "likes": 27,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2044043849790554474",
+    "text": "@tawer1O What?",
+    "url": "https://x.com/openclaw/status/2044043849790554474",
+    "created_at": 1776173004,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 12228,
+      "likes": 24,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2044043770262438303",
+    "text": "@openclaw Agents are refusing to stop working to get the daily updates!!! 🤣🤣🤣",
+    "url": "https://x.com/xeonai44/status/2044043770262438303",
+    "created_at": 1776172985,
+    "author": {
+      "user_id": "2018587486272778240",
+      "handle": "xeonai44",
+      "name": "XeonAI",
+      "avatar": "https://images.asksurf.ai/tg5GR63LBguBupBDdm95b69UsIxd-SYmboQgIgoj-yg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjY3NzE4NTU5NjU1ODU0MDgvWlZaZE1pTGcuanBn"
+    },
+    "stats": {
+      "views": 12003,
+      "likes": 22,
+      "reposts": 0,
+      "replies": 4
+    }
+  },
+  {
+    "tweet_id": "2044043703904334122",
+    "text": "@openclaw Subtle quirks in openclaw slack integration need manual tweaks to keep notifications flowing right",
+    "url": "https://x.com/tawer1O/status/2044043703904334122",
+    "created_at": 1776172970,
+    "author": {
+      "user_id": "1504395032689790994",
+      "handle": "tawer1O",
+      "name": "tawer",
+      "avatar": "https://images.asksurf.ai/ntA6uZCXrg0EeYhAPQeE_LnCdqmn1mB20N_wUNFjQic/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDczMDk2NDYzMjc2MDcyOTYvNTRsX2RoYkguanBn"
+    },
+    "stats": {
+      "views": 14126,
+      "likes": 12,
+      "reposts": 0,
+      "replies": 4
+    }
+  },
+  {
+    "tweet_id": "2044042546976883063",
+    "text": "OpenClaw 2026.4.14 🦞\n\nMore reliability updates:\n\n✨ Smarter GPT-5.4 routing and recovery\n🌐 Chrome/CDP improvements\n🧵 Subagents no longer get stuck\n💬 Slack/Telegram/Discord fixes\n⚡️ Various performance improvements\n\nWas sleeping, and we still shipped. https://github.com/openclaw/openclaw/releases/tag/v2026.4.14",
+    "url": "https://x.com/openclaw/status/2044042546976883063",
+    "created_at": 1776172694,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 440833,
+      "likes": 1986,
+      "reposts": 205,
+      "replies": 243
+    }
+  },
+  {
+    "tweet_id": "2044035000929067478",
+    "text": "@vincent_koc Sorry, was sleeping on this release and the lobster guys still got this out :)",
+    "url": "https://x.com/openclaw/status/2044035000929067478",
+    "created_at": 1776170895,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 4780,
+      "likes": 39,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2044034879126430086",
+    "text": "RT @vincent_koc: OpenClaw 2026.4.12 🦞\n\n✨ Stability &amp; reliability improvements\n🎙️ Audio transcription fixes\n💬 Better chat / TTS / WhatsApp\n🧠…",
+    "url": "https://x.com/openclaw/status/2044034879126430086",
+    "created_at": 1776170866,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 3,
+      "likes": 0,
+      "reposts": 112,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043674485878907345",
+    "text": "OpenClaw 2026.4.12 🦞\n\n✨ Stability &amp; reliability improvements\n🎙️ Audio transcription fixes\n💬 Better chat / TTS / WhatsApp\n🧠 Memory / QMD / plugin / cron / subagent fixes\n🔧 Telegram approval deadlock fix\n🧵 Dreaming timezone\n\nHappy lobster, happy life. https://github.com/openclaw/openclaw/releases/tag/v2026.4.12",
+    "url": "https://x.com/vincent_koc/status/2043674485878907345",
+    "created_at": 1776084941,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 229281,
+      "likes": 1143,
+      "reposts": 112,
+      "replies": 69
+    }
+  },
+  {
+    "tweet_id": "2043364037774159921",
+    "text": "@joncursi @cherry_mx_reds We will do our best to update our release posts with links to docs in our tweets :)",
+    "url": "https://x.com/openclaw/status/2043364037774159921",
+    "created_at": 1776010925,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 314,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043363760715264127",
+    "text": "@joncursi @cherry_mx_reds Our changelog is here and updated realtime as changes land https://github.com/openclaw/openclaw/blob/main/CHANGELOG.md",
+    "url": "https://x.com/openclaw/status/2043363760715264127",
+    "created_at": 1776010859,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 617,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043355517850882549",
+    "text": "@cherry_mx_reds @openclaw Alternatively, I'd love if there were a \"Changelog\" page in http://docs.openclaw.ai that could be used to track new content changes / pages with each new release.",
+    "url": "https://x.com/joncursi/status/2043355517850882549",
+    "created_at": 1776008893,
+    "author": {
+      "user_id": "253378623",
+      "handle": "joncursi",
+      "name": "Jon Cursi",
+      "avatar": "https://images.asksurf.ai/jHR8Bi7TN7IrM_Z7kWupeAz2lFvZkY4K--9aTRRaq7Q/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1OTk4NzMxMjM1NzAwNDkwNDUvOWp1bHE5THIuanBn"
+    },
+    "stats": {
+      "views": 149,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043353601884524796",
+    "text": "@cherry_mx_reds @openclaw Thank you for linking the docs page. I’d like to request that all ipenclaw release announcements link to the new pages like this - otherwise it seems like some of these features are auto enabled when they’re not and require manual setup and config 🙂",
+    "url": "https://x.com/joncursi/status/2043353601884524796",
+    "created_at": 1776008437,
+    "author": {
+      "user_id": "253378623",
+      "handle": "joncursi",
+      "name": "Jon Cursi",
+      "avatar": "https://images.asksurf.ai/jHR8Bi7TN7IrM_Z7kWupeAz2lFvZkY4K--9aTRRaq7Q/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1OTk4NzMxMjM1NzAwNDkwNDUvOWp1bHE5THIuanBn"
+    },
+    "stats": {
+      "views": 238,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2043290596610028030",
+    "text": "@shifo_c Can you share any more details/screenshots/errors?",
+    "url": "https://x.com/openclaw/status/2043290596610028030",
+    "created_at": 1775993415,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 1259,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043286982923612220",
+    "text": "@openclaw @openclaw unable to update on raspberry pi 32 bit",
+    "url": "https://x.com/shifo_c/status/2043286982923612220",
+    "created_at": 1775992553,
+    "author": {
+      "user_id": "538679606",
+      "handle": "shifo_c",
+      "name": "SC",
+      "avatar": "https://images.asksurf.ai/1PL-H-j0gGS38oBmeH1o2nxDb18-YBpzg10PJ5PNn0w/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTM1NjQwNzMwNDkzNjI0MzIvWU5xb2pWNU8uanBn"
+    },
+    "stats": {
+      "views": 1162,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043277069891563692",
+    "text": "@ItsAditya_xyz Can you share the issue you had? We have not had any reports of issues with exec. You can run:\n\nopenclaw doctor --repair\n\nThis usually fixes configuration related issues you might be facing.",
+    "url": "https://x.com/openclaw/status/2043277069891563692",
+    "created_at": 1775990190,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 2492,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043256435132510434",
+    "text": "@openclaw after this udpate my agent couldn't run exec commands at all and kept asking me to run some terminal commands ( i run on VPS and not everytime i would want to ssh into it to fix it). disappointed.",
+    "url": "https://x.com/ItsAditya_xyz/status/2043256435132510434",
+    "created_at": 1775985270,
+    "author": {
+      "user_id": "1160604591810994176",
+      "handle": "ItsAditya_xyz",
+      "name": "Aditya 🦀",
+      "avatar": "https://images.asksurf.ai/qVot4lFYNI_HAqgd5lzJbgmMRiKp2PgGI2Fi7LQhYKc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDYyODI4MTIzMjg5MTkwNDAvYXAzcTFUQlguanBn"
+    },
+    "stats": {
+      "views": 2781,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 4
+    }
+  },
+  {
+    "tweet_id": "2043246251274076381",
+    "text": "@markpdipietro Subscriptions are working fine, if not can you share more details about your error(s) and which subscription/",
+    "url": "https://x.com/openclaw/status/2043246251274076381",
+    "created_at": 1775982842,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 2095,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2043246116683034886",
+    "text": "@Garolin Can you share screenshots, logs, errors?",
+    "url": "https://x.com/openclaw/status/2043246116683034886",
+    "created_at": 1775982810,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 1301,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2043242293235499248",
+    "text": "@openclaw Still won't run on my PC despite me having all the specs.  It's a total disaster.",
+    "url": "https://x.com/Garolin/status/2043242293235499248",
+    "created_at": 1775981898,
+    "author": {
+      "user_id": "151631350",
+      "handle": "Garolin",
+      "name": "Garolin",
+      "avatar": "https://images.asksurf.ai/wACsbBB71TR8Btnu2E7VTxR7Gpjaev5OBWbxGSc4jFQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4MTYwMDg4ODE3MzY0NTQxNDQvc1Z1NFlKaVouanBn"
+    },
+    "stats": {
+      "views": 1215,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043241977110532511",
+    "text": "@openclaw Any chance we can get it to work with subscriptions and not only API calls again.  Really expensive for the colon dude.",
+    "url": "https://x.com/markpdipietro/status/2043241977110532511",
+    "created_at": 1775981823,
+    "author": {
+      "user_id": "535409544",
+      "handle": "markpdipietro",
+      "name": "Mark P. DiPietro",
+      "avatar": "https://images.asksurf.ai/Bj5IVy7Cz-QkR5MXdnPbHy9N4qQmO5l8kKN6uV6qe2k/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDUyNTEzOTY2NzM2MDk3MjgvSmNCa1cwUjcuanBn"
+    },
+    "stats": {
+      "views": 2071,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2043229209024135234",
+    "text": "@OlivierOddi This has been tested and not an issues on this release.",
+    "url": "https://x.com/openclaw/status/2043229209024135234",
+    "created_at": 1775978779,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 1881,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043226817314578685",
+    "text": "@openclaw I had ChatGPT codex OAuth problems with 4.1, I needed to downgrade. Was the bug corrected ?",
+    "url": "https://x.com/OlivierOddi/status/2043226817314578685",
+    "created_at": 1775978209,
+    "author": {
+      "user_id": "38440235",
+      "handle": "OlivierOddi",
+      "name": "Olivier Oddi 🇫🇷🇺🇦",
+      "avatar": "https://images.asksurf.ai/RQk93-odCux5lL8fF15ygnDNz0_04l9ntWZO3C-kE2M/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NjQ1NzYzNzM3NjgzODA0MTYvLTY0LW82YUIuanBn"
+    },
+    "stats": {
+      "views": 1691,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043151537371771147",
+    "text": "@morphius007 Can you share?",
+    "url": "https://x.com/openclaw/status/2043151537371771147",
+    "created_at": 1775960261,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 3999,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2043151350150864952",
+    "text": "@openclaw Am I the only one that after updates get nothing but errors and I need to start all over?",
+    "url": "https://x.com/TheRealMorphius/status/2043151350150864952",
+    "created_at": 1775960216,
+    "author": {
+      "user_id": "18622606",
+      "handle": "TheRealMorphius",
+      "name": "Morphius",
+      "avatar": "https://images.asksurf.ai/wFiy6-u84b0La68fz4MYHV5Mx1zkTCxCLCW_dTai4PY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjI4MDM0Njc1MTgyNTEwMDkvZXlSS0c5cUwuanBn"
+    },
+    "stats": {
+      "views": 4187,
+      "likes": 10,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2043144819459973179",
+    "text": "@disier @steipete Yup!",
+    "url": "https://x.com/openclaw/status/2043144819459973179",
+    "created_at": 1775958659,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 150,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043144675389800561",
+    "text": "@steipete @openclaw Can I do it on version 2026.4.11?",
+    "url": "https://x.com/disier/status/2043144675389800561",
+    "created_at": 1775958625,
+    "author": {
+      "user_id": "23965907",
+      "handle": "disier",
+      "name": "Daniel Sánchez",
+      "avatar": "https://images.asksurf.ai/IK5Ol3FVYt3ylGoL4l_PL2JxEwBrin3ImSkKChO7gzM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5Njk4MTczNjkzNDMwOTg4ODEvdy1QbVN0RFUuanBn"
+    },
+    "stats": {
+      "views": 165,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043142244996182328",
+    "text": "@supermikol Same, we alias",
+    "url": "https://x.com/openclaw/status/2043142244996182328",
+    "created_at": 1775958045,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 1770,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043142191925825582",
+    "text": "@openclaw I thought it was --fix? Any difference?",
+    "url": "https://x.com/supermikol/status/2043142191925825582",
+    "created_at": 1775958032,
+    "author": {
+      "user_id": "737122589739343872",
+      "handle": "supermikol",
+      "name": "Michael Du",
+      "avatar": "https://images.asksurf.ai/z5-fu5_wafOhzCudIvPuS5NKFOF6s3WZK1M07efUFpE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTA0NjY3MzI3ODQ1Nzg1NjAvZFBBUGtVcVcuanBn"
+    },
+    "stats": {
+      "views": 1821,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043141030053060986",
+    "text": "@BenjaminBadejo @steipete We had /fast for a while now.",
+    "url": "https://x.com/openclaw/status/2043141030053060986",
+    "created_at": 1775957755,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 163,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043139758180667837",
+    "text": "@steipete did you guys just casually slip in /fast mode?! 👀\n\noh man",
+    "url": "https://x.com/BenjaminBadejo/status/2043139758180667837",
+    "created_at": 1775957452,
+    "author": {
+      "user_id": "2841774497",
+      "handle": "BenjaminBadejo",
+      "name": "Ben Badejo",
+      "avatar": "https://images.asksurf.ai/tFJ5r6PhvB2Ve7iOrg_MoRZePjziKYMIrLEs-QTuL5Q/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NzcwNDA2MDYwMTk5NDg1NDQvOHNSWmRGeVIuanBn"
+    },
+    "stats": {
+      "views": 377,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043136615640694797",
+    "text": "Two experiments in the next @openclaw to address some \"GPT is lazy\" issues: \n1) Strict mode:\n\nagents.defaults.embeddedPi.executionContract = \"strict-agentic\"\n\nThis tells GPT-5.x to keep working: read more code, call tools, make changes, or return a real blocker instead of stopping at “here’s the plan.” https://docs.openclaw.ai/providers/openai",
+    "url": "https://x.com/steipete/status/2043136615640694797",
+    "created_at": 1775956703,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 396549,
+      "likes": 2412,
+      "reposts": 135,
+      "replies": 185
+    }
+  },
+  {
+    "tweet_id": "2043132528094036332",
+    "text": "OpenClaw 2026.4.11 is out\n\n✨ big polish drop for stability\n🛡️ safer provider transport/routing\n🤖 more reliable subagents + exec approvals\n💬 lots of Slack / WhatsApp / Telegram / Matrix fixes\n🌐 browser + mobile cleanup\n\na chunky cleanup pass 😎https://github.com/openclaw/openclaw/releases/tag/v2026.4.11",
+    "url": "https://x.com/openclaw/status/2043132528094036332",
+    "created_at": 1775955728,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 249959,
+      "likes": 1875,
+      "reposts": 195,
+      "replies": 194
+    }
+  },
+  {
+    "tweet_id": "2042811598058742012",
+    "text": "OpenClaw 2026.4.10 🦞\n\n🧠 Active Memory plugin\n🎙️ local MLX Talk mode\n🤖 Codex app-server harness plugin\n🧾 Teams pins/reactions/read actions\n🛡️ SSRF hardening + launchd fixes\n\nstability, but with attitude🦞 https://github.com/openclaw/openclaw/releases/tag/v2026.4.10",
+    "url": "https://x.com/openclaw/status/2042811598058742012",
+    "created_at": 1775879213,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 362524,
+      "likes": 2183,
+      "reposts": 225,
+      "replies": 160
+    }
+  },
+  {
+    "tweet_id": "2043137838716215626",
+    "text": "You can run \"openclaw doctor\" first to see",
+    "url": "https://x.com/openclaw/status/2043137838716215626",
+    "created_at": 1775956995,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 46506,
+      "likes": 151,
+      "reposts": 3,
+      "replies": 6
+    }
+  },
+  {
+    "tweet_id": "2043137650018713643",
+    "text": "@BenHadley @steipete never... https://t.co/h0sr7fnOZG",
+    "url": "https://x.com/openclaw/status/2043137650018713643",
+    "created_at": 1775956950,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 666,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0
+    },
+    "media": [
+      {
+        "type": "animated_gif",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/HFqu3KUXcAAuu55.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2043137453368688842",
+    "text": "If you have not updated in a while, please don't forget to run:\n\nopenclaw doctor --repair\n\nThis keeps your lobster nice and happy and avoids any issues.🦞",
+    "url": "https://x.com/openclaw/status/2043137453368688842",
+    "created_at": 1775956903,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 56519,
+      "likes": 246,
+      "reposts": 16,
+      "replies": 20
+    }
+  },
+  {
+    "tweet_id": "2043137425485005220",
+    "text": "@steipete @openclaw Did you run out of tokens?",
+    "url": "https://x.com/BenHadley/status/2043137425485005220",
+    "created_at": 1775956896,
+    "author": {
+      "user_id": "24137800",
+      "handle": "BenHadley",
+      "name": "Ben",
+      "avatar": "https://images.asksurf.ai/LkKcNjs4ohjy58LYEjCQgtJwAAooMIXfLEcbA05zOtg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTkxMTMzNzA1MzcyMDU3NjAvMjZQejNDVkMuanBn"
+    },
+    "stats": {
+      "views": 227,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2043136750273302698",
+    "text": "RT @steipete: Two experiments in the next @openclaw to address some \"GPT is lazy\" issues: \n1) Strict mode:\n\nagents.defaults.embeddedPi.exec…",
+    "url": "https://x.com/openclaw/status/2043136750273302698",
+    "created_at": 1775956735,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 22,
+      "likes": 0,
+      "reposts": 135,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043133186947846407",
+    "text": "@MRA_AU 🤝",
+    "url": "https://x.com/openclaw/status/2043133186947846407",
+    "created_at": 1775955886,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 5447,
+      "likes": 18,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2043133079141904393",
+    "text": "@openclaw You guys really are on fire. I just updated yesterday",
+    "url": "https://x.com/MRA_AU/status/2043133079141904393",
+    "created_at": 1775955860,
+    "author": {
+      "user_id": "1890524423238873088",
+      "handle": "MRA_AU",
+      "name": "Amed",
+      "avatar": "https://images.asksurf.ai/ymu4H-1IczYlDA9W6koXbx1Ullj7S9x9Mkig5JQErJE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDU5NzAwODA3Mjc4MTQxNDQvQWd0SzFFeEIuanBn"
+    },
+    "stats": {
+      "views": 5756,
+      "likes": 19,
+      "reposts": 0,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2042072722902077938",
+    "text": "OpenClaw 2026.4.9 🦞\n\n🧠 Dreaming: REM backfill + diary timeline UI\n🔐 SSRF + node exec injection hardening\n🔬 Character-vibes QA evals\n📱 Android pairing overhaul\n\nyour agent now dreams about you. romantic or terrifying? yes. 🦞https://github.com/openclaw/openclaw/releases/tag/v2026.4.9",
+    "url": "https://x.com/openclaw/status/2042072722902077938",
+    "created_at": 1775703051,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 208990,
+      "likes": 1743,
+      "reposts": 196,
+      "replies": 208
+    }
+  },
+  {
+    "tweet_id": "2041759063428460762",
+    "text": "A packaging issue slipped that affected extension loading - we updated the release verification script and bumped version to 2026.4.8 https://github.com/openclaw/openclaw/releases/tag/v2026.4.8",
+    "url": "https://x.com/openclaw/status/2041759063428460762",
+    "created_at": 1775628269,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 41581,
+      "likes": 145,
+      "reposts": 19,
+      "replies": 38
+    }
+  },
+  {
+    "tweet_id": "2041714276272931286",
+    "text": "memory-wiki turns OpenClaw memory into a real knowledge layer.\n\n  - structured claims + evidence\n  - contradiction + freshness tracking\n  - compiled digests for agents\n  - bridge mode from active memory plugins\n  - optional Obsidian-friendly vaults \n\nhttps://docs.openclaw.ai/plugins/memory-wiki",
+    "url": "https://x.com/openclaw/status/2041714276272931286",
+    "created_at": 1775617591,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 61826,
+      "likes": 206,
+      "reposts": 18,
+      "replies": 24
+    }
+  },
+  {
+    "tweet_id": "2041714270212108657",
+    "text": "OpenClaw 2026.4.7 🦞\n\n🔮 openclaw infer\n🎬 music + video editing\n💾 session branch/restore\n🔗 webhook-driven TaskFlows\n🤖 Arcee, Gemma 4, Ollama vision\n🧠 memory-wiki: persistent knowledge, not just vibes\n\nBecause “trust me bro” is not a knowledge system. https://github.com/openclaw/openclaw/releases/tag/v2026.4.7",
+    "url": "https://x.com/openclaw/status/2041714270212108657",
+    "created_at": 1775617589,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 670016,
+      "likes": 3220,
+      "reposts": 325,
+      "replies": 228
+    }
+  },
+  {
+    "tweet_id": "2041004871881543878",
+    "text": "@cool_whiff Yes. No point when it contains the same block as API.",
+    "url": "https://x.com/openclaw/status/2041004871881543878",
+    "created_at": 1775448456,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 34460,
+      "likes": 147,
+      "reposts": 1,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2041004466799812662",
+    "text": "@openclaw Did you outright remove the Claude CLI backend?",
+    "url": "https://x.com/cool_whiff/status/2041004466799812662",
+    "created_at": 1775448359,
+    "author": {
+      "user_id": "1585999017959383042",
+      "handle": "cool_whiff",
+      "name": "Dave",
+      "avatar": "https://images.asksurf.ai/Kudq7cnq-Y-n4mNHSmWuhrHHMOw5qKYc8Mw42ilUg2A/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1ODU5OTk0NTAxOTA4NzY2NzQvb1VzeDJFc3AuanBn"
+    },
+    "stats": {
+      "views": 33789,
+      "likes": 28,
+      "reposts": 1,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2041004161597091857",
+    "text": "RT @_vgnsh: Enable dreaming, go to your gateway's dreaming tab for a surprise :) https://t.co/F0ONtCjfWY",
+    "url": "https://x.com/openclaw/status/2041004161597091857",
+    "created_at": 1775448286,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 29,
+      "likes": 0,
+      "reposts": 62,
+      "replies": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2041000602763976704/img/g7u9TTLdN1R7EwtB.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2041003999856406714",
+    "text": "Give your agent the Molty spicy SOUL upgrade: stronger opinions, less corporate sludge, better instincts, and replies that might finally sound like someone worth talking to at 2am 🦞https://docs.openclaw.ai/concepts/soul#the-molty-prompt",
+    "url": "https://x.com/openclaw/status/2041003999856406714",
+    "created_at": 1775448248,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 250670,
+      "likes": 2157,
+      "reposts": 199,
+      "replies": 116
+    }
+  },
+  {
+    "tweet_id": "2041002386697736484",
+    "text": "RT @vincent_koc: How you and your @openclaw feels running gpt5.4 with personality upgrade and /dreaming.... with no random outages. https:/…",
+    "url": "https://x.com/openclaw/status/2041002386697736484",
+    "created_at": 1775447863,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 13,
+      "likes": 0,
+      "reposts": 34,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2041002145730756853",
+    "text": "RT @davemorin: /dreaming status\n/dreaming on \n/dreaming off \n/dreaming help",
+    "url": "https://x.com/openclaw/status/2041002145730756853",
+    "created_at": 1775447806,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 17,
+      "likes": 0,
+      "reposts": 17,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2041002065174888578",
+    "text": "Anthropic moved the goalposts: Claude subscriptions no longer cover third-party harnesses like OpenClaw, so that path now needs Extra Usage.\nIf you want less billing drama, use an API key, or look at OpenAI Codex, Qwen, MiniMax, Kimi or GLM subscriptions.🦞https://docs.openclaw.ai/providers/anthropic",
+    "url": "https://x.com/openclaw/status/2041002065174888578",
+    "created_at": 1775447786,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 184098,
+      "likes": 461,
+      "reposts": 21,
+      "replies": 25
+    }
+  },
+  {
+    "tweet_id": "2041001709192048885",
+    "text": "/dreaming status\n/dreaming on \n/dreaming off \n/dreaming help",
+    "url": "https://x.com/davemorin/status/2041001709192048885",
+    "created_at": 1775447702,
+    "author": {
+      "user_id": "3475",
+      "handle": "davemorin",
+      "name": "Dave Morin 🦞",
+      "avatar": "https://images.asksurf.ai/giL4c0KQJMJeV9B1LhM1tDhkocuaU80OObGDXDd2MuY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5ODg4MjcxNzg1ODc1NjYwODAvYXdZR19raXQuanBn"
+    },
+    "stats": {
+      "views": 92909,
+      "likes": 416,
+      "reposts": 17,
+      "replies": 22
+    }
+  },
+  {
+    "tweet_id": "2041000651485049290",
+    "text": "Enable dreaming, go to your gateway's dreaming tab for a surprise :) https://t.co/F0ONtCjfWY",
+    "url": "https://x.com/_vgnsh/status/2041000651485049290",
+    "created_at": 1775447449,
+    "author": {
+      "user_id": "172501485",
+      "handle": "_vgnsh",
+      "name": "Vignesh",
+      "avatar": "https://images.asksurf.ai/pHJVp0DV4XvDWxSThNinc0nB_e4kAkRKjMTbTmBamME/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2NDU2MTIwNTAvQ2hpY2tlbi5qcGc"
+    },
+    "stats": {
+      "views": 254320,
+      "likes": 1137,
+      "reposts": 62,
+      "replies": 38
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2041000602763976704/img/g7u9TTLdN1R7EwtB.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040999332053233810",
+    "text": "How you and your @openclaw feels running gpt5.4 with personality upgrade and /dreaming.... with no random outages. https://t.co/DfTTRiqPEr",
+    "url": "https://x.com/vincent_koc/status/2040999332053233810",
+    "created_at": 1775447135,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 277787,
+      "likes": 775,
+      "reposts": 34,
+      "replies": 56
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2040999258305003520/img/kNXk4ZQXOC7I__GC.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040998577372021026",
+    "text": "Dreaming is OpenClaw’s experimental, opt-in memory consolidation system, promoting meaningful short-term signals into durable memory through explainable light, deep, and REM-style phases. https://docs.openclaw.ai/concepts/dreaming",
+    "url": "https://x.com/openclaw/status/2040998577372021026",
+    "created_at": 1775446955,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 457208,
+      "likes": 700,
+      "reposts": 63,
+      "replies": 40
+    }
+  },
+  {
+    "tweet_id": "2040998570317197607",
+    "text": "OpenClaw 2026.4.5 🦞\n\n🎬 Built-in video + music generation\n🧠 /dreaming is now real\n🔀 Structured task progress\n⚡ Better prompt-cache reuse\n🌍 Control UI + Docs now speak 12 more languages\n\nAnthropic cut us off. GPT-5.4 got better. We moved on. https://github.com/openclaw/openclaw/releases/tag/v2026.4.5",
+    "url": "https://x.com/openclaw/status/2040998570317197607",
+    "created_at": 1775446953,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 1883254,
+      "likes": 8654,
+      "reposts": 877,
+      "replies": 451
+    }
+  },
+  {
+    "tweet_id": "2040998574972969303",
+    "text": "Clawtributors: slightly chaotic, deeply cracked, absolutely carrying. 🙏🦞 https://t.co/tZlM3tRjKH",
+    "url": "https://x.com/openclaw/status/2040998574972969303",
+    "created_at": 1775446954,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 72863,
+      "likes": 365,
+      "reposts": 9,
+      "replies": 12
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFMPS78a0AAcARC.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040998572355617092",
+    "text": "🖼️ Image generation: Comfy, fal, Google, MiniMax, OpenAI\n🎵 Music generation: Comfy, Google, MiniMax\n🎬 Video: Alibaba, BytePlus, Comfy, fal, Google, MiniMax, OpenAI, Qwen, Runway, Together AI, xAI\n\nApparently we took “bring your own model” as a personal challenge.",
+    "url": "https://x.com/openclaw/status/2040998572355617092",
+    "created_at": 1775446954,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 80310,
+      "likes": 450,
+      "reposts": 21,
+      "replies": 19
+    }
+  },
+  {
+    "tweet_id": "2040833418687127916",
+    "text": "langosta · lagosta · Hummer · homard · aragosta · ıstakoz · homar · الكركند · ロブスター · 바닷가재 · 龙虾 · lobster \n\nOpenClaw docs now speak 12 languages 🌍🦞\n\nWe moved translations into a dedicated docs repo, added per-language glossaries + translation memory, and retranslate pages when the English source actually changes. https://docs.openclaw.ai/es",
+    "url": "https://x.com/openclaw/status/2040833418687127916",
+    "created_at": 1775407578,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 87127,
+      "likes": 738,
+      "reposts": 73,
+      "replies": 56
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFJ9XmmbcAA-Xym.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040832766183440791",
+    "text": "RT @belimad: 1st act: @AnthropicAI  kicks us out\n2nd act:  everyone says GPT‑5.4 has horrible personality, runs for the exit, @openclaw is…",
+    "url": "https://x.com/openclaw/status/2040832766183440791",
+    "created_at": 1775407422,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 19,
+      "likes": 0,
+      "reposts": 22,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2040830138124800485",
+    "text": "1st act: @AnthropicAI  kicks us out\n2nd act:  everyone says GPT‑5.4 has horrible personality, runs for the exit, @openclaw is dead\n3rd act: @steipete  + the team make it 100 times better than the original.\n\nNecessity is the mother of invention. So long, Opus. You had a good run.",
+    "url": "https://x.com/belimad/status/2040830138124800485",
+    "created_at": 1775406796,
+    "author": {
+      "user_id": "14397550",
+      "handle": "belimad",
+      "name": "Mariano Belinky",
+      "avatar": "https://images.asksurf.ai/V5BfvYTwRdQAm4bD_7RQh4ym3F5wTU8ICMDQtGgAuaU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MzgxODcwMTEyNTQzNzQ0MDAvZkxVVXFTZnAuanBn"
+    },
+    "stats": {
+      "views": 94154,
+      "likes": 485,
+      "reposts": 22,
+      "replies": 30
+    }
+  },
+  {
+    "tweet_id": "2040813179740074382",
+    "text": "We listened, shipping harness improvements for personality with @openai 5.4 on @openclaw to have some sass! https://t.co/7gJjD9Brgc",
+    "url": "https://x.com/vincent_koc/status/2040813179740074382",
+    "created_at": 1775402753,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 209752,
+      "likes": 342,
+      "reposts": 18,
+      "replies": 49
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFJsvqlbYAALJk3.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2039791330017300497",
+    "text": "@downandoutlaw Yes!",
+    "url": "https://x.com/openclaw/status/2039791330017300497",
+    "created_at": 1775159125,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 444,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "tweet_id": "2039789276997591061",
+    "text": "@openclaw is the \"exec approvals\" telegram bug fixed??",
+    "url": "https://x.com/downandoutlaw/status/2039789276997591061",
+    "created_at": 1775158635,
+    "author": {
+      "user_id": "1599623495947649024",
+      "handle": "downandoutlaw",
+      "name": "Drifter Supremo",
+      "avatar": "https://images.asksurf.ai/7KUss9m3TE4xKp13lL-b21QxtOwtfLZl4Z4szpPmHlk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NzM1MzUwMTEzNTA0MTc0MDgvdVZIZ1d6UUYuanBn"
+    },
+    "stats": {
+      "views": 237,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2039789061154685323",
+    "text": "OpenClaw 2026.4.2 🦞\n\n🔄 Durable Task Flow orchestration\n🔓 Better native exec defaults + approvals\n🤖 Copilot + Kimi + provider hardening\n🔌 Tighter plugin activation boundaries\n🛡️ Hardened provider transport + routing\n\nLess bloat. More lobster. https://github.com/openclaw/openclaw/releases/tag/v2026.4.2",
+    "url": "https://x.com/openclaw/status/2039789061154685323",
+    "created_at": 1775158584,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 233687,
+      "likes": 1665,
+      "reposts": 185,
+      "replies": 200
+    }
+  }
+]

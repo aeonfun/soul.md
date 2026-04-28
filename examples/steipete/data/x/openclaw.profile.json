@@ -1,0 +1,15 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataObjectResponseXUser.json",
+  "data": {
+    "user_id": "1995710751097659392",
+    "handle": "openclaw",
+    "name": "OpenClaw🦞",
+    "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn",
+    "followers_count": 0,
+    "following_count": 0
+  },
+  "meta": {
+    "credits_used": 2,
+    "cached": false
+  }
+}

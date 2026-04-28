@@ -1,0 +1,1034 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="view-transition" content="same-origin"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="canonical" href="https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing"><meta name="generator" content="Astro v5.18.1"><!-- General Meta Tags --><title>Migrating 700+ Tests to Swift Testing: A Real-World Experience | Peter Steinberger</title><meta name="title" content="Migrating 700+ Tests to Swift Testing: A Real-World Experience | Peter Steinberger"><meta name="description" content="How I migrated over 700 tests from XCTest to Swift Testing across two projects, with AI assistance and systematic refinement"><meta name="author" content="Peter Steinberger"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Migrating 700+ Tests to Swift Testing: A Real-World Experience | Peter Steinberger"><meta property="og:description" content="How I migrated over 700 tests from XCTest to Swift Testing across two projects, with AI assistance and systematic refinement"><meta property="og:url" content="https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing"><meta property="og:image" content="https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing/index.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-06-06T18:00:00.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing"><meta property="twitter:title" content="Migrating 700+ Tests to Swift Testing: A Real-World Experience | Peter Steinberger"><meta property="twitter:description" content="How I migrated over 700 tests from XCTest to Swift Testing across two projects, with AI assistance and systematic refinement"><meta property="twitter:image" content="https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Migrating 700+ Tests to Swift Testing: A Real-World Experience | Peter Steinberger","image":"https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing/index.png","datePublished":"2025-06-06T18:00:00.000Z","author":[{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"}]}</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Peter Steinberger" href="https://steipete.me/rss.xml"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><script src="/toggle-theme.js"></script><!-- Domain-based markdown redirect --><script>
+      // Check if we're on steipete.md domain
+      const hostname = window.location.hostname;
+      if ((hostname === 'steipete.md' || hostname === 'www.steipete.md') && !window.location.pathname.endsWith('.md')) {
+        // Redirect to the .md version of the current page
+        const mdPath = window.location.pathname === '/' ? '/index.md' : window.location.pathname + '.md';
+        window.location.replace(mdPath + window.location.search + window.location.hash);
+      }
+    </script><!-- Twitter Widget Script --><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><style>@media(max-width:640px){.newsletter-box[data-astro-cid-nbvfnxgh]{margin-left:-1rem;margin-right:-1rem;border-radius:0}}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.jXOsNRnW.css">
+<style>.youtube-embed-container[data-astro-cid-vj4tpspi]{margin:2rem 0;position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden}.youtube-embed-container[data-astro-cid-vj4tpspi] iframe[data-astro-cid-vj4tpspi]{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+</style><style>[data-astro-transition-scope="astro-pu2sknsl-1"] { view-transition-name: migrating-700-tests-to-swift-testing-a-real-world-experience; }@layer astro { ::view-transition-old(migrating-700-tests-to-swift-testing-a-real-world-experience) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(migrating-700-tests-to-swift-testing-a-real-world-experience) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(migrating-700-tests-to-swift-testing-a-real-world-experience) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(migrating-700-tests-to-swift-testing-a-real-world-experience) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: swift; }@layer astro { ::view-transition-old(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: testing; }@layer astro { ::view-transition-old(testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: swift-testing; }@layer astro { ::view-transition-old(swift-testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(swift-testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(swift-testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(swift-testing) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-5"] { view-transition-name: xc-test; }@layer astro { ::view-transition-old(xc-test) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(xc-test) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(xc-test) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(xc-test) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-6"] { view-transition-name: ai; }@layer astro { ::view-transition-old(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ai) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-7"] { view-transition-name: migration; }@layer astro { ::view-transition-old(migration) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(migration) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(migration) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(migration) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-7"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-7"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-7"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-7"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-7"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-7"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-7"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-7"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-8"] { view-transition-name: i-os; }@layer astro { ::view-transition-old(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-8"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-8"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-8"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-8"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-8"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-8"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-8"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-8"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-9"] { view-transition-name: mac-os; }@layer astro { ::view-transition-old(mac-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(mac-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(mac-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(mac-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-9"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-9"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-9"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-9"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-9"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-9"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-9"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-9"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4>  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Migrating 700+ Tests to Swift Testing: A Real-World Experience","description":"How I migrated over 700 tests from XCTest to Swift Testing across two projects, with AI assistance and systematic refinement","author":{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"},"datePublished":"2025-06-06T18:00:00.000Z","dateModified":"2025-06-06T18:00:00.000Z","publisher":{"@type":"Person","name":"Peter Steinberger","logo":{"@type":"ImageObject","url":"https://steipete.me/peter-avatar.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing"},"image":"https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing/index.png","articleSection":"Swift","keywords":"Swift, Testing, Swift-Testing, XCTest, AI, Migration, iOS, macOS","wordCount":2457,"timeRequired":"13 min read"}</script> <header> <a id="skip-to-content" href="#main-content" class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <div id="nav-container" class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"> <a href="/" class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:static"> Peter Steinberger </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg> </button> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Posts
+</a> </li> <!-- <li class="col-span-2">
+            <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
+              Tags
+            </a>
+          </li> --> <li class="col-span-2"> <a href="/about">
+About
+</a> </li>  <li class="col-span-1 flex items-center justify-center"> <a href="/search" class="group inline-block hover:text-accent focus-outline flex p-3 sm:p-1" aria-label="search" title="Search"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span> </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-border" aria-hidden="true"> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",()=>{s()});</script> <script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="mx-auto w-full max-w-3xl px-4 pb-12 mt-8" data-pagefind-body data-astro-cid-vj4tpspi> <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-cid-vj4tpspi data-astro-transition-scope="astro-pu2sknsl-1"> Migrating 700+ Tests to Swift Testing: A Real-World Experience </h1> <div class="flex items-center justify-between gap-4 mt-2 mb-6" data-astro-cid-vj4tpspi> <div class="flex items-center gap-3" data-astro-cid-vj4tpspi> <div class="flex items-center gap-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5 min-w-[1.25rem]"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg> <span class="sr-only">Published:</span> <span class="text-sm italic sm:text-base"> <time datetime="2025-06-06T18:00:00.000Z">6 Jun, 2025</time> </span> </div>  <span class="text-foreground/30" data-astro-cid-vj4tpspi>•</span> <span class="text-sm text-foreground/60" data-astro-cid-vj4tpspi>13 min read</span>  </div> <div class="opacity-80 max-sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/migrating-700-tests-to-swift-testing.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> </div> <article id="article" class="mx-auto prose mt-6 max-w-3xl" data-astro-cid-vj4tpspi> <img src="/assets/img/2025/migrating-700-tests-to-swift-testing/hero.png" alt="" class="mb-8 aspect-video w-full rounded-md object-cover" loading="lazy" data-astro-cid-vj4tpspi> <p><strong>TL;DR</strong>: I let Claude Code convert 700+ tests to Swift Testing, watched it fail spectacularly, created an AI-generated playbook, then watched it succeed brilliantly. The difference? Better instructions.</p>
+<p>I’ve been migrating my test suites from XCTest to <a href="https://developer.apple.com/xcode/swift-testing/">Swift Testing</a>. Between <a href="https://github.com/steipete/VibeMeter">Vibe Meter</a> and <a href="https://github.com/steipete/CodeLooper">Code Looper</a>, that’s over 700 tests across 118 files. Here’s what I learned from letting AI help with the conversion and then systematically improving the results using my <a href="https://gist.github.com/steipete/84a5952c22e1ff9b6fe274ab079e3a95">Swift Testing playbook</a>.</p>
+<h2 id="the-initial-attempt">The Initial Attempt</h2>
+<p>Started with the laziest possible prompt:</p>
+<blockquote>
+<p>Hey Claude Code, convert all these tests to swift-testing.<br>
+I’ll go make coffee.</p>
+</blockquote>
+<p>The initial results were… technically correct. The tests compiled. They even passed. But looking at the code, it was clear this was just XCTest wearing a Swift Testing costume.</p>
+<p>When AI gives you lemons:</p>
+<ul>
+<li><code>XCTestCase</code> classes became <a href="https://developer.apple.com/documentation/testing/suite"><code>@Suite</code></a> structs</li>
+<li><code>XCTAssert</code> calls turned into <a href="https://developer.apple.com/documentation/testing/expect(_:_:sourceLocation:)"><code>#expect</code></a> statements</li>
+<li><code>func testFoo()</code> transformed to <a href="https://developer.apple.com/documentation/testing/test"><code>@Test</code></a> <code>func foo()</code></li>
+</ul>
+<p>But it missed the deeper opportunities that Swift Testing provides. The real work began after my coffee kicked in.</p>
+<blockquote>
+<p><strong>Full disclosure</strong>: I actually tried Swift Testing last week but completely messed it up because I linked to the wrong version without understanding it was already integrated into Xcode. Shoutout to <a href="https://x.com/throwspace/status/1929658866804953371">Stuart</a> who nudged me to try again. Sometimes you need that external push to revisit something you wrote off too quickly.</p>
+</blockquote>
+<h2 id="creating-a-systematic-approach">Creating a Systematic Approach</h2>
+<p>Instead of manually fixing 700 tests, I did what any reasonable developer would do: I procrastinated by watching WWDC videos. Both <a href="https://developer.apple.com/videos/play/wwdc2024/10179/"><em>Meet Swift Testing</em></a> and <a href="https://developer.apple.com/videos/play/wwdc2024/10195/"><em>Go further with Swift Testing</em></a> sessions were eye-opening.</p>
+<p>But here’s where it gets complicated. The WWDC videos referenced outdated APIs that confused my AI agents. Plus, Claude couldn’t access Apple’s documentation because it’s all JavaScript-rendered. I spent hours trying different approaches until I discovered <a href="https://www.firecrawl.dev/referral?rid=9CG538BE">Firecrawl</a> (affiliate link, I need moar credits!), which converted Apple’s entire Swift Testing documentation into a massive Markdown file. (This experience inspired me to build <a href="https://steipete.me/posts/llm-codes-transform-developer-docs">llm.codes</a>, where anyone can now generate up-to-date documentation from Apple’s official sources.)</p>
+<p>So I ended up with <a href="https://gist.github.com/steipete/84a5952c22e1ff9b6fe274ab079e3a95">two documents</a>:</p>
+<ol>
+<li>The complete Swift Testing API documentation from Apple (via <a href="https://www.firecrawl.dev/referral?rid=9CG538BE">Firecrawl</a>)</li>
+<li>An actionable playbook with examples from WWDC videos</li>
+</ol>
+<p>I fed both into <a href="https://aistudio.google.com/">Google’s AI Studio</a>, asked it to correct the outdated API references, and let Gemini compile everything into a comprehensive <a href="https://gist.github.com/steipete/84a5952c22e1ff9b6fe274ab079e3a95">Swift Testing resource</a> with both the API documentation and actionable migration patterns.</p>
+<p><strong>Why go through all this effort?</strong> Swift Testing is new and underrepresented in open source compared to mature ecosystems like TypeScript/React where AI has absorbed countless examples. For emerging technologies, you need to explicitly provide the knowledge that doesn’t exist in the training data yet.</p>
+<p>The key insight: AI needs concrete patterns and examples, not just documentation. This playbook became my guide for teaching Claude Code how to write <em>idiomatic</em> Swift Testing code, providing:</p>
+<ul>
+<li>Migration patterns with before/after examples</li>
+<li>Best practices for each Swift Testing feature</li>
+<li>Common pitfalls and how to avoid them</li>
+<li>Specific guidance on when to use each feature</li>
+</ul>
+<h2 id="round-two-ai-redemption-arc">Round Two: AI Redemption Arc</h2>
+<p>With the playbook in hand, I gave Claude Code new instructions:</p>
+<blockquote>
+<p>Read <code>swift-testing-playbook.md</code> and improve &#x26; refactor the tests. Periodically stop, compile, fix any build issues, commit, ensure everything is green locally and on CI, then continue until perfection.</p>
+</blockquote>
+<p><strong>Plot twist</strong>: The first time I tried this, Claude got creative and started implementing <a href="https://github.com/steipete/CodeLooper/pull/8/commits/d1bb7ba75dfefc821d24d5cfff6c785cd92f9079">new test patterns from the playbook</a> instead of converting existing tests. I had to clarify:</p>
+<p><img src="/assets/img/2025/migrating-700-tests-to-swift-testing/claude-being-dumb.png" alt="Claude getting carried away with implementing test patterns instead of converting existing tests" loading="lazy"></p>
+<blockquote>
+<p>Read <code>swift-testing-playbook.md</code> and <code>swift-testing-api.md</code> and refactor the <strong>existing</strong> tests in this codebase to use Swift Testing patterns.</p>
+</blockquote>
+<p>Lesson learned: Be very specific with AI instructions. “Improve tests using these patterns” can mean “create new tests” or “convert existing tests.” The difference matters when you have existing test coverage to preserve.</p>
+<p>This iterative approach revealed several patterns worth sharing:</p>
+<h3 id="1-nested-suites-bring-order-to-chaos">1. Nested Suites Bring Order to Chaos</h3>
+<p>The biggest transformation came from consolidating scattered test files into organized hierarchies. Vibe Meter’s AuthenticationTokenManager tests showed the most dramatic improvement:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Before: 4 separate test files</span></span>
+<span class="line"><span>VibeMeterTests/</span></span>
+<span class="line"><span>├── AuthenticationTokenManagerCoreTests.swift</span></span>
+<span class="line"><span>├── AuthenticationTokenManagerCookieTests.swift  </span></span>
+<span class="line"><span>├── AuthenticationTokenManagerEdgeCasesTests.swift</span></span>
+<span class="line"><span>└── AuthenticationTokenManagerTests.swift</span></span></code></pre>
+<p>To this beauty:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Authentication Token Manager Tests</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">authentication</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">unit</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">MainActor</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> AuthenticationTokenManagerTests</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // MARK: - Core Functionality</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Core Functionality</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">fast</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> Core</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> mockManager: MockAuthenticationTokenManager</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        init</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            mockManager </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> MockAuthenticationTokenManager</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">save token success</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">critical</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">requiresKeychain</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> saveTokenSuccess</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">            // Core authentication tests...</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // MARK: - Cookie Management</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Cookie Management</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> CookieManagement</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">cookie extraction from headers</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> cookieExtractionFromHeaders</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">            // Cookie-related tests...</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // MARK: - Edge Cases</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Edge Cases</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">edgeCase</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">fast</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> EdgeCases</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">handles concurrent token updates</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> handlesConcurrentTokenUpdates</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">            // Edge case tests...</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>75% fewer files, with logical organization that mirrors the actual functionality. Each nested suite can have its own setup, and the test navigator in Xcode finally makes sense.</p>
+<h3 id="2-parameterized-tests-eliminate-copy-paste-syndrome">2. Parameterized Tests Eliminate Copy-Paste Syndrome</h3>
+<p>Remember writing the same test five times with different values? Vibe Meter’s currency conversion tests showcase Swift Testing’s superior parameterization:</p>
+<details>
+<summary>View Currency Conversion Test Implementation</summary>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Before: Individual test methods for each scenario</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testConvert_SmallAmount</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">/* test code */</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testConvert_LargeAmount</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">/* test code */</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testConvert_NegativeAmount</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">/* test code */</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testConvert_ZeroAmount</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">/* test code */</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testConvert_PrecisionAmount</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">/* test code */</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// ... and many more</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// After: Sophisticated parameterized testing</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Currency Conversion Tests</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">currency</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">unit</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> CurrencyConversionTests</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> Sendable</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">CustomTestStringConvertible </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> amount: </span><span style="color:#1976D2;--shiki-dark:#C5E478">Double</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> rate: </span><span style="color:#1976D2;--shiki-dark:#C5E478">Double</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> expected: </span><span style="color:#1976D2;--shiki-dark:#C5E478">Double</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> description: </span><span style="color:#1976D2;--shiki-dark:#C5E478">String</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> testDescription: </span><span style="color:#1976D2;--shiki-dark:#C5E478">String</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#D9F5DD">            "</span><span style="color:#22863A;--shiki-dark:#ECC48D">$</span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">amount</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D"> × </span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">rate</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D"> → $</span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">expected</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D"> (</span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">description</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D">)</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    static</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> conversionTestCases: [ConversionTestCase] </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 85.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">USD to EUR conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">0.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">zero amount conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">same currency conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">-100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> -85.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">negative amount conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">1_000_000.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 850_000.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">large amount conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">0.01</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.0085</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">small amount conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        ConversionTestCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">999.99</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1.2345</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1234.488</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">precision conversion</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    ]</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Currency conversion calculations</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">critical</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">          arguments</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> CurrencyConversionTests.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">conversionTestCases</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> conversionCalculations</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">testCase</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">: ConversionTestCase</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> result </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> MainActor.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">run</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            CurrencyConversionHelper.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">amount</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> testCase.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">amount</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> testCase.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> tolerance </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> testCase.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">expected</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">magnitude</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> &#x3C;</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1.0</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ?</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.0001</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> :</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.01</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">result.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">isApproximatelyEqual</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">to</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> testCase.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">expected</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">tolerance</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> tolerance</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Invalid rate handling</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">edgeCase</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">          arguments</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="color:#1976D2;--shiki-dark:#82AAFF">nil</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#1976D2;--shiki-dark:#F78C6C">0.0</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#1976D2;--shiki-dark:#F78C6C">-1.0</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">infinity</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">nan</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">] </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">as</span><span style="color:#212121;--shiki-dark:#D6DEEB"> [</span><span style="color:#1976D2;--shiki-dark:#C5E478">Double</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#212121;--shiki-dark:#D6DEEB">])</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> invalidRateHandling</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">invalidRate</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">: </span><span style="color:#1976D2;--shiki-dark:#C5E478">Double</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> result </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> MainActor.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">run</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            CurrencyConversionHelper.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">amount</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> invalidRate</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">result </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">==</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 100.0</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Should return original amount for invalid rates</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+</details>
+<p>The beauty? <a href="https://developer.apple.com/documentation/testing/customteststringconvertible"><code>CustomTestStringConvertible</code></a> makes each test case self-documenting in the test navigator with descriptions like “$100.0 × 0.85 → $85.0 (USD to EUR conversion)” instead of generic object names. Test failures become instantly readable, and we can test edge cases (nil, infinity, NaN) in a single elegant test.</p>
+<h3 id="3-instance-isolation-simplifies-state-management">3. Instance Isolation Simplifies State Management</h3>
+<p>Swift Testing creates a fresh instance for each test, eliminating shared state issues:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> DatabaseTests</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> db: TestDatabase</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> tempDir: URL</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    init</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        tempDir </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> FileManager.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">default</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">temporaryDirectory</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">appendingPathComponent</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">UUID</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">uuidString</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        try</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> FileManager.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">default</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">createDirectory</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">at</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> tempDir</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        db </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> TestDatabase</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">path</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> tempDir</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    deinit</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        try</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> FileManager.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">default</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">removeItem</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">at</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> tempDir</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>No more worrying about test order or cleanup between tests. Each test gets its own clean instance.</p>
+<h3 id="4-better-error-handling-and-assertions">4. Better Error Handling and Assertions</h3>
+<p><a href="https://developer.apple.com/documentation/testing/">Swift Testing</a> provides two types of assertions that behave very differently:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// #expect: Soft assertion - continues test on failure</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">#expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">user.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">email</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ==</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">test@example.com</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">#expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">user.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">isActive</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ==</span><span style="color:#1976D2;--shiki-dark:#FF5874"> true</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// ↑ Both assertions run even if first one fails</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// #require: Hard assertion - stops test immediately on failure</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> config </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> try</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> #require</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">loadConfiguration</span><span style="color:#212121;--shiki-dark:#D6DEEB">())</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// ↑ Test stops here if config is nil, preventing crashes below</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> apiKey </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> try</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> #require</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">config.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">apiKey</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<p>Error handling is also more expressive than XCTest:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Validate specific error types</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">#expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">throws</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> NetworkError.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> api.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">fetchWithoutAuth</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Ensure no errors</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">#expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">throws</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#7FDBCA"> Never</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> parseValidJSON</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">data</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h3 id="5-time-limits-prevent-ci-hangs">5. Time Limits Prevent CI Hangs</h3>
+<p>Performance tests were scattered across multiple files with no protection against runaway execution:</p>
+<details>
+<summary>View Performance Test Implementation</summary>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Before: Manual timing with XCTest</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testLogging_Performance</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> iterations </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 10_000</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> testMessage </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Performance test message</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    measure</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        for</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> i </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">..&#x3C;</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">iterations {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            LoggingService.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">info</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">testMessage</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#D3423E"> \(</span><span style="color:#22863A;--shiki-dark:#ECC48D">i</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testCurrencyConversionPerformance</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">    self</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">measure</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        for</span><span style="color:#1976D2;--shiki-dark:#D6DEEB"> _</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">..&#x3C;</span><span style="color:#1976D2;--shiki-dark:#F78C6C">1000</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#D6DEEB">            _</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> CurrencyHelper.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// After: Clean, declarative performance tests</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Suite</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Performance Benchmarks</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">performance</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> PerformanceBenchmarks</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Bulk currency conversion performance</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">timeLimit</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">minutes</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">1</span><span style="color:#212121;--shiki-dark:#D6DEEB">)))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">MainActor</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> bulkCurrencyConversionPerformance</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Test configuration</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> amounts </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#1976D2;--shiki-dark:#C5E478"> Array</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">stride</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">from</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.01</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">through</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 10_000.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">by</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.01</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> exchangeRates </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">EUR</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.92</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">GBP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.82</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">JPY</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 110.0</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">AUD</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1.35</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">CAD</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#D32F2F;--shiki-dark:#C792EA">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1.25</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Performance test</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> startTime </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> Date</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        for</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> amount </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> amounts {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            for</span><span style="color:#212121;--shiki-dark:#D6DEEB"> (</span><span style="color:#1976D2;--shiki-dark:#82AAFF">_</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, rate</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> exchangeRates {</span></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#D6DEEB">                _</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> CurrencyConversionHelper.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">amount</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> amount, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> rate</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> duration </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> Date</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">timeIntervalSince</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">startTime</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Verify performance</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        print</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Converted </span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">amounts.</span><span style="color:#1976D2;--shiki-dark:#ECC48D">count</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> *</span><span style="color:#22863A;--shiki-dark:#ECC48D"> exchangeRates.</span><span style="color:#1976D2;--shiki-dark:#ECC48D">count</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D"> values in </span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">duration</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#ECC48D">s</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">duration </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">&#x3C;</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 10.0</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Framework enforces the 1-minute limit</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    @</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Logging throughput</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">timeLimit</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">seconds</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">30</span><span style="color:#212121;--shiki-dark:#D6DEEB">)))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> loggingThroughput</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> iterations </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 100_000</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // No manual measurement needed - framework handles it</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        for</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> i </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">..&#x3C;</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">iterations {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">            LoggingService.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">debug</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Test message </span><span style="color:#22863A;--shiki-dark:#D3423E">\(</span><span style="color:#22863A;--shiki-dark:#ECC48D">i</span><span style="color:#22863A;--shiki-dark:#D3423E">)</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Test will fail if it exceeds 30 seconds</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+</details>
+<p>This prevents runaway tests from blocking CI pipelines. Something I’ve dealt with too many times in XCTest.</p>
+<h2 id="beyond-basic-conversion-real-improvements">Beyond Basic Conversion: Real Improvements</h2>
+<p>The mechanical migration was just the beginning. Here’s where Swift Testing really shines:</p>
+<h3 id="meaningful-error-testing-with-expectthrows">Meaningful Error Testing with #expect(throws:)</h3>
+<p>Stop settling for “it didn’t crash” assertions:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Before: Wishful thinking</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">do</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> manager.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">startListener</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">} </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">catch</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">error </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">!=</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Well, yes... that's why we're in catch</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// After: Actual validation</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">#expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">throws</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> URLError.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> api.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">fetchWithoutAuth</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Even better: Test the specific error properties</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">do</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> api.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">fetchWithoutAuth</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    Issue.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">record</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Expected URLError to be thrown</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">} </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">catch</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> error </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">as</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> URLError</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">error.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">code</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ==</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">notConnectedToInternet</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h3 id="memory-leak-detection-built-right-in">Memory Leak Detection Built Right In</h3>
+<p>Swift Testing’s instance isolation makes leak detection elegant:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">ThreadSafeBox instances are properly deallocated</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> threadSafeBoxMemoryLeaks</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    weak</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> weakBox: ThreadSafeBox</span><span style="color:#212121;--shiki-dark:#D6DEEB">&#x3C;</span><span style="color:#1976D2;--shiki-dark:#C5E478">String</span><span style="color:#212121;--shiki-dark:#D6DEEB">></span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    do</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> box </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> ThreadSafeBox</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">test-value</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        weakBox </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> box</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">weakBox </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">!=</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Box should be alive within scope</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> Task.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">yield</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Allow deallocation</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">weakBox </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">==</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Box should be deallocated after scope ends</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h3 id="descriptive-test-names-that-tell-stories">Descriptive Test Names That Tell Stories</h3>
+<p>No more cryptic function names:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Before: What does this even test?</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">windowControllerManagement</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// After: Crystal clear intent</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Window controller management handles creation and lifecycle</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Position saving and restoration persists window states</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">AppleScript support methods provide automation capabilities</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<h3 id="advanced-confirmation-patterns">Advanced Confirmation Patterns</h3>
+<p>Swift Testing’s <a href="https://developer.apple.com/documentation/testing/confirmation(_:expectedcount:sourcelocation:_:)"><code>confirmation()</code></a> handles complex async scenarios elegantly:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Multi-step debouncer lifecycle</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> multiStepDebouncerLifecycle</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> confirmation</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Complete lifecycle</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">expectedCount</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 3</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { confirmation </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Step 1: Initial call</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        debouncer.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">call</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#6F42C1;--shiki-dark:#C5E478">confirmation</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> Task.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">sleep</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">for</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">milliseconds</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">70</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Step 2: Second call after first completes</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        debouncer.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">call</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#6F42C1;--shiki-dark:#C5E478">confirmation</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> Task.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">sleep</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">for</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">milliseconds</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">70</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Step 3: Final verification</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        confirmation</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h3 id="taming-flaky-tests-with-withknownissue">Taming Flaky Tests with withKnownIssue</h3>
+<p>Every codebase has those intermittent failures. Swift Testing provides a civilized way to handle them with <a href="https://developer.apple.com/documentation/testing/withknownissue(_:isintermittent:sourcelocation:_:)"><code>withKnownIssue</code></a>:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">External API availability check</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> externalAPITest</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> async</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> throws</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    await</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> withKnownIssue</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">External API may be temporarily unavailable</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">isIntermittent</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#FF5874"> true</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> url </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> URL</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">string</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">https://api.exchangerate-api.com/v4/latest/USD</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">!</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#212121;--shiki-dark:#D6DEEB"> (</span><span style="color:#1976D2;--shiki-dark:#82AAFF">_</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, response</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> try</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> await</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> URLSession.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">shared</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">data</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">from</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> url</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> httpResponse </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> response </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">as!</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> HTTPURLResponse</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">httpResponse.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">statusCode</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ==</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 200</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Exchange rate API should be available</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h2 id="the-results">The Results</h2>
+<p>Looking at the final pull requests (<a href="https://github.com/steipete/VibeMeter/pull/28">Vibe Meter PR #28</a>, <a href="https://github.com/steipete/CodeLooper/pull/8">Code Looper PR #8</a>), the transformation is dramatic:</p>
+<p><strong>Combined Results:</strong></p>
+<ul>
+<li><strong>46% fewer test files</strong> (91 → 49 files) through intelligent consolidation</li>
+<li><strong>+3,258 lines of enhanced test code</strong> across both projects
+<ul>
+<li>Vibe Meter: 61 → 23 files, +1,006 lines</li>
+<li>Code Looper: 30 → 26 files, +2,252 lines</li>
+</ul>
+</li>
+<li><strong>Zero test duplication</strong> thanks to parameterized tests</li>
+<li><strong>Hierarchical organization</strong> that actually makes sense in Xcode’s navigator</li>
+<li><strong>Bulletproof error handling</strong> with specific exception types</li>
+<li><strong>CI that doesn’t hang</strong> with proper timeouts on every async test</li>
+</ul>
+<p><strong>Why more lines of code?</strong> Swift Testing prioritizes maintainability over brevity. Here’s a typical transformation:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Before: XCTest (3 lines)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> testCurrencyConversion</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    XCTAssertEqual</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#1976D2;--shiki-dark:#F78C6C">100</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#1976D2;--shiki-dark:#F78C6C">85.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">accuracy</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.01</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// After: Swift Testing (5 lines)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Test</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#22863A;--shiki-dark:#ECC48D">Currency conversion with EUR rate</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, .</span><span style="color:#6F42C1;--shiki-dark:#C5E478">tags</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">currency</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> currencyConversionEUR</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> result </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> convert</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">amount</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 100.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">rate</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.85</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">    #expect</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">result.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">isApproximatelyEqual</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">to</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 85.0</span><span style="color:#6F42C1;--shiki-dark:#82AAFF">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">tolerance</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0.01</span><span style="color:#212121;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>The increase comes from descriptive test names, explicit tagging, better parameter naming, and structured test case types for parameterized tests.</p>
+<p>This represents quality improvement, not bloat. Moving from cryptic but compact tests to self-documenting, maintainable test suites.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>AI needs guidance</strong>: The initial blind conversion was just the starting point. The real value came from providing structured patterns through the playbook.</p>
+</li>
+<li>
+<p><strong>Iterative refinement works</strong>: The approach of compile-test-commit-repeat caught issues early and made debugging easier.</p>
+</li>
+<li>
+<p><strong>Swift Testing encourages better patterns</strong>: Features like parameterized tests and instance isolation naturally lead to cleaner test design.</p>
+</li>
+<li>
+<p><strong>Migration reveals test quality issues</strong>: This wasn’t just a syntax conversion. It was an opportunity to improve test architecture.</p>
+</li>
+</ol>
+<h2 id="additional-ai-resources-for-swift-testing">Additional AI Resources for Swift Testing</h2>
+<p>For Cursor users, there’s the <a href="https://docs.cursor.com/context/@-symbols/@-docs">@Docs</a> context which <a href="https://raw.githubusercontent.com/getcursor/crawler/main/docs.jsonl">includes</a> the Apple Documentation as a choice.</p>
+<p>There’s also the <a href="https://context7.com/swiftlang/swift-testing">Context 7 MCP</a> that can be instructed to fetch Apple’s docs for testing, however this only includes code snippets and no explanation. (Enes mentioned that <a href="https://x.com/enesakar/status/1931296179502927935">this is on purpose</a>, though I got great results with explanatory text)</p>
+<p>The combination of AI assistance and systematic refinement made this large-scale migration manageable. While the initial AI conversion provided a foundation, the real value came from applying Swift Testing’s features thoughtfully to create a more maintainable test suite.</p>
+<h2 id="running-tests-faster-with-filters">Running Tests Faster with Filters</h2>
+<p>One more tip that significantly speeds up the development workflow: use <code>swift test --filter</code> to run specific tests instead of the entire suite. This is especially useful when you’re iterating on a particular feature:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"># Run a single test suite by name</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --filter</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">FooTests</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"># Run tests with specific tags</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --filter-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> fast</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --filter-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> currency</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"># Combine multiple tags (runs tests with ALL specified tags)</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --filter-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> unit</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --filter-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> fast</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"># Skip tests with certain tags</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --skip-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> slow</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">swift</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> test</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --skip-tag</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> requiresNetwork</span></span></code></pre>
+<p>The performance difference is dramatic when working on a large codebase. Instead of waiting for 700+ tests to run, you can get feedback in seconds by filtering to just the tests you’re working on. Combined with Swift Testing’s parallel execution, this makes the test-driven development cycle incredibly fast.</p>
+<hr>
+<p><strong>P.S.</strong> - If you’re still manually converting <code>XCTestExpectation</code>, stop. <a href="claude-code-is-my-computer">Make AI do it</a>. Just give it <a href="https://gist.github.com/steipete/84a5952c22e1ff9b6fe274ab079e3a95">better instructions</a> than I did.</p> </article> <div class="newsletter-box bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 my-8" data-astro-cid-nbvfnxgh> <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-astro-cid-nbvfnxgh>
+New posts, shipping stories, and nerdy links straight to your inbox.
+</p> <form action="https://buttondown.com/api/emails/embed-subscribe/steipete" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3" data-astro-cid-nbvfnxgh> <input type="hidden" name="tag" value="steipete" data-astro-cid-nbvfnxgh> <input type="text" name="name" placeholder="Your Name" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <input type="email" name="email" placeholder="Your Email" required class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <button type="submit" class="px-6 py-2 bg-accent rounded-md hover:bg-accent/90 transition-colors font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2" style="color: white;" data-astro-cid-nbvfnxgh>
+Subscribe
+</button> </form> <p class="text-xs text-gray-500 dark:text-gray-400 mt-3" data-astro-cid-nbvfnxgh>
+2× per month, pure signal, zero fluff.
+</p> </div>  <hr class="my-8 border-dashed" data-astro-cid-vj4tpspi> <div class="opacity-80 sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/migrating-700-tests-to-swift-testing.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> <ul class="mt-4 mb-8 sm:my-8" data-astro-cid-vj4tpspi> <li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/swift/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Swift</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/testing/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Testing</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/swift-testing/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-4"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Swift-Testing</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/xc-test/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-5"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>XCTest</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/ai/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-6"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>AI</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/migration/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-7"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Migration</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/i-os/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-8"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>iOS</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/mac-os/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-9"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>macOS</span> </a> </li> </ul> <div class="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end sm:gap-4" data-astro-cid-vj4tpspi> <div class="flex flex-col flex-wrap items-center justify-center gap-2 sm:gap-1 sm:items-start"> <span class="italic">Share this post on:</span> <div class="text-center flex flex-wrap gap-1"> <a href="https://x.com/intent/post?url=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Share this post on X</span> </a><a href="https://bsky.app/intent/compose?text=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Share this post on BlueSky</span> </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Share this post on LinkedIn</span> </a><a href="https://wa.me/?text=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg><span class="sr-only">Share this post via WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg><span class="sr-only">Share this post on Facebook</span> </a><a href="https://t.me/share/url?url=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg><span class="sr-only">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Pinterest"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg><span class="sr-only">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://steipete.me/posts/2025/migrating-700-tests-to-swift-testing" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via email"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Share this post via email</span> </a> </div> </div> <button id="back-to-top" class="focus-outline py-1 whitespace-nowrap hover:opacity-75" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span data-astro-cid-vj4tpspi>Back to Top</span> </button> </div> <hr class="my-6 border-dashed" data-astro-cid-vj4tpspi> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="flex flex-col sm:flex-row justify-between gap-6" data-prev-url="/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents" data-next-url="/posts/2025/commanding-your-claude-code-army" data-astro-cid-vj4tpspi> <a href="/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents" class="flex gap-2 hover:opacity-75 items-start" id="prev-post-link" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Previous Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>Peekaboo MCP – lightning-fast macOS screenshots for AI agents</div> </div> </a> <a href="/posts/2025/commanding-your-claude-code-army" class="flex gap-2 hover:opacity-75 items-start justify-end text-right ml-auto" id="next-post-link" data-astro-cid-vj4tpspi> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Next Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>Commanding Your Claude Code Army</div> </div> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg> </a> </div> </main> <footer class="w-full mt-auto"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-border" aria-hidden="true"> </div> <div class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"> <div class="flex-wrap justify-center gap-1 flex"> <a href="https://github.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title=" Peter Steinberger on Github"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg><span class="sr-only"> Peter Steinberger on Github</span> </a><a href="https://x.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Peter Steinberger on X</span> </a><a href="https://bsky.app/profile/steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Peter Steinberger on BlueSky</span> </a><a href="https://www.linkedin.com/in/steipete/" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Peter Steinberger on LinkedIn</span> </a><a href="mailto:peter@steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Send an email to Peter Steinberger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Send an email to Peter Steinberger</span> </a> </div> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <a href="https://github.com/steipete/steipete.me" target="_blank" rel="noopener noreferrer" class="hover:text-accent">
+Steal this post ➜ CC BY 4.0 · Code MIT
+</a> </div> </div> </footer>  <!-- Vercel Analytics --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_0_lang.iMTEyByK.js"></script> <!-- Vercel Speed Insights --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_1_lang.B9nzKlec.js"></script> </body></html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6"),
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-muted px-2 py-1 text-xs leading-4 text-foreground font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" }),
+  );
+
+  /** Add lazy loading to all images in the article */
+  function addLazyLoading() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+    
+    const images = article.querySelectorAll("img:not([loading])");
+    images.forEach((img) => {
+      img.setAttribute("loading", "lazy");
+    });
+  }
+  addLazyLoading();
+
+  /** Keyboard navigation for posts */
+  function setupKeyboardNavigation() {
+    const navContainer = document.querySelector('[data-prev-url]');
+    if (!navContainer) return;
+    
+    const prevUrl = navContainer.getAttribute('data-prev-url');
+    const nextUrl = navContainer.getAttribute('data-next-url');
+    
+    document.addEventListener('keydown', (e) => {
+      // Ignore if user is typing in an input, textarea, or contenteditable
+      if (e.target.matches('input, textarea, [contenteditable="true"]')) return;
+      
+      // J key for next post
+      if (e.key === 'j' && nextUrl) {
+        window.location.href = nextUrl;
+      }
+      // K key for previous post
+      else if (e.key === 'k' && prevUrl) {
+        window.location.href = prevUrl;
+      }
+    });
+  }
+  setupKeyboardNavigation();
+
+  /** Process YouTube and Twitter embeds */
+  function processEmbeds() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+
+    // Look for YouTube embeds
+    const youtubeEmbedRegex = /\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/g;
+    
+    let foundYoutubeEmbeds = false;
+    
+    // Helper to extract a YouTube video ID from various URL formats
+    const extractYouTubeId = (input) => {
+      let videoId = input;
+      try {
+        if (videoId.includes("youtube.com/watch")) {
+          const url = new URL(videoId);
+          videoId = url.searchParams.get("v") || "";
+        } else if (videoId.includes("youtu.be/")) {
+          videoId = videoId.split("youtu.be/")[1]?.split("?")[0] || "";
+        } else if (videoId.includes("youtube.com/embed/")) {
+          videoId = videoId.split("youtube.com/embed/")[1]?.split("?")[0] || "";
+        }
+      } catch (_) {
+        // If URL parsing fails, fall back to the raw input
+      }
+      return videoId;
+    };
+
+    // 1) Pre-pass: replace whole-paragraph shortcodes (most common case)
+    const pNodes = article.querySelectorAll("p");
+    pNodes.forEach((p) => {
+      const text = (p.textContent || "").trim();
+      const ytMatch = text.match(/\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/);
+
+      if (ytMatch && ytMatch[1]) {
+        foundYoutubeEmbeds = true;
+        const videoId = extractYouTubeId(ytMatch[1]);
+        const container = document.createElement("div");
+        container.className = "youtube-embed-container";
+        container.innerHTML = `
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/${videoId}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        `;
+        p.replaceWith(container);
+      }
+    });
+
+    // 2) Fallback: process any remaining text nodes that still contain shortcodes
+    const walker = document.createTreeWalker(
+      article,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false,
+    );
+
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      textNodes.push(node);
+    }
+
+    textNodes.forEach((textNode) => {
+      let content = textNode.textContent;
+      let hasChanges = false;
+
+      // Process YouTube embeds
+      content = content.replace(youtubeEmbedRegex, (match, videoId) => {
+        foundYoutubeEmbeds = true;
+        hasChanges = true;
+        videoId = extractYouTubeId(videoId);
+
+        return `<div class="youtube-embed-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/${videoId}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`;
+      });
+
+      if (hasChanges) {
+        // Replace the text node with HTML content
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+
+        // Replace the text node with the new HTML elements
+        const parent = textNode.parentNode;
+        while (tempDiv.firstChild) {
+          parent.insertBefore(tempDiv.firstChild, textNode);
+        }
+        parent.removeChild(textNode);
+      }
+    });
+  }
+
+  // Run the embed processing
+  processEmbeds();
+  
+  // Also run after astro navigation
+  document.addEventListener("astro:page-load", processEmbeds);
+</script> 

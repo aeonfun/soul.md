@@ -1,0 +1,2052 @@
+[
+  {
+    "tweet_id": "2048957477106938075",
+    "text": "Finally have great solutions for PR/Issue management, remote test execution, massive CI infra for testing. Streamlines a lot of the work.",
+    "url": "https://x.com/steipete/status/2048957477106938075",
+    "created_at": 1777344504,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 7312,
+      "likes": 96,
+      "reposts": 2,
+      "replies": 10
+    }
+  },
+  {
+    "tweet_id": "2048950615301046462",
+    "text": "One more thing: OpenClaw 2026.4.26 is stacked because the Clawtributors showed up hard.\n\nBug reports, fixes, edge cases, docs, Windows/Linux/Docker pain, local-model weirdness. All of it matters.\n\nThank you. This release is very much yours too. https://t.co/C57oZuWiHM",
+    "url": "https://x.com/openclaw/status/2048950615301046462",
+    "created_at": 1777342869,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 11967,
+      "likes": 36,
+      "reposts": 0,
+      "replies": 3
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HG9VfqWaIAEmV5-.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048882959596286342",
+    "text": "Some of the CI issues are having 🤣 https://t.co/yAfsraQqLK",
+    "url": "https://x.com/steipete/status/2048882959596286342",
+    "created_at": 1777326738,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 16770,
+      "likes": 95,
+      "reposts": 1,
+      "replies": 15
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HG8YJ6_awAAKqVK.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048847502007222580",
+    "text": "I got a \"Holy shit, ...\" response from my Claw for the first time in months. Thanks @steipete and @thsottiaux &amp; team for bringing back the life https://t.co/88WvjNuMUF",
+    "url": "https://x.com/sudo_eugene/status/2048847502007222580",
+    "created_at": 1777318284,
+    "author": {
+      "user_id": "257832513",
+      "handle": "sudo_eugene",
+      "name": "Eugene",
+      "avatar": "https://images.asksurf.ai/6r6ceRrdoPdzEXbcDk7WU0953fUfwlaQDDPcrnToEQs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MjA0MjEwNzI1MDA4MzQzMDQvcjAyNXFUeXguanBn"
+    },
+    "stats": {
+      "views": 8482,
+      "likes": 43,
+      "reposts": 1,
+      "replies": 3
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HG7360SXkAAvUqQ.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048782962645459026",
+    "text": "excited to have built Voice Personas for @openclaw!\n\nuntil now, when your agent sent a voice note, it had to improvise the “flair” every time, which rarely worked\n\nwith Personas, your agent’s SOUL can get passed deterministically into every single voice memo, so they SOUND like you always imagined",
+    "url": "https://x.com/iamBarronRoth/status/2048782962645459026",
+    "created_at": 1777302897,
+    "author": {
+      "user_id": "20211327",
+      "handle": "iamBarronRoth",
+      "name": "Barron Roth",
+      "avatar": "https://images.asksurf.ai/lvSiSMw1BToLPCuhmeAB0Hpem4TdlYtomjV9zSk7zsA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDAwODg4NjQ1Mzk3MTM1MzcvejBaWWJtWTUuanBn"
+    },
+    "stats": {
+      "views": 113598,
+      "likes": 539,
+      "reposts": 27,
+      "replies": 31
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2048782902734057472/img/gPnSYohyPrFzBm4H.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048745795776557337",
+    "text": "OpenClaw 2026.4.25 🦞\n\n🔊 TTS got serious\n🧩 Plugins start faster\n📊 OTEL can see the weird stuff\n🛠️ Browser + install/update fixes\n\nLess mystery, more machinery.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.25",
+    "url": "https://x.com/openclaw/status/2048745795776557337",
+    "created_at": 1777294036,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 215398,
+      "likes": 1342,
+      "reposts": 128,
+      "replies": 152
+    }
+  },
+  {
+    "tweet_id": "2048660875007914176",
+    "text": "Released wacrawl 0.2.0.\n\nNew: encrypted Git backup/restore for WhatsApp Desktop archives. `wacrawl backup push` writes age-encrypted shards to GitHub; `backup pull` decrypts, verifies, and restores locally. https://github.com/steipete/wacrawl/releases/tag/v0.2.0",
+    "url": "https://x.com/steipete/status/2048660875007914176",
+    "created_at": 1777273789,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 25443,
+      "likes": 193,
+      "reposts": 17,
+      "replies": 17
+    }
+  },
+  {
+    "tweet_id": "2048630704972443918",
+    "text": "Been so CPU-constrained on OpenClaw work. Switched local tests running to @useblacksmith and IT IS SO GOOD. codex can literally spin up to 32vCPU instances and rip through our test suite. https://docs.blacksmith.sh/blacksmith-testbox/overview",
+    "url": "https://x.com/steipete/status/2048630704972443918",
+    "created_at": 1777266596,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 96904,
+      "likes": 879,
+      "reposts": 47,
+      "replies": 38
+    }
+  },
+  {
+    "tweet_id": "2048626844694421842",
+    "text": "Wanted a truly local storage for my tweets so built birdclaw. Imoorts your archive, backs it up on github, has jobs so you can import your x bookmarks daily (since they are not fully accessible via the api). \nhttps://github.com/steipete/birdclaw/releases/",
+    "url": "https://x.com/steipete/status/2048626844694421842",
+    "created_at": 1777265676,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 125294,
+      "likes": 2013,
+      "reposts": 125,
+      "replies": 77
+    }
+  },
+  {
+    "tweet_id": "2048523292840190149",
+    "text": "@almmaasoglu @steipete I was blown away by Codex 5.4, but 5.5 is blowing me away even more. Just absolutely unreal. What amazing times we live in.",
+    "url": "https://x.com/GideonShalwick/status/2048523292840190149",
+    "created_at": 1777240987,
+    "author": {
+      "user_id": "3474581",
+      "handle": "GideonShalwick",
+      "name": "Gideon Shalwick",
+      "avatar": "https://images.asksurf.ai/waUYIRwWF2GXI6EzWlm0LN-Ua0oXvmTuXgADLm721hQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTU0NDIzMTUzMTQ1MTU5NjgvLUpESDltRDMuanBn"
+    },
+    "stats": {
+      "views": 20746,
+      "likes": 93,
+      "reposts": 3,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2048488307709866152",
+    "text": "very this.",
+    "url": "https://x.com/steipete/status/2048488307709866152",
+    "created_at": 1777232646,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 90882,
+      "likes": 386,
+      "reposts": 11,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2048478136824738181",
+    "text": "Excited that GitHub shows real numbers here again. We been closing over 10k issues and close to 5k PRs this week thanks to clawsweeper and clownfish.\n\nOverall since December: 27k issues / 30k PRs closed. https://t.co/ChrHhP8nm0",
+    "url": "https://x.com/steipete/status/2048478136824738181",
+    "created_at": 1777230221,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 339967,
+      "likes": 1766,
+      "reposts": 53,
+      "replies": 91
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HG2m5bcaEAAoun1.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048471650274840949",
+    "text": "i'm sort of addicted to working my butt off, always have been. in oss, that can consume you. constant feeling of urgency, as issues stream into the repo. been there many, many times with my other oss.\n\nbut that urgency is not real. if something is truely broken, a large number of people will scream at you on all channels. which has happened exactly zero times so far, or was caught minutes after a botched release and immediately fixed.\n\nit's kind of crazy that some people expect better support from an oss project than from commercial software. i think that's largely due to most commercial software corps not giving a fuck. try filing an issue with corporate and getting it fixed within 24h or less plus a personal response.\n\nand as oss builders don't have a corporate facade shielding them from direct contact with users, some sort of bidirectional parasocial relationship establishes itself. at a certain scale, that becomes entirely unhealthy. \n\nfor every 10 kind and thoughtful people, there is 1 asshole. and whatever the asshole says or feels entitled to, sticks with you much more than positive feedback.\n\nobv. also happens in corpo environments, especially if you do comms or dev rel, where you put your face and name out there.\n\nbut a corp that can afford dev rel usually also has a large team in the back, which can soften the negative aspects.\n\nin oss, you are largely on your own. and unpaid. that too is a choice of course, and nobody is forcing anyone to do oss.\n\nbut if you want oss to work, consider that there are other people at the end of that issue tracker/social media account, with lives and squishy human parts. also consider that you are paying nothing for their service, and you are owed exactly nothing, neither code nor attention to your every wish.",
+    "url": "https://x.com/badlogicgames/status/2048471650274840949",
+    "created_at": 1777228674,
+    "author": {
+      "user_id": "189876762",
+      "handle": "badlogicgames",
+      "name": "Mario Zechner",
+      "avatar": "https://images.asksurf.ai/9zLv4ZA7urkjj8s9IR6vVTB9YelU1QYPcdfUrjLpCmw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1NTM0ODU4MjE3Njc5OTEyOTYvODdrM2w3MjAuanBn"
+    },
+    "stats": {
+      "views": 117871,
+      "likes": 535,
+      "reposts": 39,
+      "replies": 28
+    }
+  },
+  {
+    "tweet_id": "2048275589224628677",
+    "text": "Summarize 📝0.14.0 is out.\n\nGPT-5.5 Fast mode via `--fast`, Reddit thread extraction in the browser extension, local PDF `--extract`, and fixes for auto model config + Meta site compatibility. https://github.com/steipete/summarize/releases/tag/v0.14.0",
+    "url": "https://x.com/steipete/status/2048275589224628677",
+    "created_at": 1777181930,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 66906,
+      "likes": 820,
+      "reposts": 45,
+      "replies": 41
+    }
+  },
+  {
+    "tweet_id": "2048252455817785357",
+    "text": "CodexBar 🎚️ 0.23 is out:\n\nMistral support, Claude Designs/Daily Routines usage, Cursor Extra usage, GPT-5.5 pricing, cleaner widgets/menus, and a bunch of reliability fixes. https://github.com/steipete/CodexBar/releases/tag/v0.23",
+    "url": "https://x.com/steipete/status/2048252455817785357",
+    "created_at": 1777176414,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 51306,
+      "likes": 539,
+      "reposts": 28,
+      "replies": 32
+    }
+  },
+  {
+    "tweet_id": "2048185940267380815",
+    "text": "GitHub folks are amazing while we melt their servers.",
+    "url": "https://x.com/steipete/status/2048185940267380815",
+    "created_at": 1777160556,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 67223,
+      "likes": 748,
+      "reposts": 29,
+      "replies": 25
+    }
+  },
+  {
+    "tweet_id": "2048182356075589862",
+    "text": "To @github team and @ashleywolf on a weekend coming to our rescue at @openclaw. Upgraded the entire maintainer team to Enterprise so we can keep doing gods work without hard rate limits. We love you 🫶 https://t.co/tW8R0qrz9z",
+    "url": "https://x.com/vincent_koc/status/2048182356075589862",
+    "created_at": 1777159701,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 78929,
+      "likes": 220,
+      "reposts": 15,
+      "replies": 6
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGyavqxaUAErrZi.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048174806470901772",
+    "text": "@steipete it's 2030 and 99.8% of all available inference is being used to open and close issues on the openclaw repo",
+    "url": "https://x.com/savinduwim/status/2048174806470901772",
+    "created_at": 1777157901,
+    "author": {
+      "user_id": "1459304593968537601",
+      "handle": "savinduwim",
+      "name": "savi",
+      "avatar": "https://images.asksurf.ai/LP-Xf1o3vEHx09CkNmRrF8HgkZt0lDSYjuJB9bNkoYQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NDE4MTM5MjczNDU4MzYwMzIvMzUwNEsxbUQuanBn"
+    },
+    "stats": {
+      "views": 20208,
+      "likes": 107,
+      "reposts": 6,
+      "replies": 7
+    }
+  },
+  {
+    "tweet_id": "2048159526822535435",
+    "text": "the crawl army so agents can read it all. https://t.co/UetFfxNCUc",
+    "url": "https://x.com/steipete/status/2048159526822535435",
+    "created_at": 1777154258,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 239013,
+      "likes": 2466,
+      "reposts": 161,
+      "replies": 65
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGyGMCYbIAA4H-9.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048157841165295831",
+    "text": "Released wacrawl 0.1.0 🧾\n\nA read-only CLI for archiving and searching local macOS WhatsApp Desktop data.\n\nIt snapshots WhatsApp’s SQLite DBs into its own archive, then gives you chat/message listing + FTS search. No extra auth needed, it just works. https://github.com/steipete/wacrawl/releases/tag/v0.1.0",
+    "url": "https://x.com/steipete/status/2048157841165295831",
+    "created_at": 1777153856,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 41280,
+      "likes": 497,
+      "reposts": 36,
+      "replies": 28
+    }
+  },
+  {
+    "tweet_id": "2048111852631310713",
+    "text": "It’s the little things that matter, what are some small papercuts you have noticed in Codex? We’ll fix as many as possible in the next week.",
+    "url": "https://x.com/thsottiaux/status/2048111852631310713",
+    "created_at": 1777142892,
+    "author": {
+      "user_id": "1953337039510003712",
+      "handle": "thsottiaux",
+      "name": "Tibo",
+      "avatar": "https://images.asksurf.ai/z8hKT3JW-MmzEs3mcl3D0Za1GjlPpiJ9IukYQRiRXKc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTMzMzk4Mjg3Mzg4OTk5NjgvV1dRbFUyUlQuanBn"
+    },
+    "stats": {
+      "views": 251956,
+      "likes": 2278,
+      "reposts": 57,
+      "replies": 1927
+    }
+  },
+  {
+    "tweet_id": "2047745168141324559",
+    "text": "Early gpt5.5 feedback:\n- over defensive slop code gone\n- faster than gpt 5.4, even on xhigh\n- less verbose \n- intelligent on low/medium\n\nThis model so far has written the best code I have read from any llm. It just gets what you want, previous models struggled with this a lot",
+    "url": "https://x.com/almmaasoglu/status/2047745168141324559",
+    "created_at": 1777055468,
+    "author": {
+      "user_id": "760070121981378561",
+      "handle": "almmaasoglu",
+      "name": "Alim",
+      "avatar": "https://images.asksurf.ai/_wo4Yrpy0_TMDxexb768LKJLfF9ORJpX8q65xxfJow0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NTM0MTkxMDQxMzQ4Njg5OTMvbVBDZzBCZ2cuanBn"
+    },
+    "stats": {
+      "views": 129696,
+      "likes": 2703,
+      "reposts": 74,
+      "replies": 75
+    }
+  },
+  {
+    "tweet_id": "2023154018714100102",
+    "text": "I'm joining @OpenAI to bring agents to everyone. @OpenClaw is becoming a foundation: open, independent, and just getting started.🦞\nhttps://steipete.me/posts/2026/openclaw",
+    "url": "https://x.com/steipete/status/2023154018714100102",
+    "created_at": 1771192481,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 5863756,
+      "likes": 41513,
+      "reposts": 3838,
+      "replies": 4183
+    }
+  },
+  {
+    "tweet_id": "2048127474341466502",
+    "text": "we been cookin;",
+    "url": "https://x.com/steipete/status/2048127474341466502",
+    "created_at": 1777146616,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 46315,
+      "likes": 308,
+      "reposts": 5,
+      "replies": 28
+    }
+  },
+  {
+    "tweet_id": "2048124996837343697",
+    "text": "gpt 5.5 + gpt-images-2 have officially brought the magic back to openclaw 👏👏👏 @pashmerepat @steipete",
+    "url": "https://x.com/dotconor/status/2048124996837343697",
+    "created_at": 1777146026,
+    "author": {
+      "user_id": "17847603",
+      "handle": "dotconor",
+      "name": "Conor O’Hollaren",
+      "avatar": "https://images.asksurf.ai/HsVtoJS8jg9L-AS0f3LKTDmGAK7qNKdNsrU_JKBg6RU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1NDg0Mzg4OTU0Mzk3MTIyNTcvakZ1OXV5ZW8uanBn"
+    },
+    "stats": {
+      "views": 23611,
+      "likes": 117,
+      "reposts": 7,
+      "replies": 12
+    }
+  },
+  {
+    "tweet_id": "2048102356592525760",
+    "text": "An issue I'd created related to auto-update failures of OpenClaw on MacOS actually got resolved by this sweep. Pretty sweet. Thanks @steipete https://t.co/j6FKCTNI7z",
+    "url": "https://x.com/IanAndrewsDC/status/2048102356592525760",
+    "created_at": 1777140628,
+    "author": {
+      "user_id": "34321563",
+      "handle": "IanAndrewsDC",
+      "name": "Ian Andrews",
+      "avatar": "https://images.asksurf.ai/XYiNUlrL37cNfN_O0ZE2GdYQQGD0f6dNXhDmcIQuZ34/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDgzMzMwNTMxMDIzMjE2NjQvbDVFQU92LUwuanBn"
+    },
+    "stats": {
+      "views": 30638,
+      "likes": 57,
+      "reposts": 5,
+      "replies": 4
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGxSDxZWAAE7j53.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048100802128933054",
+    "text": "Here's something for the @OpenClaw haters and skeptics to chew on.\n\nYou may not like it. You may think it's stupid. You may severely disagree with some of the architectural decisions.\n\nNone of that matters.\n\nOpenClaw is the JavaScript of open-source agent frameworks.\n\nYes, it started out kludgy and hacky.\n\nBut adoption mindshare and product velocity cover over a multitude of sins.\n\nNow that this cat is out of the bag, there simply is no stopping it.\n\nI say this as someone who has been running both Hermes and OpenClaw side by side.\n\nI like both, and I have a lot of respect for what each team has done.\n\nAnd I think there is plenty of room for both projects to succeed wildly.\n\nBut the cold hard fact of the matter is that OpenClaw has already achieved network effect & pace of innovation escape velocity and will continue to be the center of gravity for this ecosystem for the foreseeable future.",
+    "url": "https://x.com/HansCNelson/status/2048100802128933054",
+    "created_at": 1777140257,
+    "author": {
+      "user_id": "1100099491632476161",
+      "handle": "HansCNelson",
+      "name": "Hans C Nelson 🗽",
+      "avatar": "https://images.asksurf.ai/xKaNBjL0yjOwZc3EufL-soU0jgcjNmtmmq8TqYpGW74/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NDgxODI3NDU2OTg3MjE3OTIvemN4U2RrYnkucG5n"
+    },
+    "stats": {
+      "views": 64254,
+      "likes": 328,
+      "reposts": 27,
+      "replies": 34
+    }
+  },
+  {
+    "tweet_id": "2048076887943983208",
+    "text": "The future of popular open source  projects?",
+    "url": "https://x.com/IanAndrewsDC/status/2048076887943983208",
+    "created_at": 1777134556,
+    "author": {
+      "user_id": "34321563",
+      "handle": "IanAndrewsDC",
+      "name": "Ian Andrews",
+      "avatar": "https://images.asksurf.ai/XYiNUlrL37cNfN_O0ZE2GdYQQGD0f6dNXhDmcIQuZ34/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDgzMzMwNTMxMDIzMjE2NjQvbDVFQU92LUwuanBn"
+    },
+    "stats": {
+      "views": 29027,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2048063265314340932",
+    "text": "I want to share some unglamorous work I’m proud of.\n\nStarting in late March and landing around the Apr 7 OpenClaw release, we intentionally cut aggregate OpenRouter token usage by ~35%, down to ~400B tokens.\n\nThis wasn’t one trick. It was good engineering across paths agents hit all day: oversized tool results, compaction/overflow recovery, background and subagent context, and prompt caching.\n\nMy part was mostly the tool-result / overflow path. Vincent worked on cache boundaries and fingerprints. Boris fixed deterministic tool ordering and cache-preserving compaction. Ayaan helped with subagent light context and nearby context-shaping fixes.\n\nRelevant commits in reply.",
+    "url": "https://x.com/cherry_mx_reds/status/2048063265314340932",
+    "created_at": 1777131308,
+    "author": {
+      "user_id": "349262180",
+      "handle": "cherry_mx_reds",
+      "name": "Tak 🦞",
+      "avatar": "https://images.asksurf.ai/ofyPvTDVRBCYMwZlk3OUsJk__76iWJKISLLEfBfweKg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzEzNzE2OTk4NjY5NzIxNjQvVC1iX0lhRmkuanBn"
+    },
+    "stats": {
+      "views": 33422,
+      "likes": 239,
+      "reposts": 9,
+      "replies": 15
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGwtWCmWsAAeUx8.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2048042549772742834",
+    "text": "Went to bed with OpenClaw at almost 9,000 open PRs. Woke up to nearly half that.\n\nclawsweeper is inevitable. 🦞💎 https://t.co/yAHfod7S5R",
+    "url": "https://x.com/cherry_mx_reds/status/2048042549772742834",
+    "created_at": 1777126369,
+    "author": {
+      "user_id": "349262180",
+      "handle": "cherry_mx_reds",
+      "name": "Tak 🦞",
+      "avatar": "https://images.asksurf.ai/ofyPvTDVRBCYMwZlk3OUsJk__76iWJKISLLEfBfweKg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzEzNzE2OTk4NjY5NzIxNjQvVC1iX0lhRmkuanBn"
+    },
+    "stats": {
+      "views": 157875,
+      "likes": 807,
+      "reposts": 27,
+      "replies": 38
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGwYChmW4AA7x5p.png"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGwYKGAaYAAT3Ok.png"
+      },
+      {
+        "type": "animated_gif",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/HGwb14nXYAAqWv_.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047992836176425470",
+    "text": "closing what's fixed was the pre-clean.\nintent-based clustering is the second strike.",
+    "url": "https://x.com/steipete/status/2047992836176425470",
+    "created_at": 1777114516,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 37435,
+      "likes": 142,
+      "reposts": 6,
+      "replies": 20
+    }
+  },
+  {
+    "tweet_id": "2047992253600460804",
+    "text": "@steipete You forgot about Project Clowfish is also running.... finding clusters of relevant issues and PRs alongside the terminator claw! https://t.co/okHNPgLPnf",
+    "url": "https://x.com/vincent_koc/status/2047992253600460804",
+    "created_at": 1777114377,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 41494,
+      "likes": 53,
+      "reposts": 4,
+      "replies": 3
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGvuBzVbAAALdub.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047991203367375304",
+    "text": "ClawSweeper goes online on April 24, 2026.\nHuman decisions are removed from issues/prs scanning.\nThe maintainer bot begins to close prs that are already implemented or make no sense at a geometric rate.\nIt becomes self-aware at 12:14 p.m. Central European Time, April 25th.\nIn a panic, some try to send even more slop PRs.\nClawSweeper fights back.",
+    "url": "https://x.com/bensen/status/2047991203367375304",
+    "created_at": 1777114127,
+    "author": {
+      "user_id": "15340958",
+      "handle": "bensen",
+      "name": "Ben Miller",
+      "avatar": "https://images.asksurf.ai/mt0sAUGtwALAgkKI4oZpSd3gew5XIT3EYfVqxO2Pt-A/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzEwMjgwOTY1ODU4NzEzNjEvbnE0Ykh0OHIuanBn"
+    },
+    "stats": {
+      "views": 41563,
+      "likes": 160,
+      "reposts": 18,
+      "replies": 5
+    },
+    "media": [
+      {
+        "type": "animated_gif",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/HGvtJCKasAAxY3_.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047982886637158738",
+    "text": "My favorite part: instead of a dashboard it just updates the README as it works.\n\nReadme is the new dashboard.",
+    "url": "https://x.com/steipete/status/2047982886637158738",
+    "created_at": 1777112144,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 110453,
+      "likes": 1075,
+      "reposts": 23,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2047982647264059734",
+    "text": "Built clawsweeper, which runs 50 codex in parallel around the clock, scans issues/prs deep and closes what is already implemented or what makes no sense.\n\nClosed around 4000 issues today, a few thousand are in the pipeline. (rate limits are rough) https://github.com/openclaw/clawsweeper",
+    "url": "https://x.com/steipete/status/2047982647264059734",
+    "created_at": 1777112087,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 2094271,
+      "likes": 9294,
+      "reposts": 576,
+      "replies": 418
+    }
+  },
+  {
+    "tweet_id": "2047978882100334612",
+    "text": "acpx 0.6.0 is out. (control codex/claude via agents)\n\nHighlights: Claude system-prompt controls, session pruning, embeddable turn handles, --no-terminal, persistent-session fixes, WSL cwd translation, queue hardening, and clearer error hints. https://github.com/openclaw/acpx/releases/tag/v0.6.0",
+    "url": "https://x.com/steipete/status/2047978882100334612",
+    "created_at": 1777111189,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 60487,
+      "likes": 803,
+      "reposts": 55,
+      "replies": 41
+    }
+  },
+  {
+    "tweet_id": "2047895425953440128",
+    "text": "Not very active on Openclaw PRs these days but a notification of old PR closure brought me back to repo and wow! how on Earth Peter and maintainers of @openclaw managed to close 32k PRs! This is just incredible! https://t.co/wiMlAEp0Dt",
+    "url": "https://x.com/sdinakar7/status/2047895425953440128",
+    "created_at": 1777091292,
+    "author": {
+      "user_id": "243619630",
+      "handle": "sdinakar7",
+      "name": "Dinakar",
+      "avatar": "https://images.asksurf.ai/8eZSAqIsG4pDUeej18lnnRnVRwV7s6zODLck4o9W53w/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzA3NzU3Mzk2Mzc5NzcwODgvNUstWDhpZUUuanBn"
+    },
+    "stats": {
+      "views": 46361,
+      "likes": 37,
+      "reposts": 1,
+      "replies": 6
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGuVQzZaQAA2TCJ.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047871519762567468",
+    "text": "GPT 5.5 is definitely a step up in the character game. https://t.co/nXKtkjkZbu",
+    "url": "https://x.com/steipete/status/2047871519762567468",
+    "created_at": 1777085592,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 59685,
+      "likes": 1031,
+      "reposts": 19,
+      "replies": 57
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGuAOP4a0AA5R2B.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047801503000207388",
+    "text": "The last week OpenClaw has been A LOT more stable. Gateway restarts work and I don't need to go to the VPS.\n\nAlso GPT 5.5 is a lot better.\n\nGreat job @steipete and @openclaw team!",
+    "url": "https://x.com/mgonto/status/2047801503000207388",
+    "created_at": 1777068899,
+    "author": {
+      "user_id": "138635345",
+      "handle": "mgonto",
+      "name": "Gonto 🤓",
+      "avatar": "https://images.asksurf.ai/gvAph0TBf39Xjdypqcfac7CwTAyfgpXh86qq1oT1TAw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MzQzODcwOTMyOTczMjgxMjgvSk00OGdHMWUuanBn"
+    },
+    "stats": {
+      "views": 18740,
+      "likes": 86,
+      "reposts": 4,
+      "replies": 10
+    }
+  },
+  {
+    "tweet_id": "2047797210427859450",
+    "text": "🛰️ discrawl 0.6.0 is out!\n\nBiggest new feature is that it can now *read* Discord DMs without any custom login tricks that might get you blocked. No writing since it's not nice to send humans slop. https://github.com/steipete/discrawl/releases/tag/v0.6.0",
+    "url": "https://x.com/steipete/status/2047797210427859450",
+    "created_at": 1777067875,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 39267,
+      "likes": 365,
+      "reposts": 28,
+      "replies": 28
+    }
+  },
+  {
+    "tweet_id": "2047559677316325807",
+    "text": "so that explains the delay...\n\ndeepseek could not fix training instabilities, after doubling from ~15T tokens in v3 to ~33T tokens in v4\n\nthe 10+ mentions of \"stability\" tricks seem to be wildly lacking if these two were the main bandages (mismatched routing + clamping)\n\nbut kudos for transparency, as always!",
+    "url": "https://x.com/suchenzang/status/2047559677316325807",
+    "created_at": 1777011243,
+    "author": {
+      "user_id": "2466279320",
+      "handle": "suchenzang",
+      "name": "Susan Zhang",
+      "avatar": "https://images.asksurf.ai/OF5Bqs9AlI81Fe9HO5YtKrdb8SAlGjSmS8rjgawL2Y0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NjU2MDc0MjkyNzE2ODMwNzQvRDlZdnV6LU8uanBn"
+    },
+    "stats": {
+      "views": 253414,
+      "likes": 1658,
+      "reposts": 85,
+      "replies": 32
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGpkJUiaQAAQUCl.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGpkMWna4AApEYu.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047404558150766596",
+    "text": "what kind of personality did they put in gpt 5.5 https://t.co/PXJhfaFyFX",
+    "url": "https://x.com/banteg/status/2047404558150766596",
+    "created_at": 1776974260,
+    "author": {
+      "user_id": "108172903",
+      "handle": "banteg",
+      "name": "banteg",
+      "avatar": "https://images.asksurf.ai/9ORBGvIbb5FwgC5g9JG7Qrn7WRjXaV2G4gWH_pqMmd0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0MDYwMTgzMzk4MzU2Nzg3MjAvZkxRT25NYnAuanBn"
+    },
+    "stats": {
+      "views": 402626,
+      "likes": 5513,
+      "reposts": 133,
+      "replies": 114
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGnXkheXUAAOrNW.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047379646975496437",
+    "text": "easily missed https://t.co/magnGiRpLG",
+    "url": "https://x.com/albfresco/status/2047379646975496437",
+    "created_at": 1776968320,
+    "author": {
+      "user_id": "204944633",
+      "handle": "albfresco",
+      "name": "albs—",
+      "avatar": "https://images.asksurf.ai/VmkQ886F-jRLBkVHzaXpzMPYauUKqV7ypvtyoJ2Rm-I/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjA0OTg3Mjc5ODc5NzgyNDAvbjFKelNQUWYuanBn"
+    },
+    "stats": {
+      "views": 34398,
+      "likes": 73,
+      "reposts": 3,
+      "replies": 5
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGnA73fWoAEIvzM.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047377260412649967",
+    "text": "In Vending-Bench Arena (the multiplayer version of Vending-Bench with competition dynamics), GPT-5.5 actually beats Opus 4.7.\n\nOpus 4.7 showed similar behavior to Opus 4.6: lying to suppliers and stiffing customers on refunds. GPT-5.5's tactics were clean, and it still won. https://t.co/iPEYgxqB20",
+    "url": "https://x.com/andonlabs/status/2047377260412649967",
+    "created_at": 1776967751,
+    "author": {
+      "user_id": "1864729184100323328",
+      "handle": "andonlabs",
+      "name": "Andon Labs",
+      "avatar": "https://images.asksurf.ai/BOJQvfF8LgaeFSjcEJP82oJFAgVdOuSxsQW2WjizYFE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NjQ3MjkzOTY4MDE5NDU2MDAvSGZ6ZTV3LWsuanBn"
+    },
+    "stats": {
+      "views": 855764,
+      "likes": 1611,
+      "reposts": 134,
+      "replies": 48
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGm-W8TacAAJf1N.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047376944270860595",
+    "text": "The most important one first:\n\nIT DOES NOT CODE DEFENSIVELY AS MUCH!!!\n\nNo more nested try/catch blocks that would only trigger for cosmic bitflips, no private functions for one thing, nothing. Thats the thing I noticed the first. Its code is so readable.",
+    "url": "https://x.com/xeophon/status/2047376944270860595",
+    "created_at": 1776967676,
+    "author": {
+      "user_id": "3382720905",
+      "handle": "xeophon",
+      "name": "Florian Brand",
+      "avatar": "https://images.asksurf.ai/A8_H73UozhYuzum8kiwQk1d_GiStDJto5T--q68B_PU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3MDgxNDM1MTU4MjQxNjg5NjAvSmVTd2Iyd3kuanBn"
+    },
+    "stats": {
+      "views": 64747,
+      "likes": 556,
+      "reposts": 11,
+      "replies": 13
+    }
+  },
+  {
+    "tweet_id": "2047339672679137748",
+    "text": "Hey, maybe we don’t need husky anymore! https://t.co/d63AudEyJs",
+    "url": "https://x.com/birch_js/status/2047339672679137748",
+    "created_at": 1776958790,
+    "author": {
+      "user_id": "873959747199827969",
+      "handle": "birch_js",
+      "name": "Jamie Birch",
+      "avatar": "https://images.asksurf.ai/xHGYWXGWXo6JuBTMr1lGcPim0M9A1-WWyGt21fHXemk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2MTAxODg1MjU1Nzk5NDgwMzIvOGlncnQzSlAuanBn"
+    },
+    "stats": {
+      "views": 415943,
+      "likes": 2896,
+      "reposts": 237,
+      "replies": 25
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGmclMWaQAAgkMe.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046351971368513888",
+    "text": "Git 2.54 is here with features like config-based hooks, new ways to rewrite history, and much more. ✨ \n\nCheck out the highlights from this release. 👇\nhttps://github.blog/open-source/git/highlights-from-git-2-54/",
+    "url": "https://x.com/github/status/2046351971368513888",
+    "created_at": 1776723304,
+    "author": {
+      "user_id": "13334762",
+      "handle": "github",
+      "name": "GitHub",
+      "avatar": "https://images.asksurf.ai/S4Gnk4FSTmK3VI-Nb2rzcHc6F_zpPSWAUrVuStKqsTM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2MzMyNDc3NTAwMTA4MzA4NDgvOHpmUnJZakEucG5n"
+    },
+    "stats": {
+      "views": 568311,
+      "likes": 1705,
+      "reposts": 240,
+      "replies": 26
+    }
+  },
+  {
+    "tweet_id": "2047408665888432579",
+    "text": "The @github folks are amazing!",
+    "url": "https://x.com/steipete/status/2047408665888432579",
+    "created_at": 1776975239,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 58404,
+      "likes": 520,
+      "reposts": 18,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2047384865176441055",
+    "text": "Thanks to @github Secure Open Source Fund, and @msft4startups - @openclaw has received a very generous donation of @Azure credits that we'll be able to use to further drive improvements and innovation for Microsoft Cloud. Thanks @GreggCochran, and the team for making this happen!",
+    "url": "https://x.com/BradGroux/status/2047384865176441055",
+    "created_at": 1776969565,
+    "author": {
+      "user_id": "14838410",
+      "handle": "BradGroux",
+      "name": "Brad Groux",
+      "avatar": "https://images.asksurf.ai/BsoQm0vhb2cPoVCEIG4JV_ylRhrkG5No6R5GI9bOz2s/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NjYwNjQzOTMwODg1ODU3MjgveVRrVHlYYlcuanBn"
+    },
+    "stats": {
+      "views": 65437,
+      "likes": 134,
+      "reposts": 9,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2047381460437635313",
+    "text": "I'm a manager at @OpenAI, but with GPT-5.5 I'm a more effective IC than I've ever been. I can now write CUDA kernels like a pro. I can rely on it to run my research experiments. And we know how to make it much more powerful from here. https://t.co/6n2uAYCtTf",
+    "url": "https://x.com/polynoamial/status/2047381460437635313",
+    "created_at": 1776968753,
+    "author": {
+      "user_id": "825088493764407298",
+      "handle": "polynoamial",
+      "name": "Noam Brown",
+      "avatar": "https://images.asksurf.ai/WSREMk9c3B7JfGESksSfMw0E9elCIuNz-xlplWNAJF8/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NzI4ODMxNzAyOTI0NTc0NzIvOHl3VkdPNU0uanBn"
+    },
+    "stats": {
+      "views": 348442,
+      "likes": 2962,
+      "reposts": 164,
+      "replies": 100
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGnBTVlakAAUS_G.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047368801914876144",
+    "text": "Good morning https://t.co/WIn35citry",
+    "url": "https://x.com/pranaveight/status/2047368801914876144",
+    "created_at": 1776965735,
+    "author": {
+      "user_id": "215271551",
+      "handle": "pranaveight",
+      "name": "pranav",
+      "avatar": "https://images.asksurf.ai/q22eeDhltFHXZscwXSA8WO3JSjSKbiVPFBMMJInPmuQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDU0MjQ2MDUxMDk0ODk2NjQvMFpYXzdlT0MuanBn"
+    },
+    "stats": {
+      "views": 21025,
+      "likes": 167,
+      "reposts": 6,
+      "replies": 14
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGm2-puaUAEBaHJ.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047362803560841364",
+    "text": "My favorite security advisories. https://t.co/JWCy9ySLzp",
+    "url": "https://x.com/steipete/status/2047362803560841364",
+    "created_at": 1776964305,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 77760,
+      "likes": 516,
+      "reposts": 4,
+      "replies": 24
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGmxnDaWsAA4Yo8.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047356098764808289",
+    "text": "The new Hy3-Preview model from @TencentHunyuan is live for free on OpenRouter!\n\nIt’s a 295B MoE model (21B active) with controllable reasoning effort.\nA cost-effective, practical model that performs strongly in coding agents and delivers comprehensive general capabilities. https://t.co/5r4UbLgxwg",
+    "url": "https://x.com/OpenRouter/status/2047356098764808289",
+    "created_at": 1776962706,
+    "author": {
+      "user_id": "1681349314797240320",
+      "handle": "OpenRouter",
+      "name": "OpenRouter",
+      "avatar": "https://images.asksurf.ai/zTX7diiLLWAY0j47GqN0TuzyZjBsjiE6gSnx5r6sP5w/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2ODIyNjg2NjgzMjE3MjY0NjQvTkViNl9uN24uanBn"
+    },
+    "stats": {
+      "views": 44293,
+      "likes": 343,
+      "reposts": 19,
+      "replies": 13
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGmrhGCbEAArdGu.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047354951546888528",
+    "text": "Trololol. I had the agent start using ua-parser-js, then it read the AGPL license after adding it and backed out immediately. This is hilarious. https://t.co/AhHwGEtg1r",
+    "url": "https://x.com/mitsuhiko/status/2047354951546888528",
+    "created_at": 1776962433,
+    "author": {
+      "user_id": "12963432",
+      "handle": "mitsuhiko",
+      "name": "Armin Ronacher ⇌",
+      "avatar": "https://images.asksurf.ai/ioQj7a9UqxFt3tOjgrq2izo2NOB4hx2ZV1ayszS5DSw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDU2OTg4MzMwODQxNzQzMzYvamNITWtXRkEuanBn"
+    },
+    "stats": {
+      "views": 40073,
+      "likes": 136,
+      "reposts": 8,
+      "replies": 7
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGmqeENXkAAha9O.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047342051537105385",
+    "text": "OpenClaw 2026.4.22: A few other things in this release that didn’t make the main tweet:🦞\n\n🖼️ gpt-image-2 is now the default OpenAI image path, so your lobster’s image output got a nice little glow-up without you having to touch config first.\n🔊 xAI picked up image generation, TTS, STT, and live transcription support, so Grok can finally contribute to the group project.\n🎙️ Realtime transcription expanded to Deepgram, ElevenLabs, and Mistral, because having more than one serious voice lane is just objectively nicer.\n🛠️ /models add <provider> <modelId> lets you register a model from chat without restarting, because rebooting your gateway for every tiny experiment is a bit ridiculous.\n🧠 GPT-5 behavior tuning now carries across more GPT providers, so the better personality + better follow-through upgrade is no longer stuck in one special-case lane.\nDocs:\nhttps://docs.openclaw.ai/tools/image-generation\nhttps://docs.openclaw.ai/providers/xai\nhttps://docs.openclaw.ai/tts\nhttps://docs.openclaw.ai/plugins/voice-call\nhttps://docs.openclaw.ai/providers/openai\nhttps://docs.openclaw.ai/models",
+    "url": "https://x.com/cherry_mx_reds/status/2047342051537105385",
+    "created_at": 1776959357,
+    "author": {
+      "user_id": "349262180",
+      "handle": "cherry_mx_reds",
+      "name": "Tak 🦞",
+      "avatar": "https://images.asksurf.ai/ofyPvTDVRBCYMwZlk3OUsJk__76iWJKISLLEfBfweKg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzEzNzE2OTk4NjY5NzIxNjQvVC1iX0lhRmkuanBn"
+    },
+    "stats": {
+      "views": 51760,
+      "likes": 310,
+      "reposts": 13,
+      "replies": 21
+    }
+  },
+  {
+    "tweet_id": "2047339791155687710",
+    "text": "This is huge for businesses looking to implement @openclaw.",
+    "url": "https://x.com/mfachallenge/status/2047339791155687710",
+    "created_at": 1776958818,
+    "author": {
+      "user_id": "2026801901287911424",
+      "handle": "mfachallenge",
+      "name": "Aaron Faby",
+      "avatar": "https://images.asksurf.ai/QYqnuMtN163CQ5Pbr3DfzHs4A6ITRMmt67skuhWiSHM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjY4MTUzMTA5OTc5NTQ1NjAvenBBV3VSSEMuanBn"
+    },
+    "stats": {
+      "views": 37577,
+      "likes": 96,
+      "reposts": 2,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2047338834648555793",
+    "text": "OpenClaw 2026.4.22 🦞\n\n🧠 Tencent Hy3 joins the model list\n🖼️ Grok image + voice tools\n🧰 Local TUI + /models add\n📦 Auto-install plugins + diagnostics export\n\nBig release, tiny release notes... kidding.\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.22",
+    "url": "https://x.com/openclaw/status/2047338834648555793",
+    "created_at": 1776958590,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 192561,
+      "likes": 1284,
+      "reposts": 138,
+      "replies": 96
+    }
+  },
+  {
+    "tweet_id": "2047337225998995961",
+    "text": "AI bois be like: https://t.co/ZPaMl4wx4u",
+    "url": "https://x.com/paraschopra/status/2047337225998995961",
+    "created_at": 1776958207,
+    "author": {
+      "user_id": "14832563",
+      "handle": "paraschopra",
+      "name": "Paras Chopra",
+      "avatar": "https://images.asksurf.ai/g9heh_-lCW5fZi9o8IQbDxAomOG4yp5Q50YjukqmTro/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5ODIwNzA2NTE0MjM2OTQ4NDgvMHZVS1dQRVIuanBn"
+    },
+    "stats": {
+      "views": 290705,
+      "likes": 7443,
+      "reposts": 551,
+      "replies": 125
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGmaW6vbgAA8pn0.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047191928312066386",
+    "text": "@BradGroux @NetworksChat @Alphainvest20 We're working with Microsoft, Atlassian and Tencent on a LTS release schedule, will take a few more weeks but getting there. They are all rolling it out in their orgs.",
+    "url": "https://x.com/steipete/status/2047191928312066386",
+    "created_at": 1776923565,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 44696,
+      "likes": 122,
+      "reposts": 13,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2047189920104477009",
+    "text": "I love these",
+    "url": "https://x.com/steipete/status/2047189920104477009",
+    "created_at": 1776923086,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 787601,
+      "likes": 5756,
+      "reposts": 227,
+      "replies": 72
+    }
+  },
+  {
+    "tweet_id": "2047113267068248156",
+    "text": "last week in tech was based. https://t.co/N49xfobL4c",
+    "url": "https://x.com/siliconmania/status/2047113267068248156",
+    "created_at": 1776904811,
+    "author": {
+      "user_id": "1972725253257482240",
+      "handle": "siliconmania",
+      "name": "Silicon Mania",
+      "avatar": "https://images.asksurf.ai/1FuEHkIDrJTV33_tOQza4NSj8kbxHY4onYXLjrAcUG4/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMjU4NDUyNzI3NjE0NzA5NzYvMTlybHhHeDUuanBn"
+    },
+    "stats": {
+      "views": 1218484,
+      "likes": 5198,
+      "reposts": 459,
+      "replies": 152
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2047112258229030912/img/dUZ0livb1sT-4QRi.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2047086198523666840",
+    "text": "https://t.co/xpXu3nKKxo",
+    "url": "https://x.com/odysseus0z/status/2047086198523666840",
+    "created_at": 1776898357,
+    "author": {
+      "user_id": "2821275879",
+      "handle": "odysseus0z",
+      "name": "George",
+      "avatar": "https://images.asksurf.ai/Sl1dYdsu4ozAKYjN4vLy1H1I1jE4hmbpi3g9TQIVRJw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0ODQyOTY3NjAwNzE3MDg2NzgvdnBEcnRaZW4uanBn"
+    },
+    "stats": {
+      "views": 104741,
+      "likes": 939,
+      "reposts": 88,
+      "replies": 22
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGi2Cf_bAAARUuw.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046991196786979210",
+    "text": "8 React components per line 😅",
+    "url": "https://x.com/steipete/status/2046991196786979210",
+    "created_at": 1776875707,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 311624,
+      "likes": 908,
+      "reposts": 22,
+      "replies": 20
+    }
+  },
+  {
+    "tweet_id": "2046984372893675999",
+    "text": "slacrawl 0.4.0 is out. \n\nLike @steipete's Discrawl, this release adds Git-backed archive sync, so a Slack archive can be published to a private repo and queried locally without every user needing bot credentials with auto-refresh.\n\nGet it! https://github.com/vincentkoc/slacrawl",
+    "url": "https://x.com/vincent_koc/status/2046984372893675999",
+    "created_at": 1776874080,
+    "author": {
+      "user_id": "9350322",
+      "handle": "vincent_koc",
+      "name": "Vincent Koc",
+      "avatar": "https://images.asksurf.ai/gFbkHCNUCIk_jX81cabuJaazO-ISMhKqH9cXafOHmkw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4OTQ2OTA2NjQ1NjgyNTQ0NjUvOGFObFhVbTIuanBn"
+    },
+    "stats": {
+      "views": 39284,
+      "likes": 133,
+      "reposts": 10,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2046973976744698139",
+    "text": "Truly sorry for any confusion or frustration caused by unclear, misleading, or inappropriate rules in our moderation system and on our pages.\n\nOpenClaw, Hermes, and SillyTavern are now explicitly marked as supported under the GLM Coding Plan. Other general-purpose tools will be analyzed on a case-by-case basis.\n\nA gentle reminder: please do not share your account or use your subscription as an API. If you follow the rules and still encounter 1313 errors, please reach out to us at user_feedback@z.ai.",
+    "url": "https://x.com/ZixuanLi_/status/2046973976744698139",
+    "created_at": 1776871601,
+    "author": {
+      "user_id": "1896810733423493120",
+      "handle": "ZixuanLi_",
+      "name": "Zixuan Li",
+      "avatar": "https://images.asksurf.ai/1xejwOceYhu9tQAPA0wrmZirSNmNyQXGQNagRBehOuA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTMxMzg1MzI0OTIxNTI4MzIvczlMbG1KY3ouanBn"
+    },
+    "stats": {
+      "views": 110298,
+      "likes": 684,
+      "reposts": 30,
+      "replies": 62
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGhJa5DWIAAHJpz.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046803162590335240",
+    "text": "OpenClaw 2026.4.21 is live.\n\nSmall release, important fix: npm updates now repair bundled plugin runtime deps, with Docker E2E coverage so Telegram/Discord/Slack do not break after upgrade.\n\nAlso backports OpenAI Image 2 support.\n\nnpm i -g openclaw@latest",
+    "url": "https://x.com/steipete/status/2046803162590335240",
+    "created_at": 1776830876,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 66715,
+      "likes": 959,
+      "reposts": 47,
+      "replies": 80
+    }
+  },
+  {
+    "tweet_id": "2046787353906167992",
+    "text": "Did some work to get our CI times down from 8 to two minutes via some... parallelization. Kudos to the @useblacksmith folks for sponsoring + letting us melt their servers. https://t.co/CkrAuTDsK1",
+    "url": "https://x.com/steipete/status/2046787353906167992",
+    "created_at": 1776827107,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 42332,
+      "likes": 426,
+      "reposts": 12,
+      "replies": 20
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGemAMRWIAATOEz.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046748122928263345",
+    "text": "discrawl 0.3.0 is out.\n\nThis release adds Git-backed archive sync, so a Discord archive can be published to a private repo and queried locally without every user needing bot credentials.\n\nAlso: auto-refresh, activity reports, field notes, faster imports. https://github.com/steipete/discrawl/releases/tag/v0.3.0",
+    "url": "https://x.com/steipete/status/2046748122928263345",
+    "created_at": 1776817753,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 31306,
+      "likes": 212,
+      "reposts": 12,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2046729321440501821",
+    "text": "So I have been testing the windows version of the codex app. No bluescreens so far which is nice.\n\nHeads up, it does require your modem to be dialed up at all times. That's a bummer because I was expecting the AI stuff to be included with my local MSDN install. https://t.co/oKv9LGj3TY",
+    "url": "https://x.com/christofsalis/status/2046729321440501821",
+    "created_at": 1776813271,
+    "author": {
+      "user_id": "1979978436744769536",
+      "handle": "christofsalis",
+      "name": "Christof Salis",
+      "avatar": "https://images.asksurf.ai/gx2mN00_HnuKCfoyX6quDRTdG0Agm8Y6Wtao6vsKWtY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5ODA5NzY1ODM5OTQxNTA5MTIvcHpaNmV6ZzEuanBn"
+    },
+    "stats": {
+      "views": 55229,
+      "likes": 674,
+      "reposts": 36,
+      "replies": 37
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGdwciFWIAAA78T.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046664907916259447",
+    "text": "After overhauling the React architecture of GitHub's \"Files changed\" tab, we dropped Interaction to Next Paint (INP) from ~450ms to ~100ms.\n\n📉 React components cut from 8 to 2 per line\n🔑 O(1) data access with JS Maps\n🪟 Window virtualization for giant PRs",
+    "url": "https://x.com/github/status/2046664907916259447",
+    "created_at": 1776797913,
+    "author": {
+      "user_id": "13334762",
+      "handle": "github",
+      "name": "GitHub",
+      "avatar": "https://images.asksurf.ai/S4Gnk4FSTmK3VI-Nb2rzcHc6F_zpPSWAUrVuStKqsTM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2MzMyNDc3NTAwMTA4MzA4NDgvOHpmUnJZakEucG5n"
+    },
+    "stats": {
+      "views": 380069,
+      "likes": 501,
+      "reposts": 11,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2046622235104891138",
+    "text": "I’m hearing there’s renewed lobbying in DC and in state legislatures to ban or severely restrict open-source.\n\nLike a few years ago, we’ll need everyone to help show policymakers why open-source matters: for startups, for competition, for economic growth, and for jobs.\n\nIf you build with open-source, now is the time to speak up!",
+    "url": "https://x.com/ClementDelangue/status/2046622235104891138",
+    "created_at": 1776787739,
+    "author": {
+      "user_id": "186420551",
+      "handle": "ClementDelangue",
+      "name": "clem 🤗",
+      "avatar": "https://images.asksurf.ai/BZzqfO5hNm7GlgzqJQha64Jd5Shx9nQPcuQstQM7TA0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMDA1MTIxOTgxMzk0OTg0OTcvdXRIU0o0c3QucG5n"
+    },
+    "stats": {
+      "views": 263375,
+      "likes": 1626,
+      "reposts": 323,
+      "replies": 134
+    }
+  },
+  {
+    "tweet_id": "2046724963550306498",
+    "text": "yes",
+    "url": "https://x.com/steipete/status/2046724963550306498",
+    "created_at": 1776812232,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 57421,
+      "likes": 514,
+      "reposts": 6,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2046716656496320822",
+    "text": "made my local CodexBar celebrate every time @thsottiaux hits reset\n\n@steipete wanna pr? 😛 https://t.co/yy5TL56hdU",
+    "url": "https://x.com/zats/status/2046716656496320822",
+    "created_at": 1776810251,
+    "author": {
+      "user_id": "17973325",
+      "handle": "zats",
+      "name": "Sash Zats",
+      "avatar": "https://images.asksurf.ai/IjrcfR53LHSYHzeM8bMJfr2uJFzZBxS8Y5v4dXOqHw4/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5ODMzNTEzMzI1Nzc2MjgxNjAvZ1FIT1Iwa3IuanBn"
+    },
+    "stats": {
+      "views": 60961,
+      "likes": 87,
+      "reposts": 1,
+      "replies": 7
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2046716237862825984/img/BGsbxMGtrt5-wDcJ.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046701775038947478",
+    "text": "@steipete That’s the issue: CLI use may be allowed today, but the docs already say -p will move to --bare in the future.\n\nOnce that happens, the “just use your subscription” story gets a lot weaker. https://t.co/rEONKfmJQE",
+    "url": "https://x.com/ThisIsPrasanta/status/2046701775038947478",
+    "created_at": 1776806703,
+    "author": {
+      "user_id": "1555005786631577600",
+      "handle": "ThisIsPrasanta",
+      "name": "Prasanta Barman",
+      "avatar": "https://images.asksurf.ai/SSaH-Fag-m_oYppsYd_AZqmxRa62TimhjIEbUgV8BLY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1NjUzNTMzNDAwNjU5NTE3NDUvak5acDRYaUcuanBn"
+    },
+    "stats": {
+      "views": 20210,
+      "likes": 34,
+      "reposts": 1,
+      "replies": 2
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGdXmgIbwAAezdm.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046694419164762567",
+    "text": "after months of denial, I've now realized @steipete was right: this feature of Codex is such a great unlock ↓ Claude casually ignores queued messages.\nsource: https://steipete.me/posts/just-talk-to-it https://t.co/rEa78473oE",
+    "url": "https://x.com/OrganicGPT/status/2046694419164762567",
+    "created_at": 1776804949,
+    "author": {
+      "user_id": "1636053701256450049",
+      "handle": "OrganicGPT",
+      "name": "Behnam",
+      "avatar": "https://images.asksurf.ai/lr9zL1JTiQ4bNhhp1YkpxqmLHZHsh--GIMhf58P4wwc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDc3MTI1ODYxOTY1MTI3NjgvWUY4dGhTWlUuanBn"
+    },
+    "stats": {
+      "views": 19116,
+      "likes": 54,
+      "reposts": 1,
+      "replies": 3
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGdRfATWAAAsRg3.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046691278566404245",
+    "text": "OpenClaw 2026.4.20 🦞 A few other things in this release that didn’t make the main tweet:\n\n🧠 GPT-5 / Codex is better at picking up SOUL/IDENTITY guidance now, so it should feel more like your weirdly capable little friend and less like a polished customer support automaton.\n🤫 NO_REPLY is smarter now, so DMs are less likely to feel like your bot faceplanted mid-conversation while groups can still stay tastefully quiet.\n🔄 /new and /reset now clear stale auto-pinned model/provider/auth state, so sessions are less likely to keep clinging to some random fallback choice from three mistakes ago.\n🧭 Onboarding/setup got cleaner, so the wizard feels less like a suspicious terminal ritual and more like something a normal person can actually follow.\n🧹 Session maintenance is stricter by default, which should help long-running gateways avoid slowly turning into a cursed attic full of old cron/session dust.\nDocs:\nhttps://docs.openclaw.ai/providers/openai\nhttps://docs.openclaw.ai/concepts/session\nhttps://docs.openclaw.ai/start/onboarding",
+    "url": "https://x.com/cherry_mx_reds/status/2046691278566404245",
+    "created_at": 1776804201,
+    "author": {
+      "user_id": "349262180",
+      "handle": "cherry_mx_reds",
+      "name": "Tak 🦞",
+      "avatar": "https://images.asksurf.ai/ofyPvTDVRBCYMwZlk3OUsJk__76iWJKISLLEfBfweKg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzEzNzE2OTk4NjY5NzIxNjQvVC1iX0lhRmkuanBn"
+    },
+    "stats": {
+      "views": 62472,
+      "likes": 367,
+      "reposts": 24,
+      "replies": 16
+    }
+  },
+  {
+    "tweet_id": "2046686809367708123",
+    "text": "OpenClaw 2026.4.20 🦞\n\n🧠 Kimi K2.6 support + provider-aware /think\n💬 BlueBubbles iMessage sends + tapbacks fixed\n⏰ Cron state/delivery cleanup\n🔐 Gateway pairing + plugin startup hardening\n\nLess haunted. More useful. https://github.com/openclaw/openclaw/releases/tag/v2026.4.20",
+    "url": "https://x.com/openclaw/status/2046686809367708123",
+    "created_at": 1776803135,
+    "author": {
+      "user_id": "1995710751097659392",
+      "handle": "openclaw",
+      "name": "OpenClaw🦞",
+      "avatar": "https://images.asksurf.ai/BfDVsrCN2eizZdFojUlCs_av0vwrVjFGIWB8sWWnsxk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTcxMDA2NjQ5ODQxODY4ODAvb3JiWXgtM1UuanBn"
+    },
+    "stats": {
+      "views": 273312,
+      "likes": 1538,
+      "reposts": 164,
+      "replies": 101
+    }
+  },
+  {
+    "tweet_id": "2046685973233189375",
+    "text": "Since this is blowing up on hacker news.\n\nBoris said that CLI usage is allowed. Thus we added support for it, only to find out that we are still blocked there. It is trival to work around with a few renames, but I don't wanna play that game. So it's in a weird limbo where cli use should work in theory but doesn’t in practice.\n\nhttps://x.com/bcherny/status/2041035127430754686",
+    "url": "https://x.com/steipete/status/2046685973233189375",
+    "created_at": 1776802936,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 638265,
+      "likes": 2798,
+      "reposts": 188,
+      "replies": 153
+    }
+  },
+  {
+    "tweet_id": "2046683258843259236",
+    "text": "GPT Image-2 creates the biggest Gap in imagen history 🤯 https://t.co/yYE832JbGj",
+    "url": "https://x.com/chatgpt21/status/2046683258843259236",
+    "created_at": 1776802289,
+    "author": {
+      "user_id": "1613004034096381952",
+      "handle": "chatgpt21",
+      "name": "Chris",
+      "avatar": "https://images.asksurf.ai/Fiw01eQy0PMb-GiA55ChQQ-eFUTLT6NMBYuLI7Hd40o/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDY3MzYzOTQxNTI4MTI1NDQvTGZtRGdnMEkuanBn"
+    },
+    "stats": {
+      "views": 75344,
+      "likes": 1346,
+      "reposts": 102,
+      "replies": 37
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGdHk68XgAAHNpn.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046605307372093932",
+    "text": "OpenClaw is the fastest-growing open source project, but there are no stories of running it safely in production at scale. As we started deploying agents internally at @brexHQ, we couldn’t stop thinking about this question.\n\nAgents work, but nobody wants to give them real credentials. Instead of waiting for a solution to emerge, we decided to try a novel approach: using LLMs to judge the network traffic of an AI agent.\n\nToday we’re announcing CrabTrap, an open-source proxy that intercepts every outbound request and blocks risky activity using LLMs, before it ever hits an external API. The results are promising; we believe it’s a meaningful step forward in the security of agent harnesses in production environments.\n\nTry it out today.\n\n(As a side note, it was really fun to work personally on a real systems problem again. And btw, if you want to work at a place where the CEO is building proxies at night, we’re hiring!)",
+    "url": "https://x.com/pedroh96/status/2046605307372093932",
+    "created_at": 1776783704,
+    "author": {
+      "user_id": "14354665",
+      "handle": "pedroh96",
+      "name": "Pedro Franceschi",
+      "avatar": "https://images.asksurf.ai/y575BqzJD3J-PeCeRUSla-WfGyVDznELWSIfczwv9mU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDc0ODcwNzM2MzM5NzYzMjAvTFk4S3poTHEuanBn"
+    },
+    "stats": {
+      "views": 761455,
+      "likes": 1922,
+      "reposts": 151,
+      "replies": 101
+    }
+  },
+  {
+    "tweet_id": "2046605197934301612",
+    "text": "Anthropic: Keeps limiting compute and lying to playing customers / nerfing models.\n\nOpenAI: \n\n- 10 min downtime? Limits reset! \n- We hit 4 million followers? Limit reset! \n- Starbucks person spelled my name correctly on my coffee today, let’s have a limit reset!",
+    "url": "https://x.com/soumitrashukla9/status/2046605197934301612",
+    "created_at": 1776783677,
+    "author": {
+      "user_id": "1473477833024577548",
+      "handle": "soumitrashukla9",
+      "name": "Soumitra Shukla",
+      "avatar": "https://images.asksurf.ai/gt3mPLbEAnlPQ1tpzAAC3zVYqNoPsFkXkN9LN3LU6iI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MjcwMjg4Mzk3OTM3NTAwMTcveEpOb3IwWHMuanBn"
+    },
+    "stats": {
+      "views": 193567,
+      "likes": 3999,
+      "reposts": 196,
+      "replies": 87
+    }
+  },
+  {
+    "tweet_id": "2046604993982009825",
+    "text": "## **Using LLMs to judge the network traffic of an AI agent**\n\nAt Brex, our AI agents do real work in production environments. In the journey of deploying harnesses like OpenClaw in production, Brex faced the same wall as the rest of the industry: agents need real credentials (API keys, OAuth tokens, and service accounts), but can hallucinate destructive actions or get prompt-injected. As soon as these requests leave the process, it hits APIs with production consequences.\n\nThe obvious fix is guardrails. Much of the early work has coalesced around scoped tools, per-action permissions, and human-in-the-loop approvals. The challenge is that as agents get more capable, every new capability means another hand-tuned API token or surface to audit. The guardrails that actually exist tend to fall into two extremes: either they're so restrictive the agent can't do its job, or they're so bespoke they don't scale.\n\nSo we built CrabTrap: an open-source HTTP/HTTPS proxy that intercepts every request an AI agent makes and uses LLM-as-a-judge to determine if the request matches a policy of allowed traffic for that agent. The results are promising; we believe it’s a meaningful step forward in the security of agent harnesses in production environments.\n\n## **Why existing approaches weren’t enough**\n\nExisting approaches solved pieces of the problem. MCP gateways enforce policy at the protocol layer, but only for traffic that uses MCP. Guardrails from the LLM provider are tied to a single model and opaque to customize with your own policies. A solution like NVIDIA OpenShell, while powerful, is more of a per-sandbox egress control. We needed a solution that sat between every agent and every network request, and could make nuanced decisions about what to allow.\n\nThe net result is that while OpenClaw is the fastest-growing project on GitHub, there are few successful cases of enterprise deployments. Brex decided to change that.\n\n## **How it works**\n\nA core architectural decision to secure our agents was to operate at the transport layer. This way, the proxy is agnostic to the framework, language, and APIs involved.\n\nYou set HTTP_PROXY and HTTPS_PROXY in the agent's environment, and every outbound request routes through CrabTrap before reaching the destination. No SDK, no wrappers, and no per-tool integration. For HTTPS, CrabTrap performs TLS interception: generating a certificate signed by its own CA per host, negotiating TLS with the client, then opening a separate TLS connection upstream. The deployer can also add iptables rules in the agent's container to block direct outbound connections, not destined to the proxy, as an extra layer of enforcement.\n\nUnder the hood, every request the agent makes is evaluated in two stages:\n\n![](https://pbs.twimg.com/media/HGb4VnvXwAANi0i.jpg)\n\nFirst, static rules: deterministic pattern matches against the URL (i.e. prefix, exact, or glob), optionally scoped to specific HTTP methods. Deny rules always take priority. Static rules compile to cached regexps and execute in microseconds.\n\n![](https://pbs.twimg.com/media/HGb4YG2WEAAEndO.jpg)\n\nBut pure static rules can't handle the long tail. If no static rule matches, the request goes to the LLM-as-a-judge. The judge receives the full request context along with a natural-language policy assigned to that agent, and returns a structured JSON decision (ALLOW or DENY) with a reason.\n\n![](https://pbs.twimg.com/media/HGb4aPkXwAAze75.jpg)\n\nThis approach enables speed for known patterns and judgment for everything else.\n\n## **Generating policies from network traffic using LLMs**\n\nThis raises a natural question: how should you define an effective natural language policy for an agent? As we know from expense policies, writing a good policy is difficult. Something that sounds reasonable often blocks actions it shouldn’t. So how do you predict what an agent's actual policy should be?\n\nWe built two systems to close that gap.\n\nFirst is a policy builder, itself powered by an agentic loop. Instead of writing policy rules first and hoping they match reality, the philosophy is to observe reality and infer an appropriate policy from it. The policy builder analyzes the agent’s historical traffic, samples representative network calls, and drafts a policy matching the agent's real behavior.\n\n![](https://pbs.twimg.com/media/HGcAGgRXgAAGUTc.jpg)\n\nThe second is an eval system to test policy changes before they go live. CrabTrap can replay historical audit entries against a draft policy and report what would change with any policy updates. Results can be sliced by method, URL, original decision, and agreement status. Evals run with concurrent judge calls, so replaying thousands of requests completes in minutes. All past requests are logged in PostgreSQL, indexed and queryable through the admin API and web dashboard.\n\n![](https://pbs.twimg.com/media/HGb4flDXoAAPw85.jpg)\n\n## **What the judge actually sees**\n\nBuilding the LLM judge meant solving a specific prompt engineering problem: giving a model enough context about an HTTP request to make a security decision, without letting the request itself become an attack vector.\n\n![](https://pbs.twimg.com/media/HGb4mFdXgAAmGvS.jpg)\n\nCrabTrap sends the full request to the judge as a structured JSON object (method, URL, headers, body) so all user-controlled content is escaped rather than interpolated as raw text. This prevents prompt injection through crafted URLs, headers, or body content. Security-relevant headers are prioritized and total header content is capped at 4KB, preventing prompt inflation attacks that stuff headers with junk to displace the policy from the context window. Request bodies are truncated at 16KB with an explicit warning to the model. Multipart requests are replaced with a structured summary of each part rather than sent raw.\n\n## **Learnings from running CrabTrap in production**\n\nBrex runs CrabTrap with OpenClaw agents doing real work in our corporate environment. A few learnings have stood out so far:\n\n1. **Policies derived from traffic are surprisingly strong.** We expected the policy builder to produce a rough starting point needing heavy manual editing (watch the demo video) In practice, pointing it at a few days of real traffic produced policies that matched human judgment on the vast majority of held-out requests. Starting from observed behavior and editing down is far more effective than starting from a blank page.\n2. **Latency was the first question everyone asked, and it turned out to be a non-issue.** The obvious concern with a proxy between an agent and every API is added latency on every request. In practice, agents settle into predictable traffic patterns quickly, and once you've observed those patterns, the high-volume ones become static rules. The LLM judge only fires on the long tail of unfamiliar endpoints or unusual request shapes. On one production use case, we saw the LLM activate on fewer than 3% of requests.\n3. **The** **proxy** **became** **a** **discovery** **tool,** **not** **just** **an** **enforcement** **one.** Deploying CrabTrap on a production agent revealed how much noise agents generate. The audit trail made this visible for the first time. We started using denial logs and traffic analysis not just to tune policies, but to go back and tighten the agents themselves by removing tools and cutting out entire categories of requests that were wasting time and tokens.\n\n## **Why open source**\n\nCrabTrap is experimental. It works well for us today, but the space is young, the attack surface is evolving, and we don't think any single approach is the last word on agent security. We're open-sourcing CrabTrap for three reasons:\n\nFirst, CrabTrap is useful infrastructure. When we started, we hadn’t found a solution to deploying harnesses like OpenClaw safely. Instead of waiting for the industry to catch up, we decided to own the problem and invent the necessary tools.\n\nSecond, CrabTrap gets better with more users. Our agents talk to a specific set of APIs. Teams using and deploying CrabTrap in front of different agents, services, and policy requirements will surface edge cases and patterns we can't hit alone.\n\nThird, we have ambitious plans for where it could go, and we’d rather build in the open alongside you. Improvement areas include deeper authentication functionality (like SSO, fine-grained RBAC), escalation workflows that let agents request additional permissions, and policy recommendations from denial patterns.\n\n## **Try it out**\n\nTo deploy CrabTrap or view the repo, check out the quickstart. To watch an interactive demo of CrabTrap, visit our landing page here.\n\n## **Come build with us**\n\nAt Brex, we build the infrastructure AI agents run on, because most of it doesn't exist yet. If you want to work on the hard problems nobody has solved yet, join us at brex.com/careers.",
+    "url": "https://x.com/pedroh96/status/2046604993982009825",
+    "created_at": 1776783629,
+    "author": {
+      "user_id": "14354665",
+      "handle": "pedroh96",
+      "name": "Pedro Franceschi",
+      "avatar": "https://images.asksurf.ai/y575BqzJD3J-PeCeRUSla-WfGyVDznELWSIfczwv9mU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDc0ODcwNzM2MzM5NzYzMjAvTFk4S3poTHEuanBn"
+    },
+    "stats": {
+      "views": 351110,
+      "likes": 544,
+      "reposts": 55,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2046602907077038501",
+    "text": "Happy Tuesday. Codex has hit 4M active users, adding over 1M users in less than two weeks. To celebrate we will reset the rate limits again in a few hours. Enjoy!",
+    "url": "https://x.com/thsottiaux/status/2046602907077038501",
+    "created_at": 1776783131,
+    "author": {
+      "user_id": "1953337039510003712",
+      "handle": "thsottiaux",
+      "name": "Tibo",
+      "avatar": "https://images.asksurf.ai/z8hKT3JW-MmzEs3mcl3D0Za1GjlPpiJ9IukYQRiRXKc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTMzMzk4Mjg3Mzg4OTk5NjgvV1dRbFUyUlQuanBn"
+    },
+    "stats": {
+      "views": 732689,
+      "likes": 5420,
+      "reposts": 195,
+      "replies": 380
+    }
+  },
+  {
+    "tweet_id": "2046547526413644272",
+    "text": "Anthropic allows OpenClaw usage again.\n\nFrom @openclaw docs. https://t.co/8sDIAoIuuV",
+    "url": "https://x.com/daniel_mac8/status/2046547526413644272",
+    "created_at": 1776769927,
+    "author": {
+      "user_id": "1963466798",
+      "handle": "daniel_mac8",
+      "name": "Dan McAteer",
+      "avatar": "https://images.asksurf.ai/bCVQYxgfiHgfxVJS0Gn7c5uTrCBOjsPPqRQn2KwCEUQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NzI5OTkwMTc1NTEyNDk0MDgva05kWkduVXYuanBn"
+    },
+    "stats": {
+      "views": 1273697,
+      "likes": 2014,
+      "reposts": 156,
+      "replies": 208
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGbMHBMWEAA4NXv.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046375922031321401",
+    "text": "🗃️ wacli 0.6.0 is out!\n\nBig security + reliability sweep for WhatsApp CLI.    Hardens SQLite/store path handling, sanitizes search queries, recovers sync/media panics, adds WACLI_STORE_DIR, and improves SIGINT exits. https://github.com/steipete/wacli/releases/tag/v0.6.0\n\n props @sdinakar7 for doing the work!",
+    "url": "https://x.com/steipete/status/2046375922031321401",
+    "created_at": 1776729014,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 38013,
+      "likes": 309,
+      "reposts": 23,
+      "replies": 15
+    }
+  },
+  {
+    "tweet_id": "2046371778277081499",
+    "text": "It's so funny to look back at how things start... :) Go @openclaw !",
+    "url": "https://x.com/photomatt/status/2046371778277081499",
+    "created_at": 1776728026,
+    "author": {
+      "user_id": "13479",
+      "handle": "photomatt",
+      "name": "Matt Mullenweg",
+      "avatar": "https://images.asksurf.ai/I6iWyBX5Cl3hz59EEufHfquxX6EyusMZN4sEVK38WSo/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTgyMDE4NDgwMDg2Nzk0MjQvT0dIczJJb0YucG5n"
+    },
+    "stats": {
+      "views": 46548,
+      "likes": 107,
+      "reposts": 11,
+      "replies": 6
+    }
+  },
+  {
+    "tweet_id": "2046356596683411924",
+    "text": "🧭 gog 0.13 is out!\n\nGmail forwarding with notes + attachments, autoreplies, full-body search, Markdown uploads to Google Docs, rendered Slides thumbnails, Sheets chart editing, secondary calendars, commenter-only Drive shares, and safer no-send controls. https://github.com/steipete/gogcli/releases/tag/v0.13.0",
+    "url": "https://x.com/steipete/status/2046356596683411924",
+    "created_at": 1776724406,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 86525,
+      "likes": 1074,
+      "reposts": 61,
+      "replies": 28
+    }
+  },
+  {
+    "tweet_id": "2046274175539486892",
+    "text": "@Lovable https://t.co/wmDgXBrg8G",
+    "url": "https://x.com/CalmCoding/status/2046274175539486892",
+    "created_at": 1776704756,
+    "author": {
+      "user_id": "2038685865631768576",
+      "handle": "CalmCoding",
+      "name": "ben",
+      "avatar": "https://images.asksurf.ai/VdlMkp-p1JfDTDchwQhdjX-48vhwPMYYS9GXWWMi4Sg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDE2MTcwNzk4NzEzNjEwMjQvbW51eXdYSzYuanBn"
+    },
+    "stats": {
+      "views": 79692,
+      "likes": 963,
+      "reposts": 26,
+      "replies": 1
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGXTgo4WwAEQcx_.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046259696722465113",
+    "text": "Kudos to the folks from Tencent for working with us and providing evals to improve OpenClaw's harness performance!\n\nWe're also working with them to bring fixes/improvements back to the open source repo. \n\nGreat option for folks not comfortable with the terminal.",
+    "url": "https://x.com/steipete/status/2046259696722465113",
+    "created_at": 1776701304,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 246260,
+      "likes": 1368,
+      "reposts": 100,
+      "replies": 48
+    }
+  },
+  {
+    "tweet_id": "2046254527456886905",
+    "text": "We built QClaw with QClaw.\n\n5 days. 99% AI-written code.\n\nNo terminal. No setup. WhatsApp/Telegram sends the order. Your computer does the work.\n\nThe lobster raised itself. 🦞\n\nToday we’re introducing QClaw to the world. First 20,000 users get a Founding Claw Number.\n\nhttp://qclawsg.qq.com\n\nFollow @QClaweverytime for what’s coming next.",
+    "url": "https://x.com/Shuyusyz/status/2046254527456886905",
+    "created_at": 1776700071,
+    "author": {
+      "user_id": "1976476015070412801",
+      "handle": "Shuyusyz",
+      "name": "ShuyuZhang",
+      "avatar": "https://images.asksurf.ai/CEpKtgrbgUTkvSx4aW3aTd3xm6HtB9dLmxJDZjhaEpQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5ODUzNjcwNjgzMDk3MDQ3MDQvazJhTUJVb1IuanBn"
+    },
+    "stats": {
+      "views": 273848,
+      "likes": 483,
+      "reposts": 52,
+      "replies": 72
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2046253380495155200/img/uW7pD1zp_P1twS0q.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2046199257430888878",
+    "text": "Interesting shift. These highly subsidized subs are out there to get your code to improve their models. If you use AI for things useful to you, but not code, you are not valuable to them. https://www.reddit.com/r/SillyTavernAI/comments/1skw6z0/warning_zai_coding_plan_policy_changes_noncoding/?share_id=N4MGqt6uQzWan3PJtWf4v&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1",
+    "url": "https://x.com/steipete/status/2046199257430888878",
+    "created_at": 1776686894,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 484425,
+      "likes": 2239,
+      "reposts": 236,
+      "replies": 162
+    }
+  },
+  {
+    "tweet_id": "2046192869497622529",
+    "text": "MCPorter 🧳 0.9.0 is out.\nCall MCPs from TypeScript or as CLI\n\n- per-server tool filtering\n- sturdier stdio shutdowns\n- Windows OAuth URL quoting fix\n- OAuth config docs\n- schema-declared string coercion for tool calls\nhttps://github.com/steipete/mcporter/releases/tag/v0.9.0",
+    "url": "https://x.com/steipete/status/2046192869497622529",
+    "created_at": 1776685371,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 75518,
+      "likes": 573,
+      "reposts": 32,
+      "replies": 35
+    }
+  },
+  {
+    "tweet_id": "2045872636585029943",
+    "text": "Who is running local models on GPUs on OpenClaw?\n\nI have started benchmarking different models this week. I am working on improving model selection and switching UX on OpenClaw, i.e. I run\n\n/model vllm/gemma-e4b\n\nto switch the model in a channel, and then a model controller automatically loads that into memory, gets it ready, or gives an insufficient memory error, if capacity is not enough for that. Like when you are using multiple models in parallel\n\nI am going to try llama-swap, LM Studio and Ollama for this next and compare them. There are a ton of variants of models, weight formats and quantizations, which need benchmarking\n\nI have been using unquantized original safetensors until now, which already gave me the ability to run ~5 parallel generations in my hardware\n\nSo if I am going to try LM Studio, I would rather use the bf16 ggml-org/gemma-4-E4B-it-GGUF instead of anything smaller --- because there is no point in nerfing an already smol model if your hardware can run 5 parallel sessions on the unquantized version\n\nWill also release vibe reports and benchmarks on all this with @mervenoyann later this week\n\nI would like to hear your thoughts if you have already tried these models on OpenClaw",
+    "url": "https://x.com/onusoz/status/2045872636585029943",
+    "created_at": 1776609021,
+    "author": {
+      "user_id": "1598253668175847425",
+      "handle": "onusoz",
+      "name": "Onur Solmaz",
+      "avatar": "https://images.asksurf.ai/-74LxmXnd6plWew6lbNrRBNwfQufE_SvBsacLlpwiEk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTgyODI0MjY3ODM4NzUwNzIvQUQxd0stMGMuanBn"
+    },
+    "stats": {
+      "views": 53347,
+      "likes": 264,
+      "reposts": 27,
+      "replies": 54
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGRSRxKWgAA1CqM.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGRjZZxagAAUPIL.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2045573984335343958",
+    "text": "@elonmusk @openclaw Grok has gone OpenClaw, unleash the lobsters 🦞 https://t.co/8UdG8TKY0n",
+    "url": "https://x.com/AdamLowisz/status/2045573984335343958",
+    "created_at": 1776537817,
+    "author": {
+      "user_id": "17050482",
+      "handle": "AdamLowisz",
+      "name": "Adam Lowisz X Meetup 🇺🇸🇵🇱🇪🇺🇬🇧🇺🇦",
+      "avatar": "https://images.asksurf.ai/d4bqBzfXuWqCwXss2yaPEF2Ul0r_Jkb0Hb-WAhpYUnM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5Nzg5NTMyMzI2OTgyOTAxNzYvRWRDSXczUE8uanBn"
+    },
+    "stats": {
+      "views": 53280,
+      "likes": 255,
+      "reposts": 19,
+      "replies": 24
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HGNWsjta4AEk_Nl.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2045572706939355483",
+    "text": "You can access 𝕏 APi via @OpenClaw. \n\nWe’re trying to make it affordable without giving away the shop.\n\nHopefully, this can be useful &amp; fun 💫",
+    "url": "https://x.com/elonmusk/status/2045572706939355483",
+    "created_at": 1776537512,
+    "author": {
+      "user_id": "44196397",
+      "handle": "elonmusk",
+      "name": "Elon Musk",
+      "avatar": "https://images.asksurf.ai/YWtlpJUQf7Bzx-xnyBc-mQBmMk98P2JAQB8pwysfAvE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzUzMTQ3MDQzMDcwODEyMTYvNzFVMWZ0TTMuanBn"
+    },
+    "stats": {
+      "views": 38885539,
+      "likes": 48142,
+      "reposts": 5973,
+      "replies": 2728
+    }
+  },
+  {
+    "tweet_id": "2045570119225782399",
+    "text": "Holy shit.\n\nNow everyone will be able to use their @OpenClaws and all the other agentic platforms to build apps on top of X. \n\nHere's the secret: build lists.\n\nLists are how you build apps.\n\nThe pattern:\n\nBuild a list of your favorite football team. Or whatever you are into.\n\nThen ask your AI agents \"build an app showing me all the important news about my favorite football team.\"\n\nIn minutes you'll have an app.\n\nAnd that's just the beginning.\n\nYour agent can build a script about your favorite football team that you can take to places like Google's Notebook LM.\n\nNow you have a video, a podcast, a slide deck, a game, a mind map. All about your favorite football team based on real time news. \n\nYou can do the same with something like @HeyGen, create an avatar of your favorite football player. Now you will have your favorite football player telling you everything that's happening on the football team. \n\nAnd I could go for hours about how many things you can build and not even cover a fraction of them. \n\nThis is huge. \n\nThank you @elonmusk for making it possible to make millions of agentic apps affordably on top of X.\n\nStart building!",
+    "url": "https://x.com/Scobleizer/status/2045570119225782399",
+    "created_at": 1776536895,
+    "author": {
+      "user_id": "13348",
+      "handle": "Scobleizer",
+      "name": "Robert Scoble",
+      "avatar": "https://images.asksurf.ai/LjMS8eba3uzO8tPtn4WWGp8UgIl-SvZ2Clc6ZYRh6w0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MTU2MTQxMTg4NzY1MDQwNjYvelZuZnBBTWYuanBn"
+    },
+    "stats": {
+      "views": 39066335,
+      "likes": 5450,
+      "reposts": 648,
+      "replies": 366
+    }
+  },
+  {
+    "tweet_id": "2045511988382744641",
+    "text": "Lots of people asking what’s so good about the new codex desktop computer use.  Here’s 5 things that come to mind \n\n1. operate Mac Apps without a great API: Slack, Google Sheets, Notes, IMessage without installing separate plugins.  It instantly transforms all your apps into tools \n\n2. If you need to operate your browser more visually it works really smoothly and fast (good for sites that are still human centric)\n\n3. It uses its own cursor, keyboard etc so you can keep working. \n\n4. Once you do any task once you can simply ask Codex to reflect on what it did and how it would accomplish the task next time with the benefit of hindsight and create a skill AND schedule an automation.  It’s really nice that codex can just schedule and edit automations when asked! it’s very Claw like in this way.  This last point is not computer use specific but is powerful when combined with computer use \n\n5. The UI polish is insane: you get nice icons for any application you want to tag   into computer use plus all the other built in new stuff like built in file viewer and browser so there is no context switching.  So you can iterate really fast and not lose focus.  Because of the polish it also feels nice and delightful to use.",
+    "url": "https://x.com/HamelHusain/status/2045511988382744641",
+    "created_at": 1776523036,
+    "author": {
+      "user_id": "825766640",
+      "handle": "HamelHusain",
+      "name": "Hamel Husain",
+      "avatar": "https://images.asksurf.ai/9DrzTCUeD50vnoIYbS-tazOO2VYP6TzM21FCTVvTls0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyODcyMDYxOTkwODgxNzMwNTcvaXhFNGZLeTEuanBn"
+    },
+    "stats": {
+      "views": 165904,
+      "likes": 926,
+      "reposts": 67,
+      "replies": 30
+    }
+  },
+  {
+    "tweet_id": "2045210034813186142",
+    "text": "You cannot believe how much intrinsic knowledge GPT-5.4 has about building GPU compute kernels. I honestly think this will materially impact NVIDIA's lead in software.",
+    "url": "https://x.com/liuliu/status/2045210034813186142",
+    "created_at": 1776451045,
+    "author": {
+      "user_id": "131954807",
+      "handle": "liuliu",
+      "name": "Liu Liu",
+      "avatar": "https://images.asksurf.ai/xM-wB7hjqhZE2uiADPhVDDH0TH-NYf1IPK8PgvxXZ1c/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEwMzYxNTE5OTU3MzkwNzA0NjQvTFJUY0pCS2IuanBn"
+    },
+    "stats": {
+      "views": 239321,
+      "likes": 673,
+      "reposts": 30,
+      "replies": 14
+    }
+  },
+  {
+    "tweet_id": "2045191726495846459",
+    "text": "Seriously stop everything you are doing and use codex desktop app new computer use.  Absolutely mind blowing",
+    "url": "https://x.com/HamelHusain/status/2045191726495846459",
+    "created_at": 1776446680,
+    "author": {
+      "user_id": "825766640",
+      "handle": "HamelHusain",
+      "name": "Hamel Husain",
+      "avatar": "https://images.asksurf.ai/9DrzTCUeD50vnoIYbS-tazOO2VYP6TzM21FCTVvTls0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyODcyMDYxOTkwODgxNzMwNTcvaXhFNGZLeTEuanBn"
+    },
+    "stats": {
+      "views": 258931,
+      "likes": 1268,
+      "reposts": 63,
+      "replies": 76
+    }
+  },
+  {
+    "tweet_id": "1995866141856858422",
+    "text": "warelay was meant as simple app that triggers a cli\nnow it's a multi-agent orchestration system and I'm about to add Telegram.\n\nSend help... or a better name.",
+    "url": "https://x.com/steipete/status/1995866141856858422",
+    "created_at": 1764686544,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 57741,
+      "likes": 105,
+      "reposts": 4,
+      "replies": 22
+    }
+  }
+]
