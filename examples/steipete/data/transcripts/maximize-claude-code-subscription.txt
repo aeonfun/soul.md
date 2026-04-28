@@ -1,0 +1,687 @@
+What's up engineers? Andy Debb Dan here.
+This question hits my inbox every single
+week. After every video, engineers ask,
+"Can I use my claw subscription instead
+of an API key? I already pay for it, so
+can I just use it?" Short answer, yes.
+And I'll show you exactly how. The long
+answer here is there's one rule to
+follow and one confusing thread over
+time of engineers that work at Enthropic
+going back and forth on what we can and
+cannot do. and it's all been exposed by
+Open Claw. We're going to cover this,
+but we're also going to make a couple
+things really clear. Breaking the one
+rule I'm going to share is how you get
+instabbed. This might sound extreme, but
+getting banned from Claude could change
+the trajectory of your engineering
+career. In the Age of Agents, losing
+access to state-of-the-art models and
+tools will set you back. On the other
+hand, we don't want to waste money on
+expensive Opus 4.7 tokens when you've
+already paid for a subscription that you
+could be using. So before you do
+anything clever with your Clawude Pro or
+Max subscription, you'll need to know
+the exact lines Enthropic drew up in
+their latest clarification. The exact
+lines you do not want to cross. To make
+things absolutely clear here, we'll
+break down the claw subscription into
+three tiers of usage. safe,
+controversial, and bannable. Here's how
+you can maximize your Claw subscription
+without getting banned.
+So, here's the whole video in 20 seconds
+so you know exactly what you're getting.
+First, we're going to cover the one most
+important rule to follow. Then, we'll
+break down the three tiers of usage,
+what you can do, what's controversial,
+and what gets you banned. Here's the one
+rule that can get you through 90% of all
+terms of all usage. Memorize this one
+line here. Your Pro or Mac subscription
+is for your individual use. The moment
+your code routes someone else's request
+through your subscription, stop using
+the subscription oath token and switch
+to an API key. The second another human
+becomes the intended user, you've
+crossed from individual use into product
+territory. And that's the big
+distinguishing factor here. If you just
+search product on their usage policy,
+developers building products or services
+that interact with cloud's capabilities,
+including the SDK, should use API
+authentication. So we're saying use an
+API key. The second what you're building
+is not just for you. So this is the
+golden rule. It's for your individual
+use. The moment someone else is using
+your subscription, you have violated
+terms of service. And so the test in one
+sentence is, am I the only human whose
+work these agents are running? If so,
+ooth off key and your subscription is
+fine. If not, use your API key. That's
+the whole decision here. Let me make
+this super clear here. This is my direct
+understanding of all anthropics
+published documentation as of April
+2026. If you work at Anthropic and I got
+anything wrong, email me. I'll amend
+this video immediately. The goal here is
+fair use and alignment for every single
+engineer watching, nothing else. So what
+is safe? What can you do with your claw
+subscription? Let's start with safe use.
+Personal scripts on your own laptop.
+Cron files, pipelines, agentic
+workflows. That's all safe use. You are
+the only user there. The cloud agent SDK
+running your own agents doing research.
+This is all valid fair use. CI running
+your own repo with the cloud code o
+token set. Again, fair use as long as
+you're the only one on this repo. Okay,
+that's important. cloud code on your
+work laptop for engineering. You author.
+So, you're writing code, you're building
+products, you're doing whatever that you
+are authoring. This is still safe use.
+You're all good to go here. Building a
+product is fine. As you'll see, using
+your subscription inside of the product,
+that's not fine. Cloud code web, cloud
+code desktop, all the cloud code related
+functionality, features, tools, apps,
+obviously that's okay. Enthropic wants
+you to use their tools. All right, so
+that's super clear. The big idea here is
+one human, one subscription, one
+beneficiary. Now, if you have a team or
+enterprise subscription, it's more about
+your team usage. The rules are a little
+different there. But for individuals,
+it's one person, one subscription, one
+beneficiary. If you remember nothing
+else, remember this. This is all safe
+use. Now, things get a little murky.
+Let's look at the controversial usage of
+your claw subscription. Okay, this is
+where it isn't clear and where you start
+blurring the lines a little bit. agency
+or contractor work using your personal
+token. And so here we're talking about
+workflows that use your OOTH token
+through your subscription that's exposed
+to your agency or your contractor work.
+Okay, I'm not talking about writing the
+code. I'm talking about a service that's
+ongoing where you are not the only
+person benefiting from it. So this is
+where things get a little more
+controversial. Slack bots daily reports
+used by multiple humans. Okay, so a
+little more controversial here, right?
+Because the output is not just for you.
+we've broken that rule about who the
+intended output is for. This is where
+things get a little weird because when
+you're writing code, when you're
+building a product, that's all fair use.
+But the moment the output and the usage
+is shared, it's not so clear. Open
+source CLIs only safe if everyone brings
+their own token. If you're embedding
+your O token into a website or some CLI
+tool and you're providing usage through
+that interface using your token that
+multiple humans are benefiting from that
+is controversial use. I would steer away
+from that type of usage. Internal team
+tools running on one developers pro or
+max token. This is very risky. We're
+getting into that zone where it's
+clearly multiple people benefiting
+inside the process, right? Not just the
+output of the thing, the process of
+building the thing. Internal team tools.
+Again, this is a little different if
+you're running an enterprise or team
+subscription. That's safe for that.
+You're going to want to reach out to
+Anthropic directly. For individuals,
+this is crossing the line. Blurry, but
+we're crossing the line. This is
+something you could air quotes get away
+with given your token usage is low, but
+I would not recommend that. Here we just
+switched to the API token. And then the
+most controversial of all, third-party
+agent harnesses, open claw style. This
+is highly contested. Let me just wrap up
+here and then we're going to refocus
+back on this because I thought diving
+into this I would be able to just jump
+in, find the clear answer, share it with
+you guys here today. But I spent a lot
+of time and frankly quite annoyed with
+how much time I've had to spend tracing
+through Enthropics, flipping back and
+forth and back and forth on thirdparty
+agent harness usage. So we got to talk
+about this a little more. But overall
+for controversial uses, right,
+everything I've mentioned here, I just
+recommend you grab the API key here and
+stop guessing. Okay, this is the winning
+move here. Don't risk losing access to
+some of the most powerful, most
+intelligent compute and tools.
+Regardless of what you think about
+Anthropic, they are your interface to
+some of the best intelligence on the
+planet. Okay? So, don't burn that
+because you're trying to save a few
+bucks. It's not worth it. I will also
+say here, as you'll see in a moment,
+Enthropic needs to be clearer about
+these use cases. I found myself just as
+confused as many other engineers, which
+is a serious problem. So, let's go ahead
+and just understand this. What is
+anthropic's position on using the OOTH
+for personal work inside of third-party
+agent harnesses like OpenClaw? Let me
+just kind of share how confusing this
+has been walking through this and try to
+provide some clarity as much as I can
+here. So, let's start from the beginning
+or one beginning. So February 18th, Tar,
+one of the anthropic team members says
+here that we want to encourage local
+development and experimentation with the
+agent SDK. If you're building a business
+on top of the agent SDK, uh you should
+use an API key instead of the OOTH key,
+right? Instead of your subscription.
+We're going to make this clear in our
+docs. Okay, fine. So this seems like a
+really clear start. Next, Boris
+Churnney, the creator of Cloud Code,
+says tomorrow 12. So this is April 3rd.
+Okay, so we're moving a little bit into
+the future. All subscriptions will no
+longer cover thirdparty usage like
+OpenClaw. Okay, fine. Third party usage
+is not allowed at all. Okay, so this
+means that we cannot use agent
+harnesses. Third party agent harnesses
+like OpenClaw. To Boris's credit
+completely, we've been working hard to
+meet the increase in demand for Claude.
+Our subscriptions weren't built for the
+usage patterns of these thirdparty
+tools. Uh capacity is a resource we
+manage thoughtfully and we are
+prioritizing our customers using our
+products. Makes sense. There's nothing
+confusing about that. If you're compute
+constrained, which it sounds like they
+are, you want to have all the demand
+coming through your products. Okay, so
+nothing wrong about that. This is where
+things get a little annoying and weird.
+April 6th, we have Peter Steinberg, the
+creator of Open Claw, says Anthropic is
+now blocking first party harness use as
+well. Laura says, "This is not
+intentional. Likely an overactive abuse
+classifier looking and working on
+clarifying the policy going forward."
+Okay, if we move forward here on the
+10th, Peter got banned from OpenClaw
+usage and then he got his account
+reinstated. We're kind of flipping back
+and forth here. I'm not sure if I can
+use OpenClaw, if I can use Open Code, if
+I can use the PI coding agent. It's not
+clear what I can use here. And then on
+the OpenCloud documentation, Enthropic
+staff told us OpenClaw style CLI usage
+is allowed again, but for long lived
+gateway hosts, anthropic API keys are
+still the cleanest and most predictable
+production pathway. We're flipping back
+and forth here all over the place. There
+are many, many, many more tweets like
+this that say you can use it, say you
+can't use it. You know, you shouldn't,
+but you can. And we're unbanning Peter.
+This has just been a nightmare to track
+down. And you know, like I said, there's
+like a million more tweets like this. I
+think it's obnoxious that I have to
+spend my time as an engineer going on
+Twitter to try to find the source of
+truth for what should be in the usage
+policy documentation. And if you come
+back to this, as we should be, because
+this is where the real legal bounds
+actually lie in the usage policy here.
+Here's what Anthropic is saying, and
+this is what I like to go by when I'm
+building. This is what I do. I look at
+the documentation. I don't look at
+tweets. I don't look at what people are
+saying. I look at what the company says,
+which can be quite challenging because
+very clearly they're flip-flopping here
+a decent amount on how you can actually
+use their tools. Okay. But I think the
+definitive guide is here. Again, as
+mentioned, developers building products
+or services that interact with cloud's
+capabilities, including the SDK, should
+use an API key. So, a couple different
+metrics you and I can use. If you're
+building a product or service and you're
+servicing more than just yourself, use
+an API key. As mentioned, that is the
+golden rule here. If you're building a
+product or a service or other users
+requests are being routed through your O
+token, do not do that. Okay, that is
+violating the usage policy as stated
+here. Of course, full disclaimer, read
+and look over the documentation yourself
+and try to track all the tweets as well.
+If you're working at Anthropic, please
+make this clear. Add explicit examples
+of what we can and cannot do and please
+address third-party agent harnesses.
+This is how I interpret the
+documentation. Again, you know, do your
+own research here. Given the current
+state of things, I'm currently not using
+my OOTH token, which we're going to
+break down how to gain access to and how
+to use in just a moment here. I'm not
+using that for any third party tools. My
+favorite agent harness right now is the
+PI coding agent. This is my go-to for
+fully controlling the agent harness. I'm
+a huge Cloud Code fan. I've been using
+it since the beginning, but it has
+become more and more bloated over time.
+I'll link a big hitting video where we
+talked about the PI coding agent versus
+cloud code in the description if you're
+interested in that. The big idea here is
+you want an open- source cloud code
+competitor that you can fully control
+down to the font color. And this is
+going to be really really important as
+we move further into multi- aent
+orchestration and as we scale our
+compute to scale our impact which is
+typically the focus of this channel. So,
+if you're new, like and subscribe to
+stay on the edge of aic engineering.
+Normally, we don't cover what I like to
+call configuration level issues like
+this. But it's come up over and over and
+over. And as I started looking into
+this, it's really not that clear. So, I
+wanted to address it directly here on
+the channel. What is gray here is open
+claw style third party agent harnesses.
+This is not clear at all cuz I'm telling
+you right now I think the bigger issue
+here is and we'll talk about this at the
+end. It's becoming more and more clear
+that Anthropic is compute constrained
+and they're trying to first service
+their highest tier most important
+subscribers which makes sense. That's
+exactly what you would do. You want to
+defend your high income revenue users,
+right? It makes complete sense. You
+cannot blame them for that. But what we
+can blame them for is not being clear on
+exactly how we can use the subscription.
+Obviously, as a longtime Claude
+subscriber, I have the Mac subscription,
+and you know, I've been paying them 200
+every single month for over a year now.
+Obviously, I want permissive use. I want
+to be able to use this all the time,
+everywhere, right? But that's not the
+reality of running a business. And so, I
+understand that, but what I wish they
+would do is just make it clearer. This
+is how I'm interpreting this. I'm
+playing it safe. I'm definitely on more
+on the conservative side here on trying
+to like hack out tokens and try to use
+the subscription for every little thing
+because I realize the importance of the
+tooling and specifically the models
+coming out of Enthropic. That's the
+controversial use and this is the
+biggest one. Make sure you follow the
+channel, drop a like, let the algorithm
+know you're interested. I'll be updating
+any changes here on the channel around
+the controversial use of the clawed
+subscription. Now, let's move on to the
+final tier. If you do these things, you
+will be banned and it's really only a
+matter of time. someone at Anthropic
+will find you and more likely their
+agents and their abuse detection systems
+will find you and ban you. If you're
+shipping a product that runs on your Pro
+Max O token, you can get banned and it's
+very easy to detect this. How many
+tokens are coming through your service?
+What's the classification of the prompts
+that are running and are you running in
+a third party agent harness with a bunch
+of random requests that a single
+individual user could not do? It's kind
+of easy to detect this guys. So like
+don't be an idiot. This is banable use.
+Multi-tenant SAS application logging in
+to claude on your behalf obviously
+banable pulling your one subscription
+across a team with no team or enterprise
+seats banable reselling claude banable
+instant ban okay extracting tokens
+pier.json JSON or your keychain and
+using them. Banable, right? This all
+clearly abuses of your subscription.
+Don't do these things. Don't misuse
+software. Don't be malicious. It's in
+your benefit to not get banned. Right?
+My oneliner here is don't trade Frontier
+AI access and Frontier AI tooling for a
+few hundred bucks. You're trying to save
+money. You're trying to build a
+business. You're trying to do your
+thing. I get it. But you don't want to
+lose access to premium compute, to
+premium intelligence. This will get you
+banned full stop. So, now we have a
+better idea of how to use a
+subscription. Let's break down exactly
+how to use your OOTH token and not your
+API key because there's one big gotcha
+here that if you don't catch this, you
+will be billing your API key and not
+your OOTH token.
+So, I have this codebase here that's
+going to be available to you. So, in
+this codebase, I have a few very, very
+simple but very informative examples of
+how to set up your OF key in your
+systems. And again, I'm assuming you're
+following the one rule so that you are
+not breaking your subscription usage
+terms, okay? Your own use and you're not
+routing someone else's requests. By the
+way, for gray controversial usage, I
+didn't mention this. I want to clearly
+state that if you're unsure, you can
+just directly contact support. They do
+mention this or contact sales. Actually,
+for questions about permuted
+authentication use, please contact
+sales. I am going to ask them directly
+after I film this video if I can use a
+third-party agent harness like the pi
+coding agent. I'm just going to directly
+ask them and see what they say because
+this is my favorite agent harness. I'm
+absolutely not an open claw user. I do
+not recommend using that tool. Uh that's
+a topic for another time, but I'm going
+to go ahead and directly ask them. This
+is something that you can do too, right?
+If you're not sure about that gray area,
+it's always just better to ask. So, let
+me show you exactly how this works. So,
+I'm using just this is a simple command
+line runner and it runs out of a just
+file. So in this file, you can see we
+have a bunch of simple commands. They're
+mostly just routing to Astral UV, the
+best way to run Python. They're just
+kicking off single file Python scripts
+with concise examples on how to use your
+OF key versus your API key. If I type J,
+which is an alias for just it's going to
+just show me all the commands I have
+available. We have the CLI and the agent
+SDK. You can run your OOTH and your API
+token directly through the CLI. So, you
+know, we can do claw-p ping, right? And
+this is going to run directly to the CLI
+and you can set up through the agent SDK
+that's available. Let's run this J API
+CLI. So here we've used the API key. The
+way that you can know that you're using
+your API key is this field here API key
+source. And you can see here rate limit
+events. The API key has no rate limit
+event. This is going to differ from what
+we'll look at in a second which is your
+OOTH usage. Right? Oth usage bills
+against your subscription which has rate
+limits just by coming into this codebase
+running the install command which I set
+up in every codebase now. So if you go
+into whatever cloud code instance you
+have or any agentic coding tool really
+you don't need cloud code you can do
+/install and I have this prompt here
+that's going to automatically help you
+set up this codebase very very quickly.
+After you get that all set up you can
+just type jpi cli. It'll run everything
+you need to see and understand to know
+for a fact using your API key or your
+ooth token. So all the code is here in
+this API key CLI file. But the important
+piece is here. So if we go into the
+output ind JSON file, this is just the
+raw output stream of that execution in
+the log file. You're going to know for a
+fact that you're running your API key
+through this field. If you just search
+API key here, this is the field that
+lets you know for a fact you're running
+your API key. So very important, you
+know, we got build. If we look for
+total, we can see our total costs. 2
+cents for a ping prompt. Pretty crazy,
+right? That's because of that massive
+system prompt. But if we back up here,
+type J again, and we do J O CLI, this is
+going to run our subscription. Again,
+this is all going to be in this codebase
+for you, link in the description. It's
+going to be completely free, so you can
+understand exactly how to set up your
+Cloud subscription using your OOTH
+token. We have our events indon file.
+And if we go into this, this is just the
+raw streamed output from that execution.
+Uh you can know for a fact that you're
+running your subscription like this. So
+if we break this into new lines and we
+search API key source, it will say none
+here. And it'll also give you this
+field. You also see this rate limit
+type. On line three, you can see here we
+have five hour rate limit type. This is
+how you know for a fact you're using
+your oath token through your
+subscription and not the API key. Now I
+mentioned that there's a gotcha. There's
+a big thing you need to make sure you're
+doing here. If we go into 01 off CLI
+line 103, you need to make sure that you
+unset your anthropic API key. You need
+to make 100% absolute sure that you
+unset this thing. Otherwise, it's going
+to override your OOTH token. So, you can
+see here right in the environment
+variable, I'm popping this out.pop. Make
+sure you can still read code. If you
+can't read this code, probably should
+not be using this code. But if you hit
+enter here, you can see subprocess.run.
+This is the environment we pass into the
+CLI. There is an agent SDK version here
+as well if you want to use that. But
+it's going to make sure that variable
+specifically the API key is not set up.
+Let me backtrack a little bit. To obtain
+your off token, all you need to do is
+type claude setup token and it's going
+to open up a browser for you and you're
+going to be able to get your off token
+like this. This is going to build right
+against your subscription usage. And of
+course, just take that and you're going
+to want to set that directly in your
+environment variable. I set up both here
+just as examples. Cloud code ooth token.
+This is the variable name. And then you
+have your anthropic API key. So that's
+it. It's that simple. This codebase is
+going to be available to you. Link in
+the description. It contains some more
+information and research on the three
+tiers of usage. You really want to stay
+in this green safe area. Clean setup
+guide here. You can go the agentic
+installation or manual installation if
+you want to make sure you know what
+everything is doing, which I always
+recommend. Looking through this and
+preparing for this video really really
+made me think more about what's going on
+at Anthropic. Like why is there so much
+back and forth and lack of clarity
+around how we can use a subscription
+that we pay for? And I I think it comes
+down to like three things. Anthropic
+continues to experience exponential
+growth and with that comes massive
+growing pains. It's pretty clear and
+there's some research and and sources
+that state this. Uh at this point they
+are compute constraint and they don't
+want subscriptions being abused and
+overused. That's completely
+understandable. But what's not
+understandable is the miscommunication
+or the unclear or maybe intentional
+confusing communication across a bunch
+of Twitter accounts. like it's just a
+nightmare to track this down. This is
+not where I want to be going to know the
+tools I can and cannot engineer with. I
+really really hope they clarify things.
+Again, if you are at Enthropic and
+you're watching this, I would love and I
+speak for other engineers as well here
+would love some more just clear
+communication. Give us concrete
+examples. Really break it down for us.
+What can we do and what can we not do?
+The controversial usage just shouldn't
+exist, right? You shouldn't have to
+guess at what you can and cannot do. I
+would love clarity on these items
+directly. I think there's a decent
+inspiration here for Anthropic to get
+this figured out because right behind
+them on their tails is Sam Alman at
+OpenAI just kind of like giving free
+reign to everyone to use codecs and the
+GPT models. This news just dropped
+today. Apparently, Antropic is testing
+preventing any clawed code usage on the
+pro subscription. If you scroll down on
+this post, Sam Alman comments, "Okay,
+boomer."
+which just crazy for a CEO at a company
+to be saying saying something like this
+on someone's post. Um Amal of course
+works at Anthropic as well. But um yeah,
+they're just kind of getting roasted
+here on reducing usage. But I you know,
+again, I get it from a business
+perspective. You have to depend your
+compute resource. It's going to be the
+most important resource anyone has very
+soon. Probably already is, frankly. So
+they're testing blocking cloud code
+usage on the pro subscription. Pretty
+crazy. Great note here from Simon
+Willis, one of my favorite engineers.
+This doesn't clarify anything. Please
+don't play games like that with AB
+tests. Kind of agree with him. I don't
+know why this is an AB test. They're
+testing sentiment, I guess, around
+losing capability. I think it's pretty
+clear how that's going to go, but shout
+out Sam Alman. This guy's pretty punchy.
+I know that the answers here haven't
+been 100% clear, 100% perfect. That's
+just because there is some gray area
+here with the anthropic claw
+subscription. They haven't clarified it.
+I would love clarification. We'll wait
+on that. Make sure you like, subscribe,
+comment, all that good stuff, so you let
+the algorithm know you're interested.
+I'm going to be tracking this
+development on the channel to make it
+super super clear for engineers who are
+just trying to build who's just trying
+to create products who are just trying
+to master Gentic engineering in the age
+of agents. If you're interested in that
+and if you're interested in pushing what
+you can do with a Gentic technology,
+follow that's our bread and butter here
+on the channel. I'm not super amped,
+frankly, to be covering stuff like this,
+but it is important. It is useful. It is
+valuable. So, I wanted to bring it here
+to you on the channel. I'm playing this
+more on the conservative side. I use my
+API token right now inside of the PI
+agent harness when I want to touch the
+anthropic models. I would lean further
+away from these controversial uses and
+more toward the, you know, safe, very
+clear uses. One human, one subscription,
+one beneficiary. Don't play with your
+access to the most important technology
+of our lifetime. With that being said,
+your Max Plan is already paid for. So,
+let's use it right. You know where to
+find me every single Monday. Stay
+focused and keep building.

@@ -1,0 +1,882 @@
+[music]
+Peter, welcome to OpenAI.
+&gt;&gt; Thanks for having me.
+&gt;&gt; We've known each other online now for
+many years. Uh, but I'm so happy to
+finally get the chance to spend more
+time with you in person.
+&gt;&gt; Likewise. Beautiful office, by the way.
+&gt;&gt; Thank you. Thank you. You had a crazy
+couple weeks. We first had the idea of
+doing a video video together a month
+ago. If we had done it then I would have
+had to intro you. I guess you don't even
+need an intro anymore. Uh it's not often
+that an open source project makes the
+WRA journal. Uh so congrats on all the
+success. How are you feeling?
+&gt;&gt; Slightly some story overload on all
+points but also you know when I when I
+started out this year like messing with
+AI, I wanted to like inspire people and
+I feel like this is the final form.
+[laughter]
+So I'm I'm I'm proud.
+&gt;&gt; It's been amazing. You've been in SF for
+the past week. Uh, and you attended some
+events like the Codex hackathon, but you
+also had claw con like an event
+dedicated to open claw.
+&gt;&gt; Well, it also was created by the
+community.
+&gt;&gt; Yes. I created this discord channel
+about meetups. After people were like,
+we need to have a meetup and I'm like
+sure. And then I came to Clock and there
+were like a thousand people and I was
+just blown away by like the creativity,
+the
+the the
+colors, like there are so many things,
+so many people excited.
+&gt;&gt; I mean, that's how you realize that
+you've built something magical. Like the
+project did not even exist a few weeks
+ago and now you have like thousands of
+people embracing it, using it, gathering
+to meet you in SF. It's pretty
+incredible. Even in Vienna next week, we
+have like already 300 people and it's by
+far not as much of a tax scene.
+&gt;&gt; Wow.
+&gt;&gt; As as San Francisco.
+&gt;&gt; It's now worldwide.
+&gt;&gt; So now it's a phenomenon.
+&gt;&gt; Yeah. That's amazing that that this
+reaches different continents, different
+cultures.
+&gt;&gt; Indeed. And and so how has the
+conversation been with like the
+community here? You spend time with the
+community, some of the maintainers also
+that you've kind of like brought into
+your project. Yeah.
+&gt;&gt; Um, how has that been for you this week?
+&gt;&gt; It's been quite something.
+&gt;&gt; Um, a lot of people love it. A lot of
+people have this expectation of this
+enterprise ready final project when for
+me for the longest time it was like my
+my little playground. I mean the whole
+year I'm just marveling at what's
+possible now. If you're a builder this
+is like what a time to be alive.
+&gt;&gt; Yeah. What do you think is the most
+interesting thing about building like
+actually building being a builder at
+this moment in time like it's a very
+interesting time where like the entire
+tool chain is changing
+&gt;&gt; the definition of what it is to be a
+developer is also changing and anyone
+can build anything when I when I started
+&gt;&gt; playing with with this new tech I got a
+dopamine hit every time back then I
+started with cloud code when it got
+something right and it was like maybe
+30% or 40% chance but I To me, it was
+like
+like literally mind-blowing because I
+had this realization that now I can
+definitely build anything and um you
+know, usually you're so time constrained
+because software is hard and software is
+still hard but you're so much faster
+now. I agree. Uh so if we take um a few
+years back maybe and rewind a little
+bit. So you I got first got to know your
+work back I think in 2011 or 2012 when
+you built PS PDF kit.
+&gt;&gt; Yeah.
+&gt;&gt; And from the outside it's interesting
+because it feels like you've achieved
+the dream of every developer. You kind
+of saw a problem. You created a great
+solution for it. You built a company
+around it. You scaled it. You solved it.
+But I'm sure that journey is never that
+easy.
+&gt;&gt; I mean I didn't wake up one day and
+thought I'm going to build a PDF
+framework. that is like minus 100 on my
+interest list. Uh so it kind of kind of
+just happened like a weird butterfly
+effect from being at the Nokia
+development days to having friends that
+needed it uh and an American visa taking
+too long kind of emerged to me creating
+a company.
+&gt;&gt; What I find interesting is like after
+that company uh you you built you kind
+of took a break for a little while.
+&gt;&gt; Yeah. So, what brought you back?
+&gt;&gt; At the end, I I was just really burned
+out. Like, I was running on high steam
+for 13 years. Running a company is hard.
+Being a founder is hard. It's And I also
+didn't really It's my first one. So, I
+didn't really had the the knowledge
+how to how to mitigate those things. So,
+I was just burning a bit too bright and
+I needed to decompress. So, I still
+follow the tech news. I I saw I think
+the very early things of GBT engineer
+whatever it was called of chat GBT and I
+was kind of cool but
+didn't really excite me is you always
+have to experience new technology just
+by reading from it doesn't really convey
+the power
+&gt;&gt; so so even that tech didn't really click
+and only when I was ready when I felt
+the need for like okay I want to build
+something again and then I
+I didn't want to build it in Apple tech
+anymore cuz I I'd done this for such a
+long time and
+the world kind of moved on a little bit.
+You know, you need to things need to be
+web first and I I kind of had the hinge
+back then, but it's so hard when you go
+from when you're such an expert in one
+field and you move to another field.
+Hard is even the wrong word. It's it's
+more like painful.
+&gt;&gt; Mhm. Because then you're like you have
+all this this broad knowledge of how to
+build things
+but to really do that without
+agentic engineering you need to still
+learn a lot to to move your knowledge
+over and then I thought like ah let's
+let's check out what this AI stuff is.
+The moment where it blew my mind was I I
+took this project that was halfway done
+that where I just yeah burned out before
+finishing it basically.
+&gt;&gt; It's often the case that like for us
+developers we love having new ideas and
+starting projects but getting them to
+the finish line is the hard part.
+&gt;&gt; Oh I see it all the time. It's it's it's
+really hard and I even sometimes fail.
+But for this one I I wanted to continue
+but I also wanted to rewrite it.
+&gt;&gt; Mh.
+&gt;&gt; So I I took the whole thing. I made one
+huge markdown file like I don't know 1.5
+megabyte with all the files. I dragged
+it into Gemini Studio 2.5 at the time. I
+said write me a spec and I had like
+those 400 line spec then I dragged it
+into cloud code and then I wrote build
+and I I did other stuff on main screen.
+It was just like running on the side
+screen for hours. It was it was things
+were quite a bit rougher back then. And
+at one point it it told me
+I'm 100% production ready, you know,
+like the the psychopic uh Opus 3.5 or
+whatever it was. And I tried it and it
+crashed and then I like hooked up um
+Playright.
+I think one of the few MCPs I would
+actually use and told it to like build
+the login stuff and check the work along
+the way.
+&gt;&gt; Yeah. or something for Twitter and then
+1 hour later it it actually worked and
+it did show me some stuff. I mean it was
+like the worst slop but to me this was
+like the moment where it really clicked
+cuz like
+&gt;&gt; this is like just process-wise I got
+like goosebumps for like the
+possibilities and that was kind of
+moment where I couldn't really sleep
+anymore.
+&gt;&gt; Yeah. Because by now then then like my
+head exploded with all the things that I
+I always wanted to build that I just
+couldn't before and then I just really
+went into the rabbit hole. A lot of
+people have seen like Open Claw as an
+overnight success for you. But what I
+love and I what I find fascinating in
+your story is kind of how it's a
+culmination of so many projects that
+you've been working on for the past like
+9 or 10 months, right? Like when you
+look at your GitHub profile, there's
+like 40 plus projects you've built. Um
+half of them I use in the project. Yeah.
+&gt;&gt; Yeah. And I think like many of those
+Yeah. You you combined them all inside
+OpenClaw. Yeah. Can you tell us more
+about this journey about like how all of
+these ideas and projects made their way
+to openclaw?
+&gt;&gt; I wish I could say that I had the
+unified plan in the beginning but a lot
+of it was just exploration and I wanted
+things and those things didn't exist and
+and I just yield them or let's say I
+prompted them into existence. Why? you
+know, it's like, okay, let's build it.
+&gt;&gt; And then like and it was like step by
+step just because I yeah, I wanted my
+agent to like do some stuff for me. I I
+didn't have that this this this unified
+vision yet. I I had a it's funny how it
+goes full circle because I I wanted to
+have something
+that would look at for example my
+WhatsApps
+and then I built I haven't got the
+domain for that. I built the prototype,
+but then I thought all the big labs are
+going to build it. Like I just wait a
+little bit. I focused on other stuff. I
+just experimented a lot. I my mission
+was kind of like to have fun and inspire
+people. And then by November, I I built
+a few versions of what I wanted, but
+nothing really good. And by November, I
+was like, why still why did no lab still
+build any of that? You know, like what
+the what the heck are they doing? And
+then I I built
+the first version that became open
+class. We at name number five now. Um
+still didn't fully click for me. It was
+like a this is cool. Like took like one
+hour to like build the first prototype
+cuz you just you just yield things into
+existence now.
+And then where it really clicked was
+where I was at this uh weekend trip in
+Marrakesh and I I found myself using it
+way more because it was so convenient,
+you know, like there was no there's no
+really good internet. So WhatsApp was
+WhatsApp just works everywhere. Um and
+it was just so convenient. Like I made
+pictures for to translate stuff to like
+find me in restaurants but also like
+look up stuff on my computer. It was
+really cool. And I showed it to friends
+and I made it like send me text messages
+for me and and they wanted it, you know,
+and I'm like, "Yeah, you you shouldn't
+use it. You don't get that. It's too
+dangerous for
+&gt;&gt; these are the [clears throat] only signs
+of like, you know, uh product market
+fit. If your friends already want what
+you have, even though you're going to
+never design that for them, it was more
+like reserved for the technical like
+peers that you have."
+&gt;&gt; Yeah. And then when it really clicked
+for me was I used it so much and at some
+point I sent like a voice message
+and and I was like wait this shouldn't
+work.
+&gt;&gt; Oh yeah. Tell me more about that story
+because I think we talked about it the
+other day. That's fascinating.
+&gt;&gt; Yeah. It showed me how good those models
+are in problem solving. You know like we
+built these things for agent for agendic
+engineering but really the skill is like
+more abstract. like it's if you want to
+be a really good coder, you need to be a
+really good problem solver. And that
+just maps in any domain really.
+&gt;&gt; Yeah.
+&gt;&gt; So I I sent this voice match and the
+typing indicator appeared and and I'm
+like I'm very curious what happens now.
+This I didn't build this can't work. And
+then the model just replied to me and I
+were like how did you do that? You just
+like asked the model like how why this
+should not work. And the model was like
+yeah you sent me a a message but it was
+just a file with no file ending. So I
+just looked at the file header and found
+that it's OPUS the the audio codex. So I
+used ffmpeg on my computer to convert it
+and then I wanted to to transcribe it
+but it didn't have whisper installed.
+So I found I looked around and I found
+an openi key and I used curl to just
+send a file to open ai and got the text
+back and here I am. This is incredible.
+I mean like that's the power of like
+giving tools and the complete access to
+a computer to these like agents
+&gt;&gt; and now they can just like actually come
+up with the solutions themselves even
+though you never programmed them at all.
+&gt;&gt; It's so funny like I I told the story
+and then people are like oh my god it
+just used your key like this is madness.
+I'm like no like I put it in the
+environment exactly for that reason. If
+it's this kind of like a script that
+should access my open key like my bot
+works in the same in the same
+environment of course it should access
+my open I like I put it there for that
+reason. This is not bad. This is exactly
+what I wanted.
+&gt;&gt; Yeah.
+&gt;&gt; Yeah. That's that's where I had my
+little moment and then every time I I
+showed it to friends or I put them in a
+little group chat
+like to be to be frank like this this
+thing is designed for one-on-one
+communication, right? So if you put in a
+group chat, pick someone that you trust.
+&gt;&gt; Really trust. Yes.
+&gt;&gt; Yeah. Because it was not designed for,
+oh, let's just put it out there and it
+will always do the right thing. You
+know, it is your personal assistant.
+&gt;&gt; When I set it up, I was also very
+intrigued. I was like, this is a weird
+setup. I'm like, where is this going to
+take me? Uh, but I had also a few like
+aha moment where like the more access
+you give it, the more tools and skills
+you give it, the more impressed you can
+become. You also give it like a virtual
+skill and then you ask it to build a
+website or application even for an event
+you want to host. Not only is it
+building the app, it's also using your
+openi key to like make some AI features
+into it. It's deploying it to versel.
+There's already a link you can share
+with friends. It's a kind of like
+mind-blowing step up change versus just
+like oh I'm augmenting myself to write
+code. throughout November and December I
+was like hooked on this and I I mean I
+still do some other projects but like
+most of my time went there
+but on on Twitter
+people wouldn't get it and I was like I
+got very muted responses and I'm like
+every time I showed it to a friend they
+wanted it and I'm like no it's not ready
+yet you know. So then I was like okay
+what's the most insane thing I can do to
+like show people how cool this is? So I
+created a discord and just put my my bot
+in there without any security because
+back then I didn't even had sandboxing
+built in. It was just very early and I
+just worked in the open. I basically
+built now open claw with open claw and
+debugged it and then asked the model
+like oh do you see this tool called no I
+see nothing. It's like oh check check
+your own source code and and and and
+did all a bunch of stuff and people saw
+it and then they understood.
+&gt;&gt; And when you uh put it in discord like
+this what kind of access did you give
+it? Did you also give it like all your
+tweets for instance? Like what kind of
+like knowledge that did it have about
+you?
+&gt;&gt; Not all my tweets too many. Um but a lot
+of my memory stuff. Yeah. So I I
+actually was monitoring it very quickly
+because yeah prompt injection is
+unsolved. But also the latest generation
+of models is really good. So I have like
+one canary
+my soul.mde that kind of defines
+what are my values? How do I want the
+model to to work to operate to sync?
+What's important to me? That's secret.
+Yeah.
+&gt;&gt; And and people really wanted that and
+and I random people came in and tried to
+like prompt injected and pasted like
+huge blocks of code and the model was
+like I'm not reading this. So it was
+basically mocking them. But I was still
+not very confident, right? So the first
+night was like got me a whole lot of
+interest. And then I I turned it off,
+went to bed, slept like 10 hours, woke
+up, there was like 800 messages on on on
+Discord. My agent was replying to every
+single one. [laughter]
+I freaked out. Like I turned it off
+again. I read through every single thing
+and and at some point I chilled out
+because it actually didn't it didn't do
+anything malicious. It didn't even
+manage to get my solder to be out. I'm
+not saying this is I'm sure problem
+detection is possible, but it's not as
+easy as people think it,
+&gt;&gt; right? In the grand scheme of things, it
+was actually performing the way you
+wanted it to.
+&gt;&gt; Yeah. My big mistake was I I disabled
+it, but I forgot that I actually had a
+launch demon.
+&gt;&gt; What What's the the main thing a launch
+demon does? If the thing crashes or is
+killed, it restarts it.
+&gt;&gt; Yeah.
+&gt;&gt; Because you want a reliable service and
+like Apple built this to be a reliable
+service and I I just didn't think about
+it. So, I killed it and it restarted
+within 5 seconds while I went to sleep.
+Now I know better. But now I'm also I
+also built in sandboxing. So he was so
+proud that it's in his Mac studio. It
+calls it the castle and then I put it
+into a little little set container.
+But you know those models are so
+creative. Like the first time I I I made
+a I made an LP Docker container and
+there's like nothing in it. And I I I
+told now Malti like hey can you check
+out this website and they were like
+there's not even curl. There's nothing
+in here. And I'm like, be creative. So,
+it built it built um lobster curl just
+by like its own tool.
+&gt;&gt; It just built its own its own curl by
+like using some some TCP socket and like
+there was like a C compiler and then it
+had like it built like a crappy version
+of curl so it could actually access a
+website and it worked crazy. So, I'm
+like those things are so resourceful.
+It's incredible.
+&gt;&gt; Yeah. you had some challenges too of
+like you know people really like uh
+taking a look at the security issues
+potentially and expecting you to have uh
+everything so robust from day one
+although you were just putting an open
+source project out there. I always love
+when people ask me like, "Oh yeah, can
+you put me in with like the CEO or human
+resources or some other member of my
+team?" And I'm like,
+&gt;&gt; "It just me hacking from my cave
+basically
+&gt;&gt; like but you that's where you see the
+dissonance, right? This would have not
+been possible
+by any human, any one human. Yes, I have
+maintainers now and I get PRs, but
+essentially I'd built this.
+&gt;&gt; Yeah. even a year ago it wouldn't have
+been possible. There is no model for
+like something like this could be built
+by one person. So it's not even they
+don't even consider that
+&gt;&gt; right. Yeah. Let's actually touch on
+that like I think um on your like
+productivity because I'm sure like many
+developers must be wondering like how is
+Peter so productive and I was looking at
+your uh GitHub again this morning and I
+saw it's like 90,000 contribution on
+more than 120 projects just this past
+year. But what's also interesting is
+like you know the past year started very
+white on the GitHub activity graph and
+then light green and then into fall
+around October November it's very dark
+green. Yeah. Um
+&gt;&gt; that's where
+&gt;&gt; what happened
+to Codex [laughter]
+&gt;&gt; like uh with every generation they got
+better but it's not just that the agents
+got better the harnesses got better also
+my understanding of how to approach this
+and my workflow got better. You know,
+there's these people that write software
+in the old way and the old way is going
+to go away. And they try,
+they call it vibe coding. I I think VIP
+coding is a slur. And then they try AI,
+but they don't understand that it's a
+skill.
+&gt;&gt; You you you pick up the guitar, you're
+not going to be good at the guitar on
+the first day.
+&gt;&gt; So, they going to have a bad experience
+and then they're like, "Oh, no, it's not
+going to work."
+While if you approach it more like
+playful,
+it you have to learn. You have to like I
+have a gut feeling now for like which
+prompt will and how long it'll take. And
+if it takes longer, I'll I'll reflect.
+Oh, maybe I made a mistake. Maybe my
+architecture is wrong, my thinking was
+wrong, or maybe something else. Just as
+with code, if you if you if you write
+code and and you have a feeling of, oh,
+this is this naturally goes into my
+architecture or this is this is I'm
+fighting the the system and it just
+takes time.
+&gt;&gt; And so if people want to become more
+like you, uh what is your codec setup
+today? Cuz I think you famously said
+like most people over complicate their
+setup.
+&gt;&gt; I mean I also over complicated my setup.
+I I call it the agentic trap from your
+first touch point in that new technology
+to like becoming really effective. A lot
+of people get stuck in there trying to
+like super optimize their setup. Doesn't
+really make you more productive, but it
+feels like you're more productive. So
+like I put this one blog post that was
+also very controversial, but I just talk
+to it. Like you just approach it like a
+conversation. Like your model is like
+your it's not really pair programming.
+It's something different, you know? It's
+it's it's a conversation. I basically
+tell what I want. I always ask the
+model, do you have any questions? for
+some reason like there's always
+questions about the model by default is
+trained to just solve your problem and
+then would just make assumptions. The
+default assumptions might not always be
+the best ones, especially you have to
+remember it's trained with a lot of code
+and also a lot of older code. Do you
+have any question is like a very
+important question. People don't realize
+that the model usually starts with a
+blank slate because they don't learn
+like us. Like every new session is like
+I know nothing about this codebase and
+I'll just search and find the little
+things that you ask me to and then try
+to solve it. But they don't see usually
+the whole picture. If you do this
+properly, you have to have the full
+picture in your head and you have to
+like help the model a little bit to
+motivate it to like look here, look
+there. And Codex is just much better at
+taking a broad look first. I used a very
+a very basic approach. I don't even use
+work trees. I just have have
+check out one to 10. Basically, keeping
+it simple helps me to focus more on the
+actual problem. So I don't even deal
+with branches or work trees. I just
+focus on different problems. Ideally,
+that gets easier if the project becomes
+a little bit larger. Then you can work
+on different things that don't fight
+each other so much.
+&gt;&gt; You used Codex a ton to build open claw.
+&gt;&gt; Um, how has Codex changed the way you
+work?
+&gt;&gt; Well, I tried a lot of tools and what I
+like about Codex is that my trust in it
+building what I want from all the tools
+right now is the highest. And the number
+of things that just work is really high.
+And I don't think what people realize is
+that with GPD 5.2, it was again like a
+quantum leap in terms of Yeah, this will
+just work. I'm still amazed how well
+this already works.
+&gt;&gt; That's fantastic. We can just build
+things. Uh this is pretty incredible.
+&gt;&gt; Yeah, like people need to give this a
+try.
+&gt;&gt; You famously said also that like you're
+shipping code now that you're not even
+reading.
+&gt;&gt; How is that changed?
+&gt;&gt; Most code is boring. like most code just
+transforms one shape of data into
+another shape of data and eventually the
+user sees it or it goes somewhere else.
+So like on most most code it writes I'm
+I have a pretty good understanding of
+what it writes and it's enough to like
+that I I see the stream uh and see that
+okay like the mental model I have in my
+head of what it creates is approximately
+what it creates. I was I led a team
+before, right? I had a lot of software
+engineers under me and that also
+requires accepting that they will not
+write exactly the same code that I want.
+In the end, you you should optimize a
+code base so agents can do their best
+work,
+&gt;&gt; which is not always the same as humans
+can do the best work,
+&gt;&gt; right?
+&gt;&gt; It also means accepting that maybe the
+code is not exactly how I would like it,
+how I would write it, and I could push
+the model towards that. But often times
+there's so many ways how you can
+structure something that often it
+doesn't matter if it becomes a
+performance problem. You just focus on
+that you make it better.
+&gt;&gt; And your point that you just made on
+like you kind of like the value of code
+and how you approach code is also
+changing a lot how you approach open
+source right because like I was looking
+at like open cloud you now have like
+2,000 PRs open right now.
+&gt;&gt; Yeah.
+before before we had like AI, you know,
+you would have to read all of these PRs
+because there was value in the code
+being created. But sometimes now you
+refer to that as like not a pull request
+but a prompt request almost because like
+more the idea or the intention behind
+the PR that's more important than the
+code itself. PR is actually sometimes
+take me longer than if I would approach
+it myself
+&gt;&gt; because
+my trust in the model not being
+malicious is much higher than an
+external contributor that I never heard
+of before and where we had no discussion
+before. So I have to scrutinize that a
+little bit more. But then if I see a PR
+my like I I start the review and my
+first question to the model is do you
+understand the intent of the PR? Because
+I don't really care about the code. what
+they care about what is that person
+actually trying to solve. You know, it's
+more like an issue with like a here's my
+attempt of a solution, but first of all,
+many many people still don't really know
+how to deal the agent.
+&gt;&gt; And then often it's just a very
+localized solution because they they
+don't have the full system in their
+head. The hard part is how does this
+little new feature fit into my whole my
+my bigger system or how does this little
+fix okay, this little fix fix is a tiny
+thing, but is it even the right fix? Is
+it is it it's probably often this like a
+more systemic or an architecture issue.
+So the model is actually really good if
+you you just have a conversation and
+then and when I say okay now build this
+then it will start to build this. So I
+asked the model what's the what's the
+intent? Is that the most optimal
+solution?
+Sometimes it says yes. Most often it
+would say no. Then I would start to
+explore what would be the what would be
+the best fix. Is this like an
+architectural problem? Is this something
+that is let's say it's it's a problem in
+message handling. Does this only affect
+WhatsApp but maybe also I don't know
+signal.
+&gt;&gt; Yeah.
+&gt;&gt; So so should we should we solve this in
+a more general way? Is this a new
+feature? Do we even want a new feature?
+Um, so sometimes those discussion go on
+for like 10 15 minutes. I I use like
+voice because it's literally like you
+you talk to a very smart coworker.
+&gt;&gt; Easier to give tokens of a voice than
+like typing.
+&gt;&gt; Yeah. When when I'm happy then I have
+like one slash command like land PR that
+explains the whole procedure to like
+actually create a branch, do all the
+changes, get the PR merged. I I wanted
+to create a community. I I try to still
+credit the person that created it even
+though the whole thing takes me longer
+than if I would just write it all
+myself,
+&gt;&gt; right?
+&gt;&gt; Um but I appreciate that people
+want to be part of this. What's your
+vision for Open Claw now going forward
+with all of these contributors that are
+kind of like surrounding the project and
+and do you see yourself as kind of a
+trailblazer for this idea of like a what
+a personal AI agent should look like so
+that you know a billion people can one
+day use something like that?
+&gt;&gt; Yeah. I want to find the balance between
+this is something that my mom can
+install but also this is something
+that's fun and hackable which is
+difficult. You know, most open source
+projects you like download the package.
+But for the longest time, my default
+install was get clone, build, run, and
+then you literally have the source code
+on disk and the agent sits in the source
+code and is aware of the source code.
+And if you don't like anything, you you
+literally prompt the agent and it would
+change itself like
+&gt;&gt; like actual selfmodifying software. So,
+a lot of people that never sent me a PR
+sent me a PR. That's also why it's more
+like a prompt request because they just
+lack the understanding of how to build
+software that lasts and at the same time
+the whole world is is or the whole
+security industry is like putting their
+eyes on it which has been interesting
+and also a little bit frustrating
+because it it misses some nuance right
+for example the the web server that I
+have that's meant for you initially I
+built it for debugging and then I made
+pretty but it's only meant to be
+accessible in your network in your
+trusted network but because it should
+also be like a hacker's hacker's
+paradise there is an option how you can
+like change that because like some
+people have weird setups maybe they use
+like angro maybe use reverse proxies so
+there is a reason why I didn't want to
+like
+limit that but now you have like people
+that put it on the open internet even
+though I'm screaming in the security
+document please don't do that that's not
+that's not what it's intended for and
+then I have the security people that
+point out that oh yeah it doesn't have
+login limitations you know like it
+doesn't have all these things that you
+need when it's on the public internet
+like yeah I didn't build it for that
+with that intention but because it is
+configurable it totally counts as a as a
+CVS10
+uh so yeah I
+I struggled a little bit with that uh
+but now I I brought on actually a
+security expert that's the main focus I
+I realized is I cannot stop people from
+using it in ways it was not intended. So
+my my big focus now is to like support
+all these use cases and help people not
+shoot themselves in the foot.
+&gt;&gt; Right. And that's the beauty of open
+source. People can embrace it and like
+come up with ideas that you didn't even
+think about.
+&gt;&gt; Yeah. That's the beauty and the madness
+of it.
+&gt;&gt; Yeah. Zooming out maybe for a second
+beyond open claw. Like I've talked to a
+bunch of developers this week um who
+knew you were coming to the Codex
+hackathon and told me like how many like
+how come does like Peter come up with
+all these great ideas like how does
+Peter come up with so much creativity? I
+don't know if you have any answer to
+that or if it's more like your own
+curiosity that you're following. It's
+more like this realization that
+stuff's easy now. So even if I find an
+open source thing that maybe solves my
+problem to 70%. I just built it myself
+which would have been absolutely
+impossible a year ago even and now it's
+just like I just prompt it then it's on
+a second screen and and code works.
+We're both from Europe. When I travel
+outside of SF and I go back to Europe,
+I'm sure you feel the same way like many
+developers and engineers have not
+embraced codecs and agentic tools just
+yet. What would be your advice for them
+like as they get started and like should
+rethink the way they work and their
+workflow? My first advice always is like
+approach it in a playful way. Build
+something that you always wanted to
+build. Um if you are at least a little
+bit of a builder, there has to be
+something on the back of your mind that
+you want to build. Like just just play.
+You just have to approach this this this
+thing playful cuz like I think the
+Nvidia Nvidia CEO said that in the near
+term you're not going to replace by AI.
+You're going to be replaced by someone
+who uses AI.
+&gt;&gt; Yeah. Better than you. Yeah. But if your
+identity is I want to I want to create
+things. I want to solve problems. If
+you're high agency, if you're smart, you
+will be in more demand than ever.
+&gt;&gt; Yeah. Well, it's such a great time for
+builders who embrace these tools, shape
+their curiosity, and really can bring
+any ideas to life the exact same way
+you've done with all of these great
+projects and and OpenClaw.
+&gt;&gt; I think in a year this is going to this
+is going to explode.
+&gt;&gt; Yeah. 2026 will be an interesting one. I
+think it's a fantastic way to end. Thank
+you so so much, Peter, for your time.
+Uh, wonderful to spend time with you. We
+all at OpenAI love your work. We love
+supporting builders like yourself and
+honestly, you're a true inspiration for
+the broader developer community. Thanks
+again and we can't wait to see what
+you're going to work on next.

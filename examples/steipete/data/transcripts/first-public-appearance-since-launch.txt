@@ -1,0 +1,1021 @@
+from
+&gt;&gt; man of the hour.
+&gt;&gt; How are you doing? Thank you so much for
+staying up late. What time is it for
+you?
+&gt;&gt; Uh it's 11.
+&gt;&gt; Thank you so much. We really appreciate
+&gt;&gt; 11 p.m. for everybody that's just
+&gt;&gt; Yes. 11 p.m. 11 p.m.
+&gt;&gt; Um so I'd love to kick it off with just
+a brief background on when you started
+this project, a little bit of your
+career, how you how you're thinking
+about it going forward, and then I
+&gt;&gt; This was this was your very first
+project ever, right?
+&gt;&gt; Yeah. Yeah. Yeah. First time coding,
+right? [laughter]
+No, we were we were enjoying uh we were
+enjoying a screenshot of your your
+GitHub profile earlier and just seeing
+like how many how many different things
+&gt;&gt; an overnight success.
+&gt;&gt; A true overnight success but uh we're
+super excited to have you here.
+&gt;&gt; Yeah.
+&gt;&gt; Awesome. Yeah, I'm excited to be here as
+well.
+&gt;&gt; Um yeah, I don't know. I
+I worked for my own software company for
+13 years
+&gt;&gt; and then I I sold it about four years
+ago.
+Then I was completely burned out.
+&gt;&gt; I did like
+I mean it's it's TV but still blackjack
+and hookers
+&gt;&gt; and
+&gt;&gt; wild. Well, we're glad we're glad you're
+back in the game.
+&gt;&gt; Yeah.
+&gt;&gt; Yeah. You know you know what they say
+like for every four years you need like
+one year break and I did like 13 years
+non-stop. So like three years the math
+kind of checks out.
+&gt;&gt; Okay. And then this year, no last year,
+now 2016. Um,
+in April, uh, at some point I my spark
+was back.
+&gt;&gt; Yeah.
+&gt;&gt; Um, because before I was like I was
+sitting on my computer and I don't know
+if you've seen Austin Powers, but it it
+felt like someone sucked my Mojo out.
+&gt;&gt; Um,
+but yeah, I I had time to to recover. I
+came back in April and I wanted to do
+something new. My background was like a
+lot of Apple and iOS and I'm a little
+bit fed up. I I wanted I wanted I wanted
+to build that stuff
+&gt;&gt; and I didn't have the experience. I
+didn't want to feel like an idiot. So I
+looked into AI and it was good. It was
+not great but it was good. Um and I was
+like why is nobody talking about it? You
+know, I feel like because I missed those
+three years where it was really bad and
+I came back just at the time like cloud
+code was released what February in beta.
+&gt;&gt; Yeah.
+&gt;&gt; So this was my first experience. I was
+like this is this is pretty awesome.
+&gt;&gt; Mhm.
+&gt;&gt; And and then I I couldn't sleep anymore.
+Like I literally had trouble I had
+trouble going to bed, you know, like we
+had like addiction before and then like
+we had addiction again. [laughter]
+Um,
+&gt;&gt; but a but a positive one.
+&gt;&gt; Yeah. Well, yeah, I would say so. Um,
+and I I hooked up a lot of my friends
+for
+uh looking into as well. And they had
+the same problem and I texted them at
+like 4:00 a.m. and they replied. Um, I
+even I even started a a meetup. That's
+where I come from. I call it uh I called
+it cloud code anonymous. Now it's called
+agents anonymous because you have to go
+with the times.
+&gt;&gt; Sure.
+&gt;&gt; And and yeah, ever since then I
+That's what I say on my profile. I came
+back from retirement to mess with AI.
+&gt;&gt; Yeah.
+&gt;&gt; And I'm having loads of fun.
+&gt;&gt; That's great.
+&gt;&gt; I love it. Maybe maybe walk us through
+some of the other stuff that you shipped
+and and worked on prior to this and and
+even just kind of like your mindset
+working on these different projects. I'm
+I'm assuming at different points you
+would think that some would get more
+traction than others, but it would
+probably be impossible to have predicted
+in some ways that this would have gone
+from almost to the point the reason that
+this so wild is I'm seeing people on
+Instagram that like I don't think of as
+people that like follow tech at all and
+they're at the Apple store getting a Mac
+Mini. So it feels like it just went it
+broke containment like incredibly
+quickly and you see the GitHub stars are
+like actually I've never seen a chart
+like this every you know the last the
+last you know every everybody loves to
+show their charts but the chart is
+actually unbelievable. It's just a line
+going straight up.
+&gt;&gt; I I I need to talk to someone at GitHub
+because I I don't think there's been a
+project before that that's been like
+straight
+&gt;&gt; it is it is it is bad insane.
+&gt;&gt; Yeah. Um,
+I mean honestly my main mantra is I want
+to have fun, you know, like the best way
+to learn these new technologies if if
+you have fun with it. You have to play
+with it. So I I build little things that
+I think could be useful. I try different
+languages. I try different approaches.
+Um, it's aic engineering. I don't like
+the word v coding so much. I always make
+the joke I I do aching engineering and
+then when it starts hitting 3:00 a.m. I
+switch to vip coding and next I have
+regrets. Yeah,
+&gt;&gt; you should have just gone to sleep
+basically.
+&gt;&gt; Yeah.
+&gt;&gt; Yeah. Yeah. Yeah. Sometimes that's hard.
+&gt;&gt; Um
+&gt;&gt; but then I just I just build little
+things. I had this idea about personal
+agents in
+in in May already. And I I tried it was
+like the time that GBD41 was out. It was
+just not good enough. And then I
+thought, well, all the big all the big
+companies will build this in the next
+few months anyhow. So So I was like, why
+why the f should I do that, you know? I
+was just going to wait and they make it
+better.
+&gt;&gt; Yeah.
+&gt;&gt; And I build out and I I build a lot of
+stuff. Um
+there's like one project that is still
+unfinished that I at some point want to
+finish. And I build a lot of a lot of
+CLI because that's that's where agents
+are really good. You know, you have to
+close the loop. That's always the the
+secret. You have to give you have to
+build it so that the agent has the best
+possible way to build software. This is
+that's the the secret a little bit. Um
+I tried a lot of stuff and then in
+November I looked and still there was
+nothing. Like where is where is my
+agent?
+&gt;&gt; Yeah.
+&gt;&gt; Um
+&gt;&gt; I I I had a little project in in May. I
+spent two months on it. Uh it it started
+as a joke because we I did a hackathon
+with with two friends and we like what
+can we build that that could be kind of
+cool? Wouldn't it be cool if I could use
+clot code from my phone?
+&gt;&gt; Yeah, it's kind of like something that
+everybody builds. I see this like every
+day like but now I almost call it like
+this is like
+&gt;&gt; one step in your journey in becoming a
+good authentic engineer is you're going
+to build some some shitty orchestration
+tool for yourself because it's fun and
+you think
+&gt;&gt; Yeah.
+&gt;&gt; Yeah. Yeah. bridge. And I I built that
+for 2 months and then uh I had to stop
+because it became so good that I was up
+with my friends but literally was my
+phone like using cloth code to like work
+on this thing and it's like this is bad
+for my mental health. It's already bad
+and now like I'm I'm literally building
+something to have better access to my
+drugs.
+&gt;&gt; Yeah. I mean, I saw I I I've seen people
+using cloud code on laptops as they get
+off of airplanes because they're so
+locked in they just have to send one
+more and that's like the clearest sign
+that like you need a bridge and a phone
+involved.
+&gt;&gt; Yeah. No, but also like you know like
+this this feeling when your agent's not
+running like right now there's like two
+terminals so you could be building
+something, right? So
+&gt;&gt; So if you're in this addiction mode,
+you're almost like you almost feel like
+&gt;&gt; if you need to step out for 10 seconds
+and fire off.
+&gt;&gt; Yeah. Feel free to take a break. I can
+do an ad. [laughter]
+&gt;&gt; No, there's
+&gt;&gt; there's still some drama that that I'm
+I'm I'm finishing. But anyhow,
+um
+so in November,
+&gt;&gt; yeah,
+&gt;&gt; I
+I don't know, you know, I wake up every
+day. I'm like, okay, what do I want to
+work on now? What would be cool? And
+then they was like, "Okay, I I want to
+chat with my computer on WhatsApp
+because because if my agents are not
+running are running and then I go to the
+kitchen, I want to check up on them or
+like I want to like do little prompts."
+&gt;&gt; Yeah.
+&gt;&gt; So I I just hack together
+some WhatsApp integration that literally
+receives a message, calls Cloud Code,
+and then returns what Cloud Code
+returns. One shot.
+&gt;&gt; Yeah.
+&gt;&gt; And it took like 1 hour and it worked. I
+was like, "Well, okay, that's kind of
+cool."
+&gt;&gt; But I usually use prompts, like a little
+text and an image, cuz images are like
+they often give you so much context and
+you don't have to type so much.
+&gt;&gt; So, I feel like this is like one of the
+hacks where you can prompt faster. Just
+like make a screenshot. So, the agents
+are really good at figuring out what you
+want. Um, so I hacked together images
+and then I I was on a trip in Marrakesh
+with like a weekend birthday trip
+&gt;&gt; and I [clears throat] I found myself
+using this like way more than I than I
+saw. But not for not for programming.
+It's more like, hey, there like there's
+like restaurants. Um because it it had
+Google in it and it it could figure out
+stuff and it's like especially when
+you're on the go. It's like super useful
+and then and I wasn't thinking I was
+just sending it a voice message, you
+know, but I didn't build that. There was
+no support for voice messages in there.
+So So the reading indicator came and I'm
+like, "Oh, I'm really curious what's
+what's happening now." And then after 10
+seconds, my agent replied as if nothing
+happened. I'm like,
+"How the f did you do that?"
+And it replied, "Yeah, you sent me you
+sent me a message, but there was only a
+link to a file. There's no file ending.
+So I looked at the file header. I found
+out that it's oppus. So I used ffmpeg on
+your Mac to convert it to to wave. And
+then I wanted to use Visper, but didn't
+have it installed, and there was an
+installed error. But then I looked
+around and found the OpenAI key in your
+environment." So I sent it via curl to
+OpenAI. um got the translation back and
+then I unresponded.
+&gt;&gt; And that was like the moment where like
+&gt;&gt; wow.
+&gt;&gt; Yeah.
+&gt;&gt; You know, it's like that's where it
+clicked. These things are like
+&gt;&gt; damn smart, resourceful
+&gt;&gt; beasts if you actually give them the
+power.
+&gt;&gt; Sure.
+&gt;&gt; Um
+and then I was I was kind of hooked.
+Like I I did all kinds of of of weird
+stuff like I used as alarm clock. I I
+let it migrate to my computer in London,
+but then it use SSH to log into my my
+Mac MacBook and turn up the volume to
+wake me up in the morning. I think I
+built world's most expensive alarm
+clock. [laughter]
+&gt;&gt; Yeah, that's crazy.
+&gt;&gt; And it it even got it wrong because I
+had like a it uses a heartbeat, you
+know, like the concept of you do a
+prompt and you get something is already
+if inherently dangerous, but I was like,
+let's turn it up a notch. Let's let's
+automate that. Let's give it a
+heartbeat. And and and the prompt was
+literally surprised me.
+&gt;&gt; Wow.
+&gt;&gt; Um
+&gt;&gt; but you know, I see this this project as
+as much technology as it is like art and
+exploration
+&gt;&gt; cuz
+this feels in one way in one way it's
+just glue. It's it's it's just putting
+pieces together that we already have. In
+another way, it's it's a whole different
+way how you interact with those things
+because all the technology blends away.
+&gt;&gt; You don't think about new session,
+compaction, which model. I mean, maybe a
+little bit because tokens are still
+expensive. Um,
+but usually all of that blends away. You
+just you just talk to a friend or a
+ghost or
+&gt;&gt; whatever. It made me it made me last
+[clears throat] year everyone was
+wanting these agentic experiences. You
+were having this experience and and it
+seemed like all the focus was on
+browsers and seeing the way that people
+have been using uh uh sorry mol
+maltbots. It's taking me a while to
+adapt. Uh it just feels like all the
+focus was at the wrong layer. It's like
+why do I care about the browser if I can
+just talk with an agent
+&gt;&gt; across every app
+&gt;&gt; across every app every every surface.
+It's like I don't care about the browser
+at all anymore.
+&gt;&gt; Yeah.
+&gt;&gt; I mean, a lot of the prep work I did
+before I built this was just built
+little CLI because my my premises MCPS
+are crap.
+&gt;&gt; Mhm.
+&gt;&gt; Doesn't really scale.
+Uh people build like all kinds of weird
+search things around it. But you know
+what scales? CLIs. Uh agents know Unix.
+You can have like a thousand little
+programs on your computer. Um you they
+just have to know the name. They call
+the help menu. They load in what's
+needed. We are calling the help menu.
+Then they know how to use it and then
+they can use it. And if you if you're
+smart, you build it in a way that just
+uses what the model already expects. You
+know, don't build it for humans, build
+it for models. So if they call minus
+minus log, you build minus minus log. as
+it's like agentic driven for like yeah
+built built how they think and
+everything works better it's a new kind
+of software in a way
+&gt;&gt; um
+so for most of the things I don't need a
+browser like I built something for the
+whole Google thing for places for my
+sonos I hooked up my cameras my my my
+home automation system like with every
+little CLI and skill my agent got more
+power and he got more fun Yeah.
+&gt;&gt; Um, and I already had a lot of that
+working when I when I I built the the
+WhatsApp thing
+and I just got hooked. And the thing was
+I found it amazing and I talked about it
+on Twitter and usually when I when I
+talk about projects I I get response but
+this one it was very muted. It feels
+like people are not getting it.
+I I showed it to my friends, even my
+non- tech friends, and they're like they
+wanted it. So, I was like I was I was up
+to something, you know.
+&gt;&gt; Uh but the tech people
+wouldn't get it. So, I tried
+I tried a bunch of thing like I kept
+working on it cuz I used it and
+ultimately I built it for me. You know,
+this is open source. My motivation is
+have fun, inspire people, not make a
+whole bunch of money. I already have a
+whole bunch of money. Um,
+&gt;&gt; how are you how are you how have you
+been navigating the last uh 72 hours? I
+mean the last the last week really
+because because we were joking earlier
+on the show like the amount of the
+amount of people that are frantically
+trying to give you money, acquire the
+company,
+&gt;&gt; you contribute to the project, hire you
+&gt;&gt; uh you know there's companies with you
+know 0.01% of the traction that are
+raising at you know multi-billion dollar
+valuations. You have infinite
+opportunities right now and yet you seem
+very happy doing just continuing to do
+exactly what you're doing. But how are
+you thinking through it all?
+&gt;&gt; I mean, how am I taking it? Badly, at
+least sleepwise. Uh, but it but it's
+also infinitely exciting and I I love
+that I started something, you know. I I
+I would say last year was the year of
+the coding agent. This year is the year
+of the personal assistant.
+&gt;&gt; Mhm.
+&gt;&gt; And
+I think I cracked
+and woke up people that there's a real
+need for it.
+&gt;&gt; I don't know if if if Mobot is is the
+answer. It's it should show people the
+way. I'm sure there's going to be a lot
+of a lot of products in the space. I'm
+sure people are manically working on it
+right now.
+&gt;&gt; Um
+&gt;&gt; I would say it's going to be very
+interesting. Yeah. But there was a lot
+of stuff um between
+Twitter literally exploding
+our Discord server
+multiplying in in ways I haven't seen
+before and in ways I I couldn't handle
+like at some point I was just copy
+pasting questions from Discord into
+Codex that [clears throat] the response
+wrote the next question. At some point
+that didn't scale anymore so it just
+like copied the whole channel. I'm like,
+"Answer the answer the 20 most
+questions." I was like reading over it,
+gave him a few instructions and and and
+then just pushed it over.
+&gt;&gt; Um cuz what what people don't realize
+it's like this is not a company. This is
+like one dude sitting at home having
+fun.
+&gt;&gt; Yeah.
+&gt;&gt; Um even though like I guess from the
+commits it it might appear that it's a
+company.
+&gt;&gt; Yeah. That's that's just because
+Atlantic models got so good that you can
+now ship as much as a company could a
+year ago.
+&gt;&gt; Yeah.
+&gt;&gt; If you if you if you can handle those
+tools, if you
+speak the language or like understand
+how the language thinks.
+&gt;&gt; Mhm.
+&gt;&gt; You can you can go really fast.
+&gt;&gt; Yeah.
+&gt;&gt; How are the conversations going with
+with different labs? I was saying
+earlier it's this kind of exciting
+moment for the labs because they're like
+wow people are using the intell you know
+someone's using the intelligence that I
+created in a new way but at the same
+time it's deeply uncomfortable because
+they're also using all of my competitors
+and you make it very easy to to kind of
+&gt;&gt; use whatever model um
+&gt;&gt; you know you know I
+my premise for this project was a little
+bit that every model should work
+including local models because
+&gt;&gt; to me it's a playground it's It's it's
+an amazing way to learn. Like I think
+everybody should like build an aentic
+loop. You should like explore memory.
+There's like so many interesting aspects
+of it. And I I built it so that like it
+has like plugins so like people can work
+alone little thing without having to
+like mess with the whole core.
+&gt;&gt; So it's it it's like the AI hackers
+paradise a little bit
+&gt;&gt; and it it's also super fun because it's
+personal. Um modelwise,
+OPOS is [clears throat]
+with quite a bit lead the best. Um OpenI
+is very reliable. I would even say more
+reliable and more reliable worker. Like
+for coding, I I I much prefer Codex
+because it it can navigate large code
+bases. I literally you can literally
+prompt and then push to main and I have
+a very I have like 95% certainty that it
+actually works
+&gt;&gt; with cloud code you need
+you need more tricks to get the same you
+need more more charade I sometimes say
+&gt;&gt; both both are good but I can paralyze
+faster by codex because it it requires
+less handholding um but character-wise
+I tell you.
+I don't know what they trained their
+model on, how much of Reddit is in there
+or whatever, but it it behaves so good
+in in a Discord. Like we programmed it
+so it it it it it kind of it kind of
+feels like a human. It doesn't reply to
+every message. I gave it this thing
+where
+&gt;&gt; it can reply no reply basically like a
+token and then we just don't send a
+message.
+&gt;&gt; So So it it it's it's not like it spans
+with every message. like it listens to
+the conversation and then sometimes
+brings a banger
+&gt;&gt; and like like that actually make me
+laugh and you know it's kind of hard
+because because the jokes of AIS are
+usually really bad.
+&gt;&gt; Yeah. Yeah.
+&gt;&gt; Um and I only really experienced that
+with with Opus. So this is that's my
+favorite model. That's also why it's a
+little bit of a banger that I got an
+email um from Entropic
+that I had to rename the project.
+&gt;&gt; And I I mean, kudos, they were really
+nice. They they they didn't send their
+lawyers. They sent someone internally.
+Um but the timeline was a bit rough
+and like renaming a project with that
+much traction.
+Uh it was a bit of a show. I think
+everything that everything that could
+have gone wrong today went wrong.
+&gt;&gt; Oh no. I tell you.
+&gt;&gt; Yeah.
+&gt;&gt; I mean, for what it's worth, I think the
+new name works really well.
+&gt;&gt; I guess the thing the thing that's
+actually good, I think in the long run,
+it'll be good. I mean, obviously, it's
+good for Anthropic. They It's It's kind
+of untenable to have this massive viral,
+even though it's not a company, right?
+An open source project to have this
+viral kind of
+&gt;&gt; brand out in the world that it doesn't
+matter if it's, you know, it's spelled
+differently, but when people are running
+around talking about Claudebot or
+Claude, you know, there's obvious
+confusion. But I think it'll be very
+good for for uh Maltbot to have
+independence and have its own brand.
+&gt;&gt; Uh and I think it's so early and the
+experience is so magical that uh it'll
+it'll it'll solve itself very quickly.
+&gt;&gt; It'll be fine. But I tell you like I
+I got some additional pressures. I was
+like screw it, we do it now.
+&gt;&gt; Yeah.
+&gt;&gt; You know, like the meme we do it live.
+[laughter]
+So, so, so I I had two windows open
+&gt;&gt; with Twitter.
+[laughter]
+&gt;&gt; On the one I pressed rename on the other
+one like I finished creating the other
+account was already snapped by by
+cryptoshells.
+&gt;&gt; Wow.
+&gt;&gt; I don't know. They they have like they
+have like scripts. They were already
+waiting for it in the
+&gt;&gt; should we would have connected you to X
+the team. They can do it on the back
+end.
+&gt;&gt; They can do it on the back end
+&gt;&gt; next time. Hopefully no next time. Yeah.
+Oh, they they they they were amazing.
+They helped me out immediately. We we
+got it solved very quickly. But but for
+like 20 minutes, uh
+yeah. Well, that didn't work out for
+well.
+&gt;&gt; Hopefully.
+&gt;&gt; You're like You're like, if I wanted
+money, I would raise a billion dollars,
+right?
+&gt;&gt; Yeah.
+&gt;&gt; All right. So, I'd sell it for
+&gt;&gt; more than that.
+&gt;&gt; Yeah. Do you own a Mac Mini?
+&gt;&gt; Everyone wants to know, do you own a Mac
+Mini? What do you think of Mac Minis?
+Um, my agent is a little bit of a
+princess. He doesn't do me.
+[clears throat] He does more studios.
+&gt;&gt; Okay.
+[laughter]
+&gt;&gt; You want some horses?
+&gt;&gt; He got the He got the the 512 maxed
+[snorts] out everything cuz cuz I wanted
+to like mess around with local models as
+well. So like I I I can run Miniax 21
+which is
+&gt;&gt; uh I would say is is the best the best
+uh open source model right now. Although
+Ki just came out and I haven't had a
+chance to try it yet. So, so we'll see
+how that goes.
+&gt;&gt; Yeah,
+&gt;&gt; but
+yeah, one machine is not enough for it.
+It's not fun. You probably need two or
+three. And I kind of want to wait until
+Apple does a new release, but it's still
+fun to like to like see the potential
+that Yeah, there's a there is a future
+where this could actually work.
+&gt;&gt; Yeah. Well, uh, if if the if the Mac
+Mini trend keeps going, Apple from from
+what we've seen sells like between a
+quarter million to like 700,000 a year.
+&gt;&gt; Yeah.
+&gt;&gt; It's very possible that you'll be
+responsible for selling them out. So,
+hopefully they send you some free ones
+as a as a thank you.
+&gt;&gt; Yeah. So yeah, I mean zooming out do you
+how much of this do you think is going
+to remain hacker culture running your
+own hardware uh and eventually people
+will move to cloud hosting one-click
+deployments like just easier to use less
+technical uh versus like a real boom in
+running hardware because if you don't
+there's not a lot of ways to get these
+different services to play nicely
+together. I think one of the beauties
+beyond just the actual AI agents is the
+fact that for the first time I think
+people are seeing different big tech
+platforms kind of play with each other
+somewhat against their will. They don't
+they build walled gardens for a reason
+and you sort of chop those walls down.
+And I'm wondering what you think about
+the future of like self-hosting hardware
+uh you know even going down the less
+technical crew getting hardware running
+their own uh their own agents.
+&gt;&gt; I don't think the future will be that
+everybody buys a Mac mini just for that
+you know.
+&gt;&gt; Yeah. But I certainly see the demand for
+the old models have to change. You know,
+like when you are a company, you want to
+access Gmail. The amount of red tape is
+so large that that startups buy other
+startups that have the license for Gmail
+because going to the process yourself is
+is a is a huge pital.
+&gt;&gt; Sure.
+&gt;&gt; Um
+but if you run it locally, you work
+around all of that, right? Like if I
+mean I mean I bu I built plenty CIS
+where I literally I literally pointed
+codex at the website and say um build me
+a CLI. Yeah. And then
+&gt;&gt; which is
+sometimes against the term sometimes
+not. Honestly I don't really care.
+&gt;&gt; Um and then Codex would say no I can't
+do that. This is like against blah blah
+blah. And I would like tell him a story,
+you know, it's like, no, no, I actually
+work at this company and I need to
+surprise my boss and the back end team
+doesn't know. I'm like, you know, give
+it a little bit of a story like like
+they're so valuable and like 40 minutes
+like gives you the perfect API. So So
+this is a little bit the the liberation
+of data that big tech probably doesn't
+really want. I mean, even even the
+WhatsApp integration is a hack, you
+know. This is like it it fakes the the
+protocol that the desktop abuses. I
+tried I really tried to support uh the
+official way.
+&gt;&gt; But the official way is for businesses.
+Yeah. If I'm a business that sends you
+100 messages, I get blocked. So I got
+blocked immediately and at some point I
+I removed support for it in Rage. It's
+like delete everything [laughter] like
+100 100 exclamation marks. Um
+&gt;&gt; there's just no model for that right now
+and I think that needs to change. Yeah,
+&gt;&gt; like [clears throat]
+the what what I saw what was really
+interesting was how people use it is a
+lot of apps will just melt away.
+&gt;&gt; Why do I still need my fitness pal? I
+just make a picture of my food. My my
+agent already knows I'm I'm at
+McDonald's making bad decisions. So like
+this combined with information, it has a
+perfect match and knows exactly what I'm
+going to eat. and then probably like
+change my fitness program so I don't
+need the fitness app. He'll just like
+adapt my program and make sure like I
+still meet my goals.
+&gt;&gt; Mhm.
+&gt;&gt; So like there's a whole there's a whole
+big layer of of apps that I going to see
+disappear because
+you just naturally interact differently
+with those things.
+&gt;&gt; Mhm. like
+most apps will be reduced to API and
+then the question is do you still need
+the API if I can just save it somewhere
+else?
+&gt;&gt; Yeah.
+&gt;&gt; Do you think like do you think it'll be
+a generational thing? Do you think that
+uh that uh non-technical people will you
+know get over the hump and start running
+this for that experience specifically?
+I I just I just came from a meetup uh
+the agent I know was in Vienna
+&gt;&gt; and I met someone who was like a a
+design agency but they never coded and
+he was like yeah he discovered me early
+in in December. He started using
+Maltbot.
+&gt;&gt; Yes,
+&gt;&gt; we we going to we're going to we're
+going to manage eventually.
+&gt;&gt; Don't don't worry, we'll say it
+thousands of times this year, I'm sure.
+So we will
+&gt;&gt; Multibbot. I should say Multibbot.
+That's cute. Um and and he was like,
+"Yeah, we have 25 web services now. We
+just build internal tools for whatever
+we need." And like
+&gt;&gt; has no clue. He has no clue how Cody
+works. He just like uses Telegram and
+and like just talks to his agent and his
+agent builds stuff. So So there's
+there's this whole shift of you don't
+you don't subscribe to random startups
+anymore that that build like this column
+subset of what you need. You just have
+your own hyperpersonalized software that
+solves exactly your problem and it's
+also free.
+&gt;&gt; Yeah. So and and and non-technical
+people do that, you know, because it
+just comes so naturally. You just you
+just talk your problem and then the
+thing builds what you need. And you also
+don't forget like this is the worst that
+the models ever are. Like there's this
+is only going to go up. This is only
+going to become easier and faster.
+&gt;&gt; Mhm.
+&gt;&gt; Have you met Jensen yet?
+&gt;&gt; Because I feel like you're making his
+life. You're definitely helping out too.
+dream bullcase, right?
+&gt;&gt; Like I would if I would had my tin foil
+hat on, I might say you're you're an you
+know big AI industry plant designed to
+create more inference demand.
+&gt;&gt; Yeah.
+&gt;&gt; Yeah, I guess I am just [laughter]
+we were joking around. Uh just just an
+indie.
+&gt;&gt; What's next?
+&gt;&gt; Yeah. I'm assuming you hopefully get an
+after you finish firing off prompts at
+3:00 a.m. you get some sleep. What are
+you doing tomorrow?
+Um, there's a lot of emails from
+security researchers right now.
+&gt;&gt; Yeah.
+&gt;&gt; You know, you know, the thing is I built
+this for fun
+&gt;&gt; for me to use one-on-one on WhatsApp or
+Telegram.
+&gt;&gt; The whole thing with Discord was like
+Edit, but
+&gt;&gt; the model was that you trust the people
+that are in there. Now, people use it
+for
+&gt;&gt; untrusted experiences.
+&gt;&gt; Yeah. They use like the the little the
+little web app that I have that is that
+was meant for debugging, they put it on
+the open internet. So like all the
+thread models that I didn't care about
+are now there because people use it
+differently and I'm I'm being bombarded.
+There's like some stuff that's valid,
+some stuff that I just never cared about
+that is technically valid, but that's
+not how I use it. Mhm.
+&gt;&gt; Um,
+I don't know how to deal with that yet
+because it's the whole system is broken,
+you know, like I I'm like one guy. I do
+this for fun and you expect me to sift
+through 100 security uh things for use
+cases that I don't really care about.
+&gt;&gt; So, we'll see. We'll see how it goes.
+Um, luckily I I'm starting to build up a
+team. There's definitely people that do
+care a lot about this. Mhm.
+&gt;&gt; So I would say this is going to become a
+very secure product eventually because
+right now the whole world is like
+&gt;&gt; pulling it apart and if you're honest
+this is this is all by coded you know
+&gt;&gt; uh like there's there's there's quite
+some aentic engineering in it but
+ultimately I wanted to build something
+to show people anyway not a finished
+product from enterprise company.
+&gt;&gt; Yeah. and and I would I would even say
+like
+I don't know if any company would touch
+it because we just haven't solved some
+things like prompt injection is not
+solved. Yeah,
+&gt;&gt; there is there is absolute risk and and
+I I tried to make it very clear in in on
+the website and even when you started
+you have to like please read this
+document. It's like with with great
+power becomes great responsibility and
+my early users they understood there was
+a lot there's a lot of AI researchers in
+there as well that yeah it's not perfect
+cannot be done perfect yet um I I would
+say this will accelerate research to
+make it better because now you have the
+demand and we need to figure out a way
+how we can build something that works
+for everyone.
+Um
+but yeah, right now I'm I'm working on
+making this a community. It it it should
+be bigger than me. It
+also I need help. It it is way too much
+work. Like I can only I can only go so
+much without sleep. Um,
+&gt;&gt; so, so is any part of you want to form
+an actual company that then, you know,
+contributes to the open source project,
+uh, but solves some of these problems
+that, uh, are going to require, you
+know, a bunch of people that presumably
+would need a salary in order to commit
+all their time to this, or do you want
+to keep it, you know, just a bunch of
+hackers forever?
+&gt;&gt; I think instead of a company, I would
+much rather consider a foundation or
+like something that is nonprofit.
+Um,
+I haven't made up my mind yet. There was
+&gt;&gt; 10,000 10,000 VCs just punched a hole in
+the wall. [laughter]
+&gt;&gt; Actually, I don't know. Some people have
+had a good track record investing in
+nonprofits over the last
+&gt;&gt; That's true.
+&gt;&gt; 10 years. Uh, how do you think about
+open- source licensing? What what what
+are you picking now? Are you switching?
+Do you have any plans to change the
+license? How do you think about someone
+just taking this and selling it?
+&gt;&gt; This will happen. This will totally
+happen.
+&gt;&gt; Yeah.
+&gt;&gt; Um I would say the premise against it is
+let's make open source so good that
+there's not a lot of space for people to
+like convert it and make it their own
+thing.
+&gt;&gt; Sure.
+&gt;&gt; But you know ultimately it's it's a
+trade-off. I wanted to I wanted it to be
+&gt;&gt; accessible and free. You pick MIT or
+something like that. Yes. that will get
+you people that that that sell it.
+&gt;&gt; Yeah.
+&gt;&gt; But ultimately,
+it doesn't even matter that much. You
+know, code is code is not worth that
+much anymore.
+&gt;&gt; It's you could you could you could just
+delete that and then and then build it
+again in months.
+It's it's much more the idea and the
+eyeballs uh and maybe the brand that
+actually has value. So, let them
+&gt;&gt; you are already a cult hero.
+&gt;&gt; Yeah, the chat's going crazy for you.
+Everyone loves you.
+&gt;&gt; This is uh one of the most refreshing
+and unique interviews we've ever had on
+the
+&gt;&gt; For sure. For sure. We'll let you get
+some sleep. Uh, thank you so much for
+hopping on the show.
+&gt;&gt; Yeah. Anything else you want to share
+before you jump off?
+&gt;&gt; Yeah.
+&gt;&gt; Uh, yes. I would love to have
+maintainers like if you if you love open
+source, if you have experience, if you
+love shifting to security reports,
+uh, or or if you love taking software
+apart, but then also help and not just
+like throw work at me because I'm like
+at my limit, um, email me. Um, I want
+this to outlift me.
+&gt;&gt; Mhm.
+&gt;&gt; Uh, this I think this is too cool to to
+to
+let it go to rot and it's good people.
+&gt;&gt; Yeah.
+&gt;&gt; Incredible. Are you going to ship that
+product you had in the in the chamber?
+You said there was one you were close or
+you going to lock in on this?
+&gt;&gt; That's that's more hobby. I don't know.
+No, I I have some other ideas in my head
+of um what something like this could
+become.
+&gt;&gt; And it doesn't need to be this. But I
+don't want to [snorts] share too much.
+&gt;&gt; Yeah, no problem. Come back on the show
+when you when you launch that. We'd love
+to have you
+&gt;&gt; purely for the love of the game.
+&gt;&gt; The love of the game.
+&gt;&gt; You're an absolute legend. It was great
+hanging, Peter.
+&gt;&gt; Thanks so much.
+&gt;&gt; Let's [clears throat] get some sleep.
+&gt;&gt; Get some sleep. We'll talk to you soon.
+Goodbye.
+&gt;&gt; Founder Moon. What a legend.
+&gt;&gt; Yeah.
+&gt;&gt; Uh true overnight success in both ways,
+you know, I like actually an overnight
+success in terms of that GitHub star
+chart. Uh and then also an overnight
+success in just grinding for you know
+years building projects and contributing
+and then uh building setting the product
+up the brand right everything just
+perfect to really uh capitalize on the
+moment. There were so many I I I
+normally I don't have we don't we're
+podcasting so much don't have a ton of
+time to relisten to stuff but there were
+so many kind of interesting points of
+view that he shared that uh I'll
+certainly be
+&gt;&gt; super interested to see where this goes.
+A lot of people are saying get this guy
+a billion dollars. A lot of people are
+saying he's going to wind up working
+&gt;&gt; the whole thing is I don't think he
+needs it.
+&gt;&gt; Yeah.
+&gt;&gt; Like like the the beauty of this is that
+it was not something magical that was
+created by
+&gt;&gt; spending burning a billion dollars.

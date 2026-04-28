@@ -1,0 +1,777 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="view-transition" content="same-origin"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="canonical" href="https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit"><meta name="generator" content="Astro v5.18.1"><!-- General Meta Tags --><title>Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention | Peter Steinberger</title><meta name="title" content="Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention | Peter Steinberger"><meta name="description" content="Discover how iOS 18's hidden automatic observation tracking brings SwiftUI-like reactive programming to UIKit and AppKit, making your UI code cleaner and more maintainable."><meta name="author" content="Peter Steinberger"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention | Peter Steinberger"><meta property="og:description" content="Discover how iOS 18's hidden automatic observation tracking brings SwiftUI-like reactive programming to UIKit and AppKit, making your UI code cleaner and more maintainable."><meta property="og:url" content="https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit"><meta property="og:image" content="https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit/index.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-06-11T09:00:00.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit"><meta property="twitter:title" content="Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention | Peter Steinberger"><meta property="twitter:description" content="Discover how iOS 18's hidden automatic observation tracking brings SwiftUI-like reactive programming to UIKit and AppKit, making your UI code cleaner and more maintainable."><meta property="twitter:image" content="https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention | Peter Steinberger","image":"https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit/index.png","datePublished":"2025-06-11T09:00:00.000Z","author":[{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"}]}</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Peter Steinberger" href="https://steipete.me/rss.xml"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><script src="/toggle-theme.js"></script><!-- Domain-based markdown redirect --><script>
+      // Check if we're on steipete.md domain
+      const hostname = window.location.hostname;
+      if ((hostname === 'steipete.md' || hostname === 'www.steipete.md') && !window.location.pathname.endsWith('.md')) {
+        // Redirect to the .md version of the current page
+        const mdPath = window.location.pathname === '/' ? '/index.md' : window.location.pathname + '.md';
+        window.location.replace(mdPath + window.location.search + window.location.hash);
+      }
+    </script><!-- Twitter Widget Script --><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><style>@media(max-width:640px){.newsletter-box[data-astro-cid-nbvfnxgh]{margin-left:-1rem;margin-right:-1rem;border-radius:0}}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.jXOsNRnW.css">
+<style>.youtube-embed-container[data-astro-cid-vj4tpspi]{margin:2rem 0;position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden}.youtube-embed-container[data-astro-cid-vj4tpspi] iframe[data-astro-cid-vj4tpspi]{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+</style><style>[data-astro-transition-scope="astro-pu2sknsl-1"] { view-transition-name: automatic-observation-tracking-in-ui-kit-and-app-kit-the-feature-apple-forgot-to-mention; }@layer astro { ::view-transition-old(automatic-observation-tracking-in-ui-kit-and-app-kit-the-feature-apple-forgot-to-mention) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(automatic-observation-tracking-in-ui-kit-and-app-kit-the-feature-apple-forgot-to-mention) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(automatic-observation-tracking-in-ui-kit-and-app-kit-the-feature-apple-forgot-to-mention) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(automatic-observation-tracking-in-ui-kit-and-app-kit-the-feature-apple-forgot-to-mention) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-pu2sknsl-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-pu2sknsl-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: i-os; }@layer astro { ::view-transition-old(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(i-os) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: swift; }@layer astro { ::view-transition-old(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(swift) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: ui-kit; }@layer astro { ::view-transition-old(ui-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ui-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ui-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ui-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-5"] { view-transition-name: app-kit; }@layer astro { ::view-transition-old(app-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(app-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(app-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(app-kit) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-6"] { view-transition-name: observation; }@layer astro { ::view-transition-old(observation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(observation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(observation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(observation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4>  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention","description":"Discover how iOS 18's hidden automatic observation tracking brings SwiftUI-like reactive programming to UIKit and AppKit, making your UI code cleaner and more maintainable.","author":{"@type":"Person","name":"Peter Steinberger","url":"https://steipete.me/about"},"datePublished":"2025-06-11T09:00:00.000Z","dateModified":"2025-06-11T09:00:00.000Z","publisher":{"@type":"Person","name":"Peter Steinberger","logo":{"@type":"ImageObject","url":"https://steipete.me/peter-avatar.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit"},"image":"https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit/index.png","articleSection":"iOS","keywords":"iOS, Swift, UIKit, AppKit, Observation","wordCount":1527,"timeRequired":"8 min read"}</script> <header> <a id="skip-to-content" href="#main-content" class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <div id="nav-container" class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"> <a href="/" class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:static"> Peter Steinberger </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg> </button> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Posts
+</a> </li> <!-- <li class="col-span-2">
+            <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
+              Tags
+            </a>
+          </li> --> <li class="col-span-2"> <a href="/about">
+About
+</a> </li>  <li class="col-span-1 flex items-center justify-center"> <a href="/search" class="group inline-block hover:text-accent focus-outline flex p-3 sm:p-1" aria-label="search" title="Search"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span> </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-border" aria-hidden="true"> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",()=>{s()});</script> <script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="mx-auto w-full max-w-3xl px-4 pb-12 mt-8" data-pagefind-body data-astro-cid-vj4tpspi> <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-cid-vj4tpspi data-astro-transition-scope="astro-pu2sknsl-1"> Automatic Observation Tracking in UIKit and AppKit: The Feature Apple Forgot to Mention </h1> <div class="flex items-center justify-between gap-4 mt-2 mb-6" data-astro-cid-vj4tpspi> <div class="flex items-center gap-3" data-astro-cid-vj4tpspi> <div class="flex items-center gap-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5 min-w-[1.25rem]"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg> <span class="sr-only">Published:</span> <span class="text-sm italic sm:text-base"> <time datetime="2025-06-11T09:00:00.000Z">11 Jun, 2025</time> </span> </div>  <span class="text-foreground/30" data-astro-cid-vj4tpspi>•</span> <span class="text-sm text-foreground/60" data-astro-cid-vj4tpspi>8 min read</span>  </div> <div class="opacity-80 max-sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/automatic-observation-tracking-uikit-appkit.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> </div> <article id="article" class="mx-auto prose mt-6 max-w-3xl" data-astro-cid-vj4tpspi>  <p><strong>TL;DR</strong>: iOS 18 and macOS 15 secretly ship with automatic observation tracking for UIKit/AppKit. Enable it with a plist key, and your views magically update when your <code>@Observable</code> models change. No more manual <code>setNeedsDisplay()</code> calls!</p>
+<h2 id="the-hidden-gem-in-ios-18">The Hidden Gem in iOS 18</h2>
+<p>Remember when SwiftUI came out and we all marveled at how views automatically updated when <code>@Published</code> properties changed? Well, Apple has been quietly working on bringing that same magic to UIKit and AppKit. The best part? It shipped in iOS 18/macOS 15, but hardly anyone knows about it. You don’t even need Xcode 26, it’s just one simple plist entry away.</p>
+<h2 id="the-problem-weve-all-faced">The Problem We’ve All Faced</h2>
+<p>Let’s be honest - keeping your UI in sync with your data model in UIKit has always been a chore. Here’s the dance we’ve all done:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> ProfileViewController</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIViewController </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user: User</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        didSet</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">            updateUI</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> updateUI</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        nameLabel.</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">text</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">name</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        avatarImageView.</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">image</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">avatar</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // ... 20 more lines of manual updates</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">        setNeedsLayout</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>Forgot to call <code>updateUI()</code>? Enjoy your stale UI. Called it too often? Hello, performance issues. It’s tedious and error-prone.</p>
+<h2 id="enter-automatic-observation-tracking">Enter Automatic Observation Tracking</h2>
+<p>With the new observation framework, this entire pattern becomes obsolete. Here’s the same code with automatic tracking:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> Observation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Observable</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> User</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> name: </span><span style="color:#1976D2;--shiki-dark:#C5E478">String</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> ""</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> avatar: UIImage</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> unreadCount </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> hasUnread: </span><span style="color:#1976D2;--shiki-dark:#C5E478">Bool</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        unreadCount </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">></span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> ProfileViewController</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIViewController </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> User</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    override</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> viewWillLayoutSubviews</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">        super</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">viewWillLayoutSubviews</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // UIKit tracks these property accesses automatically!</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        nameLabel.</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">text</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">name</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        avatarImageView.</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">image</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> user.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">avatar</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        badgeView.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">isHidden</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> !</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">user.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">hasUnread</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>That’s it. Change <code>user.name</code> anywhere in your app, and the label updates. No manual calls, no forgotten updates, no performance overhead from unnecessary refreshes. It just works.</p>
+<h2 id="where-observation-tracking-works">Where Observation Tracking Works</h2>
+<p>The automatic observation tracking is supported in a variety of UIKit and AppKit methods. For most cases, <code>viewWillLayoutSubviews()</code> in UIKit view controllers, <code>layoutSubviews()</code> in UIKit views, and their AppKit equivalents (<code>viewWillLayout()</code> and <code>layout()</code>) are the go-to choices.</p>
+<details>
+<summary><strong>View the complete list of supported methods</strong></summary>
+<h3 id="uiview">UIView</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/uikit/automatic-trait-tracking"><code>updateProperties()</code></a> (iOS 26+)</li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiview/1622482-layoutsubviews"><code>layoutSubviews()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiview/1622512-updateconstraints"><code>updateConstraints()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiview/1622529-draw"><code>draw(_:)</code></a></li>
+</ul>
+<h3 id="uiviewcontroller">UIViewController</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/uikit/automatic-trait-tracking"><code>updateProperties()</code></a> (iOS 26+)</li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller/1621437-viewwilllayoutsubviews"><code>viewWillLayoutSubviews()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller/1621398-viewdidlayoutsubviews"><code>viewDidLayoutSubviews()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller/1621379-updateviewconstraints"><code>updateViewConstraints()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller/4195484-updatecontentunavailableconfigur"><code>updateContentUnavailableConfiguration(using:)</code></a></li>
+</ul>
+<h3 id="uipresentationcontroller">UIPresentationController</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/uikit/uipresentationcontroller/1618335-containerviewwilllayoutsubviews"><code>containerViewWillLayoutSubviews()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/uikit/uipresentationcontroller/1618329-containerviewdidlayoutsubviews"><code>containerViewDidLayoutSubviews()</code></a></li>
+</ul>
+<h3 id="uibutton">UIButton</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/uikit/uibutton/3750773-updateconfiguration"><code>updateConfiguration()</code></a></li>
+<li>When executing the <a href="https://developer.apple.com/documentation/uikit/uibutton/3750772-configurationupdatehandler"><code>configurationUpdateHandler</code></a></li>
+</ul>
+<h3 id="uicollectionviewcell-uitableviewcell-uitableviewheaderfooterview">UICollectionViewCell, UITableViewCell, UITableViewHeaderFooterView</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/uikit/uicollectionviewcell/3600950-updateconfiguration"><code>updateConfiguration(using:)</code></a> (UICollectionViewCell)</li>
+<li><a href="https://developer.apple.com/documentation/uikit/uitableviewcell/3601058-updateconfiguration"><code>updateConfiguration(using:)</code></a> (UITableViewCell)</li>
+<li><a href="https://developer.apple.com/documentation/uikit/uitableviewheaderfooterview/3601061-updateconfiguration"><code>updateConfiguration(using:)</code></a> (UITableViewHeaderFooterView)</li>
+<li>When executing the <code>configurationUpdateHandler</code></li>
+</ul>
+<h3 id="nsview-appkit">NSView (AppKit)</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/appkit/nsview/1526891-updateconstraints"><code>updateConstraints()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsview/1526146-layout"><code>layout()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsview/1483686-draw"><code>draw(_:)</code></a></li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsview/1526068-updatelayer"><code>updateLayer()</code></a></li>
+</ul>
+<h3 id="nsviewcontroller-appkit">NSViewController (AppKit)</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/appkit/nsviewcontroller/1434401-updateviewconstraints"><code>updateViewConstraints()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsviewcontroller/1434481-viewwilllayout"><code>viewWillLayout()</code></a></li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsviewcontroller/1434491-viewdidlayout"><code>viewDidLayout()</code></a></li>
+</ul>
+</details>
+<h2 id="enabling-the-magic">Enabling the Magic</h2>
+<p>Here’s where it gets interesting. This feature isn’t enabled by default (yet). You need to add a key to your Info.plist:</p>
+<h3 id="for-uikit-ios-18">For UIKit (iOS 18+)</h3>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">&#x3C;</span><span style="color:#22863A;--shiki-dark:#CAECE6">key</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">></span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">UIObservationTrackingEnabled</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#CAECE6">key</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">>&#x3C;</span><span style="color:#22863A;--shiki-dark:#CAECE6">true</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">/></span></span></code></pre>
+<h3 id="for-appkit-macos-15">For AppKit (macOS 15+)</h3>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">&#x3C;</span><span style="color:#22863A;--shiki-dark:#CAECE6">key</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">></span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">NSObservationTrackingEnabled</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#CAECE6">key</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">>&#x3C;</span><span style="color:#22863A;--shiki-dark:#CAECE6">true</span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">/></span></span></code></pre>
+<p>This plist key enables observation tracking in iOS 18 and macOS 15. Starting with their 26 releases, this is on by default and the key will simply be ignored.</p>
+<h2 id="ios-26-and-beyond">iOS 26 and Beyond</h2>
+<p>iOS 26 (already in beta!) brings improvements. The new <code>updateProperties()</code> method on both <code>UIView</code> and <code>UIViewController</code> provides an even better place for observable property access. For a comprehensive overview of all iOS 26 UIKit additions, check out <a href="https://www.swiftjectivec.com/ios-26-notable-uikit-additions/">Jordan Morgan’s excellent writeup</a>.</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> MyView</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIView </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model: MyModel</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    override</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> updateProperties</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">        super</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">updateProperties</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // This runs before layoutSubviews for even better performance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        backgroundColor </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">backgroundColor</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        layer.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">cornerRadius</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">cornerRadius</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>This method is specifically designed for property updates and runs before <code>layoutSubviews</code>, allowing for more efficient updates and clearer separation of concerns.</p>
+<p>Just like the layout system has <code>setNeedsLayout()</code> and <code>layoutIfNeeded()</code>, the property update system provides <a href="https://developer.apple.com/documentation/uikit/uiview/setNeedsUpdateProperties"><code>setNeedsUpdateProperties()</code></a> and <a href="https://developer.apple.com/documentation/uikit/uiview/updatePropertiesIfNeeded"><code>updatePropertiesIfNeeded()</code></a>. You can call <code>setNeedsUpdateProperties()</code> to schedule a property update on the next update cycle, or use <code>updatePropertiesIfNeeded()</code> to force an immediate update if one is pending. This gives you fine-grained control over when property updates occur, which is especially useful for optimizing performance in complex view hierarchies.</p>
+<p>Apple’s <a href="https://developer.apple.com/documentation/uikit/automatic-trait-tracking">automatic trait tracking documentation</a> provides detailed guidance on using these new APIs. Plus, automatic observation tracking is enabled by default in iOS 26, so you won’t even need the plist key anymore.</p>
+<h2 id="the-gotchas">The Gotchas</h2>
+<p>Of course, it’s not all roses. Here are a few things to watch out for:</p>
+<ul>
+<li><strong>Observation happens in specific methods</strong>: Only properties accessed in the supported methods (see list above) are tracked</li>
+<li><strong>Timing matters</strong>: If you’re doing expensive computations, consider caching results since these methods can be called frequently</li>
+<li><strong>Memory considerations</strong>: Observable objects are retained while being observed, so be mindful of retain cycles</li>
+<li><strong>Thread safety</strong>: While <code>@Observable</code> is thread-safe, mutations from different threads could lead to inconsistent UI representations. Keep all mutations on the main thread to avoid surprises</li>
+</ul>
+<h2 id="a-pattern-to-avoid">A Pattern to Avoid</h2>
+<p>You might be tempted to create a method that pre-accesses all observable properties:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// ❌ Don't do this</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">override</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> trackObservableProperties</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // Accessing all properties upfront</span></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#D6DEEB">    _</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">backgroundColor</span></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#D6DEEB">    _</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">cornerRadius</span></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#D6DEEB">    _</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">title</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // ... etc</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>This is an anti-pattern for two reasons:</p>
+<ol>
+<li>
+<p><strong>Inefficiency</strong>: It establishes observation dependencies for ALL properties, even those not used in the current UI state. The beauty of automatic observation is that it only tracks properties actually accessed during updates.</p>
+</li>
+<li>
+<p><strong>Fragility</strong>: You’re maintaining a duplicate list of properties that can easily fall out of sync with your actual UI code.</p>
+</li>
+</ol>
+<p>Instead, access properties directly where they’re used:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// ✅ Do this</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">override</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> layoutSubviews</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">    super</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">layoutSubviews</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // Only accessed properties create dependencies</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    if</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.isOptionEnabled {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        view.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">foo</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">bar</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // Only bar is observed</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    } </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">else</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        view.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">foo</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">baz</span><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // Only baz is observed</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>This way, only the properties actually affecting your UI get observation dependencies, making your code both more efficient and maintainable.</p>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<p>You might be wondering about performance. The beauty of this system is that it only tracks dependencies when views are actually laying out. If a view isn’t visible, it’s not tracking. The observation framework uses a sophisticated dependency graph that ensures minimal overhead.</p>
+<h2 id="complete-example-project">Complete Example Project</h2>
+<p>Automatic observation tracking is one of those features that makes you wonder how you lived without it. It brings the best parts of SwiftUI’s reactive programming model to UIKit and AppKit, without requiring a complete rewrite of your app.</p>
+<p>All the code snippets in this post come from a fully working example project. Check it out on GitHub: <a href="https://github.com/steipete/ObservationTrackingExample">ObservationTrackingExample</a></p>
+<h2 id="the-missing-piece-custom-traits">The Missing Piece: Custom Traits</h2>
+<p>If you’ve used SwiftUI, you know the joy of <code>@EnvironmentObject</code> - drop an object at the root, access it anywhere. UIKit developers have been jealous of this pattern for years. Well, jealous no more. (Mac devs miss out tho - there’s no equivalent on AppKit yet)</p>
+<p>Since iOS 17, UIKit has quietly introduced custom traits - a way to attach arbitrary values to the trait collection that flows through your view hierarchy. These aren’t just for dark mode and size classes anymore. Keith Harrison has an <a href="https://useyourloaf.com/blog/custom-traits-and-swiftui/">excellent deep dive into custom traits</a> if you want the full story.</p>
+<p>The magic happens when you combine custom traits with observable objects. You get automatic propagation AND automatic updates. It’s like having your cake and eating it too.</p>
+<details>
+<summary><strong>View the complete Example</strong></summary>
+<p>Let’s build an app-wide state container that any view can access and observe:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> UIKit</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> Observation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">@</span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">Observable</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> AppModel</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> currentUser: User</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> theme: Theme </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> .</span><span style="color:#24292EFF;--shiki-dark:#C5E478">light</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> isOnline </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#1976D2;--shiki-dark:#FF5874"> true</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // Add more app-wide state as needed</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Define a custom trait for your app model</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">struct</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> AppModelTrait</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UITraitDefinition </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    static</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> defaultValue: AppModel</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Add convenient accessors</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">extension</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> UITraitCollection</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> appModel: AppModel</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">        self</span><span style="color:#212121;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">AppModelTrait.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">extension</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> UIMutableTraits</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> appModel: AppModel</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        get</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">AppModelTrait.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">]</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        set</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#24292EFF;--shiki-dark:#7FDBCA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">AppModelTrait.</span><span style="color:#D32F2F;--shiki-dark:#C792EA">self</span><span style="color:#212121;--shiki-dark:#D6DEEB">]</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> newValue }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h2 id="injecting-the-model">Injecting the Model</h2>
+<p>At your app’s root (usually in your scene delegate or root view controller), inject the model:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> SceneDelegate</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIResponder</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#6F42C1;--shiki-dark:#C5E478">UIWindowSceneDelegate </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    var</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> window: UIWindow</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> appModel </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> AppModel</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> scene</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">_</span><span style="color:#FF9800;--shiki-dark:#7FDBCA"> scene</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">: UIScene, </span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">willConnectTo</span><span style="color:#FF9800;--shiki-dark:#7FDBCA"> session</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">: UISceneSession, </span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">options</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">: UIScene.ConnectionOptions</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        guard</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> windowScene </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> (scene </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">as?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> UIWindowScene) </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">else</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">return</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        window </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIWindow</span><span style="color:#212121;--shiki-dark:#D6DEEB">(</span><span style="color:#6F42C1;--shiki-dark:#C5E478">windowScene</span><span style="color:#212121;--shiki-dark:#82AAFF">:</span><span style="color:#6F42C1;--shiki-dark:#82AAFF"> windowScene</span><span style="color:#212121;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">        let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> rootViewController </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> MainTabBarController</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Inject the app model into the trait system</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        rootViewController.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">traitOverrides</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">appModel</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> appModel</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        window</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">rootViewController</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> rootViewController</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        window</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">makeKeyAndVisible</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<h2 id="observing-changes-anywhere">Observing Changes Anywhere</h2>
+<p>Now the magic part - any view controller in your hierarchy can access and observe the model:</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="swift"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">class</span><span style="color:#6F42C1;--shiki-dark:#D6DEEB"> ProfileViewController</span><span style="color:#212121;--shiki-dark:#D6DEEB">:</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIViewController </span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> nameLabel </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UILabel</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">    let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> statusIndicator </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#6F42C1;--shiki-dark:#C5E478"> UIView</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    override</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> func</span><span style="color:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> viewWillLayoutSubviews</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">()</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#7FDBCA">        super</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#6F42C1;--shiki-dark:#C5E478">viewWillLayoutSubviews</span><span style="color:#212121;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        guard</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> let</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">=</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> traitCollection.appModel </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">else</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { </span><span style="color:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">return</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // These automatically update when model properties change!</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        nameLabel.</span><span style="color:#1976D2;--shiki-dark:#D6DEEB">text</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">currentUser</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">name</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ??</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Guest</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        statusIndicator.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">backgroundColor</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">isOnline</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> ?</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> .</span><span style="color:#24292EFF;--shiki-dark:#C5E478">systemGreen</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> :</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> .</span><span style="color:#24292EFF;--shiki-dark:#C5E478">systemRed</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="color:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">        // Theme updates</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        view.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">backgroundColor</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">theme</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">backgroundColor</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        nameLabel.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">textColor</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> model.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">theme</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#C5E478">textColor</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>No delegates. No notifications. No manual updates. Change <code>appModel.currentUser</code> anywhere in your app, and every view observing it updates automatically.</p>
+</details>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://developer.apple.com/documentation/observation">Apple’s Observation Framework Documentation</a></li>
+<li><a href="https://developer.apple.com/videos/play/wwdc2023/10149/">WWDC 2023: Discover Observation in Swift</a> (covers the foundation)</li>
+<li><a href="https://github.com/steipete/ObservationTrackingExample">Example Project on GitHub</a></li>
+<li><a href="https://forums.swift.org/t/observation-tracking-in-uikit">Swift Forums Discussion on Observation Tracking</a></li>
+<li><a href="https://useyourloaf.com/blog/custom-traits-and-swiftui/">Custom Traits and SwiftUI</a> by Keith Harrison</li>
+</ul> </article> <div class="newsletter-box bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 my-8" data-astro-cid-nbvfnxgh> <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-astro-cid-nbvfnxgh>
+New posts, shipping stories, and nerdy links straight to your inbox.
+</p> <form action="https://buttondown.com/api/emails/embed-subscribe/steipete" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3" data-astro-cid-nbvfnxgh> <input type="hidden" name="tag" value="steipete" data-astro-cid-nbvfnxgh> <input type="text" name="name" placeholder="Your Name" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <input type="email" name="email" placeholder="Your Email" required class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" data-astro-cid-nbvfnxgh> <button type="submit" class="px-6 py-2 bg-accent rounded-md hover:bg-accent/90 transition-colors font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2" style="color: white;" data-astro-cid-nbvfnxgh>
+Subscribe
+</button> </form> <p class="text-xs text-gray-500 dark:text-gray-400 mt-3" data-astro-cid-nbvfnxgh>
+2× per month, pure signal, zero fluff.
+</p> </div>  <hr class="my-8 border-dashed" data-astro-cid-vj4tpspi> <div class="opacity-80 sm:hidden"><span aria-hidden="true" class="max-sm:hidden">
+|
+</span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/steipete/steipete.me/edit/main/src/content/blog/2025/automatic-observation-tracking-uikit-appkit.md" rel="noopener noreferrer" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg><span class="italic max-sm:text-sm sm:inline">Edit on GitHub</span></a></div> <ul class="mt-4 mb-8 sm:my-8" data-astro-cid-vj4tpspi> <li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/i-os/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>iOS</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/swift/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Swift</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/ui-kit/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-4"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>UIKit</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/app-kit/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-5"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>AppKit</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/observation/" class="relative pr-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 text-sm" data-astro-transition-scope="astro-36ssibgs-6"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -mr-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Observation</span> </a> </li> </ul> <div class="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end sm:gap-4" data-astro-cid-vj4tpspi> <div class="flex flex-col flex-wrap items-center justify-center gap-2 sm:gap-1 sm:items-start"> <span class="italic">Share this post on:</span> <div class="text-center flex flex-wrap gap-1"> <a href="https://x.com/intent/post?url=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Share this post on X</span> </a><a href="https://bsky.app/intent/compose?text=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Share this post on BlueSky</span> </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Share this post on LinkedIn</span> </a><a href="https://wa.me/?text=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg><span class="sr-only">Share this post via WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg><span class="sr-only">Share this post on Facebook</span> </a><a href="https://t.me/share/url?url=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg><span class="sr-only">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post on Pinterest"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg><span class="sr-only">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://steipete.me/posts/2025/automatic-observation-tracking-uikit-appkit" class="group inline-block hover:text-accent p-3 sm:p-2 hover:rotate-6" title="Share this post via email"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-8 sm:size-6 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Share this post via email</span> </a> </div> </div> <button id="back-to-top" class="focus-outline py-1 whitespace-nowrap hover:opacity-75" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span data-astro-cid-vj4tpspi>Back to Top</span> </button> </div> <hr class="my-6 border-dashed" data-astro-cid-vj4tpspi> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="flex flex-col sm:flex-row justify-between gap-6" data-prev-url="/posts/2025/llm-codes-transform-developer-docs" data-next-url="/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents" data-astro-cid-vj4tpspi> <a href="/posts/2025/llm-codes-transform-developer-docs" class="flex gap-2 hover:opacity-75 items-start" id="prev-post-link" data-astro-cid-vj4tpspi> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Previous Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>llm.codes: Make Apple Docs AI-Readable</div> </div> </a> <a href="/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents" class="flex gap-2 hover:opacity-75 items-start justify-end text-right ml-auto" id="next-post-link" data-astro-cid-vj4tpspi> <div class="min-w-0" data-astro-cid-vj4tpspi> <span class="block text-sm text-foreground/70" data-astro-cid-vj4tpspi>Next Post</span> <div class="text-accent/85" data-astro-cid-vj4tpspi>Peekaboo MCP – lightning-fast macOS screenshots for AI agents</div> </div> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-shrink-0 mt-0.5" data-astro-cid-vj4tpspi="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg> </a> </div> </main> <footer class="w-full mt-auto"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-border" aria-hidden="true"> </div> <div class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"> <div class="flex-wrap justify-center gap-1 flex"> <a href="https://github.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title=" Peter Steinberger on Github"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg><span class="sr-only"> Peter Steinberger on Github</span> </a><a href="https://x.com/steipete" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on X"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Peter Steinberger on X</span> </a><a href="https://bsky.app/profile/steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on BlueSky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110">
+  <path d="M12 11.5c-.87-1.69-3.24-4.84-5.44-6.4-2.1-1.48-2.89-1.24-3.42-1.01-.62.27-.72 1.17-.72 1.72 0 .55.3 4.52.5 5.18.65 2.19 2.97 2.93 5.1 2.69.11-.02.22-.03.33-.04-.11.01-.22.03-.33.04-3.13.47-5.91 1.61-2.26 5.67 4.01 4.15 5.5-.89 6.26-3.45.76 2.56 1.64 7.42 6.19 3.45 3.41-3.45.94-5.2-2.19-5.67-.11-.01-.22-.03-.33-.04.11.01.22.02.33.04 2.14.24 4.45-.5 5.1-2.69.2-.66.5-4.63.5-5.18 0-.55-.11-1.49-.72-1.77-.53-.24-1.33-.5-3.44.99-2.2 1.56-4.57 3.71-5.44 6.4Z" stroke-width="1.815" />
+</svg><span class="sr-only">Peter Steinberger on BlueSky</span> </a><a href="https://www.linkedin.com/in/steipete/" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Peter Steinberger on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="sr-only">Peter Steinberger on LinkedIn</span> </a><a href="mailto:peter@steipete.me" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Send an email to Peter Steinberger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Send an email to Peter Steinberger</span> </a> </div> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <a href="https://github.com/steipete/steipete.me" target="_blank" rel="noopener noreferrer" class="hover:text-accent">
+Steal this post ➜ CC BY 4.0 · Code MIT
+</a> </div> </div> </footer>  <!-- Vercel Analytics --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_0_lang.iMTEyByK.js"></script> <!-- Vercel Speed Insights --><script type="module" src="/_astro/Analytics.astro_astro_type_script_index_1_lang.B9nzKlec.js"></script> </body></html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6"),
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-muted px-2 py-1 text-xs leading-4 text-foreground font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" }),
+  );
+
+  /** Add lazy loading to all images in the article */
+  function addLazyLoading() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+    
+    const images = article.querySelectorAll("img:not([loading])");
+    images.forEach((img) => {
+      img.setAttribute("loading", "lazy");
+    });
+  }
+  addLazyLoading();
+
+  /** Keyboard navigation for posts */
+  function setupKeyboardNavigation() {
+    const navContainer = document.querySelector('[data-prev-url]');
+    if (!navContainer) return;
+    
+    const prevUrl = navContainer.getAttribute('data-prev-url');
+    const nextUrl = navContainer.getAttribute('data-next-url');
+    
+    document.addEventListener('keydown', (e) => {
+      // Ignore if user is typing in an input, textarea, or contenteditable
+      if (e.target.matches('input, textarea, [contenteditable="true"]')) return;
+      
+      // J key for next post
+      if (e.key === 'j' && nextUrl) {
+        window.location.href = nextUrl;
+      }
+      // K key for previous post
+      else if (e.key === 'k' && prevUrl) {
+        window.location.href = prevUrl;
+      }
+    });
+  }
+  setupKeyboardNavigation();
+
+  /** Process YouTube and Twitter embeds */
+  function processEmbeds() {
+    const article = document.querySelector("#article");
+    if (!article) return;
+
+    // Look for YouTube embeds
+    const youtubeEmbedRegex = /\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/g;
+    
+    let foundYoutubeEmbeds = false;
+    
+    // Helper to extract a YouTube video ID from various URL formats
+    const extractYouTubeId = (input) => {
+      let videoId = input;
+      try {
+        if (videoId.includes("youtube.com/watch")) {
+          const url = new URL(videoId);
+          videoId = url.searchParams.get("v") || "";
+        } else if (videoId.includes("youtu.be/")) {
+          videoId = videoId.split("youtu.be/")[1]?.split("?")[0] || "";
+        } else if (videoId.includes("youtube.com/embed/")) {
+          videoId = videoId.split("youtube.com/embed/")[1]?.split("?")[0] || "";
+        }
+      } catch (_) {
+        // If URL parsing fails, fall back to the raw input
+      }
+      return videoId;
+    };
+
+    // 1) Pre-pass: replace whole-paragraph shortcodes (most common case)
+    const pNodes = article.querySelectorAll("p");
+    pNodes.forEach((p) => {
+      const text = (p.textContent || "").trim();
+      const ytMatch = text.match(/\{% youtube (https:\/\/[^\s]+|[a-zA-Z0-9_-]+) %\}/);
+
+      if (ytMatch && ytMatch[1]) {
+        foundYoutubeEmbeds = true;
+        const videoId = extractYouTubeId(ytMatch[1]);
+        const container = document.createElement("div");
+        container.className = "youtube-embed-container";
+        container.innerHTML = `
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/${videoId}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        `;
+        p.replaceWith(container);
+      }
+    });
+
+    // 2) Fallback: process any remaining text nodes that still contain shortcodes
+    const walker = document.createTreeWalker(
+      article,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false,
+    );
+
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      textNodes.push(node);
+    }
+
+    textNodes.forEach((textNode) => {
+      let content = textNode.textContent;
+      let hasChanges = false;
+
+      // Process YouTube embeds
+      content = content.replace(youtubeEmbedRegex, (match, videoId) => {
+        foundYoutubeEmbeds = true;
+        hasChanges = true;
+        videoId = extractYouTubeId(videoId);
+
+        return `<div class="youtube-embed-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/${videoId}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`;
+      });
+
+      if (hasChanges) {
+        // Replace the text node with HTML content
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+
+        // Replace the text node with the new HTML elements
+        const parent = textNode.parentNode;
+        while (tempDiv.firstChild) {
+          parent.insertBefore(tempDiv.firstChild, textNode);
+        }
+        parent.removeChild(textNode);
+      }
+    });
+  }
+
+  // Run the embed processing
+  processEmbeds();
+  
+  // Also run after astro navigation
+  document.addEventListener("astro:page-load", processEmbeds);
+</script> 

@@ -1,0 +1,339 @@
+When you first start programming with AI
+agents, you would say something like
+that, please fix this or please build
+that. But then as time goes, you try to
+follow the tricks and tips on how to
+optimize your workflow. They would tell
+you to run eight AI agents
+simultaneously, to have complex
+orchestrations between multiple agents,
+to chain agents together, to have custom
+sub agents, to have a library of 18
+different slash commands. After that,
+you realize that the more you cut this
+crap from the context and the more your
+context is neat and organized and clean,
+the better results you have. And then
+you end up with something like this.
+Hey, look at these files and then do
+mediumsiz change. So it's not a large uh
+full stack feature. So you kind of move
+along this curve. At the beginning you
+don't know anything. You do not have a
+workflow. Then after that you start
+complicating and over complicating
+things. And then you come to a
+realization that actually the simpler
+the better. So this is actually my story
+of working with AI agents for
+programming and this graph is taken from
+the blog of Peter Stainberger and if you
+haven't heard of him he's the creator of
+OpenClow or Cloudbot or Maltbot and he's
+shipping like crazy. He's getting a lot
+of things done and he's he's completed
+projects more than companies and teams
+would complete in years. In his blog he
+said agentic engineering has become so
+good that it now writes pretty much 100%
+of my code. So the AI agent basically
+writes 100% of his code. So how does he
+do that to build such a viral product
+like OpenClow just using AI agents.
+Let's try to learn from him to see what
+workflow he uses. So first let's start
+with things to avoid. So I have
+summarized the recent posts from his
+blog. And here I give you the
+conclusion. You do not need to elaborate
+a lot on your prompts. So people online
+like they're going to tell you to
+basically have certain prompts for for
+certain models. And they even try to
+sell like prompt templates and this is
+actually a scam. So never buy a prompt
+template on the internet. First of all,
+large language models are
+undeterministic, meaning that if you ask
+the same question with the exact same
+wording, in some settings, it can give
+you a completely different answer.
+Moreover, the context also plays a role.
+The context is not only the prompt. The
+context can have the history of the
+messages, your profile, some other
+information that the LLM or the agent
+has access to that is different from the
+prompt. So this will also affect the
+quality or the response. Moreover,
+different models or different LLMs will
+give you different results. So, it's not
+reproducible. The idea here is that you
+do not need to have elaborate prompts
+anymore for agents because agents are
+now very good in searching for context.
+So, they're going to go to the to files.
+They're going to search files in the
+codebase and they're going to ask you
+for any information that doesn't exist
+in the codebase or doesn't exist in the
+current context that the LLM has access
+to. The second thing to avoid is sub
+aents. So, the idea of sub aents is here
+you have your main agent. So when the
+main agent wants to perform a task, it's
+going to spawn a separate agent and then
+this sub agent will return the result
+and then the whole context of how it
+came into this this result will be wiped
+out. First of all, okay, you isolate the
+context but at the same time you lose
+some parts of the context that might be
+helpful in the overall task. This is one
+thing. The other thing is that the
+coding agents are going to spawn these
+sub aents without your control. You
+cannot know what's happening or what
+context uh is basically being passed
+between these sub aents. So you lose the
+control over that. That's why he
+suggests that whenever you want to uh
+have some isolated task for example
+let's say you want to search for
+something and then you want you just
+need to return the result but you do not
+need the context of how this result has
+been fetched. Uh you can just do that in
+a separate uh in a separate agent. So
+you have one agent for one task and then
+you just open a new terminal and have
+your new task in just a new u completely
+new context. And then you can just take
+the your findings and either apply to
+the codebase directly where the first
+agent is reading from or you can pass it
+manually to the first agent. So yeah, so
+this is this is the main idea. So the
+third thing that he says to avoid is
+wrapper tools. So wrapper tools
+basically are like tools or software
+that tries to wrap the existing coding
+agents like load or or or codeex and
+they try to give them extra capabilities
+to vectorize the codebase and to save
+the codebase in an index with the
+current agent capabilities. They
+actually are able to search the codebase
+very very well. So you do not need to
+have additional wrappers around these
+LLM. So now what about code quality? So
+if AI is going to write 100% of your
+code then probably the code quality is
+not going to be that great, right? So
+here he gives some techniques or some
+ideas on how to control the code quality
+as much as possible. So first is the
+blast radius thinking. So the blast
+radius thinking is the following. Think
+of your code base as this space of code
+or this space of features and files. So
+a feature for example lives in a subset
+of these files. So it lives here in the
+space. Another feature lives in another
+subset of files in your codebase. And
+here for example here is like a third
+feature. The main idea is that you
+shouldn't make changes or multiple
+changes at the same time to regions of
+your codebase that intersect, especially
+when you're using parallel agents at
+once. So this is agent one. This is
+agent two. So agent one, for example,
+can be working on this region. Agent two
+could be working on this region. The
+main thing is that they should be
+independent, completely independent. If
+they're not independent, it doesn't
+work. Also another important idea is
+that these changes or these regions
+should be small enough for the agent to
+be able to comprehend and to tackle
+efficiently. So the larger the region
+gets the more difficult for the agent to
+maintain the quality that enables it to
+implement that feature. So that's the
+idea. Another thing is that he commits
+directly to main. So he just has
+basically a linear workflow. He doesn't
+need like git work tree. And this tends
+to be better than asking the agent to
+work in multiple branches and then do
+merges because this introduces merge
+conflicts and additional overhead that
+complicates a process. Okay. Now the
+third thing are tools. So CLIs are
+better than MCPS. The idea here is that
+MCPs are chunks of text that live in the
+context. So let's say this is your full
+context. This MCP definition should live
+inside your context. Another MCP also
+lives here. Another MCP also lives here.
+So they eat from the context. And also
+it's unnecessary. For example, if the
+model is not using any of these MCPS,
+this data is going to still live in the
+context. So, it's going to cause you
+extra tokens and it's also going to
+degrade the quality because it's just
+occupying the context that could be used
+for something else. So, the better idea
+that he introduced is the use of CLI.
+So, instead of having MCP's definitions
+in the context, what you do instead is
+that you just give it the name of the
+CLI and what does it do? Then if the
+model tries to use the CLI in some way,
+it might get an error for example. And
+once it get an error, it's going to go
+and try to check the documentation of
+that CLI and then it's going to come
+back and use the correct command. So the
+second thing is that he uses multiple
+terminal with ghost ty. This is just
+like a multiplexer for using terminals
+in multiple windows. Actually I don't
+use it. I just add a new terminal but
+turned out that like a lot of people are
+using it and uh he says that it's better
+user experience when using this
+terminal. Okay. Now the context. How
+does he manage the context? As we said
+brief prompts. This is one thing. The
+second thing is he uses screenshots. He
+just like screenshots for example the
+result and he give it back to the agent
+and LLMs now have decent visual
+capabilities. So can they can read text
+from the image and they can also analyze
+how that fits to the implementation of
+the current feature that we're building.
+So the third thing is test same context.
+This is very important when you
+implement a feature ask the LLM or ask
+the agent to immediately test it because
+it has all the context it needs to test
+this feature. So it's beneficial to
+immediately test that and solve any
+issues that it might uh encounter.
+That's the idea here of the context.
+Parallel workflows he basically have
+multiple agents working in parallel
+either in one codebase or multiple code
+bases. Three to eight agents in a grid
+scale by blast radius. Also atomic
+commits atomic commits is also very
+important. So this means that one commit
+one clear change. Every commit has one
+exact purpose which is implementing
+something enhancing something solving
+some bug and so on. And now the main
+philosophy here or the main like uh
+takeaway from this video is that just
+talk to it, explore, develop intuitions
+of how it works over time. Literally
+like any other skill, just like you talk
+to it and you try to improve over time.
+Don't just like blindly listen to the
+advice on the internet of how you should
+have your setup. Experiment yourself.
+Take those like tips from the people who
+are successful. So this is a proven
+workflow. And also uh as we discussed at
+the beginning, less is more. So the less
+complicated your workflow is, the better
+the more you can get done and the better
+your overall result will be. There is
+actually one catch I want to explain but
+before that let's check comparison code
+versus codex. So he uses codeex. Why
+codex? First of all it has more around
+100,000 tokens in the context. It first
+reads files before writing. So it tends
+to explore the code base more thoroughly
+before it does some change. The oneshot
+accuracy is higher. So this is GP 5.2 2
+and he's comparing it to clude opus 4.5.
+It also handles large refactors better
+than cloud opus 4.5. That's his
+experience. So he has shipped a lot of
+product and most of them are in
+production like his trustable person.
+The CLI itself is implemented in rust
+which makes it faster and like more
+smooth experience than clo code. Okay.
+Now let's go to the part that most of us
+won't like. So this is his token usage
+on Codex. So he has used 285
+billion tokens in total. To put it in
+perspective, this is about 194,000 Harry
+Potter series, 400,000 Lord of the
+Rings, and 250,000 Bibles combined. So,
+this is the amount of tokens he has
+used. And the usage cost for that is
+$51,000. So, most of us won't have this
+enormous usage. But uh yeah, that's the
+idea. The idea is that he keeps Codex
+running for hours. So, he give it all
+the context it needs, all the tests that
+it needs to generate. the iteration
+keeps running until the refactor is done
+or until the feature is implemented.
+It's very similar to the Ralph Wigum
+thing, but it's just done in Codex. So,
+if we just take a look at all of that,
+we might be tempted to say that software
+engineering is solved. Programming is
+not needed anymore. But actually, there
+are some still difficult parts and he
+only is able to do that because of his
+knowledge about programming and about
+his extensive experience of what looks
+good and what's not and how to steer the
+model to come up with the best
+solutions. For example, here he mentions
+picking the right dependency and
+framework to set on is something I
+invest quite some time on. Is this
+well-maintained? You want the agent to
+use libraries that are well-maintained.
+How about peer dependencies? Is it
+popular? So, will it have enough world
+knowledge so agents have an easy time?
+Uh equally, system design. Will we
+communicate via the websocket, HTML?
+What do I put into the server and what
+into the client? Often, these are things
+that are a bit harder to explain to a
+model and where research and thinking
+pays off. There's still the human part.
+There's still this experience of how the
+system actually work. What are the
+design decisions? For example, if you
+don't know what he's talking about, you
+will not even ask the question whether
+to put some component on server versus
+client for example. So if you don't know
+that, you will just maybe after one two
+weeks get some like performance
+degradation, you will not even
+understand why this happened to begin
+with. But if you know from the
+beginning, you can just design and
+architect the system in a much better
+way. And uh yeah, so that's what he's
+talking about like to do the to do the
+research properly and the system design
+properly will pay off in the long run.
+So yeah, that was all. I I hope you
+learned from it. Thank you for watching.
+See you in the next one. Bye-bye.

@@ -1,0 +1,289 @@
+Peter Steinberger, the creator of
+Clawbot, which just changed its name to
+Maltbot and then as of this morning is
+now called OpenClaw, I believe, just
+went on the Pragmatic Engineer podcast
+and gave a banger podcast about how he
+built Claudebot, and then his thoughts
+on kind of the future of AI development
+and development in general. I highly
+recommend that you go over to the
+Pragmatic Engineer channel, which is a
+great channel, and watch that full
+podcast if you're into knowing how great
+engineers build stuff. There are three
+takeaways from that podcast that
+directly influence how I'm building out
+the rest of the build anything app and I
+thought I'd share those with you so you
+can weave those into your development
+process. The first one is parallel agent
+coding loops. So he talked about this
+and he actually used five to 10 agents
+while he's building out Clawbot which is
+not a surprise from somebody who's
+building out something like Claudebot or
+OpenClaw. But here's one way that you
+can think of doing this and there's
+three distinct different types of agents
+that you can use. The first agent is a
+builder agent. The second agent is like
+a pair programming agent that checks the
+code for the first agent. And the third
+agent is like an alignment agent or a
+synthesis agent. The first thing you
+want to do is break your app into
+different sections that don't really
+overlap with each other. So like maybe
+one section is your onboarding flow for
+users and another section is your
+settings management and another section
+is maybe you're have an inbox app that
+you're building. It's important that you
+separate these out because it just makes
+it cleaner and you don't have one agent
+that's trying to write code that's
+overlapping with the code from another
+agent. So the more you can separate
+these out, the easier it'll be for you.
+And what you want to do is take a prompt
+and assign agent one to a specific area.
+So if you're setting up a settings area,
+you have one builderbot, so A1 here, and
+their job is to build whatever your
+prompt says. And then it's going to
+build that. And then your second little
+buddy helper agent is going to come back
+and check the code of that agent. So
+[snorts] what you're going to do is
+you're going to fire off the prompt, get
+that that agent to start coding, and
+then you're going to move on to your
+second agent. This is in a separate part
+of the app. If this was working on
+settings, say this one's working on the
+onboarding flow, and you're going to
+have your second app start working on
+the onboarding flow, and then have your
+second buddy helper start uh reviewing
+the code for this. So it looks like
+this. You trigger this one, it starts
+working. You come and you give this one
+a prompt and it starts working. You come
+and give this one a prompt and it starts
+working. You go all the way around the
+loop. And by the time you're done with
+the last loop, this first agent is
+completed. Since you've been monitoring
+it the whole time, you've had the code
+checked. And you go through an entire
+loop like this where they all get to
+finish their respective builds. And in
+between each one of those, you have an
+alignment agent. Look at the code and
+see if the code from any of those
+individual agents are going to screw
+anything up when all of that code comes
+together. You can do this in more than
+one app, too. So, if you're building
+several apps at a time, like many of us
+are, you can set up your different apps
+to where you're building one app with
+two or three agents, the second app with
+two or three agents, the third app with
+two or three agents, and you build out
+three loops like this. So, you're
+building three apps at a time. you'll
+need your caffeine and there's a lot of
+context switching. But with the agents
+doing most of the work, it kind of frees
+you up to think about the larger system
+type things and how you're prompting and
+how your app actually serves the people
+and what problems it solves because
+you're just having these agents go
+around and build things in loops. The
+second thing you talked about is how he
+does pull request. So he's working on
+this application and there's a lot of
+people putting in different pull
+requests which if you don't know what
+that is, it's just there's different
+people or it could be different agents
+working on an application and they all
+have different pieces of code and at
+some point in time all that code needs
+to come back into the main codebase. And
+to do that they open up these things
+called pull requests which is pretty
+much just saying hey I've got this piece
+of code can we add it to the app? Now,
+the way this has always been done in the
+past is you open up a pull request and
+you go through and you review things
+line by line and then if it passes, you
+stack that on top of your app and then
+you add it to your app. Peter says he's
+getting away from this model and he
+really talks a lot about something
+called weaving your app or sculpting
+your app. And let me talk tell you a
+little about this because I think it's a
+great idea. He doesn't care about pull
+requests that much anymore. What he's
+really saying is he cares about how a
+agent or a person arrived at the
+conclusion. So the way I took what he
+said was he sees a pull request almost
+as like a suggestion. Here's a way you
+could build the app. And he will take
+those pull requests and what he actually
+wants to see is not just the code that
+somebody is submitting, but he wants to
+see the prompt that generated that code
+and how they arrived at their
+conclusion. Then what he will do is
+actually look at the code with an agent
+and then kind of like cherrypick bits
+and pieces of that code and have a
+discussion about how that code might
+influence the main branch and then bring
+in different parts of the code or maybe
+even rewrite it completely and take that
+as a suggestion and say okay now I'm
+going to build this out in main. I think
+this is a great idea because I can
+envision a time in the future, and I'm
+actually going to try to play around
+with this a little bit more this weekend
+if I have time, is to where instead of
+having one pull request, maybe you open
+up three or four branches off your main
+line, and you have agents build things
+with slightly different prompts that are
+just kind of loose prompts where you're
+not being real explicit about how to
+build it. Just get three or four
+different agents familiar with your
+codebase. You can run the init statement
+and make sure you're pointing them to
+your cloud.md file. And what you would
+do is have them all build something for
+the app and then you would look at that
+code that they have and instead of
+saying, "Okay, I'm going to go through
+and check it line by line," you have
+another agent that reviews all that
+code, considers the consequences of what
+it would take to bring it in and then
+take only the best parts of that code
+and merge it into the main part of your
+app as you know the official version of
+your application. You can do this
+already with tools like Claude. And I
+know that cursor has a feature where you
+can have multiple versions of an agent's
+response, but I plan on using this a lot
+more and changing the way I think about
+pull requests because if I'm being
+honest, I hate doing pull requests. I'm
+a vibe coder at heart and if it was up
+to me, I would just push everything on
+main and vibe code away, even if that's
+reckless and irresponsible at times. And
+the third thing you talked about was
+like sculpting versus waterfall. And I
+was really glad that he brought this up
+because as somebody who's been building
+software for a long time and has been
+deep in, you know, waterfall and agile
+conversations and building software, the
+way we used to build software was we
+would write up a huge specification.
+Then you would give that to a team of
+engineers and they would go implement
+it. And if you weren't right, you had
+this big long gap between when you
+actually built something and when it got
+released. And this causes all sorts of
+problems because if you're wrong, well,
+you've already spent tens of thousands,
+if not hundreds of thousands of dollars
+building some feature that's terrible.
+The reason I'm glad he mentioned this is
+because today I see a lot of people
+talking about specs and building up big
+elaborate specs. And it to me almost
+feels like the waterfall method is being
+brought back into AI development, which
+is the last thing we actually want. I
+know what I'm trying to do with my app
+right now is get completely away from
+building specs. And in the build
+anything app, I'm making it weird.
+You're just pretty much describing the
+spirit of a problem. And I know that
+sounds weird, but you're describing an
+app and you're just describing a
+problemcape. And that's the information
+that you're actually giving to the AI
+agents and then you're working with them
+to come up with solutions. This is way
+more agile than even agile was. And you
+get a lot more opinions. So instead of
+saying this is the answer to a problem,
+you're giving a bunch of context to all
+these agents in the build anything app
+and what's actually happening is is
+they're responding back to you in
+different ways, multiple ways you could
+solve a single problem instead of saying
+here's the problem. Here's how you're
+going to solve it. Go build it. So this
+gives you way more degrees of freedom as
+a builder. Instead of thinking you're so
+smart that you can come up with like the
+best answer, you you do the opposite of
+that and you say, "I'm not really sure.
+Let me try out four or five different
+answers." With as powerful as these
+coding agents are becoming, that's the
+way you can go. It doesn't matter if the
+code is perfect at first. You get to
+look at fully built out solutions from
+four to five like senior developer,
+junior developer type of agents. It
+sounds like Peter has been through some
+of the same type of uh waterfall
+methodology in the past and definitely
+feels that pain and I was really glad to
+see that a engineering leader like him
+is bringing stuff like this to the
+forefront because a lot of people are
+getting into coding now that have not
+been building applications for the past
+10 year and have not done that with a
+corporation. So you'll get these people
+that are doing great with vibe coding.
+you know, even if it's not the best code
+ever, they're getting into coding, which
+is what we all want. But then you'll see
+all these people that are saying, "We'll
+build these huge specs and specify
+everything, then just give this to the
+agent." And I think that's the wrong way
+to build software, and that will not be
+the way that we're doing it most
+effectively in the future. But that's
+all for today. Make sure you go over and
+watch the full podcast at the Pragmatic
+Engineer channel. It was great. It
+influenced the way I'm building out the
+Build Anything app. And if you want to
+test out the build anything app or get
+on the beta test list, go to
+ericbefor.com and you also get the
+conductor framework there for free when
+you sign up. You can use that in any
+codebase you want. But that's all for
+today. Thank you for watching.

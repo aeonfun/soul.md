@@ -1,0 +1,15 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataObjectResponseXUser.json",
+  "data": {
+    "user_id": "25401953",
+    "handle": "steipete",
+    "name": "Peter Steinberger 🦞",
+    "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n",
+    "followers_count": 496773,
+    "following_count": 2339
+  },
+  "meta": {
+    "credits_used": 2,
+    "cached": false
+  }
+}
