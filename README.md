@@ -227,6 +227,22 @@ What makes this one distinctive: tool casing as identity signal (lowercase `code
 
 ---
 
+## In the Wild
+
+Production deployments built on this methodology.
+
+### vgr_zirp — Ribbonfarm's resurrected oracle
+A retrieval-augmented Q&A system that answers in Venkatesh Rao's intellectual voice, deployed at ribbonfarm.com. Built by the Ribbonfarm team using a modified soul.md approach as the persona layer over a RAG pipeline (Voyage embeddings → Pinecone → Claude Sonnet on Cloudflare Workers).
+
+What's interesting about this implementation:
+- **LEXICON.md** — a third persona file with top 50 high-confidence coinages + definitions, letting the model reference precise jargon without retrieval
+- **Empirically-derived topic clusters** — 708 post summaries clustered into 15 topics rather than hand-authoring worldview sections (useful when the corpus is large)
+- **Era-by-era voice evolution** in STYLE.md — captures how voice shifted over time, not just a snapshot
+
+→ Writeup: [ribbonfarm.com/vgr_zirp_tech](https://ribbonfarm.com/vgr_zirp_tech/) · [contraptions.venkateshrao.com](https://contraptions.venkateshrao.com/p/ribbonfarm-resurrected)
+
+---
+
 ## Contribute Your Soul
 
 Fork this repo, build your soul using the templates, host it publicly, and open a PR adding yourself to the Examples section — one paragraph bio + link + a few lines on what makes your soul spec distinctive.
