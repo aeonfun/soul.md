@@ -55,7 +55,6 @@ Copy the templates and fill them in:
 ```
 SOUL.template.md  → SOUL.md
 STYLE.template.md → STYLE.md
-SKILL.template.md → SKILL.md
 ```
 
 ---
@@ -124,7 +123,6 @@ Also works with any model via system prompt — see [Using With Other Tools](#us
 your-soul/
 ├── SOUL.md           ← Who you are (identity, worldview, opinions)
 ├── STYLE.md          ← How you write (voice, syntax, patterns)
-├── SKILL.md          ← Operating modes (tweet, essay, chat, etc.)
 ├── MEMORY.md         ← Session memory for continuity across conversations
 ├── data/             ← Raw source material
 │   ├── writing/
