@@ -249,6 +249,8 @@ Fork this repo, build your soul using the templates, host it publicly, and open 
 
 What makes a contribution worth including: real opinions (not placeholders), a `STYLE.md` someone could actually calibrate from, and at least some examples.
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — structure, the merge bar, validation patterns, and the ethics note for public-figure souls.
+
 [Open a PR →](https://github.com/aaronjmars/soul.md/pulls)
 
 ---
