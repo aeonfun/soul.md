@@ -1,0 +1,18 @@
+{
+  // Soul files are intentionally raw — long lines, bare URLs, inline HTML,
+  // and placeholder templates are by design. So we don't enforce prose style.
+  // We only enforce link/reference integrity, the one thing that has actually
+  // broken in this repo before (see commit "remove broken SKILL.template.md
+  // reference from README"). This pairs with the lychee link check in CI.
+  "config": {
+    "default": false,
+    "MD011": true, // no reversed link syntax  (text)[url]
+    "MD039": true, // no spaces inside link text [ text ](url)
+    "MD042": true, // no empty links []() / [text]()
+    "MD052": true, // reference links must have a matching definition
+    "MD053": true, // every link/image reference definition must be used
+    "MD054": true  // disallowed malformed link/image styles
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules"]
+}

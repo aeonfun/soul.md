@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.jsonc"
+      - "scripts/check-links.mjs"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - ".markdownlint-cli2.jsonc"
+      - "scripts/check-links.mjs"
+      - ".github/workflows/ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    name: Lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v23.2.0
+        # Rules and scope come from .markdownlint-cli2.jsonc. Soul files are
+        # intentionally raw prose, so only link/reference integrity is enforced.
+
+  links:
+    name: Check relative links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Verify relative links in maintained docs resolve
+        run: node scripts/check-links.mjs
