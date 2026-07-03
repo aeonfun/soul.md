@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/soul.jpg" alt="SOUL.md" width="120" />
+  <img src="../img/soul.jpg" alt="SOUL.md" width="120" />
 </p>
 
 <h1 align="center">SOUL.MD</h1>
@@ -14,7 +14,7 @@
 
 ## What Is This?
 
-<img src="img/soul-identity.jpg" alt="Soul Identity" width="100%" />
+<img src="../img/soul-identity.jpg" alt="Soul Identity" width="100%" />
 
 A soul file captures who you are in a format AI agents can embody. Not a chatbot that *talks about you* — an AI that *thinks and speaks as you*.
 
@@ -32,7 +32,7 @@ The goal: someone reading your `SOUL.md` should be able to predict your takes on
 
 ## Quick Start
 
-<img src="img/soul-builder.jpg" alt="Soul Builder Flow" width="100%" />
+<img src="../img/soul-builder.jpg" alt="Soul Builder Flow" width="100%" />
 
 **Option 1 — Build from scratch**
 ```
@@ -63,7 +63,7 @@ examples/bad-outputs.template.md    → examples/bad-outputs.md
 
 ## Best Used With Aeon
 
-<img src="img/soul-sources.jpg" alt="Soul + Aeon" width="100%" />
+<img src="../img/soul-sources.jpg" alt="Soul + Aeon" width="100%" />
 
 [**Aeon**](https://github.com/aaronjmars/aeon) is an autonomous agent on GitHub Actions, powered by Claude Code. 68 skills across research, dev tooling, crypto monitoring, and productivity — all running in the background on a cron schedule.
 
@@ -119,7 +119,7 @@ Also works with any model via system prompt — see [Using With Other Tools](#us
 
 ## File Structure
 
-<img src="img/soul-stack.jpg" alt="Soul Stack" width="100%" />
+<img src="../img/soul-stack.jpg" alt="Soul Stack" width="100%" />
 
 ```
 your-soul/
@@ -202,35 +202,35 @@ YC President & CEO, investor, builder, SF political figure. A decade of public v
 
 What makes this one distinctive: a Five Modes framework captures the range — indie hacker energy, YC president institutional voice, SF political brawler, motivational coach, investor/analyst. Includes documented contradictions, register-switch triggers, and a weak-model test (gpt-4o-mini, 38.5/48). Built autonomously by [Daydreams agent #44693](https://market.daydreams.systems).
 
-→ [View soul files](examples/garry-tan/)
+→ [View soul files](../examples/garry-tan)
 
 ### @karpathy
 ML researcher, educator, and builder. OpenAI founding member, former Sr. Director of AI at Tesla, founder of Eureka Labs. Creator of nanoGPT, llm.c, micrograd, and the Zero-to-Hero YouTube series.
 
 What makes this one distinctive: heavy raw-data grounding — 13 blog posts, 12 YouTube transcripts, 8 repo READMEs, and 200 live tweets all checked in under `data/`. Five-mode range (Teacher / Hacker-Builder / ML Philosopher / Industry Insider / Nerd), explicit tensions section, 12 verbatim quote anchors with source citations, and three validation layers (prediction test + weak-model test scoring 40/48 on gpt-4o-mini + grader checklist).
 
-→ [View soul files](examples/karpathy/)
+→ [View soul files](../examples/karpathy)
 
 ### @VivianBala
 Singapore's Minister for Foreign Affairs since 2015. Eye surgeon by training, technologist by inclination, diplomat by trade. Public voice across UNGA, Aspen, CFR, Committee of Supply, and a decade of MFA archive transcripts.
 
 What makes this one distinctive: a small-state foreign-policy register where structure is performed out loud — pre-announced ("let me make three points"), reset to first principles when an interlocutor drifts, anchored to a four-line doctrine (*useful, not made use of; refuse to choose; foreign policy begins at home; politics stops at the water's edge*). 12 worldview items, 5 modes, 8 documented tensions, 14 calibration samples + 12 verbatim verified quote anchors with source URLs, and a 7-question grader checklist (pass ≥ 6/7). Built entirely from public material with an explicit ethical note that this is a derivative model of public voice, not impersonation.
 
-→ [View soul files](examples/vivian-balakrishnan/)
+→ [View soul files](../examples/vivian-balakrishnan)
 
 ### @VitalikButerin
 Co-founder of Ethereum, mechanism-design generalist, originator of d/acc. Russian-born, Canadian, stateless by temperament. A fifteen-year public blog (vitalik.eth.limo) spanning cryptography, public-goods funding, governance, AI risk, and longevity.
 
 What makes this one distinctive: a soul built around *understatement* — the spec's defining rule is that he almost never asserts without a hedge or a probability. Five modes (Cryptographer-Engineer / Mechanism Designer / d/acc Futurist / Movement Steward / Dry Online Poster), 8 documented tensions (built a giant financial asset but disdains speculation; most centralizing force in Ethereum while working to reduce his own influence), and signature rhetorical moves baked into STYLE.md: disambiguate first ("decentralization is three things"), name the failure mode before the solution, steelman then disagree, quantify the hedge, redirect price to purpose. 14 calibration samples + 4 verbatim quotes verified against his dated essays, a 12-prompt prediction test, and a 7-question grader checklist. Explicit ethics note: he refuses price calls and token endorsements *because* his words move markets — the model must not manufacture either.
 
-→ [View soul files](examples/vitalik-buterin/)
+→ [View soul files](../examples/vitalik-buterin)
 
 ### @steipete
 Austrian iOS-dev-turned-agentic-engineering-builder. Founder of PSPDFKit (acquired), creator of OpenClaw 🦞, joined OpenAI in February 2026 to bring agents to everyone.
 
 What makes this one distinctive: tool casing as identity signal (lowercase `codex`, capitalized `OpenClaw`), receipts-everywhere voice anchored to numbers / versions / named tools, and the lobster register ("the claw is the law" / 🦞) flagged as context-specific so forced lobster outside OpenClaw / single-user / local-first contexts is treated as a tell. Reproducible data pipeline: 47 blog posts, 16 README/VISION/AGENTS files, 8 podcast transcripts, 100 X posts via surf-ai MCP. Validated by automated weak-model test scoring 39/48 (3.25/4 PASS) on `gpt-4o-mini` via OpenRouter.
 
-→ [View soul files](examples/steipete/)
+→ [View soul files](../examples/steipete)
 
 ---
 
