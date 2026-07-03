@@ -107,5 +107,5 @@ via PVR, or open an issue for a takedown request.
 ## License
 
 By contributing, you agree that your contributions are licensed under the
-repository's [LICENSE](LICENSE). Thanks for helping make identity composable,
+repository's [LICENSE](../LICENSE). Thanks for helping make identity composable,
 forkable, and evolvable.
