@@ -7,7 +7,7 @@
 <p align="center">
   <strong>The best way to build a personality for your agent.</strong><br>
   Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
-  Best used with <a href="https://github.com/aaronjmars/aeon">Aeon</a> — background intelligence that evolves with you.
+  Best used with <a href="https://github.com/aeonfun/aeon">Aeon</a> — background intelligence that evolves with you.
 </p>
 
 ---
@@ -65,7 +65,7 @@ examples/bad-outputs.template.md    → examples/bad-outputs.md
 
 <img src="../img/soul-sources.jpg" alt="Soul + Aeon" width="100%" />
 
-[**Aeon**](https://github.com/aaronjmars/aeon) is an autonomous agent on GitHub Actions, powered by Claude Code. 68 skills across research, dev tooling, crypto monitoring, and productivity — all running in the background on a cron schedule.
+[**Aeon**](https://github.com/aeonfun/aeon) is an autonomous agent on GitHub Actions, powered by Claude Code. 68 skills across research, dev tooling, crypto monitoring, and productivity — all running in the background on a cron schedule.
 
 Soul files slot directly into Aeon. Copy your soul into `soul/` in your Aeon repo, add a few lines to `CLAUDE.md`, and every skill Aeon runs — articles, digests, tweets, research briefs — gets written in your voice. No per-skill config. Identity propagates automatically.
 
@@ -74,7 +74,7 @@ Why this pairing works:
 - **Soul files handle the who** — voice, worldview, opinions, style
 - Together you get a background agent that doesn't just work for you — it *sounds* like you
 
-Setup takes 2 minutes. See Aeon's [Soul section](https://github.com/aaronjmars/aeon#soul-optional) for details.
+Setup takes 2 minutes. See Aeon's [Soul section](https://github.com/aeonfun/aeon#soul-optional) for details.
 
 ---
 
@@ -102,7 +102,7 @@ Soul files are plain markdown — if an agent can read files, it can embody you.
 
 | Framework | Language | Stars |
 |-----------|----------|-------|
-| [Aeon](https://github.com/aaronjmars/aeon) | YAML/Markdown | — |
+| [Aeon](https://github.com/aeonfun/aeon) | YAML/Markdown | — |
 | [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
 | [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
 | [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
@@ -166,7 +166,7 @@ Or point any LLM at your folder and have it read:
 
 Notable events get appended to `MEMORY.md`, giving your soul continuity across sessions.
 
-For always-on operation, pair with [Aeon](https://github.com/aaronjmars/aeon) — your soul files feed into every skill automatically, so background tasks (digests, articles, tweets, monitoring alerts) all carry your voice without any extra prompting.
+For always-on operation, pair with [Aeon](https://github.com/aeonfun/aeon) — your soul files feed into every skill automatically, so background tasks (digests, articles, tweets, monitoring alerts) all carry your voice without any extra prompting.
 
 ---
 
@@ -258,13 +258,13 @@ What makes a contribution worth including: real opinions (not placeholders), a `
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — structure, the merge bar, validation patterns, and the ethics note for public-figure souls.
 
-[Open a PR →](https://github.com/aaronjmars/soul.md/pulls)
+[Open a PR →](https://github.com/aeonfun/soul.md/pulls)
 
 ---
 
 ## Aeon Token
 
-SOUL.md is affiliated with the [Aeon](https://github.com/aaronjmars/aeon) project and the AEON token.
+SOUL.md is affiliated with the [Aeon](https://github.com/aeonfun/aeon) project and the AEON token.
 
 Contract: [`0xbf8e8f0e8866a7052f948c16508644347c57aba3`](https://bankr.bot/agents/0xbf8e8f0e8866a7052f948c16508644347c57aba3)
 
@@ -280,5 +280,5 @@ The key challenge is *subject continuity*: the uploaded consciousness must feel 
 
 <p align="center">
   <em>Your identity is now composable. Forkable. Evolvable.</em><br>
-  Works with <a href="https://github.com/aaronjmars/aeon">Aeon</a>, Claude Code, OpenClaw, and any agent that can read markdown.
+  Works with <a href="https://github.com/aeonfun/aeon">Aeon</a>, Claude Code, OpenClaw, and any agent that can read markdown.
 </p>

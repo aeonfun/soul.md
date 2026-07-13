@@ -13,7 +13,7 @@ covers both, and how to report a problem privately.
 **Please don't open a public issue for a security problem.** Use GitHub's
 **Private Vulnerability Reporting (PVR)** instead:
 
-➡️ **[Report a vulnerability](https://github.com/aaronjmars/soul.md/security/advisories/new)**
+➡️ **[Report a vulnerability](https://github.com/aeonfun/soul.md/security/advisories/new)**
 
 (Repo → **Security** tab → **Report a vulnerability**.) This opens a private
 advisory that only the maintainers can see — never a public issue.
@@ -43,7 +43,7 @@ disclosure. We'll credit you unless you'd rather stay anonymous.
 ## Supported versions
 
 The spec, templates, and skill are maintained on the `main` branch of
-[`aaronjmars/soul.md`](https://github.com/aaronjmars/soul.md). Fixes land there.
+[`aeonfun/soul.md`](https://github.com/aeonfun/soul.md). Fixes land there.
 
 | Version | Supported |
 |---------|-----------|

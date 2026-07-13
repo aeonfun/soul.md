@@ -97,7 +97,7 @@ enforced — not style.
 ## Reporting bugs & requesting features
 
 Not sure whether something belongs?
-[Open an issue](https://github.com/aaronjmars/soul.md/issues) and ask before
+[Open an issue](https://github.com/aeonfun/soul.md/issues) and ask before
 investing the work.
 
 **Found a security or privacy problem** (injection in the builder, or a soul that
