@@ -20,7 +20,7 @@ import time
 import urllib.request
 from html.parser import HTMLParser
 
-UA = "Mozilla/5.0 (compatible; soul-garrytan/1.0; +https://github.com/aaronjmars/soul.md)"
+UA = "Mozilla/5.0 (compatible; soul-garrytan/1.0; +https://github.com/aeonfun/soul.md)"
 OUT = pathlib.Path(__file__).parent.parent / "data" / "writing"
 OUT.mkdir(parents=True, exist_ok=True)
 

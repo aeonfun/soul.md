@@ -102,4 +102,4 @@ People, coinages, tools, and concepts that shape his voice — see `data/influen
 
 ## License
 
-Public corpus is reproduced for educational / soul-file purposes under fair use. Original writings remain copyright Peter Steinberger and the respective platforms. See `aaronjmars/soul.md` repo for the umbrella project license.
+Public corpus is reproduced for educational / soul-file purposes under fair use. Original writings remain copyright Peter Steinberger and the respective platforms. See `aeonfun/soul.md` repo for the umbrella project license.

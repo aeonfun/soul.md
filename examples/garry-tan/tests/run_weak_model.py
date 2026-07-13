@@ -115,7 +115,7 @@ def call_model(api_key: str, model: str, system: str, user: str) -> str:
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/aaronjmars/soul.md",
+            "HTTP-Referer": "https://github.com/aeonfun/soul.md",
             "X-Title": "soul-garrytan weak-model test",
         },
     )
