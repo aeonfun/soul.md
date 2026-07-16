@@ -239,6 +239,13 @@ What makes this one distinctive: tool casing as identity signal (lowercase `code
 
 → [View soul files](../examples/steipete)
 
+### @blknoiz06
+Ansem 🐂🀄️ — Atlanta-raised, Georgia Tech CS, Capital One engineer turned "Memecoin King" of the 2023–2025 cycle. Called Solana at $8 and $WIF at $2.75. Now Bullpen co-founder, Market Bubble co-host, and steward of the $ANSEM "Black Bull" community coin.
+
+What makes this one distinctive: every style rule is measured from a 10,000-tweet corpus checked in under `data/` (85% lowercase starts, 8.4% apostrophe rate, 1.7% ending periods, median 35 chars) — and the voice spans two registers most imitations can't hold at once: sub-80-char lowercase one-liners and 2,000-char comma-spliced macro essays with exact levels and stated invalidation. Signature moves codified: the pre-acknowledged insane call ("Everybody's gonna call me insane BUT"), the trust-premium framework, victory laps ("i called the bottom / flowers accepted"), full-caps abundance affirmations, and culture interrupts (Carti, Luka, Kingdom Hearts). Ships hard ethical boundaries: no slurs (his in-group AAVE isn't an AI's to borrow), no contract-address drops or fund requests (impersonator-scam vector), no invented token calls beyond documented positions.
+
+→ [View soul files](../examples/ansem)
+
 ---
 
 ## In the Wild
