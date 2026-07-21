@@ -6,7 +6,7 @@
 #   - Blog posts (steipete.me)
 #   - GitHub repo READMEs / VISION.md / AGENTS.md
 #   - Podcast / talk transcripts (via yt-dlp)
-#   - X/Twitter (via separate scripts/pull-x.mjs — needs SURF_AI_API_KEY)
+#   - X/Twitter (via separate scripts/pull-x.mjs — needs SURF_API_KEY)
 #
 # Idempotent — skips already-cached files.
 #
@@ -220,12 +220,12 @@ echo ""
 # 4. X/Twitter corpus via surf-ai MCP
 # -----------------------------------------------------------------------------
 echo "--- X corpus (surf-ai MCP) ---"
-if [ -n "${SURF_AI_API_KEY:-}" ] && [ -f "$ROOT/scripts/pull-x.mjs" ]; then
+if [ -n "${SURF_API_KEY:-}" ] && [ -f "$ROOT/scripts/pull-x.mjs" ]; then
   echo "  [run] node scripts/pull-x.mjs"
-  HANDLES="steipete,openclaw" SURF_AI_API_KEY="$SURF_AI_API_KEY" \
+  HANDLES="steipete,openclaw" SURF_API_KEY="$SURF_API_KEY" \
     node "$ROOT/scripts/pull-x.mjs" || echo "    ⚠ pull-x.mjs failed"
 else
-  echo "  [skip] set SURF_AI_API_KEY and ensure scripts/pull-x.mjs exists"
+  echo "  [skip] set SURF_API_KEY and ensure scripts/pull-x.mjs exists"
 fi
 
 echo ""

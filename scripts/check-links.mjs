@@ -5,9 +5,10 @@
 // exists). External URLs and same-page anchors are out of scope here —
 // markdownlint handles link *syntax*; this handles link *targets*.
 //
-// Scope: top-level markdown only. The examples/ subtrees carry raw, third-party
-// source material whose internal links point at their original repo layouts, so
-// they are intentionally excluded.
+// Scope: hand-maintained docs only. examples/*/data/ holds raw, third-party
+// source material whose internal links point at their original repo layouts,
+// and the persona files (SOUL/STYLE/MEMORY, examples/*.md) contain sample links
+// inside illustrative output — neither is ours to keep resolvable.
 //
 // Usage: node scripts/check-links.mjs
 
@@ -16,8 +17,29 @@ import { dirname, resolve, join } from "node:path";
 
 const ROOT = resolve(process.cwd());
 
-// Maintained docs live at the repo root.
-const docs = readdirSync(ROOT).filter((f) => f.endsWith(".md"));
+const mdIn = (dir) => {
+  const abs = join(ROOT, dir);
+  if (!existsSync(abs)) return [];
+  return readdirSync(abs)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => (dir ? `${dir}/${f}` : f));
+};
+
+// Root templates/specs, community docs, the folder guides, and the per-example
+// entry points a reader actually navigates from.
+const exampleDirs = readdirSync(join(ROOT, "examples"), { withFileTypes: true })
+  .filter((e) => e.isDirectory())
+  .map((e) => e.name);
+
+const docs = [
+  ...mdIn(""),
+  ...mdIn(".github"),
+  "examples/_GUIDE.md",
+  "data/_GUIDE.md",
+  ...exampleDirs.flatMap((name) =>
+    ["README.md", "QUICKSTART.md"].map((f) => `examples/${name}/${f}`),
+  ),
+].filter((rel) => existsSync(join(ROOT, rel)));
 
 // Markdown inline links: [text](target)   and HTML attrs: src="..." href="..."
 const MD_LINK = /\[[^\]]*\]\(\s*(<[^>]+>|[^)\s]+)/g;
