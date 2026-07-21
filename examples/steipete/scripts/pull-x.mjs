@@ -35,7 +35,7 @@ mcp.stdout.on('data', (d) => {
         pending.delete(msg.id);
         resolve(msg);
       }
-    } catch (e) { /* ignore */ }
+    } catch { console.error(`non-JSON line from surf-mcp: ${line}`); }
   }
 });
 

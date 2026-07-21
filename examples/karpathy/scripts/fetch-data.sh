@@ -31,11 +31,11 @@ set -- $BLOG_URLS
 for slug in $BLOG_SLUGS; do
   url="$1"; shift
   outfile="$DATA/writing/${slug}.html"
-  if [ -f "$outfile" ]; then
+  if [ -f "$outfile" ] && [ -s "$outfile" ]; then
     echo "  [cached] $slug"
   else
     echo "  [fetch]  $slug"
-    curl -sL "$url" -o "$outfile" || echo "  [WARN] Failed to fetch $slug"
+    curl -fsSL --max-time 30 "$url" -o "$outfile" || echo "  [WARN] Failed to fetch $slug"
     sleep 0.5
   fi
 done
@@ -73,7 +73,7 @@ if command -v yt-dlp &>/dev/null; then
       echo "  [fetch]  $vid"
       yt-dlp --write-auto-sub --sub-lang en --skip-download \
         --output "$DATA/transcripts/${vid}" \
-        "https://www.youtube.com/watch?v=${vid}" 2>/dev/null || echo "  [WARN] No subs for $vid"
+        "https://www.youtube.com/watch?v=${vid}" || echo "  [WARN] Failed: $vid"
       sleep 1
     fi
   done
@@ -114,12 +114,12 @@ REPOS=(
 for repo in "${REPOS[@]}"; do
   slug="${repo//\//_}"
   outfile="$DATA/github/${slug}_README.md"
-  if [ -f "$outfile" ]; then
+  if [ -f "$outfile" ] && [ -s "$outfile" ]; then
     echo "  [cached] $repo"
   else
     echo "  [fetch]  $repo"
-    curl -sL "https://raw.githubusercontent.com/${repo}/master/README.md" -o "$outfile" 2>/dev/null \
-      || curl -sL "https://raw.githubusercontent.com/${repo}/main/README.md" -o "$outfile" 2>/dev/null \
+    curl -fsSL --max-time 30 "https://raw.githubusercontent.com/${repo}/master/README.md" -o "$outfile" \
+      || curl -fsSL --max-time 30 "https://raw.githubusercontent.com/${repo}/main/README.md" -o "$outfile" \
       || echo "  [WARN] Failed to fetch README for $repo"
     sleep 0.3
   fi

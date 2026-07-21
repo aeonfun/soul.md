@@ -177,7 +177,7 @@ HARD RULES:
         });
         const data = await response.json();
         if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
+          console.error(`  ERROR: ${JSON.stringify(data.error)}`);
           results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
           continue;
         }
@@ -201,7 +201,7 @@ HARD RULES:
         });
         const data = await response.json();
         if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
+          console.error(`  ERROR: ${JSON.stringify(data.error)}`);
           results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
           continue;
         }
@@ -254,7 +254,7 @@ HARD RULES:
         hasAnchor
       });
     } catch (err) {
-      console.log(`  FETCH ERROR: ${err.message}`);
+      console.error(`  FETCH ERROR: ${err.message}`);
       results.push({ ...test, score: 0, error: err.message });
     }
   }

@@ -97,7 +97,7 @@ for entry in "${BLOG_POSTS[@]}"; do
 done
 
 # Index page (lists posts)
-[ -f "$DATA/writing/index.html" ] || curl -fsSL "https://steipete.me/" -o "$DATA/writing/index.html" || true
+[ -f "$DATA/writing/index.html" ] || curl -fsSL "https://steipete.me/" -o "$DATA/writing/index.html" || echo "    ⚠ failed: index.html"
 
 echo ""
 
