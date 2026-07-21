@@ -110,14 +110,14 @@ Soul files are plain markdown — if an agent can read files, it can embody you.
 | Framework | Language | Stars |
 |-----------|----------|-------|
 | [Aeon](https://github.com/aeonfun/aeon) | YAML/Markdown | — |
-| [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
-| [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
-| [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
-| [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 25.3k |
-| [NanoClaw](https://github.com/qwibitai/nanoclaw) | TypeScript | 24k |
-| [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 14.9k |
-| [IronClaw](https://github.com/nearai/ironclaw) | Rust | 10.4k |
-| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Python | 8.7k |
+| [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 383k |
+| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Python | 218k |
+| [Nanobot](https://github.com/HKUDS/nanobot) | Python | 46k |
+| [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 32.3k |
+| [NanoClaw](https://github.com/qwibitai/nanoclaw) | TypeScript | 30.3k |
+| [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 29.7k |
+| [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 18k |
+| [IronClaw](https://github.com/nearai/ironclaw) | Rust | 12.5k |
 | Claude Code · OpenCode · Codex · Goose | various | — |
 
 Also works with any model via system prompt — see [Using With Other Tools](#using-with-other-tools).

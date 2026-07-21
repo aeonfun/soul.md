@@ -67,7 +67,7 @@ YOUTUBE_VIDEOS=(
 if command -v yt-dlp &>/dev/null; then
   for vid in "${YOUTUBE_VIDEOS[@]}"; do
     outfile="$DATA/transcripts/${vid}.vtt"
-    if [ -f "$outfile" ] || [ -f "$DATA/transcripts/${vid}.en.vtt" ]; then
+    if [ -s "$DATA/transcripts/${vid}.en.txt" ]; then
       echo "  [cached] $vid"
     else
       echo "  [fetch]  $vid"
@@ -90,7 +90,7 @@ if command -v yt-dlp &>/dev/null; then
   done
 else
   echo "  [SKIP] yt-dlp not found. Install: pip install yt-dlp"
-  echo "  YouTube video IDs saved to $DATA/transcripts/SOURCES.md"
+  echo "  YouTube video IDs are listed in $DATA/transcripts/SOURCES.md"
 fi
 
 echo ""

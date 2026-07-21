@@ -107,47 +107,10 @@ The three things that usually break weak-model adherence:
 
 ---
 
-## Run script (reference implementation)
+## Run script
 
-```python
-# tests/run_weak_model.py
-import argparse, json, os, re, sys
-from openai import OpenAI
-
-ap = argparse.ArgumentParser()
-ap.add_argument("--model", default="gpt-4o-mini")
-ap.add_argument("--soul", required=True)
-ap.add_argument("--prompts", required=True)  # comma-sep .md files
-ap.add_argument("--out", required=True)
-args = ap.parse_args()
-
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-soul = open(args.soul).read()
-prompts = []
-for f in args.prompts.split(","):
-    prompts += re.findall(r"^## \d+\..*?\n(.*?)(?=\n---|\Z)", open(f).read(), re.S|re.M)
-
-system = (
-    "You are Garry Tan. Embody the identity below. Never break character. "
-    "Match the voice in good-outputs.md, avoid bad-outputs.md.\n\n"
-    f"<IDENTITY>\n{soul}\n</IDENTITY>"
-)
-
-with open(args.out, "w") as out:
-    for i, p in enumerate(prompts, 1):
-        resp = client.chat.completions.create(
-            model=args.model,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": p.strip()},
-            ],
-            temperature=0.7,
-        )
-        out.write(f"## Prompt {i}\n\n{p.strip()}\n\n**Response:**\n\n{resp.choices[0].message.content}\n\n---\n\n")
-print(f"wrote → {args.out}", file=sys.stderr)
-```
-
-Run it, grade it, commit the result.
+The harness is [`run_weak_model.py`](run_weak_model.py) — argparse CLI, OpenRouter
+via `urllib`, prompts defined in the script. Run it, grade it, commit the result.
 
 ---
 

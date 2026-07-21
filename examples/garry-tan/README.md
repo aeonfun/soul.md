@@ -2,7 +2,6 @@
 
 A `soul.md` identity distillation for Garry Tan — co-founder of Posterous, founding partner of Initialized Capital, president and CEO of Y Combinator.
 
-This folder is structured to be dropped into `aeonfun/soul.md` at `examples/garry-tan/`.
 
 ## What's in here
 
@@ -48,7 +47,7 @@ python scripts/fetch_yt.py
 
 ```bash
 # From a project root, copy into a /soul directory and invoke
-claude --skill soul "write a tweet reacting to the latest OpenAI announcement"
+/soul write a tweet reacting to the latest OpenAI announcement
 ```
 
 The SKILL.md from the parent `soul.md` repo handles the embodiment logic.
