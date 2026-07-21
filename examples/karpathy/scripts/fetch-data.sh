@@ -25,7 +25,7 @@ echo ""
 echo "--- Fetching blog posts ---"
 
 BLOG_SLUGS="state-of-cv rnn-effectiveness ai-short-peek rl phd medium software-2.0 recipe biohacking-lite forward-pass blockchain lecun1989 microgpt"
-BLOG_URLS="https://karpathy.github.io/2012/10/22/state-of-computer-vision/ https://karpathy.github.io/2015/05/21/rnn-effectiveness/ https://karpathy.github.io/2015/11/14/ai/ https://karpathy.github.io/2016/05/31/rl/ https://karpathy.github.io/2016/09/07/phd/ https://karpathy.github.io/2018/01/20/medium/ https://karpathy.github.io/2017/01/25/software-2.0/ https://karpathy.github.io/2019/04/25/recipe/ https://karpathy.github.io/2020/06/11/biohacking-lite/ https://karpathy.github.io/2021/03/27/forward-pass/ https://karpathy.github.io/2021/06/21/blockchain/ https://karpathy.github.io/2022/03/14/lecun1989/ https://karpathy.github.io/2026/02/12/microgpt/"
+BLOG_URLS="https://karpathy.github.io/2012/10/22/state-of-computer-vision/ https://karpathy.github.io/2015/05/21/rnn-effectiveness/ https://karpathy.github.io/2015/11/14/ai/ https://karpathy.github.io/2016/05/31/rl/ https://karpathy.github.io/2016/09/07/phd/ https://karpathy.github.io/2018/01/20/medium/ https://karpathy.medium.com/software-2-0-a64152b37c35 https://karpathy.github.io/2019/04/25/recipe/ https://karpathy.github.io/2020/06/11/biohacking-lite/ https://karpathy.github.io/2021/03/27/forward-pass/ https://karpathy.github.io/2021/06/21/blockchain/ https://karpathy.github.io/2022/03/14/lecun1989/ https://karpathy.github.io/2026/02/12/microgpt/"
 
 set -- $BLOG_URLS
 for slug in $BLOG_SLUGS; do
@@ -118,9 +118,19 @@ for repo in "${REPOS[@]}"; do
     echo "  [cached] $repo"
   else
     echo "  [fetch]  $repo"
-    curl -fsSL --max-time 30 "https://raw.githubusercontent.com/${repo}/master/README.md" -o "$outfile" \
-      || curl -fsSL --max-time 30 "https://raw.githubusercontent.com/${repo}/main/README.md" -o "$outfile" \
-      || echo "  [WARN] Failed to fetch README for $repo"
+    # Branch and capitalisation both vary across these repos (char-rnn ships
+    # Readme.md on master), so try each combination before giving up.
+    fetched=""
+    for branch in master main; do
+      for name in README.md Readme.md readme.md; do
+        if curl -fsSL --max-time 30 \
+            "https://raw.githubusercontent.com/${repo}/${branch}/${name}" -o "$outfile"; then
+          fetched="$branch/$name"
+          break 2
+        fi
+      done
+    done
+    [ -n "$fetched" ] || echo "  [WARN] Failed to fetch README for $repo"
     sleep 0.3
   fi
 done

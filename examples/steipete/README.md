@@ -41,7 +41,8 @@ steipete-soul/
     └── x/
         ├── steipete.profile.json     ← @steipete profile (496k followers)
         ├── steipete.posts-original.json ← 100 timeline posts (filtered to 36 self-authored)
-        ├── steipete.replies.json
+        ├── steipete.replies.json     ← EMPTY ([]) — this pull failed silently and
+        │                                needs a re-run: SURF_API_KEY=... node scripts/pull-x.mjs
         ├── openclaw.profile.json     ← @openclaw profile
         ├── openclaw.posts-original.json ← 100 posts (59 openclaw-authored)
         ├── openclaw.replies.json     ← 100 replies
