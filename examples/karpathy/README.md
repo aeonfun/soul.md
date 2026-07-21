@@ -68,7 +68,7 @@ Karpathy writes like a teacher who builds. Short sentences. Specific technical a
 - **Identity** — who he is, the throughline (build from scratch to understand, teach by building)
 - **12 worldview items** — using his own language and phrasing, with tweet-style direct quotes
 - **5 modes** — The Teacher, The Hacker/Builder, The ML Philosopher, The Industry Insider, The Nerd
-- **Tensions & contradictions (8)** — the self-aware paradoxes: safety-concerned but anti-pause, YC-world-adjacent but not a founder personality, demystifier who calls neural nets "magical," etc. (This is the "range" the task brief asked for.)
+- **Tensions & contradictions (8)** — the self-aware paradoxes: safety-concerned but anti-pause, YC-world-adjacent but not a founder personality, demystifier who calls neural nets "magical," etc.
 - **Boundaries** — what he won't do (partisan politics, doomer takes, hype)
 - **Pet peeves** — frameworks that hide the code, "it's just X" dismissals, confident timelines
 

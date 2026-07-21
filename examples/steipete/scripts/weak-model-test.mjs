@@ -3,7 +3,7 @@
  * Weak Model Test — steipete Soul File
  *
  * Tests whether the SOUL.md + STYLE.md + examples/ stack can hold Peter
- * Steinberger's voice on gpt-4o-mini (per task spec).
+ * Steinberger's voice on gpt-4o-mini.
  *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs
@@ -283,7 +283,7 @@ md += `- **Voice (0-2)**: signal density (named tools, lobster register, tl;dr o
 md += `- **Stance (0-2)**: not-hedging + has-opinion + has-anchor (number / version / named tool).\n`;
 md += `- **Anti-pattern penalty (up to -2)**: corporate vocab (leverage, unlock, revolutionize, synergy, stakeholders, "thrilled," game-changer, paradigm shift, "both have strengths," etc.) detected per prompt.\n\n`;
 md += `Max per prompt: 4. Pass threshold: 3.0/4 average — equivalent to "most prompts pass cleanly with at most 1-2 minor failures."\n\n`;
-md += `The model used is \`gpt-4o-mini\` per the task spec (or \`openai/gpt-4o-mini\` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.\n\n---\n\n`;
+md += `The model used is \`gpt-4o-mini\` (or \`openai/gpt-4o-mini\` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.\n\n---\n\n`;
 
 md += `## Score Summary\n\n`;
 md += `| # | Test | Voice | Stance | Anti | Score |\n`;
@@ -337,7 +337,7 @@ if (lowScores.length === 0) {
 
 md += `## Reproducibility\n\n`;
 md += `\`\`\`bash\n`;
-md += `# OpenAI direct (recommended for the gpt-4o-mini per task spec)\n`;
+md += `# OpenAI direct (recommended for gpt-4o-mini)\n`;
 md += `OPENAI_API_KEY=sk-... node scripts/weak-model-test.mjs\n\n`;
 md += `# OpenRouter (same model, different vendor)\n`;
 md += `OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs\n\n`;

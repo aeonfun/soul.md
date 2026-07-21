@@ -3,13 +3,13 @@
  * Weak Model Test — Karpathy Soul File
  *
  * Tests whether the SOUL.md + STYLE.md stack can hold Karpathy's voice
- * on gpt-4o-mini (per task requirement).
+ * on gpt-4o-mini.
  *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs
  *   OPENAI_API_KEY=sk-... node scripts/weak-model-test.mjs  (native OpenAI)
  *
- * Default model: openai/gpt-4o-mini (as task specifies)
+ * Default model: openai/gpt-4o-mini
  * Override: MODEL=anthropic/claude-haiku-4-5 node scripts/weak-model-test.mjs
  */
 

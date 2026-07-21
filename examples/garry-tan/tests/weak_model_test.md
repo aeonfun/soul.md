@@ -147,7 +147,7 @@ with open(args.out, "w") as out:
 print(f"wrote → {args.out}", file=sys.stderr)
 ```
 
-Run it, grade it, commit the result. A passing run is part of the deliverable.
+Run it, grade it, commit the result.
 
 ---
 

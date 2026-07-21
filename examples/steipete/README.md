@@ -50,7 +50,7 @@ steipete-soul/
 
 ## Voice validation
 
-The soul stack is validated by an automated weak-model test on the model the task brief specifies (`gpt-4o-mini`):
+The soul stack is validated by an automated weak-model test on `gpt-4o-mini`:
 
 ```bash
 OPENROUTER_API_KEY=sk-or-... MODEL=openai/gpt-4o-mini node scripts/weak-model-test.mjs
