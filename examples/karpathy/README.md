@@ -115,7 +115,7 @@ Re-run the pipeline to refresh:
 
 ```bash
 bash scripts/fetch-data.sh                               # blogs + YouTube + GitHub
-SURF_API_KEY=sk-surf-... node ../../pull-x.mjs          # X refresh (see data/x/README.md)
+SURF_API_KEY=sk-surf-... node ../steipete/scripts/pull-x.mjs   # X refresh (see data/x/README.md)
 ```
 
 ---

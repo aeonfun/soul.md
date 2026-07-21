@@ -5,7 +5,6 @@
 
 import { spawn } from 'child_process';
 import { writeFileSync, mkdirSync } from 'fs';
-import { dirname } from 'path';
 
 const API_KEY = process.env.SURF_API_KEY || '';
 if (!API_KEY) { console.error('SURF_API_KEY required'); process.exit(1); }

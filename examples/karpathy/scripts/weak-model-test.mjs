@@ -304,7 +304,7 @@ if (openaiKey) {
 const result = await runTest(apiKey, model, backend);
 
 // Write results markdown
-const resultPath = join(ROOT, 'examples', 'weak-model-results.md');
+const resultPath = join(ROOT, 'tests', 'weak-model-results.md');
 let md = `# Weak Model Test Results\n\n`;
 md += `**Model**: \`${result.model}\` (${result.backend})\n`;
 md += `**Date**: ${new Date().toISOString().split('T')[0]}\n`;

@@ -27,20 +27,14 @@ from __future__ import annotations
 import json
 import os
 import pathlib
-import re
 import sys
 import time
 import urllib.parse
 import urllib.request
 
-HANDLE = "garrytan"
 USER_ID = "19301828"  # @garrytan, stable numeric id
 OUT = pathlib.Path(__file__).parent.parent / "data" / "x"
 OUT.mkdir(parents=True, exist_ok=True)
-
-
-def _slug(s: str, n: int = 40) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:n]
 
 
 def _write(tweet_id: str, date: str, text: str, source: str, reply_to: str | None) -> None:
