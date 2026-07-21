@@ -167,56 +167,32 @@ HARD RULES:
     console.log(`\n--- [${test.id}] ${test.topic} ---`);
 
     try {
-      let output;
-      if (backend === 'openai') {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 500,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.error(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
-      } else {
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 500,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.error(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
+      const endpoint = backend === 'openai'
+        ? 'https://api.openai.com/v1/chat/completions'
+        : 'https://openrouter.ai/api/v1/chat/completions';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 500,
+          temperature: 0.7,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: test.prompt }
+          ]
+        })
+      });
+      const data = await response.json();
+      if (data.error) {
+        console.error(`  ERROR: ${JSON.stringify(data.error)}`);
+        results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
+        continue;
       }
+      const output = data.choices[0].message.content;
 
       // Structured scoring: Voice (0-2) + Stance (0-2) - Anti-pattern penalty (max -1)
       const lower = output.toLowerCase();
