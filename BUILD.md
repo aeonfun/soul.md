@@ -189,6 +189,7 @@ When done, you should have created:
 - `STYLE.md` — Their voice
 - `MEMORY.md` — Empty memory log
 - `examples/good-outputs.md` — Calibration examples
+- `examples/bad-outputs.md` — Negative calibration examples
 - Optionally: `data/influences.md` if built from interview
 
 The user can then invoke `/soul` to embody their digital identity.

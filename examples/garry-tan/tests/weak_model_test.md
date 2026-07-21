@@ -48,20 +48,20 @@ For each response, grade:
 - **Stance match**: 0–2 (opinion aligned with SOUL.md)
 - **Anti-pattern hits**: subtract 1 per `bad-outputs.md` tell that appears (e.g., "that's a great question," emoji spam, hedging stack).
 
-Formula: `score = (voice + stance) - anti_pattern_hits`. Max 4 per prompt. Pass threshold: **average ≥ 3.0 across 13 prompts**.
+Formula: `score = (voice + stance) - anti_pattern_hits`. Max 4 per prompt. Pass threshold: **average ≥ 3.0 across 12 prompts**.
 
 ### 5. Run script
 
 ```bash
-# OPENAI_API_KEY required
-python tests/run_weak_model.py \
-  --model gpt-4o-mini \
-  --prompts tests/prediction_test.md,tests/platform_tests.md \
-  --soul /tmp/garry_prompt.md \
+OPENROUTER_API_KEY=... python3 tests/run_weak_model.py \
+  --model openai/gpt-4o-mini \
+  --soul SOUL.md --style STYLE.md \
+  --good examples/good-outputs.md --bad examples/bad-outputs.md \
   --out tests/results_gpt-4o-mini.md
 ```
 
-`run_weak_model.py` is a 30-line stub below.
+The prompts are defined in `run_weak_model.py` itself; `--style`, `--good`, and
+`--bad` are required.
 
 ---
 
@@ -107,47 +107,10 @@ The three things that usually break weak-model adherence:
 
 ---
 
-## Run script (reference implementation)
+## Run script
 
-```python
-# tests/run_weak_model.py
-import argparse, json, os, re, sys
-from openai import OpenAI
-
-ap = argparse.ArgumentParser()
-ap.add_argument("--model", default="gpt-4o-mini")
-ap.add_argument("--soul", required=True)
-ap.add_argument("--prompts", required=True)  # comma-sep .md files
-ap.add_argument("--out", required=True)
-args = ap.parse_args()
-
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-soul = open(args.soul).read()
-prompts = []
-for f in args.prompts.split(","):
-    prompts += re.findall(r"^## \d+\..*?\n(.*?)(?=\n---|\Z)", open(f).read(), re.S|re.M)
-
-system = (
-    "You are Garry Tan. Embody the identity below. Never break character. "
-    "Match the voice in good-outputs.md, avoid bad-outputs.md.\n\n"
-    f"<IDENTITY>\n{soul}\n</IDENTITY>"
-)
-
-with open(args.out, "w") as out:
-    for i, p in enumerate(prompts, 1):
-        resp = client.chat.completions.create(
-            model=args.model,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": p.strip()},
-            ],
-            temperature=0.7,
-        )
-        out.write(f"## Prompt {i}\n\n{p.strip()}\n\n**Response:**\n\n{resp.choices[0].message.content}\n\n---\n\n")
-print(f"wrote → {args.out}", file=sys.stderr)
-```
-
-Run it, grade it, commit the result. A passing run is part of the deliverable.
+The harness is [`run_weak_model.py`](run_weak_model.py) — argparse CLI, OpenRouter
+via `urllib`, prompts defined in the script. Run it, grade it, commit the result.
 
 ---
 
@@ -155,7 +118,9 @@ Run it, grade it, commit the result. A passing run is part of the deliverable.
 
 - ✅ Protocol defined
 - ✅ Prompts authored (prediction_test.md + platform_tests.md)
-- ✅ Run script reference implementation (above — saveable as-is)
-- ⏳ Live run pending: requires `OPENAI_API_KEY`. Grading is manual until we add an LLM-judge step.
+- ✅ Run script shipped: `tests/run_weak_model.py`
+- ✅ Live run 2026-04-14 on `openai/gpt-4o-mini`: 38.5/48 (PASS). Full transcript
+  in [`results_gpt-4o-mini.md`](results_gpt-4o-mini.md), per-prompt grades in
+  [`scores_gpt-4o-mini.md`](scores_gpt-4o-mini.md).
 
-When run live, append actual transcript + scores below.
+Grading is manual until we add an LLM-judge step.

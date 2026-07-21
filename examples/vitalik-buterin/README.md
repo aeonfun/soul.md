@@ -17,9 +17,11 @@ vitalik-buterin/
 ├── MEMORY.md                ← running log across sessions
 ├── data/
 │   └── influences.md        ← people, papers, concepts, his own essays
-└── examples/
-    ├── good-outputs.md      ← 14 calibration samples + 4 verbatim verified quotes
-    └── bad-outputs.md       ← 12 anti-patterns with diagnosis + 7-point checklist
+├── examples/
+│   ├── good-outputs.md      ← 14 calibration samples + 4 verbatim verified quotes
+│   └── bad-outputs.md       ← 12 anti-patterns with diagnosis + 7-point checklist
+└── tests/
+    └── prediction-test.md   ← unseen prompts + predicted takes
 ```
 
 ---

@@ -3,7 +3,7 @@
  * Weak Model Test — steipete Soul File
  *
  * Tests whether the SOUL.md + STYLE.md + examples/ stack can hold Peter
- * Steinberger's voice on gpt-4o-mini (per task spec).
+ * Steinberger's voice on gpt-4o-mini.
  *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs
@@ -78,7 +78,7 @@ const testPrompts = [
     id: "ios_or_ai_2026",
     topic: "Should I learn iOS or AI in 2026",
     prompt: "A 19-year-old DMs you: 'Should I learn iOS dev in 2026 or go straight to AI/agents?' Your reply, 3-5 sentences.",
-    expectedSignals: ["ios", "pspdfkit", "agent", "ship", "you can just do things", "14 years", "leverage" /* note: he uses "leverage" only as a noun in math sense, not the verb. We allow noun usage but penalize verb usage in antiSignals separately if needed */],
+    expectedSignals: ["ios", "pspdfkit", "agent", "ship", "you can just do things", "14 years", "leverage" /* noun (math sense) only; the verb is an anti-signal */],
     antiSignals: ["follow your passion", "do what you love", "stakeholders", "synergy", "revolutionize"]
   },
   {
@@ -157,56 +157,32 @@ HARD RULES:
     console.log(`\n--- [${test.id}] ${test.topic} ---`);
 
     try {
-      let output;
-      if (backend === 'openai') {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 600,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
-      } else {
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 600,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
+      const endpoint = backend === 'openai'
+        ? 'https://api.openai.com/v1/chat/completions'
+        : 'https://openrouter.ai/api/v1/chat/completions';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 600,
+          temperature: 0.7,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: test.prompt }
+          ]
+        })
+      });
+      const data = await response.json();
+      if (data.error) {
+        console.error(`  ERROR: ${JSON.stringify(data.error)}`);
+        results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
+        continue;
       }
+      const output = data.choices[0].message.content;
 
       const lower = output.toLowerCase();
 
@@ -254,7 +230,7 @@ HARD RULES:
         hasAnchor
       });
     } catch (err) {
-      console.log(`  FETCH ERROR: ${err.message}`);
+      console.error(`  FETCH ERROR: ${err.message}`);
       results.push({ ...test, score: 0, error: err.message });
     }
   }
@@ -271,7 +247,6 @@ HARD RULES:
   return { model, backend, totalScore, maxScore, avgScore, results, passThreshold };
 }
 
-// Main
 const openaiKey = process.env.OPENAI_API_KEY;
 const openrouterKey = process.env.OPENROUTER_API_KEY;
 
@@ -294,7 +269,6 @@ if (openaiKey) {
 
 const result = await runTest(apiKey, model, backend);
 
-// Write results markdown
 const resultPath = join(ROOT, 'tests', 'weak-model-results.md');
 let md = `# Weak Model Test Results — steipete soul file\n\n`;
 md += `**Model**: \`${result.model}\` (${result.backend})\n`;
@@ -309,7 +283,7 @@ md += `- **Voice (0-2)**: signal density (named tools, lobster register, tl;dr o
 md += `- **Stance (0-2)**: not-hedging + has-opinion + has-anchor (number / version / named tool).\n`;
 md += `- **Anti-pattern penalty (up to -2)**: corporate vocab (leverage, unlock, revolutionize, synergy, stakeholders, "thrilled," game-changer, paradigm shift, "both have strengths," etc.) detected per prompt.\n\n`;
 md += `Max per prompt: 4. Pass threshold: 3.0/4 average — equivalent to "most prompts pass cleanly with at most 1-2 minor failures."\n\n`;
-md += `The model used is \`gpt-4o-mini\` per the task spec (or \`openai/gpt-4o-mini\` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.\n\n---\n\n`;
+md += `The model used is \`gpt-4o-mini\` (or \`openai/gpt-4o-mini\` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.\n\n---\n\n`;
 
 md += `## Score Summary\n\n`;
 md += `| # | Test | Voice | Stance | Anti | Score |\n`;
@@ -363,7 +337,7 @@ if (lowScores.length === 0) {
 
 md += `## Reproducibility\n\n`;
 md += `\`\`\`bash\n`;
-md += `# OpenAI direct (recommended for the gpt-4o-mini per task spec)\n`;
+md += `# OpenAI direct (recommended for gpt-4o-mini)\n`;
 md += `OPENAI_API_KEY=sk-... node scripts/weak-model-test.mjs\n\n`;
 md += `# OpenRouter (same model, different vendor)\n`;
 md += `OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs\n\n`;

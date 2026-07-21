@@ -18,7 +18,7 @@ Each of 12 test prompts (mirroring `tests/prediction-test.md`) is scored on:
 
 Max per prompt: 4. Pass threshold: 3.0/4 average — equivalent to "most prompts pass cleanly with at most 1-2 minor failures."
 
-The model used is `gpt-4o-mini` per the task spec (or `openai/gpt-4o-mini` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.
+The model used is `gpt-4o-mini` (or `openai/gpt-4o-mini` via OpenRouter, identical model). The intent of the weak-model test: if the soul file holds voice on a smaller, less personality-aware model, it will hold on stronger ones too.
 
 ---
 
@@ -264,7 +264,7 @@ The model used is `gpt-4o-mini` per the task spec (or `openai/gpt-4o-mini` via O
 ## Reproducibility
 
 ```bash
-# OpenAI direct (recommended for the gpt-4o-mini per task spec)
+# OpenAI direct (recommended for gpt-4o-mini)
 OPENAI_API_KEY=sk-... node scripts/weak-model-test.mjs
 
 # OpenRouter (same model, different vendor)

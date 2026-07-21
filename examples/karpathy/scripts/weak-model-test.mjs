@@ -3,13 +3,13 @@
  * Weak Model Test — Karpathy Soul File
  *
  * Tests whether the SOUL.md + STYLE.md stack can hold Karpathy's voice
- * on gpt-4o-mini (per task requirement).
+ * on gpt-4o-mini.
  *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-... node scripts/weak-model-test.mjs
  *   OPENAI_API_KEY=sk-... node scripts/weak-model-test.mjs  (native OpenAI)
  *
- * Default model: openai/gpt-4o-mini (as task specifies)
+ * Default model: openai/gpt-4o-mini
  * Override: MODEL=anthropic/claude-haiku-4-5 node scripts/weak-model-test.mjs
  */
 
@@ -167,58 +167,34 @@ HARD RULES:
     console.log(`\n--- [${test.id}] ${test.topic} ---`);
 
     try {
-      let output;
-      if (backend === 'openai') {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 500,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
-      } else {
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model,
-            max_tokens: 500,
-            temperature: 0.7,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: test.prompt }
-            ]
-          })
-        });
-        const data = await response.json();
-        if (data.error) {
-          console.log(`  ERROR: ${JSON.stringify(data.error)}`);
-          results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
-          continue;
-        }
-        output = data.choices[0].message.content;
+      const endpoint = backend === 'openai'
+        ? 'https://api.openai.com/v1/chat/completions'
+        : 'https://openrouter.ai/api/v1/chat/completions';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 500,
+          temperature: 0.7,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: test.prompt }
+          ]
+        })
+      });
+      const data = await response.json();
+      if (data.error) {
+        console.error(`  ERROR: ${JSON.stringify(data.error)}`);
+        results.push({ ...test, score: 0, error: JSON.stringify(data.error) });
+        continue;
       }
+      const output = data.choices[0].message.content;
 
-      // Structured scoring: Voice (0-2) + Stance (0-2) - Anti-pattern penalty (max -1)
+      // Structured scoring: Voice (0-2) + Stance (0-2) - Anti-pattern penalty (max -2)
       const lower = output.toLowerCase();
 
       const signalsFound = test.expectedSignals.filter(s => lower.includes(s.toLowerCase()));
@@ -229,7 +205,6 @@ HARD RULES:
       if (signalsFound.length >= 2) voice = 2;
       else if (signalsFound.length >= 1) voice = 1;
 
-      // Also check for general Karpathy voice markers
       const voiceMarkers = /\b(from scratch|let's (build|think|see|code)|the bitter lesson|next-token|okay so|this is the way|loss went down|interesting|the thing is|basically|spelled out|under the hood|what (most )?people miss)\b/i;
       if (voice < 2 && voiceMarkers.test(output)) voice = Math.min(2, voice + 1);
 
@@ -241,7 +216,6 @@ HARD RULES:
       if (!hasHedge && (hasSpecificity || hasOpinion)) stance = 2;
       else if (hasSpecificity || hasOpinion || !hasHedge) stance = 1;
 
-      // Anti-pattern penalty
       const antiPenalty = Math.min(antiFound.length, 2);
       const score = Math.max(0, voice + stance - antiPenalty);
 
@@ -263,7 +237,7 @@ HARD RULES:
         antiFound
       });
     } catch (err) {
-      console.log(`  FETCH ERROR: ${err.message}`);
+      console.error(`  FETCH ERROR: ${err.message}`);
       results.push({ ...test, score: 0, error: err.message });
     }
   }
@@ -280,7 +254,6 @@ HARD RULES:
   return { model, backend, totalScore, maxScore, avgScore, results, passThreshold };
 }
 
-// Main
 const openaiKey = process.env.OPENAI_API_KEY;
 const openrouterKey = process.env.OPENROUTER_API_KEY;
 
@@ -303,8 +276,7 @@ if (openaiKey) {
 
 const result = await runTest(apiKey, model, backend);
 
-// Write results markdown
-const resultPath = join(ROOT, 'examples', 'weak-model-results.md');
+const resultPath = join(ROOT, 'tests', 'weak-model-results.md');
 let md = `# Weak Model Test Results\n\n`;
 md += `**Model**: \`${result.model}\` (${result.backend})\n`;
 md += `**Date**: ${new Date().toISOString().split('T')[0]}\n`;

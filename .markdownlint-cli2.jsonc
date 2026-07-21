@@ -14,6 +14,5 @@
     "MD053": true, // every link/image reference definition must be used
     "MD054": true  // disallowed malformed link/image styles
   },
-  "globs": ["**/*.md"],
-  "ignores": ["node_modules"]
+  "globs": ["**/*.md"]
 }

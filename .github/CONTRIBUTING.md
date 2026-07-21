@@ -12,9 +12,11 @@ reading it could predict its subject's take on a new topic.**
   or [`STYLE.template.md`](../STYLE.template.md), improve a `_GUIDE.md`, fix a
   factual error or broken link.
 
-Build your soul first with the [soul-builder skill](../SKILL.md) (`/soul-builder`)
-or by hand from the templates. See [`examples/_GUIDE.md`](../examples/_GUIDE.md)
-for what goes in the calibration files.
+Build your soul first with the [soul-builder skill](../BUILD.md) (`/soul-builder`)
+or by hand from the templates — [`BUILD.md`](../BUILD.md) is the full spec for
+what a soul folder must contain. See [`examples/_GUIDE.md`](../examples/_GUIDE.md)
+for what goes in the calibration files, and [`data/_GUIDE.md`](../data/_GUIDE.md)
+for what belongs in `data/`.
 
 ## Before you start
 

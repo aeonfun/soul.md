@@ -41,7 +41,8 @@ steipete-soul/
     └── x/
         ├── steipete.profile.json     ← @steipete profile (496k followers)
         ├── steipete.posts-original.json ← 100 timeline posts (filtered to 36 self-authored)
-        ├── steipete.replies.json
+        ├── steipete.replies.json     ← EMPTY ([]) — this pull failed silently and
+        │                                needs a re-run: SURF_API_KEY=... node scripts/pull-x.mjs
         ├── openclaw.profile.json     ← @openclaw profile
         ├── openclaw.posts-original.json ← 100 posts (59 openclaw-authored)
         ├── openclaw.replies.json     ← 100 replies
@@ -50,7 +51,7 @@ steipete-soul/
 
 ## Voice validation
 
-The soul stack is validated by an automated weak-model test on the model the task brief specifies (`gpt-4o-mini`):
+The soul stack is validated by an automated weak-model test on `gpt-4o-mini`:
 
 ```bash
 OPENROUTER_API_KEY=sk-or-... MODEL=openai/gpt-4o-mini node scripts/weak-model-test.mjs
@@ -82,8 +83,8 @@ The good/bad-outputs files codify these signals so the model has concrete calibr
 # Blog posts (47 files), GitHub READMEs (16 files), YouTube transcripts (8 files)
 bash scripts/fetch-data.sh
 
-# X corpus (requires SURF_AI_API_KEY for surf-ai MCP)
-SURF_AI_API_KEY=... HANDLES="steipete,openclaw" node scripts/pull-x.mjs
+# X corpus (requires SURF_API_KEY for surf-ai MCP)
+SURF_API_KEY=... HANDLES="steipete,openclaw" node scripts/pull-x.mjs
 
 # Voice-holding test (requires OpenAI or OpenRouter key)
 OPENROUTER_API_KEY=sk-or-... MODEL=openai/gpt-4o-mini node scripts/weak-model-test.mjs

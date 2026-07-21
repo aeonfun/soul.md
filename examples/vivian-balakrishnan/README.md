@@ -16,8 +16,7 @@ vivian-balakrishnan/
 ├── STYLE.md                  ← voice rules: vocabulary, rhetorical moves, register
 ├── MEMORY.md                 ← running log across sessions
 ├── data/
-│   ├── influences.md         ← Singapore lineage, books, frameworks
-│   └── speeches/             ← (placeholder for added MFA transcripts)
+│   └── influences.md         ← Singapore lineage, books, frameworks
 └── examples/
     ├── good-outputs.md       ← 14 calibration samples + 12 verbatim verified quotes
     └── bad-outputs.md        ← 12 anti-patterns with diagnosis + 7-point checklist

@@ -24,7 +24,8 @@ that part isn't a secret and we'd rather act on it fast.
 
 Please include what you can:
 
-- The file or component affected — `SKILL.md` (the builder), a `scripts/*.mjs`
+- The file or component affected — `BUILD.md` (the builder), `SKILL.md` (the
+  embodier), a `scripts/*.mjs`
   helper, a template, or a specific `examples/<name>/` soul.
 - A minimal reproduction (for injection: the source text that triggers it).
 - The impact you can demonstrate.

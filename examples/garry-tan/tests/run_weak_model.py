@@ -2,8 +2,10 @@
 """
 Run the soul file against a weak model via OpenRouter.
 
-Reads OPENROUTER_API_KEY from env (or from ~/.hermes/.env as a fallback).
+Reads OPENROUTER_API_KEY from env.
 Writes a markdown transcript with one section per prompt.
+
+Requires `certifi` (pip install certifi).
 
 Usage:
     python tests/run_weak_model.py \
@@ -21,7 +23,6 @@ import os
 import pathlib
 import sys
 import ssl
-import urllib.error
 import urllib.request
 
 import certifi
@@ -89,11 +90,6 @@ def load_api_key() -> str:
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
         return key
-    fallback = pathlib.Path.home() / ".hermes" / ".env"
-    if fallback.exists():
-        for line in fallback.read_text().splitlines():
-            if line.startswith("OPENROUTER_API_KEY="):
-                return line.split("=", 1)[1].strip()
     sys.exit("OPENROUTER_API_KEY not found")
 
 
@@ -119,11 +115,8 @@ def call_model(api_key: str, model: str, system: str, user: str) -> str:
             "X-Title": "soul-garrytan weak-model test",
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=90, context=_SSL_CTX) as resp:
-            data = json.loads(resp.read())
-    except urllib.error.HTTPError as e:
-        return f"[ERROR {e.code}: {e.read().decode(errors='replace')}]"
+    with urllib.request.urlopen(req, timeout=90, context=_SSL_CTX) as resp:
+        data = json.loads(resp.read())
     return data["choices"][0]["message"]["content"]
 
 
