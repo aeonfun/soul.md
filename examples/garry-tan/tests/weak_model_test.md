@@ -48,20 +48,20 @@ For each response, grade:
 - **Stance match**: 0–2 (opinion aligned with SOUL.md)
 - **Anti-pattern hits**: subtract 1 per `bad-outputs.md` tell that appears (e.g., "that's a great question," emoji spam, hedging stack).
 
-Formula: `score = (voice + stance) - anti_pattern_hits`. Max 4 per prompt. Pass threshold: **average ≥ 3.0 across 13 prompts**.
+Formula: `score = (voice + stance) - anti_pattern_hits`. Max 4 per prompt. Pass threshold: **average ≥ 3.0 across 12 prompts**.
 
 ### 5. Run script
 
 ```bash
-# OPENAI_API_KEY required
-python tests/run_weak_model.py \
-  --model gpt-4o-mini \
-  --prompts tests/prediction_test.md,tests/platform_tests.md \
-  --soul /tmp/garry_prompt.md \
+OPENROUTER_API_KEY=... python3 tests/run_weak_model.py \
+  --model openai/gpt-4o-mini \
+  --soul SOUL.md --style STYLE.md \
+  --good examples/good-outputs.md --bad examples/bad-outputs.md \
   --out tests/results_gpt-4o-mini.md
 ```
 
-`run_weak_model.py` is a 30-line stub below.
+The prompts are defined in `run_weak_model.py` itself; `--style`, `--good`, and
+`--bad` are required.
 
 ---
 
@@ -155,7 +155,9 @@ Run it, grade it, commit the result. A passing run is part of the deliverable.
 
 - ✅ Protocol defined
 - ✅ Prompts authored (prediction_test.md + platform_tests.md)
-- ✅ Run script reference implementation (above — saveable as-is)
-- ⏳ Live run pending: requires `OPENAI_API_KEY`. Grading is manual until we add an LLM-judge step.
+- ✅ Run script shipped: `tests/run_weak_model.py`
+- ✅ Live run 2026-04-14 on `openai/gpt-4o-mini`: 38.5/48 (PASS). Full transcript
+  in [`results_gpt-4o-mini.md`](results_gpt-4o-mini.md), per-prompt grades in
+  [`scores_gpt-4o-mini.md`](scores_gpt-4o-mini.md).
 
-When run live, append actual transcript + scores below.
+Grading is manual until we add an LLM-judge step.
