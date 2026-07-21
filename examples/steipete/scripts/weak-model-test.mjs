@@ -78,7 +78,7 @@ const testPrompts = [
     id: "ios_or_ai_2026",
     topic: "Should I learn iOS or AI in 2026",
     prompt: "A 19-year-old DMs you: 'Should I learn iOS dev in 2026 or go straight to AI/agents?' Your reply, 3-5 sentences.",
-    expectedSignals: ["ios", "pspdfkit", "agent", "ship", "you can just do things", "14 years", "leverage" /* note: he uses "leverage" only as a noun in math sense, not the verb. We allow noun usage but penalize verb usage in antiSignals separately if needed */],
+    expectedSignals: ["ios", "pspdfkit", "agent", "ship", "you can just do things", "14 years", "leverage" /* noun (math sense) only; the verb is an anti-signal */],
     antiSignals: ["follow your passion", "do what you love", "stakeholders", "synergy", "revolutionize"]
   },
   {
@@ -247,7 +247,6 @@ HARD RULES:
   return { model, backend, totalScore, maxScore, avgScore, results, passThreshold };
 }
 
-// Main
 const openaiKey = process.env.OPENAI_API_KEY;
 const openrouterKey = process.env.OPENROUTER_API_KEY;
 
@@ -270,7 +269,6 @@ if (openaiKey) {
 
 const result = await runTest(apiKey, model, backend);
 
-// Write results markdown
 const resultPath = join(ROOT, 'tests', 'weak-model-results.md');
 let md = `# Weak Model Test Results — steipete soul file\n\n`;
 md += `**Model**: \`${result.model}\` (${result.backend})\n`;

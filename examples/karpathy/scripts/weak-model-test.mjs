@@ -194,7 +194,7 @@ HARD RULES:
       }
       const output = data.choices[0].message.content;
 
-      // Structured scoring: Voice (0-2) + Stance (0-2) - Anti-pattern penalty (max -1)
+      // Structured scoring: Voice (0-2) + Stance (0-2) - Anti-pattern penalty (max -2)
       const lower = output.toLowerCase();
 
       const signalsFound = test.expectedSignals.filter(s => lower.includes(s.toLowerCase()));
@@ -205,7 +205,6 @@ HARD RULES:
       if (signalsFound.length >= 2) voice = 2;
       else if (signalsFound.length >= 1) voice = 1;
 
-      // Also check for general Karpathy voice markers
       const voiceMarkers = /\b(from scratch|let's (build|think|see|code)|the bitter lesson|next-token|okay so|this is the way|loss went down|interesting|the thing is|basically|spelled out|under the hood|what (most )?people miss)\b/i;
       if (voice < 2 && voiceMarkers.test(output)) voice = Math.min(2, voice + 1);
 
@@ -217,7 +216,6 @@ HARD RULES:
       if (!hasHedge && (hasSpecificity || hasOpinion)) stance = 2;
       else if (hasSpecificity || hasOpinion || !hasHedge) stance = 1;
 
-      // Anti-pattern penalty
       const antiPenalty = Math.min(antiFound.length, 2);
       const score = Math.max(0, voice + stance - antiPenalty);
 
@@ -256,7 +254,6 @@ HARD RULES:
   return { model, backend, totalScore, maxScore, avgScore, results, passThreshold };
 }
 
-// Main
 const openaiKey = process.env.OPENAI_API_KEY;
 const openrouterKey = process.env.OPENROUTER_API_KEY;
 
@@ -279,7 +276,6 @@ if (openaiKey) {
 
 const result = await runTest(apiKey, model, backend);
 
-// Write results markdown
 const resultPath = join(ROOT, 'tests', 'weak-model-results.md');
 let md = `# Weak Model Test Results\n\n`;
 md += `**Model**: \`${result.model}\` (${result.backend})\n`;

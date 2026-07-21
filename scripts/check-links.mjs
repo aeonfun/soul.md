@@ -2,7 +2,7 @@
 // Verifies that relative links and image sources in the repo's maintained
 // docs resolve to real files. This catches the kind of dangling reference
 // that has slipped in before (e.g. a README pointing at a file that no longer
-// exists). External URLs and same-page anchors are out of scope here — the
+// exists). External URLs and same-page anchors are out of scope here —
 // markdownlint handles link *syntax*; this handles link *targets*.
 //
 // Scope: top-level markdown only. The examples/ subtrees carry raw, third-party
