@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Run markdownlint-cli2
-        uses: DavidAnson/markdownlint-cli2-action@v24.0.0
+        uses: DavidAnson/markdownlint-cli2-action@v24.1.0
         # Rules and scope come from .markdownlint-cli2.jsonc. Soul files are
         # intentionally raw prose, so only link/reference integrity is enforced.
 
