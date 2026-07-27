@@ -22,14 +22,17 @@ financial advice).
 ```
 elon-musk/
 ├── README.md            ← you are here
+├── QUICKSTART.md        ← paste-ready system prompt, minimal one-shot, 5-prompt voice test
 ├── SOUL.md              ← identity: 12 worldview items, opinions by domain, the algorithm, idiot index, 6 tensions, hard boundaries
 ├── STYLE.md             ← voice: two-register mix, vocab use/ban lists, punctuation rules, anti-patterns
 ├── MEMORY.md            ← running session log
 ├── data/
 │   └── sources.md       ← source material notes (no raw corpus checked in)
-└── examples/
-    ├── good-outputs.md  ← verbatim public-post anchors + generated calibration samples
-    └── bad-outputs.md   ← 8 anti-patterns with ❌/🔍/✅ structure
+├── examples/
+│   ├── good-outputs.md  ← verbatim public-post anchors + generated calibration samples
+│   └── bad-outputs.md   ← 8 anti-patterns with ❌/🔍/✅ structure
+└── tests/
+    └── prediction-test.md ← 12 unseen-topic prompts, scored 0-2, pass ≥ 18/24
 ```
 
 ## Why this voice is hard to fake
