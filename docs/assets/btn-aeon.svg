@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="40" viewBox="0 0 112 40" role="img" aria-label="Built for Aeon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1a15"/>
+      <stop offset="1" stop-color="#0d0c0a"/>
+    </linearGradient>
+    <style>@keyframes dash{to{stroke-dashoffset:-32}}.bt{stroke-dasharray:5 27;animation:dash 1.5s linear infinite}</style>
+  </defs>
+  <rect x="0.5" y="0.5" width="111" height="39" rx="19.5" fill="url(#g)" stroke="#F4EFE1" stroke-opacity="0.5"/>
+  <rect x="2" y="1.5" width="108" height="15" rx="12" fill="#F4EFE1" opacity="0.05"/>
+  <path d="M15 20h3.2l2.1-6 3.1 12 2.3-8 1.6 4h2.6" fill="none" stroke="#F4EFE1" stroke-opacity="0.28" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path class="bt" d="M15 20h3.2l2.1-6 3.1 12 2.3-8 1.6 4h2.6" fill="none" stroke="#F4EFE1" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="40" y="25.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#F4EFE1">Aeon</text>
+</svg>

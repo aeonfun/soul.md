@@ -1,15 +1,23 @@
 <p align="center">
-  <img src="../img/soul.jpg" alt="SOUL.md" width="120" />
+  <img src="../docs/assets/hero-animated.svg" alt="SOUL.md — build a personality for your agent. Let Claude Code / OpenClaw ingest your data and build your AI soul: plain markdown, any agent, no fine-tune." width="100%" />
 </p>
-
-<h1 align="center">SOUL.MD</h1>
 
 <p align="center">
-  <a href="https://github.com/aeonfun/soul.md/stargazers"><img src="https://img.shields.io/github/stars/aeonfun/soul.md?style=flat-square&logo=github" alt="GitHub stars"></a>
-  <a href="https://github.com/aeonfun/soul.md/network/members"><img src="https://img.shields.io/github/forks/aeonfun/soul.md?style=flat-square&logo=github" alt="GitHub forks"></a>
-  <a href="https://x.com/aeonframework"><img src="https://img.shields.io/badge/Follow-%40aeonframework-black?style=flat-square&logo=x&labelColor=000000" alt="Follow on X"></a>
-  <a href="https://bankr.bot/discover/0xbf8e8f0e8866a7052f948c16508644347c57aba3"><img src="https://img.shields.io/badge/Aeon%20on-Bankr-orange?style=flat-square&labelColor=1a1a2e" alt="Aeon on Bankr"></a>
+  <strong>Star us&nbsp;❤️&nbsp;→</strong>&nbsp;&nbsp;
+  <a href="https://github.com/aeonfun/soul.md/stargazers"><img src="../docs/assets/btn-star.svg" alt="Star SOUL.md on GitHub" height="34" align="absmiddle"></a>&nbsp;&nbsp;
+  <a href="https://github.com/aeonfun/aeon"><img src="../docs/assets/btn-aeon.svg" alt="Built for Aeon" height="34" align="absmiddle"></a>&nbsp;&nbsp;
+  <a href="https://x.com/aeonframework"><img src="../docs/assets/btn-x.svg" alt="@aeonframework on X" height="34" align="absmiddle"></a>&nbsp;&nbsp;
+  <a href="https://bankr.bot/discover/0xbf8e8f0e8866a7052f948c16508644347c57aba3"><img src="../docs/assets/btn-bankr.svg" alt="$aeon on Bankr" height="34" align="absmiddle"></a>
 </p>
+
+<div align="center">
+
+[![stars](https://img.shields.io/github/stars/aeonfun/soul.md?style=flat-square&label=stars&color=F4EFE1&labelColor=0d0c0a&logo=github&logoColor=F4EFE1)](https://github.com/aeonfun/soul.md/stargazers)
+[![forks](https://img.shields.io/github/forks/aeonfun/soul.md?style=flat-square&label=forks&color=F4EFE1&labelColor=0d0c0a&logo=github&logoColor=F4EFE1)](https://github.com/aeonfun/soul.md/network/members)
+[![format](https://img.shields.io/badge/format-markdown-F4EFE1?style=flat-square&labelColor=0d0c0a&logo=markdown&logoColor=F4EFE1)](https://github.com/aeonfun/soul.md)
+[![license](https://img.shields.io/badge/license-MIT-F4EFE1?style=flat-square&labelColor=0d0c0a)](../LICENSE)
+
+</div>
 
 <p align="center">
   <strong>The best way to build a personality for your agent.</strong><br>
