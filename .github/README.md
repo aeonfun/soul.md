@@ -10,6 +10,12 @@
   <a href="https://bankr.bot/discover/0xbf8e8f0e8866a7052f948c16508644347c57aba3"><img src="../docs/assets/btn-bankr.svg" alt="$aeon on Bankr" height="34" align="absmiddle"></a>
 </p>
 
+<p align="center">
+  <strong>The best way to build a personality for your agent.</strong><br>
+  Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
+  Best used with <a href="https://github.com/aeonfun/aeon">Aeon</a> — background intelligence that evolves with you.
+</p>
+
 <div align="center">
 
 [![stars](https://img.shields.io/github/stars/aeonfun/soul.md?style=flat-square&label=stars&color=F4EFE1&labelColor=0d0c0a&logo=github&logoColor=F4EFE1)](https://github.com/aeonfun/soul.md/stargazers)
@@ -18,12 +24,6 @@
 [![license](https://img.shields.io/badge/license-MIT-F4EFE1?style=flat-square&labelColor=0d0c0a)](../LICENSE)
 
 </div>
-
-<p align="center">
-  <strong>The best way to build a personality for your agent.</strong><br>
-  Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
-  Best used with <a href="https://github.com/aeonfun/aeon">Aeon</a> — background intelligence that evolves with you.
-</p>
 
 ---
 
