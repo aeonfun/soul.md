@@ -304,3 +304,7 @@ The key challenge is *subject continuity*: the uploaded consciousness must feel 
   <em>Your identity is now composable. Forkable. Evolvable.</em><br>
   Works with <a href="https://github.com/aeonfun/aeon">Aeon</a>, Claude Code, OpenClaw, and any agent that can read markdown.
 </p>
+
+---
+
+Built by [Aaron Elijah Mars](https://aaronjmars.com), founder of Aeon and MiroShark · [@aaronjmars](https://github.com/aaronjmars)
