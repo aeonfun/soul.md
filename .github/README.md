@@ -37,10 +37,13 @@ Dump your tweets, essays, and posts into a folder. The agent reads everything, e
 
 The goal: someone reading your `SOUL.md` should be able to predict your takes on new topics. If they can't, it's too vague.
 
+**A second brain for who you are.** Most "second brain" tools store what you filed away - notes, clips, highlights. A soul file stores the mind that produced them: your worldview, judgment, and voice. Where a notes vault answers *what did I save about X*, a soul file answers *what would I think about X*. Load it and the agent reasons the way you would, even on topics you never wrote down.
+
 **Use cases:**
 - Generate ideas from your worldview
 - Write content (tweets, articles, emails) that sounds like you
 - Tailor AI to your interests and thinking patterns
+- Query your own second brain - ask your soul what you'd think, decide, or say
 - Scale yourself for content, responses, brainstorming
 
 ---
