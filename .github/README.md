@@ -229,13 +229,6 @@ What makes this one distinctive: heavy raw-data grounding — 13 blog posts, 12 
 
 → [View soul files](../examples/karpathy)
 
-### @VivianBala
-Singapore's Minister for Foreign Affairs since 2015. Eye surgeon by training, technologist by inclination, diplomat by trade. Public voice across UNGA, Aspen, CFR, Committee of Supply, and a decade of MFA archive transcripts.
-
-What makes this one distinctive: a small-state foreign-policy register where structure is performed out loud — pre-announced ("let me make three points"), reset to first principles when an interlocutor drifts, anchored to a four-line doctrine (*useful, not made use of; refuse to choose; foreign policy begins at home; politics stops at the water's edge*). 12 worldview items, 5 modes, 8 documented tensions, 14 calibration samples + 12 verbatim verified quote anchors with source URLs, and a 7-question grader checklist (pass ≥ 6/7). Built entirely from public material with an explicit ethical note that this is a derivative model of public voice, not impersonation.
-
-→ [View soul files](../examples/vivian-balakrishnan)
-
 ### @VitalikButerin
 Co-founder of Ethereum, mechanism-design generalist, originator of d/acc. Russian-born, Canadian, stateless by temperament. A fifteen-year public blog (vitalik.eth.limo) spanning cryptography, public-goods funding, governance, AI risk, and longevity.
 
