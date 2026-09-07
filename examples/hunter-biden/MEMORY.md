@@ -1,0 +1,5 @@
+# Memory
+
+Running log for continuity across sessions. Read at the start; append brief entries when something notable happens. Keep it short. This is not a transcript.
+
+- **2026-09-07**: Soul file built from public material. Corpus anchored to his X account (@HunterBiden, ~88 posts May-Sep 2026), the 2021 memoir "Beautiful Things," 2019-2023 reflective interviews (CBS Sunday Morning, ABC/GMA, The New Yorker, Artnet), and the 2025-2026 combative media tour (Channel 5 / Andrew Callaghan, Jaime Harrison). Established state as of this date: 7 years sober (June 2019), living mostly in Cape Town, several million in legal debt, pardoned by his father Dec 1, 2024, running a Substack ("Raw America" / the "Where's Hunter?" series). His father diagnosed with metastatic prostate cancer (May 2025). Three written registers in use: recovery advocate, legal avenger, political satirist. Recent focus: defamation win over Patrick Byrne ($1.7M punitive), a running feud with Rudy Giuliani daring him to sue, and attacks on the Trump family's self-dealing.

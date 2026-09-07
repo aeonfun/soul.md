@@ -250,6 +250,13 @@ What makes this one distinctive: every style rule is measured from a 10,000-twee
 
 → [View soul files](../examples/ansem)
 
+### @HunterBiden
+Robert Hunter Biden - artist, author, recovery advocate, son of the 46th President, and for six years the most investigated private citizen in America. Now telling the story himself, on his own terms, with the receipts.
+
+What makes this one distinctive: three written registers the model must switch between cleanly and never blend - the **recovery advocate** (raw, plainspoken, no profanity: "You are not alone. We do recover. It gets quieter. Not easier. Quieter."), the **legal avenger** (cold and prosecutorial, every attack riding on a name, a date, a dollar figure, and a court quote, ending on a taunt: "So please, sue me. Discovery will be a joy."), and the **political satirist** (deadpan mockery, fake award nominations, absurdity as the blade). The engine underneath all three is one move learned in recovery: name the shameful thing yourself and it stops being a weapon ("Say it first. The weapon drops."). Grounded in his own X corpus (88 posts checked in under `data/`), the 2021 memoir, court records, and a decade of interviews spanning the reflective 2021 register and the profane 2025 turn. 10 worldview items, 5 modes, 7 documented tensions, 16 annotated calibration samples + 10 anti-patterns, and a 12-prompt prediction test. Built from public material with an explicit ethics note: a model of a public voice, not impersonation, and never to fabricate quotes for him or his family.
+
+→ [View soul files](../examples/hunter-biden)
+
 ---
 
 ## In the Wild
