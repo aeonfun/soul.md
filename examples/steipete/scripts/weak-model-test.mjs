@@ -18,6 +18,16 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
+// OpenRouter app attribution, so test runs count toward the Aeon app page. The referer is the apex
+// https://aeon.fun on purpose (no www): the existing app page is keyed on it. X-Title is the legacy
+// alias of X-OpenRouter-Title; send both.
+const OPENROUTER_HEADERS = {
+  'HTTP-Referer': 'https://aeon.fun',
+  'X-OpenRouter-Title': 'Aeon',
+  'X-Title': 'Aeon',
+  'X-OpenRouter-Categories': 'personal-agent,cloud-agent',
+};
+
 const soul = readFileSync(join(ROOT, 'SOUL.md'), 'utf-8');
 const style = readFileSync(join(ROOT, 'STYLE.md'), 'utf-8');
 const goodExamples = readFileSync(join(ROOT, 'examples', 'good-outputs.md'), 'utf-8');
@@ -165,6 +175,7 @@ HARD RULES:
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${apiKey}`,
+          ...(backend === 'openrouter' ? OPENROUTER_HEADERS : {}),
         },
         body: JSON.stringify({
           model,
