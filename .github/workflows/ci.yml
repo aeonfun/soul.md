@@ -21,7 +21,7 @@ permissions:
 jobs:
   markdownlint:
     name: Lint markdown
-    runs-on: ${{ github.repository_owner == 'aeonfun' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - name: Run markdownlint-cli2
@@ -31,7 +31,7 @@ jobs:
 
   links:
     name: Check relative links
-    runs-on: ${{ github.repository_owner == 'aeonfun' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
