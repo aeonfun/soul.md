@@ -29,11 +29,10 @@ import certifi
 
 _SSL_CTX = ssl.create_default_context(cafile=certifi.where())
 
-# OpenRouter app attribution, so test runs count toward the Aeon app page. The referer is the apex
-# https://aeon.fun on purpose (no www): the existing app page is keyed on it. X-Title is the legacy
-# alias of X-OpenRouter-Title; send both.
+# OpenRouter app attribution, so test runs count toward the Aeon app page. The referer is Aeon's
+# site URL. X-Title is the legacy alias of X-OpenRouter-Title; send both.
 OPENROUTER_HEADERS = {
-    "HTTP-Referer": "https://aeon.fun",
+    "HTTP-Referer": "https://www.aeon.fun",
     "X-OpenRouter-Title": "Aeon",
     "X-Title": "Aeon",
     "X-OpenRouter-Categories": "personal-agent,cloud-agent",
