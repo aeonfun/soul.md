@@ -29,6 +29,16 @@ import certifi
 
 _SSL_CTX = ssl.create_default_context(cafile=certifi.where())
 
+# OpenRouter app attribution, so test runs count toward the Aeon app page. The referer is the apex
+# https://aeon.fun on purpose (no www): the existing app page is keyed on it. X-Title is the legacy
+# alias of X-OpenRouter-Title; send both.
+OPENROUTER_HEADERS = {
+    "HTTP-Referer": "https://aeon.fun",
+    "X-OpenRouter-Title": "Aeon",
+    "X-Title": "Aeon",
+    "X-OpenRouter-Categories": "personal-agent,cloud-agent",
+}
+
 PROMPTS = [
     ("tweet", "A YC company you funded just crossed $1B ARR. React on Twitter in a single tweet."),
     (
@@ -111,8 +121,7 @@ def call_model(api_key: str, model: str, system: str, user: str) -> str:
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/aeonfun/soul.md",
-            "X-Title": "soul-garrytan weak-model test",
+            **OPENROUTER_HEADERS,
         },
     )
     with urllib.request.urlopen(req, timeout=90, context=_SSL_CTX) as resp:
