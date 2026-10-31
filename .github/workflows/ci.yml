@@ -15,11 +15,16 @@ on:
       - "scripts/check-links.mjs"
       - ".github/workflows/ci.yml"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 permissions:
   contents: read
 
 jobs:
   markdownlint:
+    timeout-minutes: 15
     name: Lint markdown
     runs-on: ubuntu-latest
     steps:
@@ -30,6 +35,7 @@ jobs:
         # intentionally raw prose, so only link/reference integrity is enforced.
 
   links:
+    timeout-minutes: 15
     name: Check relative links
     runs-on: ubuntu-latest
     steps:
