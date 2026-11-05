@@ -28,9 +28,9 @@ jobs:
     name: Lint markdown
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run markdownlint-cli2
-        uses: DavidAnson/markdownlint-cli2-action@v25.0.0
+        uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
         # Rules and scope come from .markdownlint-cli2.jsonc. Soul files are
         # intentionally raw prose, so only link/reference integrity is enforced.
 
@@ -39,8 +39,8 @@ jobs:
     name: Check relative links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
       - name: Verify relative links in maintained docs resolve
