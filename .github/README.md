@@ -1,19 +1,19 @@
 <p align="center">
-  <img src="../docs/assets/hero-animated.svg" alt="SOUL.md — build a personality for your agent. Let Claude Code / OpenClaw ingest your data and build your AI soul: plain markdown, any agent, no fine-tune." width="100%" />
+  <img src="../docs/assets/readme-hero.jpg" alt="SOUL.md - build a personality for your agent. Let Claude Code / OpenClaw ingest your data and build your AI soul: plain markdown, any agent, no fine-tune." width="100%" />
 </p>
 
 <p align="center">
   <strong>Star us&nbsp;❤️&nbsp;→</strong>&nbsp;&nbsp;
   <a href="https://github.com/aeonfun/soul.md/stargazers"><img src="../docs/assets/btn-star.svg" alt="Star SOUL.md on GitHub" height="34" align="absmiddle"></a>&nbsp;&nbsp;
-  <a href="https://github.com/aeonfun/aeon"><img src="../docs/assets/btn-aeon.svg" alt="Built for Aeon" height="34" align="absmiddle"></a>&nbsp;&nbsp;
+  <a href="https://www.aeon.fun"><img src="../docs/assets/btn-aeon.svg" alt="Built for Aeon" height="34" align="absmiddle"></a>&nbsp;&nbsp;
   <a href="https://x.com/aeonframework"><img src="../docs/assets/btn-x.svg" alt="@aeonframework on X" height="34" align="absmiddle"></a>&nbsp;&nbsp;
-  <a href="https://bankr.bot/discover/0xbf8e8f0e8866a7052f948c16508644347c57aba3"><img src="../docs/assets/btn-bankr.svg" alt="$aeon on Bankr" height="34" align="absmiddle"></a>
+  <a href="https://bankr.bot/discover/0xbf8e8f0e8866a7052f948c16508644347c57aba3"><img src="../docs/assets/btn-bankr.svg" alt="$AEON on Bankr" height="34" align="absmiddle"></a>
 </p>
 
 <p align="center">
   <strong>The best way to build a personality for your agent.</strong><br>
   Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
-  Best used with <a href="https://github.com/aeonfun/aeon">Aeon</a> — background intelligence that evolves with you.
+  Best used with <a href="https://github.com/aeonfun/aeon">Aeon</a> - background intelligence that evolves with you.
 </p>
 
 <div align="center">
