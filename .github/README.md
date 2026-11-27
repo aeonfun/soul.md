@@ -83,7 +83,7 @@ examples/bad-outputs.template.md    → examples/bad-outputs.md
 
 <img src="../img/soul-sources.jpg" alt="Soul + Aeon" width="100%" />
 
-[**Aeon**](https://github.com/aeonfun/aeon) is an autonomous agent on GitHub Actions, powered by Claude Code. 68 skills across research, dev tooling, crypto monitoring, and productivity — all running in the background on a cron schedule.
+[**Aeon**](https://github.com/aeonfun/aeon): Multiply yourself ⭐ Give every idea its own swarm, 24/7. Outwork any company.
 
 Soul files slot directly into Aeon. Copy your soul into `soul/` in your Aeon repo, add a few lines to `CLAUDE.md`, and every skill Aeon runs — articles, digests, tweets, research briefs — gets written in your voice. No per-skill config. Identity propagates automatically.
 
