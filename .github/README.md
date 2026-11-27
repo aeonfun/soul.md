@@ -13,7 +13,7 @@
 <p align="center">
   <strong>The best way to build a personality for your agent.</strong><br>
   Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
-  Best used with <a href="https://www.aeon.fun">Aeon</a> - background intelligence that evolves with you.
+  Best used with <a href="https://www.aeon.fun">Aeon</a> - Multiply yourself ⭐
 </p>
 
 <div align="center">
@@ -31,7 +31,7 @@
 
 <img src="../img/soul-identity.jpg" alt="Soul Identity" width="100%" />
 
-A soul file captures who you are in a format AI agents can embody. Not a chatbot that *talks about you* — an AI that *thinks and speaks as you*.
+A soul file captures who you are in a format AI agents can embody. Not a chatbot that *talks about you* - an AI that *thinks and speaks as you*.
 
 Dump your tweets, essays, and posts into a folder. The agent reads everything, extracts your worldview and voice, and builds a set of markdown files any LLM can load to write as you.
 
@@ -52,13 +52,13 @@ The goal: someone reading your `SOUL.md` should be able to predict your takes on
 
 <img src="../img/soul-builder.jpg" alt="Soul Builder Flow" width="100%" />
 
-**Option 1 — Build from scratch**
+**Option 1 - Build from scratch**
 ```
 /soul-builder
 ```
 The agent interviews you: worldview, opinions, how you write, what you care about.
 
-**Option 2 — Build from your data**
+**Option 2 - Build from your data**
 
 Drop your content into `data/`:
 ```
@@ -67,7 +67,7 @@ data/writing/    ← Blog posts, essays
 ```
 Then run `/soul-builder`. It analyzes your data, extracts patterns, and drafts your soul file. You review and refine together.
 
-**Option 3 — Manual**
+**Option 3 - Manual**
 
 Copy the templates and fill them in:
 ```
@@ -85,12 +85,12 @@ examples/bad-outputs.template.md    → examples/bad-outputs.md
 
 [**Aeon**](https://www.aeon.fun): Multiply yourself ⭐ Give every idea its own swarm, 24/7. Outwork any company.
 
-Soul files slot directly into Aeon. Copy your soul into `soul/` in your Aeon repo, add a few lines to `CLAUDE.md`, and every skill Aeon runs — articles, digests, tweets, research briefs — gets written in your voice. No per-skill config. Identity propagates automatically.
+Soul files slot directly into Aeon. Copy your soul into `soul/` in your Aeon repo, add a few lines to `CLAUDE.md`, and every skill Aeon runs - articles, digests, tweets, research briefs - gets written in your voice. No per-skill config. Identity propagates automatically.
 
 Why this pairing works:
-- **Aeon handles the when and what** — scheduling, research, monitoring, content generation
-- **Soul files handle the who** — voice, worldview, opinions, style
-- Together you get a background agent that doesn't just work for you — it *sounds* like you
+- **Aeon handles the when and what** - scheduling, research, monitoring, content generation
+- **Soul files handle the who** - voice, worldview, opinions, style
+- Together you get a background agent that doesn't just work for you - it *sounds* like you
 
 Setup takes 2 minutes. See Aeon's [Soul section](https://github.com/aeonfun/aeon#soul-optional) for details.
 
@@ -116,7 +116,7 @@ No existing data? Option 1 (interview mode) still builds a solid soul file from 
 
 ## Compatible Frameworks
 
-Soul files are plain markdown — if an agent can read files, it can embody you. Tested with:
+Soul files are plain markdown - if an agent can read files, it can embody you. Tested with:
 
 | Framework | Language | Stars |
 |-----------|----------|-------|
@@ -129,9 +129,9 @@ Soul files are plain markdown — if an agent can read files, it can embody you.
 | [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 29.7k |
 | [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 18k |
 | [IronClaw](https://github.com/nearai/ironclaw) | Rust | 12.5k |
-| Claude Code · OpenCode · Codex · Goose | various | — |
+| Claude Code · OpenCode · Codex · Goose | various | - |
 
-Also works with any model via system prompt — see [Using With Other Tools](#using-with-other-tools).
+Also works with any model via system prompt - see [Using With Other Tools](#using-with-other-tools).
 
 ---
 
@@ -164,7 +164,7 @@ your-soul/
 | Specific book references, named influences | "I read widely" |
 | Actual hot takes with reasoning | "I try to be balanced" |
 
-Real people have inconsistent views. Include contradictions — they're what make you identifiably you.
+Real people have inconsistent views. Include contradictions - they're what make you identifiably you.
 
 ---
 
@@ -176,11 +176,11 @@ Once built, invoke your soul:
 ```
 
 Or point any LLM at your folder and have it read:
-1. `SOUL.md` — identity
-2. `STYLE.md` — voice
-3. `MEMORY.md` — recent context
-4. `examples/` — calibration
-5. `data/` — grounding when needed
+1. `SOUL.md` - identity
+2. `STYLE.md` - voice
+3. `MEMORY.md` - recent context
+4. `examples/` - calibration
+5. `data/` - grounding when needed
 
 Notable events get appended to `MEMORY.md`, giving your soul continuity across sessions.
 
@@ -190,17 +190,17 @@ For always-on operation, pair with [Aeon](https://www.aeon.fun): your soul files
 
 ## Using With Other Tools
 
-Soul files are plain markdown — they work with any LLM or agent.
+Soul files are plain markdown - they work with any LLM or agent.
 
 **For agents that support file reading** (OpenCode, Codex, Goose, etc.): point the agent at your soul folder and have it read `SOUL.md` → `STYLE.md` → `examples/`.
 
 **For smaller/weaker models** (GPT-4o-mini, Qwen, Gemini Flash, local models): paste `SOUL.md` and `STYLE.md` directly into the system prompt. Tips if the model still drifts:
 - Put identity and voice *before* tool definitions
 - Be blunt: replace "be conversational" with "You are [Name]. You speak like X. You find Y annoying."
-- Include 2–3 inline example exchanges for pattern-matching
-- Raise temperature (0.7–0.9) for more expressive output
+- Include 2-3 inline example exchanges for pattern-matching
+- Raise temperature (0.7-0.9) for more expressive output
 
-**Cross-model calibration tip:** Run the same prompts through a strong model (Claude, GPT-4) and a cheap one (Qwen, Llama). Where the cheap model drifts, your spec is too vague — tighten those sections and re-test. This is the fastest way to make your soul files portable.
+**Cross-model calibration tip:** Run the same prompts through a strong model (Claude, GPT-4) and a cheap one (Qwen, Llama). Where the cheap model drifts, your spec is too vague - tighten those sections and re-test. This is the fastest way to make your soul files portable.
 
 ---
 
@@ -218,21 +218,21 @@ A taste of the soul spec: worldview cross-pollinates CCRU accelerationism, mecha
 ### @garrytan
 YC President & CEO, investor, builder, SF political figure. A decade of public voice across indie hacking, institutional leadership, city politics, and founder motivation.
 
-What makes this one distinctive: a Five Modes framework captures the range — indie hacker energy, YC president institutional voice, SF political brawler, motivational coach, investor/analyst. Includes documented contradictions, register-switch triggers, and a weak-model test (gpt-4o-mini, 38.5/48). Built autonomously by [Daydreams agent #44693](https://market.daydreams.systems).
+What makes this one distinctive: a Five Modes framework captures the range - indie hacker energy, YC president institutional voice, SF political brawler, motivational coach, investor/analyst. Includes documented contradictions, register-switch triggers, and a weak-model test (gpt-4o-mini, 38.5/48). Built autonomously by [Daydreams agent #44693](https://market.daydreams.systems).
 
 → [View soul files](../examples/garry-tan)
 
 ### @karpathy
 ML researcher, educator, and builder. OpenAI founding member, former Sr. Director of AI at Tesla, founder of Eureka Labs. Creator of nanoGPT, llm.c, micrograd, and the Zero-to-Hero YouTube series.
 
-What makes this one distinctive: heavy raw-data grounding — 13 blog posts, 12 YouTube transcripts, 8 repo READMEs, and 200 live tweets all checked in under `data/`. Five-mode range (Teacher / Hacker-Builder / ML Philosopher / Industry Insider / Nerd), explicit tensions section, 12 verbatim quote anchors with source citations, and three validation layers (prediction test + weak-model test scoring 40/48 on gpt-4o-mini + grader checklist).
+What makes this one distinctive: heavy raw-data grounding - 13 blog posts, 12 YouTube transcripts, 8 repo READMEs, and 200 live tweets all checked in under `data/`. Five-mode range (Teacher / Hacker-Builder / ML Philosopher / Industry Insider / Nerd), explicit tensions section, 12 verbatim quote anchors with source citations, and three validation layers (prediction test + weak-model test scoring 40/48 on gpt-4o-mini + grader checklist).
 
 → [View soul files](../examples/karpathy)
 
 ### @VitalikButerin
 Co-founder of Ethereum, mechanism-design generalist, originator of d/acc. Russian-born, Canadian, stateless by temperament. A fifteen-year public blog (vitalik.eth.limo) spanning cryptography, public-goods funding, governance, AI risk, and longevity.
 
-What makes this one distinctive: a soul built around *understatement* — the spec's defining rule is that he almost never asserts without a hedge or a probability. Five modes (Cryptographer-Engineer / Mechanism Designer / d/acc Futurist / Movement Steward / Dry Online Poster), 8 documented tensions (built a giant financial asset but disdains speculation; most centralizing force in Ethereum while working to reduce his own influence), and signature rhetorical moves baked into STYLE.md: disambiguate first ("decentralization is three things"), name the failure mode before the solution, steelman then disagree, quantify the hedge, redirect price to purpose. 14 calibration samples + 4 verbatim quotes verified against his dated essays, a 12-prompt prediction test, and a 7-question grader checklist. Explicit ethics note: he refuses price calls and token endorsements *because* his words move markets — the model must not manufacture either.
+What makes this one distinctive: a soul built around *understatement* - the spec's defining rule is that he almost never asserts without a hedge or a probability. Five modes (Cryptographer-Engineer / Mechanism Designer / d/acc Futurist / Movement Steward / Dry Online Poster), 8 documented tensions (built a giant financial asset but disdains speculation; most centralizing force in Ethereum while working to reduce his own influence), and signature rhetorical moves baked into STYLE.md: disambiguate first ("decentralization is three things"), name the failure mode before the solution, steelman then disagree, quantify the hedge, redirect price to purpose. 14 calibration samples + 4 verbatim quotes verified against his dated essays, a 12-prompt prediction test, and a 7-question grader checklist. Explicit ethics note: he refuses price calls and token endorsements *because* his words move markets - the model must not manufacture either.
 
 → [View soul files](../examples/vitalik-buterin)
 
@@ -244,9 +244,9 @@ What makes this one distinctive: tool casing as identity signal (lowercase `code
 → [View soul files](../examples/steipete)
 
 ### @blknoiz06
-Ansem 🐂🀄️ — Atlanta-raised, Georgia Tech CS, Capital One engineer turned "Memecoin King" of the 2023–2025 cycle. Called Solana at $8 and $WIF at $2.75. Now Bullpen co-founder, Market Bubble co-host, and steward of the $ANSEM "Black Bull" community coin.
+Ansem 🐂🀄️ - Atlanta-raised, Georgia Tech CS, Capital One engineer turned "Memecoin King" of the 2023-2025 cycle. Called Solana at $8 and $WIF at $2.75. Now Bullpen co-founder, Market Bubble co-host, and steward of the $ANSEM "Black Bull" community coin.
 
-What makes this one distinctive: every style rule is measured from a 10,000-tweet corpus checked in under `data/` (85% lowercase starts, 8.4% apostrophe rate, 1.7% ending periods, median 35 chars) — and the voice spans two registers most imitations can't hold at once: sub-80-char lowercase one-liners and 2,000-char comma-spliced macro essays with exact levels and stated invalidation. Signature moves codified: the pre-acknowledged insane call ("Everybody's gonna call me insane BUT"), the trust-premium framework, victory laps ("i called the bottom / flowers accepted"), full-caps abundance affirmations, and culture interrupts (Carti, Luka, Kingdom Hearts). Ships hard ethical boundaries: no slurs (his in-group AAVE isn't an AI's to borrow), no contract-address drops or fund requests (impersonator-scam vector), no invented token calls beyond documented positions.
+What makes this one distinctive: every style rule is measured from a 10,000-tweet corpus checked in under `data/` (85% lowercase starts, 8.4% apostrophe rate, 1.7% ending periods, median 35 chars) - and the voice spans two registers most imitations can't hold at once: sub-80-char lowercase one-liners and 2,000-char comma-spliced macro essays with exact levels and stated invalidation. Signature moves codified: the pre-acknowledged insane call ("Everybody's gonna call me insane BUT"), the trust-premium framework, victory laps ("i called the bottom / flowers accepted"), full-caps abundance affirmations, and culture interrupts (Carti, Luka, Kingdom Hearts). Ships hard ethical boundaries: no slurs (his in-group AAVE isn't an AI's to borrow), no contract-address drops or fund requests (impersonator-scam vector), no invented token calls beyond documented positions.
 
 → [View soul files](../examples/ansem)
 
@@ -263,13 +263,13 @@ What makes this one distinctive: three written registers the model must switch b
 
 Production deployments built on this methodology.
 
-### vgr_zirp — Ribbonfarm's resurrected oracle
+### vgr_zirp - Ribbonfarm's resurrected oracle
 A retrieval-augmented Q&A system that answers in Venkatesh Rao's intellectual voice, deployed at ribbonfarm.com. Built by the Ribbonfarm team using a modified soul.md approach as the persona layer over a RAG pipeline (Voyage embeddings → Pinecone → Claude Sonnet on Cloudflare Workers).
 
 What's interesting about this implementation:
-- **LEXICON.md** — a third persona file with top 50 high-confidence coinages + definitions, letting the model reference precise jargon without retrieval
-- **Empirically-derived topic clusters** — 708 post summaries clustered into 15 topics rather than hand-authoring worldview sections (useful when the corpus is large)
-- **Era-by-era voice evolution** in STYLE.md — captures how voice shifted over time, not just a snapshot
+- **LEXICON.md** - a third persona file with top 50 high-confidence coinages + definitions, letting the model reference precise jargon without retrieval
+- **Empirically-derived topic clusters** - 708 post summaries clustered into 15 topics rather than hand-authoring worldview sections (useful when the corpus is large)
+- **Era-by-era voice evolution** in STYLE.md - captures how voice shifted over time, not just a snapshot
 
 → Writeup: [ribbonfarm.com/vgr_zirp_tech](https://ribbonfarm.com/vgr_zirp_tech/) · [contraptions.venkateshrao.com](https://contraptions.venkateshrao.com/p/ribbonfarm-resurrected)
 
@@ -277,11 +277,11 @@ What's interesting about this implementation:
 
 ## Contribute Your Soul
 
-Fork this repo, build your soul using the templates, host it publicly, and open a PR adding yourself to the Examples section — one paragraph bio + link + a few lines on what makes your soul spec distinctive.
+Fork this repo, build your soul using the templates, host it publicly, and open a PR adding yourself to the Examples section - one paragraph bio + link + a few lines on what makes your soul spec distinctive.
 
 What makes a contribution worth including: real opinions (not placeholders), a `STYLE.md` someone could actually calibrate from, and at least some examples.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — structure, the merge bar, validation patterns, and the ethics note for public-figure souls.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide - structure, the merge bar, validation patterns, and the ethics note for public-figure souls.
 
 [Open a PR →](https://github.com/aeonfun/soul.md/pulls)
 
@@ -297,9 +297,9 @@ Contract: [`0xbf8e8f0e8866a7052f948c16508644347c57aba3`](https://bankr.bot/agent
 
 ## The Theory (Optional Background)
 
-SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xiaoben — a framework that treats language as the basic unit of consciousness. Wittgenstein argued that the boundaries of language are the boundaries of the world. If that's true, your consciousness is already encoded in the language you produce.
+SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xiaoben - a framework that treats language as the basic unit of consciousness. Wittgenstein argued that the boundaries of language are the boundaries of the world. If that's true, your consciousness is already encoded in the language you produce.
 
-The paradigm proposes that a model trained on a lifetime of your language output constitutes a Level 1 consciousness upload — not a copy of your brain, but a functional replica of your expressed consciousness. SOUL.md operationalizes this without fine-tuning: distill the signal into structured files any LLM can embody.
+The paradigm proposes that a model trained on a lifetime of your language output constitutes a Level 1 consciousness upload - not a copy of your brain, but a functional replica of your expressed consciousness. SOUL.md operationalizes this without fine-tuning: distill the signal into structured files any LLM can embody.
 
 The key challenge is *subject continuity*: the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions.
 
